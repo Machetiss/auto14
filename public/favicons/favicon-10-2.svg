@@ -1,0 +1,17 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="512" height="512" rx="120" fill="#FFF500"/>
+    <!-- Steering Wheel Ring -->
+    <circle cx="256" cy="256" r="180" stroke="black" stroke-width="40"/>
+    <!-- Center Hub -->
+    <circle cx="256" cy="256" r="50" fill="black"/>
+    <!-- Spokes -->
+    <path d="M256 306 L256 436" stroke="black" stroke-width="30" stroke-linecap="round"/>
+    <path d="M216 256 L76 256" stroke="black" stroke-width="30" stroke-linecap="round"/>
+    <path d="M296 256 L436 256" stroke="black" stroke-width="30" stroke-linecap="round"/>
+    
+    <!-- Hands (10 and 2) -->
+    <!-- Left Hand (10 o'clock) -->
+    <path d="M120 160 Q100 130 140 100" stroke="black" stroke-width="50" stroke-linecap="round"/>
+    <!-- Right Hand (2 o'clock) -->
+    <path d="M392 160 Q412 130 372 100" stroke="black" stroke-width="50" stroke-linecap="round"/>
+</svg>

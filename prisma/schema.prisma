@@ -1,0 +1,57 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Lead {
+  id        Int      @id @default(autoincrement())
+  name      String
+  phone     String
+  message   String?  // Mapped from 'description'
+  service   String?
+  car       String?
+  source    String?  // Mapped from 'utm.source' or similar
+  status    String   @default("new") // new, contacted, closed
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Service {
+  id          Int      @id @default(autoincrement())
+  slug        String   @unique
+  title       String
+  description String
+  price       String?
+  features    String?  // JSON string or comma-separated
+  category    String?
+  icon        String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Review {
+  id        Int      @id @default(autoincrement())
+  author    String
+  rating    Int
+  text      String
+  source    String?  // google, yandex, manual
+  date      DateTime @default(now())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Faq {
+  id        Int      @id @default(autoincrement())
+  question  String
+  answer    String
+  category  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
