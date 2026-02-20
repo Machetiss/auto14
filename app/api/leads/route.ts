@@ -5,6 +5,7 @@ import { handleApiError } from '@/lib/api-error';
 
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
+const GOOGLE_SHEETS_WEBHOOK_URL = process.env.GOOGLE_SHEETS_WEBHOOK_URL;
 
 export async function POST(request: Request) {
     try {
@@ -63,6 +64,27 @@ export async function POST(request: Request) {
             } catch (tgError) {
                 console.error("Telegram notification failed:", tgError);
                 // Don't fail the request if TG fails, but log it.
+            }
+        }
+
+        // Send to Google Sheets (Fire and forget)
+        if (GOOGLE_SHEETS_WEBHOOK_URL) {
+            try {
+                await fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        service: service || '',
+                        name: name || 'Клиент',
+                        phone,
+                        car: car || '',
+                        description: description || '',
+                        utm: utm?.source || 'direct',
+                        createdAt: new Date().toISOString()
+                    })
+                });
+            } catch (sheetError) {
+                console.error("Google Sheets notification failed:", sheetError);
             }
         }
 

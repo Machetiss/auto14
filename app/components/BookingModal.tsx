@@ -35,68 +35,37 @@ export default function BookingModal({ isOpen, onClose, initialService = 'Схо
 
         setIsLoading(true);
 
-        // 1. Send to Google Sheets (Client-side "Fire and Forget")
-        const sheetUrl = process.env.NEXT_PUBLIC_GOOGLE_SHEETS_WEBHOOK_URL;
-        if (sheetUrl) {
-            fetch(sheetUrl, {
+        try {
+            // Send to server API — handles Telegram, DB, and Google Sheets
+            const response = await fetch('/api/leads', {
                 method: 'POST',
-                mode: 'no-cors', // Important for Google Sheets
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     service,
-                    car,
+                    name: 'Клиент',
                     phone,
+                    car,
                     description,
-                    name: 'Клиент', // Optional
-                    utm: { source: 'modal' },
-                    createdAt: new Date().toISOString()
+                    utm: { source: 'modal' }
                 }),
-            }).catch(err => console.error('Sheet Error:', err));
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json().catch(() => ({}));
+                console.error('API Error:', errorData);
+            }
+
+            sendEvent('generate_lead', {
+                form_id: 'booking_modal',
+                method: 'form'
+            });
+
+            window.location.href = '/thank-you';
+        } catch (error) {
+            console.error('Submit Error:', error);
+            // Still redirect — the lead may have been partially saved
+            window.location.href = '/thank-you';
         }
-
-        // 2. Send to Telegram (Client-side to avoid server timeouts)
-        const botToken = process.env.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN;
-        const chatId = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_ID;
-
-        if (botToken && chatId) {
-            let message = `
-🔥 *Новая заявка!*
-🛠 *Услуга:* ${service}
-👤 *Имя:* ${'Клиент'}
-📞 *Телефон:* ${phone}
-🚗 *Авто:* ${car}
-`;
-            if (description) {
-                message += `📝 *Проблема:* ${description}\n`;
-            }
-
-            try {
-                await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        chat_id: chatId,
-                        text: message,
-                        parse_mode: 'Markdown'
-                    }),
-                });
-
-                // Redirect to Thank You page regardless of result (fire and forget mostly, but we await to ensure it sent)
-                sendEvent('generate_lead', {
-                    form_id: 'booking_modal',
-                    method: 'form'
-                });
-
-                window.location.href = '/thank-you';
-            } catch (error) {
-                console.error('Telegram Error:', error);
-                window.location.href = '/thank-you';
-            }
-        };
     };
 
     const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
