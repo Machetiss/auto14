@@ -42,3 +42,11 @@
 | Environment & Secrets Setup | [DEVOPS] | Todo | `env.example` verified, build passes |
 | Broken Link Check & Hide | [FRONTEND] | Done | No 404 links, hide unfinished pages in sitemap/nav |
 | Hosting Release | [DEVOPS] | Todo | App deployed on Vercel, reg.ru domain connected
+
+## Epic 6: UI/UX Visual Polish
+| Task | Owner | Status | DoD |
+| :--- | :--- | :--- | :--- |
+| Set up Design Tokens (Fonts, Colors) | [FRONTEND] | Todo | Google Fonts (Inter, Unbounded) connected, tailwind/css variables updated |
+| Hero Section Refinement | [FRONTEND] | Todo | Improved typography, balanced spacing, high-contrast CTAs |
+| Service Pages UI Sync | [FRONTEND] | Todo | Shared typography and yellow accents across all service templates |
+| Pricing Blocks Implementation | [FRONTEND] | Todo | "Prices from..." blocks added to all service pages |
