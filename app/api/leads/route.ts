@@ -67,25 +67,29 @@ export async function POST(request: Request) {
             }
         }
 
-        // Send to Google Sheets (Fire and forget)
+        // Send to Google Sheets (fire-and-forget, don't block API response)
         if (GOOGLE_SHEETS_WEBHOOK_URL) {
-            try {
-                await fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        service: service || '',
-                        name: name || 'Клиент',
-                        phone,
-                        car: car || '',
-                        description: description || '',
-                        utm: utm?.source || 'direct',
-                        createdAt: new Date().toISOString()
-                    })
-                });
-            } catch (sheetError) {
-                console.error("Google Sheets notification failed:", sheetError);
-            }
+            const sheetPayload = JSON.stringify({
+                service: service || '',
+                name: name || 'Клиент',
+                phone,
+                car: car || '',
+                description: description || '',
+                utm: utm?.source || 'direct',
+                createdAt: new Date().toISOString()
+            });
+
+            // Don't await — fire and forget with timeout
+            fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'text/plain' },
+                body: sheetPayload,
+                signal: AbortSignal.timeout(10000), // 10s timeout
+            }).then(r => {
+                console.log('[Sheets] Status:', r.status);
+            }).catch(err => {
+                console.error('[Sheets] Error:', err.message);
+            });
         }
 
         return NextResponse.json({ success: true, leadId: lead.id });
