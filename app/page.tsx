@@ -316,7 +316,9 @@ export default function Home() {
             </section>
 
             {/* REVIEWS SECTION */}
-            <ReviewsSection />
+            <div id="reviews">
+                <ReviewsSection />
+            </div>
 
             {/* GALLERY SECTION (Expanded) */}
             <section id="gallery" className="py-12 px-4 md:px-12 max-w-7xl mx-auto">

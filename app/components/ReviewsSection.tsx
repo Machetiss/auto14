@@ -111,7 +111,7 @@ export default function ReviewsSection() {
     // However, to ensure "dynamic feel", the useEffect swap is key.
 
     return (
-        <section id="reviews" className="py-24 bg-black text-white relative overflow-hidden">
+        <section className="py-24 bg-black text-white relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
                 <Settings className="w-96 h-96 absolute -top-20 -left-20 animate-spin-slow" />
             </div>
