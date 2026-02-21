@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import { Settings, MoveRight, CornerRightDown, Phone, Wrench, ChevronRight, PackageSearch, MapPin } from 'lucide-react';
+import { Settings, MoveRight, CornerRightDown, Phone, Wrench, ChevronRight, PackageSearch, MapPin, Target, UserCheck, Banknote, ChevronDown, ChevronUp } from 'lucide-react';
 import BookingModal from './components/BookingModal';
 import ReviewsSection from './components/ReviewsSection';
 import CarWheel from './components/CarWheel';
@@ -12,9 +12,53 @@ import { TelegramIcon } from './components/icons/TelegramIcon';
 
 export default function Home() {
     const [isBookingOpen, setIsBookingOpen] = useState(false);
+    const [activeFaq, setActiveFaq] = useState<number | null>(null);
+
+    const faqs = [
+        {
+            q: "Где сделать 3D развал-схождение в Казани?",
+            a: "Автосервис Авто14 находится в Константиновке по адресу ул. Заречная 5Б. Мы используем современный 3D стенд Hoffman, который гарантирует высочайшую точность регулировки."
+        },
+        {
+            q: "Как часто и когда нужно проверять развал-схождение?",
+            a: "Мы рекомендуем проверять углы при каждой сезонной смене шин. Также проверка обязательна после попадания в глубокую яму, при неравномерном износе резины или после любого ремонта элементов подвески."
+        },
+        {
+            q: "Какие автомобили вы обслуживаете?",
+            a: "Мы работаем практически со всеми марками авто: от Lada и VAZ до современных иномарок (Kia, Toyota, BMW, Mercedes) и автомобилей старше 15 лет."
+        },
+        {
+            q: "Нужно ли записываться заранее?",
+            a: "Да, во избежание очередей мы работаем по предварительной записи. Вы можете записаться через форму на сайте или по телефону — выберем удобное для вас время."
+        },
+        {
+            q: "Даете ли вы гарантию на работы?",
+            a: "Конечно. Мы несем полную ответственность за качество выполненных работ. На все услуги нашего сервиса действует официальная гарантия."
+        },
+        {
+            q: "Можно ли приехать со своими запчастями?",
+            a: "Да, мы без проблем установим ваши запчасти. Однако в этом случае гарантия будет распространяться только на правильность установки, но не на саму деталь."
+        },
+        {
+            q: "У вас есть запчасти в наличии?",
+            a: "Своего склада запчастей у нас нет, но мы сотрудничаем с крупнейшими поставщиками Казани. При заказе у нас любые детали доставляются прямо в сервис в течение 2 часов."
+        },
+        {
+            q: "Бесплатная ли у вас диагностика?",
+            a: "Диагностика ходовой части проводится бесплатно при условии, что выявленные неисправности вы будете устранять в нашем автосервисе."
+        },
+        {
+            q: "Сколько времени занимает процедура развала?",
+            a: "В среднем процедура 3D развал-схождения на одну ось занимает от 20 до 40 минут, в зависимости от состояния регулировочных болтов."
+        },
+        {
+            q: "На каком оборудовании вы работаете?",
+            a: "Наш главный инструмент — профессиональный немецкий 3D стенд Hoffman. Это эталон точности в мире авторемонта, исключающий человеческий фактор."
+        }
+    ];
 
     return (
-        <div className={`min-h-screen bg-[#FFF500] text-black font-sans selection:bg-black selection:text-[#FFF500] relative overflow-x-hidden font-sans`}>
+        <div className={`min-h-screen bg-brand-yellow text-black font-sans selection:bg-black selection:text-brand-yellow relative overflow-x-hidden`}>
 
             <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
 
@@ -22,7 +66,7 @@ export default function Home() {
             <header className="fixed top-0 left-0 right-0 z-50 pt-4 pb-4 px-4 bg-brand-yellow shadow-md border-b-2 border-black">
                 <div className="container mx-auto flex justify-between items-center">
                     {/* Left: Nav Links */}
-                    <nav className="flex gap-6 font-black uppercase text-xs md:text-sm tracking-widest text-black font-sans">
+                    <nav className="flex gap-4 md:gap-6 font-black uppercase text-xs md:text-sm tracking-widest text-black font-sans">
                         <Link href="#services" className="hover:text-accent-orange transition-colors">Услуги</Link>
                         <Link href="#reviews" className="hover:text-accent-orange transition-colors">Отзывы</Link>
                         <Link href="#gallery" className="hover:text-accent-orange transition-colors">Галерея</Link>
@@ -90,24 +134,26 @@ export default function Home() {
                     </div>
 
                     {/* MAIN TAGLINE - HUGE & MODERN */}
-                    <h1 className="text-[14vw] md:text-[8vw] leading-[0.8] font-black tracking-tighter uppercase mb-4 text-black flex flex-col font-display">
+                    <h1 className="text-[14vw] md:text-[8vw] leading-[0.9] md:leading-[0.8] font-black tracking-tighter uppercase mb-4 text-black flex flex-col font-display">
                         <span>НАМ В</span>
                         <span>РАДОСТЬ</span>
                     </h1>
-                    <p className="text-[5vw] md:text-[2.2vw] font-black uppercase leading-[1.1] text-black opacity-90 mb-10 max-w-xl font-sans">
+                    <p className="text-[5.5vw] md:text-[2.2vw] font-black uppercase leading-[1.3] md:leading-[1.1] text-black opacity-90 mb-10 max-w-xl font-sans">
                         СДЕЛАТЬ ВАШУ МАШИНУ <br />ИДЕАЛЬНОЙ
                     </p>
 
                     {/* Action Buttons */}
-                    <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto z-20 relative">
+                    <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto z-30 relative">
                         <button onClick={() => setIsBookingOpen(true)} className="btn-primary group">
-                            Записаться на диагностику
+                            Записаться
                             <MoveRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </button>
-                        <a href="tel:+79992699359" className="btn-secondary">
-                            Позвонить
-                            <Phone className="w-5 h-5" />
-                        </a>
+                        <div className="flex flex-col gap-2">
+                            <a href="tel:+79992699359" className="btn-secondary w-full">
+                                Позвонить
+                                <Phone className="w-5 h-5" />
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -219,6 +265,56 @@ export default function Home() {
                 </div>
             </section>
 
+            {/* WHY CHOOSE US / BENEFITS SECTION */}
+            <section id="benefits" className="py-24 bg-ui-dark text-white border-y-4 border-black overflow-hidden relative">
+                {/* Background Accent */}
+                <div className="absolute top-0 right-0 w-64 h-64 bg-brand-yellow/5 rounded-full blur-3xl -mr-32 -mt-32"></div>
+
+                <div className="container mx-auto px-4 md:px-12 relative z-10">
+                    <div className="flex flex-col md:flex-row items-baseline gap-4 mb-16">
+                        <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter font-display leading-none">
+                            Почему<br /><span className="text-brand-yellow">Авто14?</span>
+                        </h2>
+                        <div className="h-1 flex-grow bg-brand-yellow/20 hidden md:block"></div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {/* Benefit 1: Hoffman */}
+                        <div className="bg-white text-black p-8 rounded-[2rem] border-4 border-black shadow-[4px_4px_0px_#FEE500] md:shadow-[8px_8px_0px_#FEE500] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all group">
+                            <div className="bg-black text-brand-yellow w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform border-2 border-black">
+                                <Target className="w-8 h-8" />
+                            </div>
+                            <h3 className="text-2xl font-black uppercase mb-4 font-display leading-tight">3D Стенд<br />Hoffman</h3>
+                            <p className="font-bold opacity-70 font-sans text-sm md:text-base">
+                                Премиальное немецкое оборудование. Точность регулировки до 0.01°. Гарантируем идеальный результат.
+                            </p>
+                        </div>
+
+                        {/* Benefit 2: Masters */}
+                        <div className="bg-brand-yellow text-black p-8 rounded-[2rem] border-4 border-black shadow-[4px_4px_0px_#000] md:shadow-[8px_8px_0px_#000] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all group">
+                            <div className="bg-black text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                <UserCheck className="w-8 h-8" />
+                            </div>
+                            <h3 className="text-2xl font-black uppercase mb-4 font-display leading-tight">Опытные<br />мастера</h3>
+                            <p className="font-black opacity-80 font-sans text-sm md:text-base">
+                                Специалисты с опытом 10+ лет. Знаем особенности подвески любой марки: от Lada до Porsche.
+                            </p>
+                        </div>
+
+                        {/* Benefit 3: Fair Prices */}
+                        <div className="bg-white text-black p-8 rounded-[2rem] border-4 border-black shadow-[4px_4px_0px_#FF4500] md:shadow-[8px_8px_0px_#FF4500] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all group">
+                            <div className="bg-accent-orange text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:-rotate-12 transition-transform border-2 border-black shadow-[4px_4px_0px_#000]">
+                                <Banknote className="w-8 h-8" />
+                            </div>
+                            <h3 className="text-2xl font-black uppercase mb-4 font-display leading-tight">Честные<br />цены</h3>
+                            <p className="font-bold opacity-70 font-sans text-sm md:text-base">
+                                Никаких скрытых платежей и «накруток». Согласовываем стоимость до начала работ. Честный подход к каждому клиенту.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* REVIEWS SECTION */}
             <ReviewsSection />
 
@@ -263,43 +359,58 @@ export default function Home() {
             </section>
 
 
-            {/* SEO & FAQ BLOCK */}
-            <section className="bg-white text-black py-20 border-t-4 border-black">
-                <div className="container mx-auto px-4">
-                    <h2 className="text-4xl md:text-6xl font-black uppercase mb-12">Вопросы и ответы</h2>
-                    {/* ... (Existing FAQ Content) ... */}
-                    <div className="grid md:grid-cols-2 gap-8 mb-12">
-                        <div>
-                            <h3 className="text-2xl font-black uppercase mb-4">Где сделать 3D развал-схождение?</h3>
-                            <p className="font-black opacity-80 mb-8">
-                                Автосервис Авто14 в Константиновке (Казань) оборудован современным 3D стендом Hoffman.
-                                Гарантируем точность регулировки.
-                            </p>
-                            <h3 className="text-2xl font-black uppercase mb-4">Какие машины обслуживаете?</h3>
-                            <p className="font-black opacity-80 mb-8">
-                                Мы работаем с любыми марками: от отечественных авто (Lada/VAZ) до иномарок (Kia, Hyundai, Toyota, VAG и др.).
-                            </p>
-                        </div>
-                        <div>
-                            <h3 className="text-2xl font-black uppercase mb-4">Нужно ли записываться заранее?</h3>
-                            <p className="font-black opacity-80 mb-8">
-                                Да, мы работаем по записи, чтобы вы не ждали в очереди. Запишитесь через сайт или по телефону.
-                            </p>
-                            <h3 className="text-2xl font-black uppercase mb-4">Даете гарантию?</h3>
-                            <p className="font-black opacity-80 mb-8">
-                                Конечно. На все работы и установленные нами запчасти действует гарантия.
-                            </p>
-                        </div>
-                    </div >
+            {/* SEO & FAQ BLOCK - Refreshed */}
+            <section className="bg-white text-black py-24 border-t-4 border-black font-sans overflow-hidden">
+                <div className="container mx-auto px-4 md:px-12 max-w-5xl">
+                    <div className="mb-16 text-center md:text-left">
+                        <h2 className="text-4xl md:text-7xl font-black uppercase tracking-tighter font-display mb-4">
+                            Вопросы<br /><span className="text-accent-orange">& ответы</span>
+                        </h2>
+                        <div className="h-2 w-32 bg-brand-yellow hidden md:block"></div>
+                    </div>
 
-                    <div className="bg-black text-white p-8 rounded-3xl">
-                        <h3 className="text-xl font-black uppercase mb-4 text-[#FFF500]">Популярные услуги в Казани</h3>
-                        <div className="flex flex-wrap gap-3 font-bold text-sm opacity-80">
-                            <span>Ремонт ходовой Казань</span> <span className="text-[#FFF500]">•</span>
-                            <span>3D Развал схождение</span> <span className="text-[#FFF500]">•</span>
-                            <span>Автосервис Константиновка</span> <span className="text-[#FFF500]">•</span>
-                            <span>Замена масла</span> <span className="text-[#FFF500]">•</span>
-                            <span>Диагностика подвески</span> <span className="text-[#FFF500]">•</span>
+                    <div className="space-y-4">
+                        {faqs.map((faq, idx) => (
+                            <div
+                                key={idx}
+                                className={`border-4 border-black rounded-2xl overflow-hidden transition-all duration-300 ${activeFaq === idx ? 'shadow-[4px_4px_0px_#FEE500] md:shadow-[8px_8px_0px_#FEE500]' : 'shadow-[2px_2px_0px_#000] md:shadow-[4px_4px_0px_#000]'
+                                    }`}
+                            >
+                                <button
+                                    onClick={() => setActiveFaq(activeFaq === idx ? null : idx)}
+                                    className="w-full flex items-center justify-between p-6 md:p-8 text-left bg-white hover:bg-brand-yellow/5"
+                                >
+                                    <span className="text-base md:text-xl font-black uppercase tracking-tight font-display pr-4 md:pr-8 leading-tight">
+                                        {faq.q}
+                                    </span>
+                                    {activeFaq === idx ? (
+                                        <ChevronUp className="w-6 h-6 md:w-8 md:h-8 flex-shrink-0 text-accent-orange" />
+                                    ) : (
+                                        <ChevronDown className="w-6 h-6 md:w-8 md:h-8 flex-shrink-0 text-black" />
+                                    )}
+                                </button>
+
+                                <div
+                                    className={`transition-all duration-300 ease-in-out border-t-4 border-black ${activeFaq === idx ? 'max-h-[800px] p-6 md:p-8 bg-black/5 opacity-100' : 'max-h-0 overflow-hidden opacity-0'
+                                        }`}
+                                >
+                                    <p className="text-base md:text-lg font-bold opacity-80 font-sans leading-relaxed">
+                                        {faq.a}
+                                    </p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* SEO KEYWORDS CLOUD */}
+                    <div className="mt-24 p-6 md:p-8 bg-black text-white rounded-3xl border-4 border-black shadow-[4px_4px_0px_#FEE500] md:shadow-[8px_8px_0px_#FEE500]">
+                        <h3 className="text-xl font-black uppercase mb-6 text-brand-yellow font-display">Популярные услуги в Казани</h3>
+                        <div className="flex flex-wrap gap-x-4 gap-y-2 font-bold text-xs md:text-sm opacity-60">
+                            <span>Ремонт ходовой Казань</span> <span className="text-brand-yellow">•</span>
+                            <span>3D Развал схождение</span> <span className="text-brand-yellow">•</span>
+                            <span>Автосервис Константиновка</span> <span className="text-brand-yellow">•</span>
+                            <span>Замена масла</span> <span className="text-brand-yellow">•</span>
+                            <span>Диагностика подвески</span> <span className="text-brand-yellow">•</span>
                             <span>Шиномонтаж цены</span>
                         </div>
                     </div>

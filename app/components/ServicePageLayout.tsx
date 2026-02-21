@@ -22,7 +22,7 @@ export default function ServicePageLayout({
     title,
     description,
     price,
-    heroImage = "/hero-girl.png", // Fallback
+    heroImage = "/hero-girl.png",
     features,
     symptoms,
     processSteps,
@@ -34,33 +34,33 @@ export default function ServicePageLayout({
     return (
         <main className="bg-white text-black font-sans pt-20">
             {/* HERO SECTION */}
-            <section className="relative bg-black text-[#FFF500] min-h-[60vh] flex items-center overflow-hidden">
-                <div className="container mx-auto px-4 z-10 flex flex-col md:flex-row items-center gap-12">
-                    <div className="md:w-1/2 pt-12 md:pt-0">
-                        <div className="inline-block bg-[#FFF500] text-black px-4 py-1 rounded-full font-bold uppercase text-xs tracking-widest mb-6">
+            <section className="relative bg-ui-dark text-brand-yellow min-h-[60vh] flex items-center overflow-hidden">
+                <div className="container mx-auto px-4 z-10 flex flex-col md:flex-row items-center gap-12 py-16">
+                    <div className="md:w-1/2">
+                        <div className="inline-block bg-brand-yellow text-black px-4 py-1 rounded-sm font-black uppercase text-[10px] tracking-widest mb-6 border border-black shadow-[2px_2px_0px_#000]">
                             Услуги Авто14
                         </div>
-                        <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-6 leading-[0.9]">
+                        <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-6 leading-[0.9] font-display text-white">
                             {title}
                         </h1>
-                        <p className="text-xl md:text-2xl font-bold opacity-80 mb-8 max-w-lg text-white">
+                        <p className="text-xl md:text-2xl font-bold opacity-80 mb-10 max-w-lg text-white font-sans">
                             {description}
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <button
                                 onClick={() => openBooking(title)}
-                                className="bg-[#FF4500] text-white px-8 py-4 rounded-full font-black uppercase hover:bg-black hover:text-[#FFF500] hover:scale-105 transition-all text-sm tracking-wider shadow-lg animate-pulse hover:animate-none border-2 border-transparent hover:border-[#FFF500]"
+                                className="btn-primary"
                             >
                                 Записаться
                             </button>
-                            <Link href="/" className="px-8 py-4 rounded-full font-bold uppercase border-2 border-white hover:bg-white hover:text-black transition-colors text-sm tracking-wider text-center">
+                            <Link href="/" className="btn-secondary !text-white !border-white hover:!bg-white hover:!text-black">
                                 На главную
                             </Link>
                         </div>
                     </div>
                     {/* Image Placeholder or prop */}
                     <div className="md:w-1/2 relative h-[400px] w-full">
-                        <div className="relative w-full h-full border-4 border-[#FFF500] rounded-3xl overflow-hidden">
+                        <div className="relative w-full h-full border-4 border-brand-yellow rounded-3xl overflow-hidden shadow-[8px_8px_0px_#000]">
                             <Image
                                 src={heroImage}
                                 alt={title}
@@ -73,34 +73,34 @@ export default function ServicePageLayout({
             </section>
 
             {/* SYMPTOMS SECTION */}
-            <section className="py-20 container mx-auto px-4">
-                <h2 className="text-3xl md:text-5xl font-black uppercase mb-12 text-center">
-                    Когда <span className="text-[#DA8A00]">нужно</span> это делать?
+            <section className="py-24 container mx-auto px-4">
+                <h2 className="text-4xl md:text-6xl font-black uppercase mb-16 text-center font-display tracking-tighter">
+                    Когда <span className="text-accent-orange">нужно</span> это делать?
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {symptoms.map((symptom, idx) => (
-                        <div key={idx} className="bg-gray-100 p-6 rounded-2xl border-l-4 border-black flex items-start gap-4">
-                            <div className="bg-accent-green text-white p-2 rounded-full mt-1 shrink-0">
+                        <div key={idx} className="bg-white p-8 rounded-2xl border-2 border-black shadow-[4px_4px_0px_#000] flex items-start gap-4 hover:translate-y-[-4px] transition-transform">
+                            <div className="bg-accent-orange text-white p-2 rounded-full shrink-0 border border-black shadow-[2px_2px_0px_#000]">
                                 <Check className="w-4 h-4" />
                             </div>
-                            <p className="font-bold text-lg">{symptom}</p>
+                            <p className="font-black uppercase text-sm tracking-tight">{symptom}</p>
                         </div>
                     ))}
                 </div>
             </section>
 
             {/* FEATURES / ADVANTAGES */}
-            <section className="py-20 bg-black text-white">
+            <section className="py-24 bg-ui-dark text-white border-y-4 border-black">
                 <div className="container mx-auto px-4">
-                    <h2 className="text-3xl md:text-5xl font-black uppercase mb-12 text--[#FFF500]">
-                        Почему <span className="text-white">Авто14</span>?
+                    <h2 className="text-4xl md:text-6xl font-black uppercase mb-16 tracking-tighter font-display">
+                        Почему <span className="text-brand-yellow">Авто14</span>?
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {features.map((feature, idx) => (
-                            <div key={idx} className="bg-[#1e1e1e] p-8 rounded-3xl border border-white/10 hover:border-[#FFF500] transition-colors">
-                                <feature.icon className="w-12 h-12 text-[#FFF500] mb-6" />
-                                <h3 className="text-xl font-black uppercase mb-3">{feature.title}</h3>
-                                <p className="opacity-70 font-bold">{feature.desc}</p>
+                            <div key={idx} className="bg-white/5 p-8 rounded-3xl border-2 border-white/10 hover:border-brand-yellow hover:bg-white/10 transition-all group">
+                                <feature.icon className="w-12 h-12 text-brand-yellow mb-6 group-hover:scale-110 transition-transform" />
+                                <h3 className="text-xl font-black uppercase mb-3 font-display">{feature.title}</h3>
+                                <p className="opacity-70 font-bold font-sans">{feature.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -108,24 +108,24 @@ export default function ServicePageLayout({
             </section>
 
             {/* PROCESS */}
-            <section className="py-20 container mx-auto px-4">
-                <h2 className="text-3xl md:text-5xl font-black uppercase mb-12">
-                    Как мы <span className="text-[#DA8A00]">работаем</span>
+            <section className="py-24 container mx-auto px-4">
+                <h2 className="text-4xl md:text-6xl font-black uppercase mb-16 font-display tracking-tighter">
+                    Как мы <span className="text-accent-orange">работаем</span>
                 </h2>
                 <div className="space-y-4 max-w-3xl mx-auto">
                     {processSteps.map((step, idx) => (
-                        <div key={idx} className="flex gap-6 group">
+                        <div key={idx} className="flex gap-8 group">
                             <div className="flex flex-col items-center">
-                                <div className="w-12 h-12 bg-black text-[#FFF500] rounded-full flex items-center justify-center font-black text-xl shrink-0 group-hover:scale-110 transition-transform">
+                                <div className="w-14 h-14 bg-black text-brand-yellow rounded-full flex items-center justify-center font-black text-2xl shrink-0 group-hover:scale-110 transition-transform border-4 border-brand-yellow">
                                     {idx + 1}
                                 </div>
                                 {idx !== processSteps.length - 1 && (
                                     <div className="w-1 bg-black/10 flex-grow my-2"></div>
                                 )}
                             </div>
-                            <div className="pb-12">
-                                <h3 className="text-2xl font-black uppercase mb-2">{step.title}</h3>
-                                <p className="font-bold opacity-60 text-lg">{step.desc}</p>
+                            <div className="pb-16">
+                                <h3 className="text-3xl font-black uppercase mb-3 font-display tracking-tight leading-none">{step.title}</h3>
+                                <p className="font-bold opacity-70 text-lg font-sans">{step.desc}</p>
                             </div>
                         </div>
                     ))}
@@ -136,23 +136,23 @@ export default function ServicePageLayout({
             <ReviewsSection />
 
             {/* FAQ */}
-            <section className="py-20 bg-gray-50 border-t-4 border-black">
+            <section className="py-24 bg-brand-yellow/10 border-t-4 border-black">
                 <div className="container mx-auto px-4 max-w-4xl">
-                    <h2 className="text-3xl md:text-5xl font-black uppercase mb-12 text-center">
+                    <h2 className="text-4xl md:text-6xl font-black uppercase mb-16 text-center font-display tracking-tighter">
                         Вопросы и ответы
                     </h2>
                     <div className="space-y-4">
                         {faq.map((item, idx) => (
-                            <div key={idx} className="bg-white rounded-2xl border-2 border-black overflow-hidden">
+                            <div key={idx} className="bg-white rounded-2xl border-2 border-black overflow-hidden shadow-[4px_4px_0px_#000]">
                                 <button
                                     onClick={() => setOpenFaqIndex(openFaqIndex === idx ? null : idx)}
-                                    className="w-full text-left p-6 flex justify-between items-center font-black uppercase text-lg hover:bg-gray-50 transition-colors"
+                                    className="w-full text-left p-6 flex justify-between items-center font-black uppercase text-lg hover:bg-brand-yellow/5 transition-colors font-display"
                                 >
                                     {item.question}
-                                    {openFaqIndex === idx ? <ChevronUp /> : <ChevronDown />}
+                                    {openFaqIndex === idx ? <ChevronUp className="text-accent-orange" /> : <ChevronDown />}
                                 </button>
                                 {openFaqIndex === idx && (
-                                    <div className="p-6 pt-0 font-bold opacity-70">
+                                    <div className="p-6 pt-0 font-bold opacity-80 font-sans border-t border-black/5 mt-4">
                                         {item.answer}
                                     </div>
                                 )}
@@ -163,19 +163,19 @@ export default function ServicePageLayout({
             </section>
 
             {/* CTA */}
-            <section className="py-24 bg-[#FFF500] text-black text-center">
+            <section className="py-32 bg-brand-yellow text-black text-center border-t-4 border-black">
                 <div className="container mx-auto px-4">
-                    <h2 className="text-4xl md:text-6xl font-black uppercase mb-8 tracking-tighter">
+                    <h2 className="text-5xl md:text-7xl font-black uppercase mb-8 tracking-tighter font-display">
                         Готовы записаться?
                     </h2>
-                    <p className="text-xl font-bold mb-12 max-w-2xl mx-auto opacity-80">
+                    <p className="text-xl md:text-2xl font-black mb-12 max-w-2xl mx-auto opacity-80 font-sans uppercase">
                         Оставьте заявку сейчас, и мы свяжемся с вами в течение 5 минут.
                     </p>
                     <button
                         onClick={() => openBooking(title)}
-                        className="bg-[#FF4500] text-white px-12 py-6 rounded-full font-black uppercase text-xl hover:bg-black hover:text-[#FFF500] hover:scale-105 transition-all shadow-2xl border-2 border-transparent hover:border-[#FFF500]"
+                        className="btn-primary !px-16 !py-6 !text-xl"
                     >
-                        Записаться
+                        Записаться на ремонт
                     </button>
                 </div>
             </section>

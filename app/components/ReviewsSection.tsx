@@ -119,10 +119,10 @@ export default function ReviewsSection() {
             <div className="max-w-7xl mx-auto px-4 md:px-12 relative z-10">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                     <div>
-                        <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-[0.8] text-[#FFF500] mb-6">
+                        <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-[0.8] text-brand-yellow mb-6 font-display">
                             Отзывы<br />Клиентов
                         </h2>
-                        <p className="text-xl font-bold opacity-80 max-w-lg">
+                        <p className="text-xl font-bold opacity-80 max-w-lg font-sans">
                             Нас рекомендуют друзьям. Рейтинг 5.0 на картах – это не просто цифры, это ваша уверенность в результате.
                         </p>
                     </div>
@@ -130,10 +130,10 @@ export default function ReviewsSection() {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {/* Yandex Maps */}
-                    <a href="https://yandex.ru/maps/org/avto14/108623850068/reviews/?ll=49.264877%2C55.809049&z=16" target="_blank" rel="noopener noreferrer" className="bg-[#1e1e1e] p-8 rounded-[2rem] hover:bg-[#2a2a2a] transition-colors group border border-white/10 hover:border-[#FFF500]/50 flex flex-col h-full transform hover:-translate-y-2 transition-transform duration-300">
+                    <a href="https://yandex.ru/maps/org/avto14/108623850068/reviews/?ll=49.264877%2C55.809049&z=16" target="_blank" rel="noopener noreferrer" className="bg-white/5 p-8 rounded-[2rem] hover:bg-white/10 transition-colors group border border-white/10 hover:border-brand-yellow/50 flex flex-col h-full transform hover:-translate-y-2 transition-transform duration-300">
                         <div className="flex justify-between items-start mb-6">
-                            <div className="bg-red-600 text-white font-bold px-3 py-1 rounded text-sm uppercase tracking-wider">Яндекс</div>
-                            <div className="flex text-[#FFF500]">
+                            <div className="bg-red-600 text-white font-bold px-3 py-1 rounded text-[10px] uppercase tracking-wider font-sans">Яндекс</div>
+                            <div className="flex text-brand-yellow">
                                 {[1, 2, 3, 4, 5].map((star) => (
                                     <svg key={star} className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
                                 ))}
@@ -152,19 +152,19 @@ export default function ReviewsSection() {
                     </a>
 
                     {/* 2GIS */}
-                    <a href="https://2gis.ru/kazan/firm/70000001065947100/tab/reviews" target="_blank" rel="noopener noreferrer" className="bg-[#1e1e1e] p-8 rounded-[2rem] hover:bg-[#2a2a2a] transition-colors group border border-white/10 hover:border-[#FFF500]/50 flex flex-col h-full transform hover:-translate-y-2 transition-transform duration-300">
+                    <a href="https://2gis.ru/kazan/firm/70000001065947100/tab/reviews" target="_blank" rel="noopener noreferrer" className="bg-white/5 p-8 rounded-[2rem] hover:bg-white/10 transition-colors group border border-white/10 hover:border-brand-yellow/50 flex flex-col h-full transform hover:-translate-y-2 transition-transform duration-300">
                         <div className="flex justify-between items-start mb-6">
-                            <div className="bg-[#78c331] text-white font-bold px-3 py-1 rounded text-sm uppercase tracking-wider">2GIS</div>
-                            <div className="flex text-[#FFF500]">
+                            <div className="bg-[#78c331] text-white font-bold px-3 py-1 rounded text-[10px] uppercase tracking-wider font-sans">2GIS</div>
+                            <div className="flex text-brand-yellow">
                                 {[1, 2, 3, 4, 5].map((star) => (
                                     <svg key={star} className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
                                 ))}
                             </div>
                         </div>
-                        <p className="font-bold text-lg mb-4 opacity-90 flex-grow">
+                        <p className="font-bold text-lg mb-4 opacity-90 flex-grow font-sans">
                             &quot;{reviews.gis.text}&quot;
                         </p>
-                        <div className="flex items-center gap-3 opacity-60 mt-auto">
+                        <div className="flex items-center gap-3 opacity-60 mt-auto font-sans">
                             <div className="w-10 h-10 bg-gray-600 rounded-full flex items-center justify-center font-bold text-xl">{reviews.gis.author[0]}</div>
                             <div>
                                 <div className="font-bold text-sm">{reviews.gis.author}</div>
@@ -174,19 +174,19 @@ export default function ReviewsSection() {
                     </a>
 
                     {/* Avito */}
-                    <a href="https://www.avito.ru/kazan/predlozheniya_uslug/avtoservis_shod-razval_3d_remont_avto_kazan_2642374619" target="_blank" rel="noopener noreferrer" className="bg-[#1e1e1e] p-8 rounded-[2rem] hover:bg-[#2a2a2a] transition-colors group border border-white/10 hover:border-[#FFF500]/50 flex flex-col h-full transform hover:-translate-y-2 transition-transform duration-300">
+                    <a href="https://www.avito.ru/kazan/predlozheniya_uslug/avtoservis_shod-razval_3d_remont_avto_kazan_2642374619" target="_blank" rel="noopener noreferrer" className="bg-white/5 p-8 rounded-[2rem] hover:bg-white/10 transition-colors group border border-white/10 hover:border-brand-yellow/50 flex flex-col h-full transform hover:-translate-y-2 transition-transform duration-300">
                         <div className="flex justify-between items-start mb-6">
-                            <div className="bg-[#00aaff] text-white font-bold px-3 py-1 rounded text-sm uppercase tracking-wider">Авито</div>
-                            <div className="flex text-[#FFF500]">
+                            <div className="bg-[#00aaff] text-white font-bold px-3 py-1 rounded text-[10px] uppercase tracking-wider font-sans">Авито</div>
+                            <div className="flex text-brand-yellow">
                                 {[1, 2, 3, 4, 5].map((star) => (
                                     <svg key={star} className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
                                 ))}
                             </div>
                         </div>
-                        <p className="font-bold text-lg mb-4 opacity-90 flex-grow">
+                        <p className="font-bold text-lg mb-4 opacity-90 flex-grow font-sans">
                             &quot;{reviews.avito.text}&quot;
                         </p>
-                        <div className="flex items-center gap-3 opacity-60 mt-auto">
+                        <div className="flex items-center gap-3 opacity-60 mt-auto font-sans">
                             <div className="w-10 h-10 bg-gray-600 rounded-full flex items-center justify-center font-bold text-xl">{reviews.avito.author[0]}</div>
                             <div>
                                 <div className="font-bold text-sm">{reviews.avito.author}</div>
