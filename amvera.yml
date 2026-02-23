@@ -1,7 +1,8 @@
 meta:
   name: auto14
+  environment: docker
   toolchain:
-    name: docker # Fixed based on Amvera error: 'meta.toolchain' must be present
+    name: docker
 
 build:
   dockerfile: Dockerfile
