@@ -8,7 +8,7 @@ export default function Shinomontazh() {
         <ServicePageLayout
             title="Шиномонтаж и Балансировка"
             description="Сезонная переобувка без очередей (по записи). Бережное отношение к датчикам давления и низкому профилю."
-            price="от 1500₽"
+            price="от 2200₽"
             heroImage="/job/shin.jpg"
             symptoms={[
                 "Наступил сезон (зима/лето)",

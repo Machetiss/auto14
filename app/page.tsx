@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { Settings, MoveRight, CornerRightDown, Phone, Wrench, ChevronRight, PackageSearch, MapPin, Target, UserCheck, Banknote, ChevronDown, ChevronUp } from 'lucide-react';
 import BookingModal from './components/BookingModal';
+import NavigatorModal from './components/NavigatorModal';
 import ReviewsSection from './components/ReviewsSection';
 import CarWheel from './components/CarWheel';
 import { WhatsAppIcon } from './components/icons/WhatsAppIcon';
@@ -12,6 +13,7 @@ import { TelegramIcon } from './components/icons/TelegramIcon';
 
 export default function Home() {
     const [isBookingOpen, setIsBookingOpen] = useState(false);
+    const [isNavigatorOpen, setIsNavigatorOpen] = useState(false);
     const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
     const faqs = [
@@ -61,6 +63,7 @@ export default function Home() {
         <div className={`min-h-screen bg-brand-yellow text-black font-sans selection:bg-black selection:text-brand-yellow relative overflow-x-hidden`}>
 
             <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
+            <NavigatorModal isOpen={isNavigatorOpen} onClose={() => setIsNavigatorOpen(false)} />
 
             {/* HEADER */}
             <header className="fixed top-0 left-0 right-0 z-50 pt-4 pb-4 px-4 bg-brand-yellow shadow-md border-b-2 border-black">
@@ -125,7 +128,7 @@ export default function Home() {
                     {/* Symptoms / Pain Points as structured tags */}
                     <div className="flex flex-wrap gap-2 mb-8 max-w-2xl">
                         {[
-                            "Тянет руль?", "Ест резину?", "Стучит подвеска?", "Увод в сторону?", "Кривой руль?"
+                            "Тянем машину в сторону?", "Руль стоит криво?", "Кидает машину по колее?", "Плохая управляемость?", "Что-то, где-то стучит?", "Давно не проверяли схождение?"
                         ].map((tag, idx) => (
                             <span key={idx} className="bg-black/5 border border-black/10 px-3 py-1 text-[10px] md:text-sm font-bold uppercase tracking-wider text-black/70 rounded-md">
                                 {tag}
@@ -134,25 +137,39 @@ export default function Home() {
                     </div>
 
                     {/* MAIN TAGLINE - HUGE & MODERN */}
-                    <h1 className="text-[14vw] md:text-[8vw] leading-[0.9] md:leading-[0.8] font-black tracking-tighter uppercase mb-4 text-black flex flex-col font-display">
+                    <h1 className="text-[12vw] md:text-[8vw] leading-[0.9] md:leading-[0.8] font-black tracking-tighter uppercase mb-4 text-black flex flex-col font-display">
                         <span>НАМ В</span>
                         <span>РАДОСТЬ</span>
                     </h1>
-                    <p className="text-[5.5vw] md:text-[2.2vw] font-black uppercase leading-[1.3] md:leading-[1.1] text-black opacity-90 mb-10 max-w-xl font-sans">
+                    <p className="text-[4.5vw] md:text-[2.2vw] font-black uppercase leading-[1.3] md:leading-[1.1] text-black opacity-90 mb-10 max-w-xl font-sans">
                         СДЕЛАТЬ ВАШУ МАШИНУ <br />ИДЕАЛЬНОЙ
                     </p>
 
                     {/* Action Buttons */}
-                    <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto z-30 relative">
-                        <button onClick={() => setIsBookingOpen(true)} className="btn-primary group">
+                    <div className="flex flex-col gap-4 w-full sm:w-auto z-30 relative">
+                        <button onClick={() => setIsBookingOpen(true)} className="btn-primary group w-full sm:w-80">
                             Записаться
                             <MoveRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </button>
-                        <div className="flex flex-col gap-2">
-                            <a href="tel:+79992699359" className="btn-secondary w-full">
-                                Позвонить
-                                <Phone className="w-5 h-5" />
-                            </a>
+
+                        <div className="flex flex-col sm:flex-row gap-3 items-center">
+                            <div className="flex flex-col gap-2 items-center w-full sm:w-auto flex-1">
+                                <a href="tel:+79992699359" className="btn-secondary w-full">
+                                    Позвонить
+                                    <Phone className="w-5 h-5" />
+                                </a>
+                                <a href="tel:+79992699359" className="text-[10px] font-black uppercase tracking-widest sm:hidden opacity-70 hover:opacity-100 transition-opacity">
+                                    +7 (999) 269-93-59
+                                </a>
+                            </div>
+
+                            <button
+                                onClick={() => setIsNavigatorOpen(true)}
+                                className="btn-secondary w-full sm:w-auto flex-1 bg-black text-[#FFF500] hover:bg-black/80"
+                            >
+                                Маршрут
+                                <MapPin className="w-5 h-5" />
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -166,6 +183,10 @@ export default function Home() {
                             fill
                             priority
                             className="object-contain object-bottom drop-shadow-2xl"
+                            style={{
+                                maskImage: 'radial-gradient(circle at bottom center, black 40%, transparent 80%)',
+                                WebkitMaskImage: 'radial-gradient(circle at bottom center, black 40%, transparent 80%)'
+                            }}
                             sizes="(max-width: 768px) 100vw, 50vw"
                         />
                     </div>

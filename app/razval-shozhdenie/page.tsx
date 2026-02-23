@@ -8,7 +8,7 @@ export default function RazvalShozhdenie() {
         <ServicePageLayout
             title="3D Развал-схождение"
             description="Идеальная точность на стенде Hoffman. Устраним жор резины и увод руля за 20 минут."
-            price="1200₽"
+            price="от 1200₽"
             heroImage="/job/razval.jpg"
             symptoms={[
                 "Машину тянет в сторону на ровной дороге",

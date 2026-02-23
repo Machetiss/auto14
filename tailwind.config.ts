@@ -28,6 +28,7 @@ const config: Config = {
             fontFamily: {
                 sans: ['var(--font-inter)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
                 display: ['var(--font-unbounded)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                hand: ['var(--font-caveat)', 'cursive'],
             },
 
             animation: {

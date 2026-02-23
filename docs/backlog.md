@@ -4,9 +4,9 @@
 | Task | Owner | Status | DoD |
 | :--- | :--- | :--- | :--- |
 | Project Initialization | Dev | Done | Git repo, Next.js app running |
-| Basic SEO (Robots, Sitemap) | SEO | In Progress | Valid `robots.txt`, `sitemap.xml` |
-| Schema.org Markup | SEO | Todo | Valid structured data for Organization, LocalBusiness |
-| Analytics Setup | Analytics | Todo | GA4 / Yandex Metrica connected |
+| Basic SEO (Robots, Sitemap) | SEO | Done | Valid `robots.txt`, `sitemap.xml` |
+| Schema.org Markup | SEO | Done | Valid structured data for Organization, LocalBusiness, OfferCatalog |
+| Analytics Setup | Analytics | In Progress | GA4 / Yandex Metrica connected |
 
 ## Epic 2: Core Pages
 | Task | Owner | Status | DoD |
@@ -46,7 +46,7 @@
 ## Epic 6: UI/UX Visual Polish
 | Task | Owner | Status | DoD |
 | :--- | :--- | :--- | :--- |
-| Set up Design Tokens (Fonts, Colors) | [FRONTEND] | Todo | Google Fonts (Inter, Unbounded) connected, tailwind/css variables updated |
-| Hero Section Refinement | [FRONTEND] | Todo | Improved typography, balanced spacing, high-contrast CTAs |
-| Service Pages UI Sync | [FRONTEND] | Todo | Shared typography and yellow accents across all service templates |
-| Pricing Blocks Implementation | [FRONTEND] | Todo | "Prices from..." blocks added to all service pages |
+| Set up Design Tokens (Fonts, Colors) | [FRONTEND] | Done | Google Fonts (Inter, Unbounded, Caveat) connected, tailwind/css variables updated |
+| Hero Section Refinement | [FRONTEND] | Done | Improved typography, balanced spacing, high-contrast CTAs, mobile optimized |
+| Service Pages UI Sync | [FRONTEND] | Done | Shared typography and yellow accents across all service templates |
+| Pricing Blocks Implementation | [FRONTEND] | In Progress | "Prices from..." blocks added to all service pages |

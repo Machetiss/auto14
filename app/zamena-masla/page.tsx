@@ -8,7 +8,7 @@ export default function ZamenaMasla() {
         <ServicePageLayout
             title="Замена масла в двигателе"
             description="Экспресс-замена масла в двигателе и КПП. Качественные расходные материалы и профессиональный подход."
-            price="от 500₽"
+            price="от 1000₽"
             heroImage="/job/oil1.jpg"
             symptoms={[
                 "Подошел пробег (5-6 тыс. км)",

@@ -8,7 +8,7 @@ export default function RemontPodveski() {
         <ServicePageLayout
             title="Ремонт Ходовой"
             description="Диагностика и устранение любых стуков. Вернем вашему авто комфорт и безопасность."
-            price="от 500₽"
+            price="от 600₽"
             heroImage="/job/hodovaya.jpg"
             symptoms={[
                 "Стук или гул при проезде неровностей",

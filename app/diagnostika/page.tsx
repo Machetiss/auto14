@@ -8,7 +8,7 @@ export default function Diagnostika() {
         <ServicePageLayout
             title="Диагностика подвески"
             description="Тщательный осмотр ходовой части на подъемнике. Найдем причину стука, люфтов и неустойчивости на дороге."
-            price="Бесплатно при ремонте"
+            price="0₽ (Бесплатно)"
             heroImage="/gallery/1.jpg"
             symptoms={[
                 "Посторонние стуки при проезде неровностей",

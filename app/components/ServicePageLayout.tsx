@@ -40,9 +40,17 @@ export default function ServicePageLayout({
                         <div className="inline-block bg-brand-yellow text-black px-4 py-1 rounded-sm font-black uppercase text-[10px] tracking-widest mb-6 border border-black shadow-[2px_2px_0px_#000]">
                             Услуги Авто14
                         </div>
-                        <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-6 leading-[0.9] font-display text-white">
+                        <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-4 leading-[0.9] font-display text-white">
                             {title}
                         </h1>
+                        <div className="flex items-center gap-4 mb-8">
+                            <div className="bg-brand-yellow text-black px-4 py-2 rounded-xl font-black text-2xl border-4 border-black shadow-[4px_4px_0px_#000]">
+                                {price}
+                            </div>
+                            <div className="text-white/60 font-bold uppercase text-xs tracking-widest leading-none">
+                                Стоимость<br />услуги
+                            </div>
+                        </div>
                         <p className="text-xl md:text-2xl font-bold opacity-80 mb-10 max-w-lg text-white font-sans">
                             {description}
                         </p>
@@ -77,14 +85,11 @@ export default function ServicePageLayout({
                 <h2 className="text-4xl md:text-6xl font-black uppercase mb-16 text-center font-display tracking-tighter">
                     Когда <span className="text-accent-orange">нужно</span> это делать?
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="flex flex-wrap gap-3 justify-center max-w-4xl mx-auto">
                     {symptoms.map((symptom, idx) => (
-                        <div key={idx} className="bg-white p-8 rounded-2xl border-2 border-black shadow-[4px_4px_0px_#000] flex items-start gap-4 hover:translate-y-[-4px] transition-transform">
-                            <div className="bg-accent-orange text-white p-2 rounded-full shrink-0 border border-black shadow-[2px_2px_0px_#000]">
-                                <Check className="w-4 h-4" />
-                            </div>
-                            <p className="font-black uppercase text-sm tracking-tight">{symptom}</p>
-                        </div>
+                        <span key={idx} className="bg-black/5 border-2 border-black/10 px-4 py-2 text-sm md:text-base font-black uppercase tracking-tight text-black/80 rounded-xl hover:bg-brand-yellow hover:border-black transition-all">
+                            {symptom}
+                        </span>
                     ))}
                 </div>
             </section>
