@@ -1,0 +1,11 @@
+meta:
+  name: auto14
+  tool: docker # Using Docker for maximum flexibility and consistency
+
+build:
+  dockerfile: Dockerfile
+
+run:
+  persistence:
+    - mountPath: /app/prisma
+      name: prisma-db # Persistence for SQLite (if used) or logs
