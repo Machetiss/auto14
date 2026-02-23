@@ -1,6 +1,7 @@
 meta:
   name: auto14
-  tool: docker # Using Docker for maximum flexibility and consistency
+  toolchain:
+    name: docker # Fixed based on Amvera error: 'meta.toolchain' must be present
 
 build:
   dockerfile: Dockerfile
