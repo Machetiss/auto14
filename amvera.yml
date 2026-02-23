@@ -1,5 +1,5 @@
 meta:
-  name: auto-14
+  name: auto14
   tool: docker # Using Docker for maximum flexibility and consistency
 
 build:
