@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { X, Send } from 'lucide-react';
 import { sendEvent } from '@/lib/analytics';
+import { useLanguage } from '../context/LanguageContext';
 
 interface BookingModalProps {
     isOpen: boolean;
@@ -11,6 +12,7 @@ interface BookingModalProps {
 }
 
 export default function BookingModal({ isOpen, onClose, initialService = 'Сход-развал 3D' }: BookingModalProps) {
+    const { t, language } = useLanguage();
     const [service, setService] = useState(initialService);
     const [car, setCar] = useState('');
     const [phone, setPhone] = useState('');
@@ -29,7 +31,7 @@ export default function BookingModal({ isOpen, onClose, initialService = 'Схо
 
         // Basic validation
         if (!phone || phone.length < 11) {
-            alert('Пожалуйста, введите корректный номер телефона');
+            alert(language === 'ru' ? 'Пожалуйста, введите корректный номер телефона' : 'Please enter a valid phone number');
             return;
         }
 
@@ -46,6 +48,7 @@ export default function BookingModal({ isOpen, onClose, initialService = 'Схо
                     phone,
                     car,
                     description,
+                    language, // Added language to lead data
                     utm: { source: 'modal' }
                 }),
             });
@@ -74,26 +77,25 @@ export default function BookingModal({ isOpen, onClose, initialService = 'Схо
         // Remove all non-digit characters except +
         val = val.replace(/[^\d+]/g, '');
 
-        // Ensure it starts with +7
-        if (!val.startsWith('+7')) {
-            // Check if user started typing 8 or 9 or just a digit
+        // Ensure it starts with +
+        if (!val.startsWith('+')) {
             const digits = val.replace(/\D/g, '');
             if (digits.length > 0) {
-                // If starts with 8, replace with 7. If 7, keep. Else just append.
                 if (digits.startsWith('8')) {
                     val = '+7' + digits.substring(1);
                 } else if (digits.startsWith('7')) {
                     val = '+7' + digits.substring(1);
                 } else {
-                    val = '+7' + digits;
+                    // If not obviously a Russian number, just let them type but prepend +
+                    val = '+' + digits;
                 }
             } else {
-                val = '+7';
+                val = '+';
             }
         }
 
-        // Limit length (optional, e.g. +7 999 999 99 99 is 12 chars, but raw digits is 11)
-        if (val.length > 12) return;
+        // Limit length
+        if (val.length > 15) return;
 
         setPhone(val);
     };
@@ -115,33 +117,33 @@ export default function BookingModal({ isOpen, onClose, initialService = 'Схо
                     <X className="w-6 h-6" />
                 </button>
 
-                <h2 className="text-3xl font-black uppercase tracking-tighter mb-2">Запись</h2>
-                <p className="font-bold opacity-60 mb-6 text-sm">Оставьте заявку, и мы свяжемся с вами в ближайшее время.</p>
+                <h2 className="text-3xl font-black uppercase tracking-tighter mb-2">{t('common.booking')}</h2>
+                <p className="font-bold opacity-60 mb-6 text-sm">{t('common.booking_desc')}</p>
 
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                     <div>
-                        <label className="block font-bold text-sm uppercase mb-1 ml-2">Услуга</label>
+                        <label className="block font-bold text-sm uppercase mb-1 ml-2">{t('booking.service_label')}</label>
                         <select
                             value={service}
                             onChange={(e) => setService(e.target.value)}
                             className="w-full bg-white border-2 border-black rounded-xl px-4 py-3 font-bold focus:outline-none focus:ring-4 focus:ring-black/20 appearance-none"
                         >
-                            <option value="Сход-развал 3D">3D Сход-развал</option>
-                            <option value="Ремонт ходовой">Ремонт ходовой</option>
-                            <option value="Подбор запчастей">Подбор запчастей</option>
-                            <option value="Техническое обслуживание">ТО (Замена масла и др.)</option>
-                            <option value="Другое">Другое</option>
+                            <option value="Сход-развал 3D">{t('booking.services.alignment')}</option>
+                            <option value="Ремонт ходовой">{t('booking.services.suspension')}</option>
+                            <option value="Подбор запчастей">{t('booking.services.parts')}</option>
+                            <option value="Техническое обслуживание">{t('booking.services.maintenance')}</option>
+                            <option value="Другое">{t('booking.services.other')}</option>
                         </select>
                     </div>
 
                     {/* Conditionally render description for 'Others' */}
                     {service === 'Другое' && (
                         <div className="animate-in fade-in slide-in-from-top-2 duration-300">
-                            <label className="block font-bold text-sm uppercase mb-1 ml-2">Опишите проблему</label>
+                            <label className="block font-bold text-sm uppercase mb-1 ml-2">{t('booking.problem_label')}</label>
                             <textarea
                                 required
                                 rows={3}
-                                placeholder="Например: стук в подвеске справа..."
+                                placeholder={t('booking.problem_placeholder')}
                                 value={description}
                                 onChange={(e) => setDescription(e.target.value)}
                                 className="w-full bg-white border-2 border-black rounded-xl px-4 py-3 font-bold placeholder:font-normal placeholder:opacity-50 focus:outline-none focus:ring-4 focus:ring-black/20 resize-none"
@@ -150,11 +152,11 @@ export default function BookingModal({ isOpen, onClose, initialService = 'Схо
                     )}
 
                     <div>
-                        <label className="block font-bold text-sm uppercase mb-1 ml-2">Марка и модель авто</label>
+                        <label className="block font-bold text-sm uppercase mb-1 ml-2">{t('booking.car_label')}</label>
                         <input
                             type="text"
                             required
-                            placeholder="Например: Kia Rio"
+                            placeholder={t('booking.car_placeholder')}
                             value={car}
                             onChange={(e) => setCar(e.target.value)}
                             className="w-full bg-white border-2 border-black rounded-xl px-4 py-3 font-bold placeholder:font-normal placeholder:opacity-50 focus:outline-none focus:ring-4 focus:ring-black/20"
@@ -162,14 +164,14 @@ export default function BookingModal({ isOpen, onClose, initialService = 'Схо
                     </div>
 
                     <div>
-                        <label className="block font-bold text-sm uppercase mb-1 ml-2">Ваш телефон</label>
+                        <label className="block font-bold text-sm uppercase mb-1 ml-2">{t('booking.phone_label')}</label>
                         <input
                             type="tel"
                             required
                             placeholder="+7 999 000 00 00"
                             value={phone}
                             onChange={handlePhoneChange}
-                            maxLength={12}
+                            maxLength={15}
                             className="w-full bg-white border-2 border-black rounded-xl px-4 py-3 font-bold placeholder:font-normal placeholder:opacity-50 focus:outline-none focus:ring-4 focus:ring-black/20"
                         />
                     </div>
@@ -180,17 +182,17 @@ export default function BookingModal({ isOpen, onClose, initialService = 'Схо
                         className="bg-[#FF4500] text-white font-black uppercase tracking-wider py-4 rounded-xl mt-2 hover:bg-black hover:text-[#FFF500] hover:scale-[1.02] active:scale-[0.98] transition-transform flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed border-2 border-transparent hover:border-[#FFF500]"
                     >
                         {isLoading ? (
-                            <span>Отправка...</span>
+                            <span>{t('common.sending')}</span>
                         ) : (
                             <>
-                                <span>Записаться</span>
+                                <span>{t('common.submit')}</span>
                                 <Send className="w-5 h-5" />
                             </>
                         )}
                     </button>
 
                     <p className="text-xs text-center font-bold opacity-40 mt-2">
-                        Нажимая кнопку, вы соглашаетесь на обработку персональных данных
+                        {t('common.policy')}
                     </p>
                 </form>
             </div>

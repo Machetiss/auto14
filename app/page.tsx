@@ -10,8 +10,11 @@ import ReviewsSection from './components/ReviewsSection';
 import CarWheel from './components/CarWheel';
 import { WhatsAppIcon } from './components/icons/WhatsAppIcon';
 import { TelegramIcon } from './components/icons/TelegramIcon';
+import { handleContactClick } from '@/lib/analytics';
+import { useLanguage } from './context/LanguageContext';
 
 export default function Home() {
+    const { t, language } = useLanguage();
     const [isBookingOpen, setIsBookingOpen] = useState(false);
     const [isNavigatorOpen, setIsNavigatorOpen] = useState(false);
     const [activeFaq, setActiveFaq] = useState<number | null>(null);
@@ -70,9 +73,9 @@ export default function Home() {
                 <div className="container mx-auto flex justify-between items-center">
                     {/* Left: Nav Links */}
                     <nav className="flex gap-4 md:gap-6 font-black uppercase text-xs md:text-sm tracking-widest text-black font-sans">
-                        <Link href="#services" className="hover:text-accent-orange transition-colors">Услуги</Link>
-                        <Link href="#reviews" className="hover:text-accent-orange transition-colors">Отзывы</Link>
-                        <Link href="#gallery" className="hover:text-accent-orange transition-colors">Галерея</Link>
+                        <Link href="#services" className="hover:text-accent-orange transition-colors">{t('nav.services')}</Link>
+                        <Link href="#reviews" className="hover:text-accent-orange transition-colors">{t('nav.reviews')}</Link>
+                        <Link href="#gallery" className="hover:text-accent-orange transition-colors">{t('nav.gallery')}</Link>
                     </nav>
 
                     {/* Right: CTA & Phone & Address */}
@@ -128,7 +131,9 @@ export default function Home() {
                     {/* Symptoms / Pain Points as structured tags */}
                     <div className="flex flex-wrap gap-2 mb-8 max-w-2xl">
                         {[
-                            "Тянем машину в сторону?", "Руль стоит криво?", "Кидает машину по колее?", "Плохая управляемость?", "Что-то, где-то стучит?", "Давно не проверяли схождение?"
+                            t('hero.pain_points.uneven_wear'),
+                            t('hero.pain_points.bad_handling'),
+                            t('hero.pain_points.wheel_crooked')
                         ].map((tag, idx) => (
                             <span key={idx} className="bg-black/5 border border-black/10 px-3 py-1 text-[10px] md:text-sm font-bold uppercase tracking-wider text-black/70 rounded-md">
                                 {tag}
@@ -138,28 +143,41 @@ export default function Home() {
 
                     {/* MAIN TAGLINE - HUGE & MODERN */}
                     <h1 className="text-[12vw] md:text-[8vw] leading-[0.9] md:leading-[0.8] font-black tracking-tighter uppercase mb-4 text-black flex flex-col font-display">
-                        <span>НАМ В</span>
-                        <span>РАДОСТЬ</span>
+                        <span>{t('hero.subtitle').split(' — ')[0]}</span>
+                        <span className="text-accent-orange">{t('hero.subtitle').split(' — ')[1]}</span>
                     </h1>
-                    <p className="text-[4.5vw] md:text-[2.2vw] font-black uppercase leading-[1.3] md:leading-[1.1] text-black opacity-90 mb-10 max-w-xl font-sans">
-                        СДЕЛАТЬ ВАШУ МАШИНУ <br />ИДЕАЛЬНОЙ
+                    <p className="text-[4.5vw] md:text-[2.2vw] font-black uppercase leading-[1.3] md:leading-[1.1] text-black opacity-90 mb-6 max-w-xl font-sans">
+                        {t('hero.title')}
+                    </p>
+
+                    {/* NEW: Free Consultation Message */}
+                    <p className="flex items-center gap-2 text-xs md:text-sm font-black uppercase text-accent-orange mb-8 animate-pulse italic">
+                        <span className="w-2 h-2 bg-black rounded-full"></span>
+                        {t('hero.consultation_free')}
                     </p>
 
                     {/* Action Buttons */}
                     <div className="flex flex-col gap-4 w-full sm:w-auto z-30 relative">
                         <button onClick={() => setIsBookingOpen(true)} className="btn-primary group w-full sm:w-80">
-                            Записаться
+                            {t('hero.cta_book')}
                             <MoveRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </button>
 
                         <div className="flex flex-col sm:flex-row gap-3 items-center">
                             <div className="flex flex-col gap-2 items-center w-full sm:w-auto flex-1">
-                                <a href="tel:+79992699359" className="btn-secondary w-full">
-                                    Позвонить
+                                <a
+                                    href={`tel:${t('common.phone').replace(/[^\d+]/g, '')}`}
+                                    className="btn-secondary w-full"
+                                    onClick={() => handleContactClick('phone', 'hero_call', t('common.phone'))}
+                                >
+                                    {t('common.call_us')}
                                     <Phone className="w-5 h-5" />
                                 </a>
-                                <a href="tel:+79992699359" className="text-[10px] font-black uppercase tracking-widest sm:hidden opacity-70 hover:opacity-100 transition-opacity">
-                                    +7 (999) 269-93-59
+                                <a
+                                    href={`tel:${t('common.phone').replace(/[^\d+]/g, '')}`}
+                                    className="text-[10px] font-black uppercase tracking-widest sm:hidden opacity-70 hover:opacity-100 transition-opacity"
+                                >
+                                    {t('common.phone')}
                                 </a>
                             </div>
 
@@ -167,7 +185,7 @@ export default function Home() {
                                 onClick={() => setIsNavigatorOpen(true)}
                                 className="btn-secondary w-full sm:w-auto flex-1 bg-black text-[#FFF500] hover:bg-black/80"
                             >
-                                Маршрут
+                                {t('hero.cta_route')}
                                 <MapPin className="w-5 h-5" />
                             </button>
                         </div>
@@ -196,13 +214,13 @@ export default function Home() {
             {/* SERVICES TICKER */}
             <div className="bg-black text-[#FFF500] py-6 overflow-hidden border-y-4 border-black">
                 <div className="animate-marquee whitespace-nowrap flex gap-16 text-3xl font-black uppercase tracking-widest min-w-full">
-                    <span>• Ремонт Ходовой</span>
-                    <span>• 3D Развал-схождение</span>
-                    <span>• Диагностика Подвески</span>
-                    <span>• Замена Масла</span>
-                    <span>• Автосервис Казань</span>
-                    <span>• Ремонт Ходовой</span>
-                    <span>• 3D Развал-схождение</span>
+                    <span>• {t('booking.services.suspension')}</span>
+                    <span>• {t('booking.services.alignment')}</span>
+                    <span>• {t('booking.services.maintenance')}</span>
+                    <span>• {t('booking.services.parts')}</span>
+                    <span>• {t('hero.title')}</span>
+                    <span>• {t('booking.services.suspension')}</span>
+                    <span>• {t('booking.services.alignment')}</span>
                 </div>
             </div>
 
@@ -387,7 +405,7 @@ export default function Home() {
                 <div className="container mx-auto px-4 md:px-12 max-w-5xl">
                     <div className="mb-16 text-center md:text-left">
                         <h2 className="text-4xl md:text-7xl font-black uppercase tracking-tighter font-display mb-4">
-                            Вопросы<br /><span className="text-accent-orange">& ответы</span>
+                            {t('faq.title').split(' ')[0]}<br /><span className="text-accent-orange">& {t('faq.title').split(' ').slice(1).join(' ')}</span>
                         </h2>
                         <div className="h-2 w-32 bg-brand-yellow hidden md:block"></div>
                     </div>
@@ -427,14 +445,15 @@ export default function Home() {
 
                     {/* SEO KEYWORDS CLOUD */}
                     <div className="mt-24 p-6 md:p-8 bg-black text-white rounded-3xl border-4 border-black shadow-[4px_4px_0px_#FEE500] md:shadow-[8px_8px_0px_#FEE500]">
-                        <h3 className="text-xl font-black uppercase mb-6 text-brand-yellow font-display">Популярные услуги в Казани</h3>
+                        <h3 className="text-xl font-black uppercase mb-6 text-brand-yellow font-display">
+                            {language === 'ru' ? 'Популярные услуги в Казани' : 'Popular Services in Kazan'}
+                        </h3>
                         <div className="flex flex-wrap gap-x-4 gap-y-2 font-bold text-xs md:text-sm opacity-60">
-                            <span>Ремонт ходовой Казань</span> <span className="text-brand-yellow">•</span>
-                            <span>3D Развал схождение</span> <span className="text-brand-yellow">•</span>
-                            <span>Автосервис Константиновка</span> <span className="text-brand-yellow">•</span>
-                            <span>Замена масла</span> <span className="text-brand-yellow">•</span>
-                            <span>Диагностика подвески</span> <span className="text-brand-yellow">•</span>
-                            <span>Шиномонтаж цены</span>
+                            <span>{t('booking.services.suspension')} Kazan</span> <span className="text-brand-yellow">•</span>
+                            <span>3D {t('booking.services.alignment')}</span> <span className="text-brand-yellow">•</span>
+                            <span>{t('hero.title')} Kazan</span> <span className="text-brand-yellow">•</span>
+                            <span>{t('booking.services.maintenance')}</span> <span className="text-brand-yellow">•</span>
+                            <span>Suspension Diagnostics</span>
                         </div>
                     </div>
                 </div>
@@ -446,8 +465,8 @@ export default function Home() {
                     {/* Address & Map */}
                     <div className="bg-black text-[#FFF500] p-0 rounded-[2rem] border-4 border-black shadow-xl overflow-hidden flex flex-col h-[400px]">
                         <div className="p-8 pb-4 text-center">
-                            <h3 className="font-black uppercase text-xl mb-2">На карте</h3>
-                            <p className="font-black text-sm mb-4">г. Казань, Константиновка, ул. Заречная 5Б</p>
+                            <h3 className="font-black uppercase text-xl mb-2">{language === 'ru' ? 'На карте' : 'On Map'}</h3>
+                            <p className="font-black text-sm mb-4">{t('common.address')}</p>
                         </div>
                         <div className="flex-grow w-full relative h-[300px]">
                             {/* Yandex Map Widget */}
@@ -463,7 +482,7 @@ export default function Home() {
 
                     {/* Phones (3 Numbers with WA/TG) */}
                     <div className="bg-white p-8 rounded-[2rem] border-4 border-black shadow-xl flex flex-col items-center text-center justify-center">
-                        <h3 className="font-black uppercase text-xl mb-6">Контакты</h3>
+                        <h3 className="font-black uppercase text-xl mb-6">{t('nav.contacts')}</h3>
                         <div className="flex flex-col gap-6 w-full">
 
                             {/* Number 1 */}
@@ -501,7 +520,7 @@ export default function Home() {
                             Авто14
                         </h2>
                         <div className="mt-4 font-black text-xl">
-                            Пн – Сб<br />09:00 – 19:00
+                            {t('common.working_hours')}
                         </div>
                         <p className="font-bold opacity-60 mt-8 text-sm">
                             © 2024–{new Date().getFullYear()}

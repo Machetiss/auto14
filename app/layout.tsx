@@ -47,6 +47,7 @@ export const metadata: Metadata = {
 };
 
 import { BookingProvider } from './context/BookingContext';
+import { LanguageProvider } from './context/LanguageContext';
 import Analytics from './components/Analytics';
 
 import YandexMetrika from './components/YandexMetrika';
@@ -58,18 +59,20 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="ru" className={`${inter.variable} ${unbounded.variable} ${caveat.variable}`}>
-            <body className="font-sans antialiased">
-                <Suspense fallback={null}>
-                    <YandexMetrika />
-                </Suspense>
-                <Analytics />
-                <SchemaMarkup />
+        <LanguageProvider>
+            <html lang="ru" className={`${inter.variable} ${unbounded.variable} ${caveat.variable}`}>
+                <body className="font-sans antialiased">
+                    <Suspense fallback={null}>
+                        <YandexMetrika />
+                    </Suspense>
+                    <Analytics />
+                    <SchemaMarkup />
 
-                <BookingProvider>
-                    {children}
-                </BookingProvider>
-            </body>
-        </html>
+                    <BookingProvider>
+                        {children}
+                    </BookingProvider>
+                </body>
+            </html>
+        </LanguageProvider>
     );
 }
