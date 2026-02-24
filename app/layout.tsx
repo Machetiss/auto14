@@ -1,25 +1,6 @@
 import { Suspense } from 'react';
 import type { Metadata } from 'next';
-import { Inter, Unbounded, Caveat } from 'next/font/google';
 import './globals.css';
-
-const inter = Inter({
-    subsets: ['cyrillic', 'latin'],
-    variable: '--font-inter',
-    display: 'swap',
-});
-
-const unbounded = Unbounded({
-    subsets: ['cyrillic', 'latin'],
-    variable: '--font-unbounded',
-    display: 'swap',
-});
-
-const caveat = Caveat({
-    subsets: ['cyrillic', 'latin'],
-    variable: '--font-caveat',
-    display: 'swap',
-});
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://auto-14.ru'),
@@ -60,8 +41,8 @@ export default function RootLayout({
 }) {
     return (
         <LanguageProvider>
-            <html lang="ru" className={`${inter.variable} ${unbounded.variable} ${caveat.variable}`}>
-                <body className="font-sans antialiased">
+            <html lang="ru">
+                <body className="antialiased">
                     <Suspense fallback={null}>
                         <YandexMetrika />
                     </Suspense>

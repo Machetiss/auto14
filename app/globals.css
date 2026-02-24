@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Bypassing build-time next/font/google ETIMEDOUT by using runtime @import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Unbounded:wght@400;700;900&family=Caveat:wght@400;700&display=swap');
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 255, 255, 255;
@@ -15,6 +18,11 @@
   --btn-hover: #E63E00;
   --btn-active: #CC3700;
   --text-light: #FAFAFA;
+
+  /* Fonts */
+  --font-inter: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-unbounded: 'Unbounded', cursive;
+  --font-caveat: 'Caveat', cursive;
 }
 
 @layer components {
