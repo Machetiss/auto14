@@ -6,7 +6,7 @@
 | Project Initialization | Dev | Done | Git repo, Next.js app running |
 | Basic SEO (Robots, Sitemap) | SEO | Done | Valid `robots.txt`, `sitemap.xml` |
 | Schema.org Markup | SEO | Done | Valid structured data for Organization, LocalBusiness, OfferCatalog |
-| Analytics Setup | Analytics | In Progress | GA4 / Yandex Metrica connected |
+| Analytics Setup | Analytics | Done | GA4 / Yandex Metrica connected |
 
 ## Epic 2: Core Pages
 | Task | Owner | Status | DoD |
@@ -39,7 +39,7 @@
 ## Epic 5: MVP Deployment
 | Task | Owner | Status | DoD |
 | :--- | :--- | :--- | :--- |
-| Environment & Secrets Setup | [DEVOPS] | Todo | `env.example` verified, build passes |
+| Environment & Secrets Setup | [DEVOPS] | Done | `env.example` verified, Amvera secrets set |
 | Broken Link Check & Hide | [FRONTEND] | Done | No 404 links, hide unfinished pages in sitemap/nav |
 | Hosting Release | [DEVOPS] | Todo | App deployed on Vercel, reg.ru domain connected
 
@@ -49,4 +49,12 @@
 | Set up Design Tokens (Fonts, Colors) | [FRONTEND] | Done | Google Fonts (Inter, Unbounded, Caveat) connected, tailwind/css variables updated |
 | Hero Section Refinement | [FRONTEND] | Done | Improved typography, balanced spacing, high-contrast CTAs, mobile optimized |
 | Service Pages UI Sync | [FRONTEND] | Done | Shared typography and yellow accents across all service templates |
-| Pricing Blocks Implementation | [FRONTEND] | In Progress | "Prices from..." blocks added to all service pages |
+| Pricing Blocks Implementation | [FRONTEND] | Done | "Prices from..." blocks added to all service pages |
+
+## Epic 7: Russian Infrastructure Migration
+| Task | Owner | Status | DoD |
+| :--- | :--- | :--- | :--- |
+| Amvera Configuration (amvera.yml, Docker) | [DEVOPS] | Done | Config files ready in repo |
+| Data Loading (Git Push) | [DEVOPS] | In Progress | Code pushed to Amvera git |
+| Domain Mapping | [DEVOPS] | Todo | auto-14.ru points to Amvera IP |
+| SSL/TLS Check (Russia VPN-free) | [QA] | Todo | Domain verified accessible from RF IPs |
