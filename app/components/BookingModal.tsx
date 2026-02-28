@@ -29,8 +29,9 @@ export default function BookingModal({ isOpen, onClose, initialService = 'Схо
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        // Basic validation
-        if (!phone || phone.length < 11) {
+        // Basic validation (extract digits from formatted phone)
+        const phoneDigits = phone.replace(/\D/g, '');
+        if (!phone || phoneDigits.length < 11) {
             alert(language === 'ru' ? 'Пожалуйста, введите корректный номер телефона' : 'Please enter a valid phone number');
             return;
         }
@@ -74,30 +75,37 @@ export default function BookingModal({ isOpen, onClose, initialService = 'Схо
     const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         let val = e.target.value;
 
-        // Remove all non-digit characters except +
-        val = val.replace(/[^\d+]/g, '');
+        // Extract only digits
+        let digits = val.replace(/\D/g, '');
 
-        // Ensure it starts with +
-        if (!val.startsWith('+')) {
-            const digits = val.replace(/\D/g, '');
-            if (digits.length > 0) {
-                if (digits.startsWith('8')) {
-                    val = '+7' + digits.substring(1);
-                } else if (digits.startsWith('7')) {
-                    val = '+7' + digits.substring(1);
-                } else {
-                    // If not obviously a Russian number, just let them type but prepend +
-                    val = '+' + digits;
-                }
-            } else {
-                val = '+';
-            }
+        // If starts with 8 or 7, treat as Russian number
+        if (digits.startsWith('8')) {
+            digits = '7' + digits.substring(1);
+        }
+        if (!digits.startsWith('7') && digits.length > 0) {
+            digits = '7' + digits;
         }
 
-        // Limit length
-        if (val.length > 15) return;
+        // Limit to 11 digits (7 + 10 digits)
+        digits = digits.substring(0, 11);
 
-        setPhone(val);
+        // Format as +7 (XXX) XXX-XX-XX
+        let formatted = '';
+        if (digits.length === 0) {
+            formatted = '';
+        } else if (digits.length <= 1) {
+            formatted = '+7';
+        } else if (digits.length <= 4) {
+            formatted = `+7 (${digits.substring(1)}`;
+        } else if (digits.length <= 7) {
+            formatted = `+7 (${digits.substring(1, 4)}) ${digits.substring(4)}`;
+        } else if (digits.length <= 9) {
+            formatted = `+7 (${digits.substring(1, 4)}) ${digits.substring(4, 7)}-${digits.substring(7)}`;
+        } else {
+            formatted = `+7 (${digits.substring(1, 4)}) ${digits.substring(4, 7)}-${digits.substring(7, 9)}-${digits.substring(9)}`;
+        }
+
+        setPhone(formatted);
     };
 
     return (
@@ -168,10 +176,10 @@ export default function BookingModal({ isOpen, onClose, initialService = 'Схо
                         <input
                             type="tel"
                             required
-                            placeholder="+7 999 000 00 00"
+                            placeholder="+7 (___) ___-__-__"
                             value={phone}
                             onChange={handlePhoneChange}
-                            maxLength={15}
+                            maxLength={18}
                             className="w-full bg-white border-2 border-black rounded-xl px-4 py-3 font-bold placeholder:font-normal placeholder:opacity-50 focus:outline-none focus:ring-4 focus:ring-black/20"
                         />
                     </div>

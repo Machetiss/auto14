@@ -32,15 +32,15 @@ export default function ServicePageLayout({
     const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
     return (
-        <main className="bg-white text-black font-sans pt-20">
+        <main className="bg-ui-dark text-black font-sans">
             {/* HERO SECTION */}
-            <section className="relative bg-ui-dark text-brand-yellow min-h-[60vh] flex items-center overflow-hidden">
+            <section className="relative bg-ui-dark text-brand-yellow min-h-[60vh] flex items-center overflow-hidden pt-20">
                 <div className="container mx-auto px-4 z-10 flex flex-col md:flex-row items-center gap-12 py-16">
                     <div className="md:w-1/2">
                         <div className="inline-block bg-brand-yellow text-black px-4 py-1 rounded-sm font-black uppercase text-[10px] tracking-widest mb-6 border border-black shadow-[2px_2px_0px_#000]">
                             Услуги Авто14
                         </div>
-                        <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-4 leading-[0.9] font-display text-white">
+                        <h1 className="text-3xl sm:text-4xl md:text-7xl font-black uppercase tracking-tighter mb-4 leading-[0.9] font-display text-white break-words">
                             {title}
                         </h1>
                         <div className="flex items-center gap-4 mb-8">
@@ -51,7 +51,7 @@ export default function ServicePageLayout({
                                 Стоимость<br />услуги
                             </div>
                         </div>
-                        <p className="text-xl md:text-2xl font-bold opacity-80 mb-10 max-w-lg text-white font-sans">
+                        <p className="text-base md:text-2xl font-bold opacity-80 mb-10 max-w-lg text-white font-sans">
                             {description}
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
@@ -81,8 +81,8 @@ export default function ServicePageLayout({
             </section>
 
             {/* SYMPTOMS SECTION */}
-            <section className="py-24 container mx-auto px-4">
-                <h2 className="text-4xl md:text-6xl font-black uppercase mb-16 text-center font-display tracking-tighter">
+            <section className="py-24 container mx-auto px-4 bg-white">
+                <h2 className="text-2xl sm:text-3xl md:text-6xl font-black uppercase mb-16 text-center font-display tracking-tighter">
                     Когда <span className="text-accent-orange">нужно</span> это делать?
                 </h2>
                 <div className="flex flex-wrap gap-3 justify-center max-w-4xl mx-auto">
@@ -97,7 +97,7 @@ export default function ServicePageLayout({
             {/* FEATURES / ADVANTAGES */}
             <section className="py-24 bg-ui-dark text-white border-y-4 border-black">
                 <div className="container mx-auto px-4">
-                    <h2 className="text-4xl md:text-6xl font-black uppercase mb-16 tracking-tighter font-display">
+                    <h2 className="text-2xl sm:text-3xl md:text-6xl font-black uppercase mb-16 tracking-tighter font-display">
                         Почему <span className="text-brand-yellow">Авто14</span>?
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -113,8 +113,8 @@ export default function ServicePageLayout({
             </section>
 
             {/* PROCESS */}
-            <section className="py-24 container mx-auto px-4">
-                <h2 className="text-4xl md:text-6xl font-black uppercase mb-16 font-display tracking-tighter">
+            <section className="py-24 container mx-auto px-4 bg-white">
+                <h2 className="text-2xl sm:text-3xl md:text-6xl font-black uppercase mb-16 font-display tracking-tighter">
                     Как мы <span className="text-accent-orange">работаем</span>
                 </h2>
                 <div className="space-y-4 max-w-3xl mx-auto">
@@ -129,7 +129,7 @@ export default function ServicePageLayout({
                                 )}
                             </div>
                             <div className="pb-16">
-                                <h3 className="text-3xl font-black uppercase mb-3 font-display tracking-tight leading-none">{step.title}</h3>
+                                <h3 className="text-xl sm:text-2xl md:text-3xl font-black uppercase mb-3 font-display tracking-tight leading-none">{step.title}</h3>
                                 <p className="font-bold opacity-70 text-lg font-sans">{step.desc}</p>
                             </div>
                         </div>
@@ -143,7 +143,7 @@ export default function ServicePageLayout({
             {/* FAQ */}
             <section className="py-24 bg-brand-yellow/10 border-t-4 border-black">
                 <div className="container mx-auto px-4 max-w-4xl">
-                    <h2 className="text-4xl md:text-6xl font-black uppercase mb-16 text-center font-display tracking-tighter">
+                    <h2 className="text-2xl sm:text-3xl md:text-6xl font-black uppercase mb-16 text-center font-display tracking-tighter">
                         Вопросы и ответы
                     </h2>
                     <div className="space-y-4">
@@ -170,7 +170,7 @@ export default function ServicePageLayout({
             {/* CTA */}
             <section className="py-32 bg-brand-yellow text-black text-center border-t-4 border-black">
                 <div className="container mx-auto px-4">
-                    <h2 className="text-5xl md:text-7xl font-black uppercase mb-8 tracking-tighter font-display">
+                    <h2 className="text-3xl sm:text-4xl md:text-7xl font-black uppercase mb-8 tracking-tighter font-display">
                         Готовы записаться?
                     </h2>
                     <p className="text-xl md:text-2xl font-black mb-12 max-w-2xl mx-auto opacity-80 font-sans uppercase">
