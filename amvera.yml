@@ -8,6 +8,4 @@ build:
   dockerfile: Dockerfile
 
 run:
-  persistence:
-    - mountPath: /app/prisma
-      name: prisma-db # Persistence for SQLite (if used) or logs
+  containerPort: 3000

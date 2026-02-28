@@ -5,14 +5,15 @@ build
 .git
 .gitignore
 .dockerignore
-Dockerfile
-amvera.yml
 README.md
 docs/
 *.db
+*.db-journal
 *.sqlite
 .env*.local
 .env.amvera
+.env
+.env.production
 auto-14/
 trash/
 temp/
@@ -25,10 +26,26 @@ yarn-error.log*
 .github
 .agents
 .cursor
-*.png
-*.jpg
-*.jpeg
-*.webp
-*.mp4
-# Keep public/ for images used in the app, but exclude raw source images if any
-# /public/large_assets if they exist
+_archive/
+geo_guide.pdf
+geo_guide.txt
+validation_*.html
+build_error.txt
+*.ps1
+*.bat
+*.py
+check_server.js
+test_server_cycle.js
+verify.ps1
+debug.bat
+copy_hero_new.ps1
+extract_pdf.py
+seed.ts
+vitest.config.ts
+playwright.config.ts
+tests/
+src/
+components/
+data/
+tsconfig.tsbuildinfo
+Ui Ux Proposal
