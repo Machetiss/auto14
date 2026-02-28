@@ -7,9 +7,6 @@ build
 .dockerignore
 README.md
 docs/
-*.db
-*.db-journal
-*.sqlite
 .env*.local
 .env.amvera
 .env
@@ -40,7 +37,6 @@ verify.ps1
 debug.bat
 copy_hero_new.ps1
 extract_pdf.py
-seed.ts
 vitest.config.ts
 playwright.config.ts
 tests/

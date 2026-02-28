@@ -4,15 +4,13 @@ FROM node:20-slim AS base
 FROM base AS deps
 WORKDIR /app
 
-# OpenSSL 1.1 is needed for Prisma on some systems, but node:20-slim has 3.0. 
-# Prisma 5+ supports 3.0, but occasionally needs libssl1.1 if the binary was built for it.
-# However, usually just switching to Debian (slim) resolves the Musl/Glibc conflicts.
-RUN apt-get update && apt-get install -y openssl libssl-dev ca-certificates && rm -rf /var/lib/apt/lists/*
+# OpenSSL + ca-certificates for Prisma and HTTPS requests
+RUN apt-get update && apt-get install -y openssl ca-certificates && rm -rf /var/lib/apt/lists/*
 
 # Install dependencies based on the preferred package manager
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
 # Copy prisma schema for postinstall prisma generate
-COPY prisma ./prisma/
+COPY prisma/schema.prisma ./prisma/
 
 RUN \
   if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
@@ -28,20 +26,23 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# Next.js collects completely anonymous telemetry data about general usage.
-# Learn more here: https://nextjs.org/telemetry
-# Uncomment the following line in case you want to disable telemetry during the build.
-# ENV NEXT_TELEMETRY_DISABLED 1
+# Set DATABASE_URL for SQLite during build
+ENV DATABASE_URL="file:./prisma/dev.db"
 
+# Create SQLite DB, run migrations, seed data, then build Next.js
+RUN npx prisma migrate deploy || npx prisma db push --accept-data-loss
+RUN npx tsx prisma/seed.ts
 RUN npm run build
 
 # Production image, copy all the files and run next
 FROM base AS runner
 WORKDIR /app
 
-ENV NODE_ENV production
-# Uncomment the following line in case you want to disable telemetry during runtime.
-# ENV NEXT_TELEMETRY_DISABLED 1
+# OpenSSL needed at runtime for Prisma engine
+RUN apt-get update && apt-get install -y openssl && rm -rf /var/lib/apt/lists/*
+
+ENV NODE_ENV=production
+ENV DATABASE_URL="file:./prisma/dev.db"
 
 RUN groupadd --system --gid 1001 nodejs
 RUN useradd --system --uid 1001 nextjs
@@ -53,16 +54,17 @@ RUN mkdir .next
 RUN chown nextjs:nodejs .next
 
 # Automatically leverage output traces to reduce image size
-# https://nextjs.org/docs/advanced-features/output-file-tracing
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+
+# Copy the seeded SQLite database
+COPY --from=builder --chown=nextjs:nodejs /app/prisma/dev.db ./prisma/dev.db
 
 USER nextjs
 
 EXPOSE 3000
 
-ENV PORT 3000
-# set hostname to localhost
-ENV HOSTNAME "0.0.0.0"
+ENV PORT=3000
+ENV HOSTNAME="0.0.0.0"
 
 CMD ["node", "server.js"]
