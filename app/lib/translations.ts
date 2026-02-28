@@ -16,7 +16,7 @@ export const translations = {
             cta_route: "Маршрут",
             consultation_free: "Консультация всегда бесплатная",
             pain_points: {
-                pulls_aside: "Тянем машину в сторону?",
+                pulls_aside: "Тянет машину в сторону?",
                 wheel_crooked: "Руль стоит криво?",
                 throws_bumps: "Кидает машину по колее?",
                 bad_handling: "Плохая управляемость?",
