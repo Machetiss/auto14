@@ -10,15 +10,18 @@ export const translations = {
             gallery: "Галерея"
         },
         hero: {
-            title: "Автосервис в Казани",
-            subtitle: "Нам в радость — Вам в гордость",
+            title: "Сделать вашу машину идеальной",
+            subtitle: "Нам в — радость",
             cta_book: "Записаться",
             cta_route: "Маршрут",
             consultation_free: "Консультация всегда бесплатная",
             pain_points: {
-                uneven_wear: "Неравномерный износ",
-                bad_handling: "Плохая управляемость",
-                wheel_crooked: "Руль стоит криво"
+                pulls_aside: "Тянем машину в сторону?",
+                wheel_crooked: "Руль стоит криво?",
+                throws_bumps: "Кидает машину по колее?",
+                bad_handling: "Плохая управляемость?",
+                something_knocks: "Что-то, где-то стучит?",
+                alignment_check: "Давно не проверяли схождение?"
             }
         },
         common: {
@@ -60,15 +63,18 @@ export const translations = {
             gallery: "Gallery"
         },
         hero: {
-            title: "Auto Service in Kazan",
-            subtitle: "Our Joy — Your Pride",
+            title: "Make your car perfect",
+            subtitle: "It's our — joy",
             cta_book: "Book Now",
             cta_route: "Route",
             consultation_free: "Consultation is always free",
             pain_points: {
-                uneven_wear: "Uneven tire wear",
-                bad_handling: "Poor handling",
-                wheel_crooked: "Crooked steering wheel"
+                pulls_aside: "Car pulls to the side?",
+                wheel_crooked: "Steering wheel crooked?",
+                throws_bumps: "Car drifts over bumps?",
+                bad_handling: "Poor handling?",
+                something_knocks: "Hear strange noises?",
+                alignment_check: "Haven't checked alignment?"
             }
         },
         common: {

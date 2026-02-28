@@ -131,9 +131,12 @@ export default function Home() {
                     {/* Symptoms / Pain Points as structured tags */}
                     <div className="flex flex-wrap gap-2 mb-8 max-w-2xl">
                         {[
-                            t('hero.pain_points.uneven_wear'),
+                            t('hero.pain_points.pulls_aside'),
+                            t('hero.pain_points.wheel_crooked'),
+                            t('hero.pain_points.throws_bumps'),
                             t('hero.pain_points.bad_handling'),
-                            t('hero.pain_points.wheel_crooked')
+                            t('hero.pain_points.something_knocks'),
+                            t('hero.pain_points.alignment_check')
                         ].map((tag, idx) => (
                             <span key={idx} className="bg-black/5 border border-black/10 px-3 py-1 text-[10px] md:text-sm font-bold uppercase tracking-wider text-black/70 rounded-md">
                                 {tag}
@@ -142,9 +145,8 @@ export default function Home() {
                     </div>
 
                     {/* MAIN TAGLINE - HUGE & MODERN */}
-                    <h1 className="text-[12vw] md:text-[8vw] leading-[0.9] md:leading-[0.8] font-black tracking-tighter uppercase mb-4 text-black flex flex-col font-display">
-                        <span>{t('hero.subtitle').split(' — ')[0]}</span>
-                        <span className="text-accent-orange">{t('hero.subtitle').split(' — ')[1]}</span>
+                    <h1 className="text-[12vw] md:text-[8vw] leading-[0.9] md:leading-[0.8] font-black tracking-tighter uppercase mb-4 text-black font-display">
+                        {t('hero.subtitle')}
                     </h1>
                     <p className="text-[4.5vw] md:text-[2.2vw] font-black uppercase leading-[1.3] md:leading-[1.1] text-black opacity-90 mb-6 max-w-xl font-sans">
                         {t('hero.title')}
