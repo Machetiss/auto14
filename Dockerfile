@@ -61,8 +61,8 @@ RUN chown nextjs:nodejs .next
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
-# Copy the seeded SQLite database
-COPY --from=builder --chown=nextjs:nodejs /app/prisma/dev.db ./prisma/dev.db
+# Copy the seeded SQLite database (whole directory for Kaniko compatibility)
+COPY --from=builder --chown=nextjs:nodejs /app/prisma ./prisma
 
 USER nextjs
 
