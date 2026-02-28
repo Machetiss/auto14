@@ -14,7 +14,7 @@ import { handleContactClick } from '@/lib/analytics';
 import { useLanguage } from './context/LanguageContext';
 
 export default function Home() {
-    const { t, language } = useLanguage();
+    const { t, language, toggleLanguage } = useLanguage();
     const [isBookingOpen, setIsBookingOpen] = useState(false);
     const [isNavigatorOpen, setIsNavigatorOpen] = useState(false);
     const [activeFaq, setActiveFaq] = useState<number | null>(null);
@@ -90,6 +90,12 @@ export default function Home() {
                                 <span>ул. Заречная 5Б, Казань</span>
                             </div>
                         </div>
+                        <button
+                            onClick={toggleLanguage}
+                            className="px-3 py-1 border-2 border-black rounded-lg font-black text-xs uppercase tracking-wider hover:bg-black hover:text-brand-yellow transition-colors"
+                        >
+                            {language === 'ru' ? 'EN' : 'RU'}
+                        </button>
                         <button onClick={() => setIsBookingOpen(true)} className="btn-primary !px-6 !py-2 !text-[10px] md:!text-xs md:!px-8 md:!py-3 shadow-none hover:shadow-none">
                             Записаться
                         </button>
@@ -451,11 +457,14 @@ export default function Home() {
                             {language === 'ru' ? 'Популярные услуги в Казани' : 'Popular Services in Kazan'}
                         </h3>
                         <div className="flex flex-wrap gap-x-4 gap-y-2 font-bold text-xs md:text-sm opacity-60">
-                            <span>{t('booking.services.suspension')} Kazan</span> <span className="text-brand-yellow">•</span>
-                            <span>3D {t('booking.services.alignment')}</span> <span className="text-brand-yellow">•</span>
-                            <span>{t('hero.title')} Kazan</span> <span className="text-brand-yellow">•</span>
-                            <span>{t('booking.services.maintenance')}</span> <span className="text-brand-yellow">•</span>
-                            <span>Suspension Diagnostics</span>
+                            <span>Развал</span> <span className="text-brand-yellow">•</span>
+                            <span>Сход-развал</span> <span className="text-brand-yellow">•</span>
+                            <span>Шиномонтаж</span> <span className="text-brand-yellow">•</span>
+                            <span>Замена масла</span> <span className="text-brand-yellow">•</span>
+                            <span>Ремонт ходовой</span> <span className="text-brand-yellow">•</span>
+                            <span>Диагностика подвески</span> <span className="text-brand-yellow">•</span>
+                            <span>3D Сход-развал Казань</span> <span className="text-brand-yellow">•</span>
+                            <span>Автосервис Казань</span>
                         </div>
                     </div>
                 </div>
