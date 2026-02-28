@@ -32,9 +32,9 @@ export default function ServicePageLayout({
     const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
     return (
-        <main className="bg-ui-dark text-black font-sans">
+        <main className="bg-white text-black font-sans">
             {/* HERO SECTION */}
-            <section className="relative bg-ui-dark text-brand-yellow min-h-[60vh] flex items-center overflow-hidden pt-20">
+            <section className="relative bg-ui-dark text-brand-yellow min-h-[60vh] flex items-center overflow-hidden pt-24">
                 <div className="container mx-auto px-4 z-10 flex flex-col md:flex-row items-center gap-12 py-16">
                     <div className="md:w-1/2">
                         <div className="inline-block bg-brand-yellow text-black px-4 py-1 rounded-sm font-black uppercase text-[10px] tracking-widest mb-6 border border-black shadow-[2px_2px_0px_#000]">
@@ -81,7 +81,7 @@ export default function ServicePageLayout({
             </section>
 
             {/* SYMPTOMS SECTION */}
-            <section className="py-24 container mx-auto px-4 bg-white">
+            <section className="py-24 container mx-auto px-4">
                 <h2 className="text-2xl sm:text-3xl md:text-6xl font-black uppercase mb-16 text-center font-display tracking-tighter">
                     Когда <span className="text-accent-orange">нужно</span> это делать?
                 </h2>
@@ -113,7 +113,7 @@ export default function ServicePageLayout({
             </section>
 
             {/* PROCESS */}
-            <section className="py-24 container mx-auto px-4 bg-white">
+            <section className="py-24 container mx-auto px-4">
                 <h2 className="text-2xl sm:text-3xl md:text-6xl font-black uppercase mb-16 font-display tracking-tighter">
                     Как мы <span className="text-accent-orange">работаем</span>
                 </h2>
