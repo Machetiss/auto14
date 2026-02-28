@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { Settings } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const reviewsData = {
     yandex: [
@@ -88,6 +89,8 @@ const reviewsData = {
 };
 
 export default function ReviewsSection() {
+    const { language } = useLanguage();
+    const l = (ru: string, en: string) => language === 'ru' ? ru : en;
     const [mounted, setMounted] = useState(false);
     // Initial state with random selection to avoid hydration mismatch if possible, 
     // but usually better to start empty or first item and swap in useEffect for CSR.
@@ -120,10 +123,10 @@ export default function ReviewsSection() {
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                     <div>
                         <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-[0.8] text-brand-yellow mb-6 font-display">
-                            Отзывы<br />Клиентов
+                            {l('Отзывы', 'Customer')}<br />{l('Клиентов', 'Reviews')}
                         </h2>
                         <p className="text-xl font-bold opacity-80 max-w-lg font-sans">
-                            Нас рекомендуют друзьям. Рейтинг 5.0 на картах – это не просто цифры, это ваша уверенность в результате.
+                            {l('Нас рекомендуют друзьям. Рейтинг 5.0 на картах – это не просто цифры, это ваша уверенность в результате.', 'Our clients recommend us to friends. A 5.0 rating on maps isn\'t just numbers — it\'s your confidence in the result.')}
                         </p>
                     </div>
                 </div>

@@ -6,8 +6,12 @@ import { WhatsAppIcon } from '../components/icons/WhatsAppIcon';
 import { TelegramIcon } from '../components/icons/TelegramIcon';
 import { handleContactClick } from '@/lib/analytics';
 import ContactForm from '../components/ContactForm';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Kontakty() {
+    const { language } = useLanguage();
+    const l = (ru: string, en: string) => language === 'ru' ? ru : en;
+
     const phones = [
         { number: '+7 (999) 269-93-59', raw: '+79992699359', wa: '79992699359', tg: 'avto14_bot' },
         { number: '+7 (929) 494-51-74', raw: '+79294945174', wa: '79294945174', tg: '+79294945174' },
@@ -23,17 +27,17 @@ export default function Kontakty() {
                     className="inline-flex items-center gap-2 font-black uppercase text-xs tracking-widest mb-12 hover:translate-x-[-4px] transition-transform group"
                 >
                     <ChevronLeft className="w-4 h-4 group-hover:text-[#FFF500]" />
-                    <span>На главную</span>
+                    <span>{l('На главную', 'Home')}</span>
                 </Link>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
                     {/* LEFT COLUMN: INFO */}
                     <div>
                         <div className="inline-block bg-[#FFF500] text-black px-4 py-1 rounded-sm font-black uppercase text-[10px] tracking-widest mb-6 border-2 border-black shadow-[4px_4px_0px_#000]">
-                            Свяжитесь с нами
+                            {l('Свяжитесь с нами', 'Contact Us')}
                         </div>
                         <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter mb-12 leading-[0.8] font-display">
-                            ГДЕ МЫ <br /><span className="text-accent-orange text-outline-black">НАХОДИМСЯ</span>
+                            {l('ГДЕ МЫ', 'WHERE')}<br /><span className="text-accent-orange text-outline-black">{l('НАХОДИМСЯ', 'TO FIND US')}</span>
                         </h1>
 
                         <div className="space-y-12">
@@ -43,9 +47,9 @@ export default function Kontakty() {
                                     <MapPin className="w-8 h-8" />
                                 </div>
                                 <div>
-                                    <h3 className="text-xs font-black uppercase tracking-widest opacity-40 mb-2">Адрес автосервиса</h3>
+                                    <h3 className="text-xs font-black uppercase tracking-widest opacity-40 mb-2">{l('Адрес автосервиса', 'Service location')}</h3>
                                     <p className="text-2xl font-black uppercase tracking-tight leading-none">
-                                        г. Казань, Константиновка,<br />ул. Заречная 5Б
+                                        {l('г. Казань, Константиновка,', 'Kazan, Konstantinovka,')}<br />{l('ул. Заречная 5Б', '5B Zarechnaya St')}
                                     </p>
                                     <a
                                         href="https://yandex.ru/maps/-/CDTFuV4q"
@@ -53,7 +57,7 @@ export default function Kontakty() {
                                         rel="noopener noreferrer"
                                         className="inline-block mt-4 text-sm font-black uppercase underline decoration-2 underline-offset-4 hover:text-accent-orange transition-colors"
                                     >
-                                        Открыть в навигаторе
+                                        {l('Открыть в навигаторе', 'Open in Maps')}
                                     </a>
                                 </div>
                             </div>
@@ -64,12 +68,12 @@ export default function Kontakty() {
                                     <Clock className="w-8 h-8" />
                                 </div>
                                 <div>
-                                    <h3 className="text-xs font-black uppercase tracking-widest opacity-40 mb-2">Режим работы</h3>
+                                    <h3 className="text-xs font-black uppercase tracking-widest opacity-40 mb-2">{l('Режим работы', 'Working hours')}</h3>
                                     <p className="text-2xl font-black uppercase tracking-tight leading-none">
-                                        Понедельник – Суббота<br />
+                                        {l('Понедельник – Суббота', 'Monday – Saturday')}<br />
                                         <span className="text-4xl">09:00 – 19:00</span>
                                     </p>
-                                    <p className="text-sm font-bold opacity-60 mt-2">Воскресенье — выходной</p>
+                                    <p className="text-sm font-bold opacity-60 mt-2">{l('Воскресенье — выходной', 'Sunday — closed')}</p>
                                 </div>
                             </div>
 
@@ -79,7 +83,7 @@ export default function Kontakty() {
                                     <Phone className="w-8 h-8" />
                                 </div>
                                 <div className="space-y-6">
-                                    <h3 className="text-xs font-black uppercase tracking-widest opacity-40 mb-2">Наши телефоны</h3>
+                                    <h3 className="text-xs font-black uppercase tracking-widest opacity-40 mb-2">{l('Наши телефоны', 'Our phones')}</h3>
                                     {phones.map((phone, idx) => (
                                         <div key={idx} className="flex flex-col gap-2">
                                             <a
@@ -126,7 +130,7 @@ export default function Kontakty() {
                                 className="grayscale group-hover:grayscale-0 transition-all duration-700"
                             ></iframe>
                             <div className="absolute bottom-6 right-6 bg-black text-[#FFF500] px-6 py-2 rounded-xl font-black uppercase text-xs border-2 border-[#FFF500] z-20 pointer-events-none">
-                                Константиновка
+                                {l('Константиновка', 'Konstantinovka')}
                             </div>
                         </div>
 

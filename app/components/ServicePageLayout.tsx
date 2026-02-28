@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Check, ChevronDown, ChevronUp, Clock, Settings, Wrench } from 'lucide-react';
 import { useBooking } from '../context/BookingContext';
+import { useLanguage } from '../context/LanguageContext';
 import ReviewsSection from './ReviewsSection';
 
 interface ServicePageLayoutProps {
@@ -29,7 +30,10 @@ export default function ServicePageLayout({
     faq
 }: ServicePageLayoutProps) {
     const { openBooking } = useBooking();
+    const { language } = useLanguage();
     const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+
+    const l = (ru: string, en: string) => language === 'ru' ? ru : en;
 
     return (
         <main className="bg-white text-black font-sans">
@@ -38,7 +42,7 @@ export default function ServicePageLayout({
                 <div className="container mx-auto px-4 z-10 flex flex-col md:flex-row items-center gap-12 py-16">
                     <div className="md:w-1/2">
                         <div className="inline-block bg-brand-yellow text-black px-4 py-1 rounded-sm font-black uppercase text-[10px] tracking-widest mb-6 border border-black shadow-[2px_2px_0px_#000]">
-                            Услуги Авто14
+                            {l('Услуги Авто14', 'Avto14 Services')}
                         </div>
                         <h1 className="text-3xl sm:text-4xl md:text-7xl font-black uppercase tracking-tighter mb-4 leading-[0.9] font-display text-white break-words">
                             {title}
@@ -48,7 +52,7 @@ export default function ServicePageLayout({
                                 {price}
                             </div>
                             <div className="text-white/60 font-bold uppercase text-xs tracking-widest leading-none">
-                                Стоимость<br />услуги
+                                {l('Стоимость', 'Service')}<br />{l('услуги', 'price')}
                             </div>
                         </div>
                         <p className="text-base md:text-2xl font-bold opacity-80 mb-10 max-w-lg text-white font-sans">
@@ -59,10 +63,10 @@ export default function ServicePageLayout({
                                 onClick={() => openBooking(title)}
                                 className="btn-primary"
                             >
-                                Записаться
+                                {l('Записаться', 'Book Now')}
                             </button>
                             <Link href="/" className="btn-secondary !text-white !border-white hover:!bg-white hover:!text-black">
-                                На главную
+                                {l('На главную', 'Home')}
                             </Link>
                         </div>
                     </div>
@@ -83,7 +87,7 @@ export default function ServicePageLayout({
             {/* SYMPTOMS SECTION */}
             <section className="py-24 container mx-auto px-4">
                 <h2 className="text-2xl sm:text-3xl md:text-6xl font-black uppercase mb-16 text-center font-display tracking-tighter">
-                    Когда <span className="text-accent-orange">нужно</span> это делать?
+                    {l('Когда', 'When do you')} <span className="text-accent-orange">{l('нужно', 'need')}</span> {l('это делать?', 'this?')}
                 </h2>
                 <div className="flex flex-wrap gap-3 justify-center max-w-4xl mx-auto">
                     {symptoms.map((symptom, idx) => (
@@ -98,7 +102,7 @@ export default function ServicePageLayout({
             <section className="py-24 bg-ui-dark text-white border-y-4 border-black">
                 <div className="container mx-auto px-4">
                     <h2 className="text-2xl sm:text-3xl md:text-6xl font-black uppercase mb-16 tracking-tighter font-display">
-                        Почему <span className="text-brand-yellow">Авто14</span>?
+                        {l('Почему', 'Why')} <span className="text-brand-yellow">{l('Авто14', 'Avto14')}?</span>
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {features.map((feature, idx) => (
@@ -115,7 +119,7 @@ export default function ServicePageLayout({
             {/* PROCESS */}
             <section className="py-24 container mx-auto px-4">
                 <h2 className="text-2xl sm:text-3xl md:text-6xl font-black uppercase mb-16 font-display tracking-tighter">
-                    Как мы <span className="text-accent-orange">работаем</span>
+                    {l('Как мы', 'How we')} <span className="text-accent-orange">{l('работаем', 'work')}</span>
                 </h2>
                 <div className="space-y-4 max-w-3xl mx-auto">
                     {processSteps.map((step, idx) => (
@@ -144,7 +148,7 @@ export default function ServicePageLayout({
             <section className="py-24 bg-brand-yellow/10 border-t-4 border-black">
                 <div className="container mx-auto px-4 max-w-4xl">
                     <h2 className="text-2xl sm:text-3xl md:text-6xl font-black uppercase mb-16 text-center font-display tracking-tighter">
-                        Вопросы и ответы
+                        {l('Вопросы и ответы', 'Questions & Answers')}
                     </h2>
                     <div className="space-y-4">
                         {faq.map((item, idx) => (
@@ -171,16 +175,16 @@ export default function ServicePageLayout({
             <section className="py-32 bg-brand-yellow text-black text-center border-t-4 border-black">
                 <div className="container mx-auto px-4">
                     <h2 className="text-3xl sm:text-4xl md:text-7xl font-black uppercase mb-8 tracking-tighter font-display">
-                        Готовы записаться?
+                        {l('Готовы записаться?', 'Ready to book?')}
                     </h2>
                     <p className="text-xl md:text-2xl font-black mb-12 max-w-2xl mx-auto opacity-80 font-sans uppercase">
-                        Оставьте заявку сейчас, и мы свяжемся с вами в течение 5 минут.
+                        {l('Оставьте заявку сейчас, и мы свяжемся с вами в течение 5 минут.', 'Leave a request now and we\'ll get back to you within 5 minutes.')}
                     </p>
                     <button
                         onClick={() => openBooking(title)}
                         className="btn-primary !px-16 !py-6 !text-xl"
                     >
-                        Записаться на ремонт
+                        {l('Записаться на ремонт', 'Book a Service')}
                     </button>
                 </div>
             </section>

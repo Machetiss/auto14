@@ -19,48 +19,7 @@ export default function Home() {
     const [isNavigatorOpen, setIsNavigatorOpen] = useState(false);
     const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
-    const faqs = [
-        {
-            q: "Где сделать 3D развал-схождение в Казани?",
-            a: "Автосервис Авто14 находится в Константиновке по адресу ул. Заречная 5Б. Мы используем современный 3D стенд Hoffman, который гарантирует высочайшую точность регулировки."
-        },
-        {
-            q: "Как часто и когда нужно проверять развал-схождение?",
-            a: "Мы рекомендуем проверять углы при каждой сезонной смене шин. Также проверка обязательна после попадания в глубокую яму, при неравномерном износе резины или после любого ремонта элементов подвески."
-        },
-        {
-            q: "Какие автомобили вы обслуживаете?",
-            a: "Мы работаем практически со всеми марками авто: от Lada и VAZ до современных иномарок (Kia, Toyota, BMW, Mercedes) и автомобилей старше 15 лет."
-        },
-        {
-            q: "Нужно ли записываться заранее?",
-            a: "Да, во избежание очередей мы работаем по предварительной записи. Вы можете записаться через форму на сайте или по телефону — выберем удобное для вас время."
-        },
-        {
-            q: "Даете ли вы гарантию на работы?",
-            a: "Конечно. Мы несем полную ответственность за качество выполненных работ. На все услуги нашего сервиса действует официальная гарантия."
-        },
-        {
-            q: "Можно ли приехать со своими запчастями?",
-            a: "Да, мы без проблем установим ваши запчасти. Однако в этом случае гарантия будет распространяться только на правильность установки, но не на саму деталь."
-        },
-        {
-            q: "У вас есть запчасти в наличии?",
-            a: "Своего склада запчастей у нас нет, но мы сотрудничаем с крупнейшими поставщиками Казани. При заказе у нас любые детали доставляются прямо в сервис в течение 2 часов."
-        },
-        {
-            q: "Бесплатная ли у вас диагностика?",
-            a: "Диагностика ходовой части проводится бесплатно при условии, что выявленные неисправности вы будете устранять в нашем автосервисе."
-        },
-        {
-            q: "Сколько времени занимает процедура развала?",
-            a: "В среднем процедура 3D развал-схождения на одну ось занимает от 20 до 40 минут, в зависимости от состояния регулировочных болтов."
-        },
-        {
-            q: "На каком оборудовании вы работаете?",
-            a: "Наш главный инструмент — профессиональный немецкий 3D стенд Hoffman. Это эталон точности в мире авторемонта, исключающий человеческий фактор."
-        }
-    ];
+    const faqs = t('faq.items') as Array<{ q: string, a: string }>;
 
     return (
         <div className={`min-h-screen bg-brand-yellow text-black font-sans selection:bg-black selection:text-brand-yellow relative overflow-x-hidden`}>
@@ -97,7 +56,7 @@ export default function Home() {
                             {language === 'ru' ? 'EN' : 'RU'}
                         </button>
                         <button onClick={() => setIsBookingOpen(true)} className="btn-primary !px-6 !py-2 !text-[10px] md:!text-xs md:!px-8 md:!py-3 shadow-none hover:shadow-none">
-                            Записаться
+                            {t('hero.cta_book')}
                         </button>
                     </div>
                 </div>
@@ -237,10 +196,10 @@ export default function Home() {
                 {/* ... (Existing Services Grid Content - Minimal changes needed here, keeping it structured) ... */}
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                     <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-[0.8]">
-                        Наши<br />Услуги
+                        {t('services_section.title')}<br />{t('services_section.title2')}
                     </h2>
                     <p className="max-w-md text-lg font-black opacity-60 text-right md:text-left">
-                        Всё, что нужно вашему автомобилю. <br />Быстро, честно, качественно.
+                        {t('services_section.subtitle')} <br />{t('services_section.subtitle2')}
                     </p>
                 </div>
 
@@ -250,10 +209,10 @@ export default function Home() {
                         <div className="bg-black text-[#FFF500] w-16 h-16 rounded-full flex items-center justify-center border-2 border-black mb-6 group-hover:scale-110 transition-transform">
                             <Settings className="w-8 h-8" />
                         </div>
-                        <h3 className="text-2xl font-black uppercase mb-4">3D Развал-схождение</h3>
-                        <p className="text-sm font-black opacity-60 mb-6 flex-grow">Стенд Hoffman 3D. Высочайшая точность регулировки углов.</p>
+                        <h3 className="text-2xl font-black uppercase mb-4">{t('services_section.alignment.name')}</h3>
+                        <p className="text-sm font-black opacity-60 mb-6 flex-grow">{t('services_section.alignment.desc')}</p>
                         <div className="flex justify-between items-center border-t-2 border-black pt-4">
-                            <span className="font-black text-xl">Подробнее</span>
+                            <span className="font-black text-xl">{t('services_section.more')}</span>
                             <ChevronRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                         </div>
                     </Link>
@@ -263,10 +222,10 @@ export default function Home() {
                         <div className="bg-white text-black w-16 h-16 rounded-full flex items-center justify-center border-2 border-white mb-6 group-hover:scale-110 transition-transform">
                             <Wrench className="w-8 h-8" />
                         </div>
-                        <h3 className="text-2xl font-black uppercase mb-4">Ремонт ходовой</h3>
-                        <p className="text-sm font-black opacity-80 mb-6 flex-grow">Диагностика и устранение неисправностей подвески.</p>
+                        <h3 className="text-2xl font-black uppercase mb-4">{t('services_section.suspension.name')}</h3>
+                        <p className="text-sm font-black opacity-80 mb-6 flex-grow">{t('services_section.suspension.desc')}</p>
                         <div className="flex justify-between items-center border-t-2 border-[#FFF500]/30 pt-4">
-                            <span className="font-black text-xl">Подробнее</span>
+                            <span className="font-black text-xl">{t('services_section.more')}</span>
                             <ChevronRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                         </div>
                     </Link>
@@ -276,10 +235,10 @@ export default function Home() {
                         <div className="bg-black text-[#FFF500] w-16 h-16 rounded-full flex items-center justify-center border-2 border-black mb-6 group-hover:scale-110 transition-transform">
                             <Settings className="w-8 h-8" />
                         </div>
-                        <h3 className="text-2xl font-black uppercase mb-4">Шиномонтаж</h3>
-                        <p className="text-sm font-black opacity-60 mb-6 flex-grow">Сезонная переобувка, балансировка, правка дисков.</p>
+                        <h3 className="text-2xl font-black uppercase mb-4">{t('services_section.tires.name')}</h3>
+                        <p className="text-sm font-black opacity-60 mb-6 flex-grow">{t('services_section.tires.desc')}</p>
                         <div className="flex justify-between items-center border-t-2 border-black pt-4">
-                            <span className="font-black text-xl">Подробнее</span>
+                            <span className="font-black text-xl">{t('services_section.more')}</span>
                             <ChevronRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                         </div>
                     </Link>
@@ -289,10 +248,10 @@ export default function Home() {
                         <div className="bg-white text-black w-16 h-16 rounded-full flex items-center justify-center border-2 border-white mb-6 group-hover:scale-110 transition-transform">
                             <PackageSearch className="w-8 h-8" />
                         </div>
-                        <h3 className="text-2xl font-black uppercase mb-4">Замена масла</h3>
-                        <p className="text-sm font-black opacity-80 mb-6 flex-grow">Экспресс-замена масла и фильтров. Качественные расходные материалы.</p>
+                        <h3 className="text-2xl font-black uppercase mb-4">{t('services_section.oil.name')}</h3>
+                        <p className="text-sm font-black opacity-80 mb-6 flex-grow">{t('services_section.oil.desc')}</p>
                         <div className="flex justify-between items-center border-t-2 border-[#FFF500]/30 pt-4">
-                            <span className="font-black text-xl">Подробнее</span>
+                            <span className="font-black text-xl">{t('services_section.more')}</span>
                             <ChevronRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                         </div>
                     </Link>
@@ -302,10 +261,10 @@ export default function Home() {
                         <div className="bg-black text-[#FFF500] w-16 h-16 rounded-full flex items-center justify-center border-2 border-black mb-6 group-hover:scale-110 transition-transform">
                             <CarWheel className="w-8 h-8" />
                         </div>
-                        <h3 className="text-2xl font-black uppercase mb-4">Диагностика</h3>
-                        <p className="text-sm font-black opacity-60 mb-6 flex-grow">Диагностика подвески и ходовой части. Найдем причину стука.</p>
+                        <h3 className="text-2xl font-black uppercase mb-4">{t('services_section.diagnostics.name')}</h3>
+                        <p className="text-sm font-black opacity-60 mb-6 flex-grow">{t('services_section.diagnostics.desc')}</p>
                         <div className="flex justify-between items-center border-t-2 border-black pt-4">
-                            <span className="font-black text-xl">Подробнее</span>
+                            <span className="font-black text-xl">{t('services_section.more')}</span>
                             <ChevronRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                         </div>
                     </Link>
@@ -320,7 +279,7 @@ export default function Home() {
                 <div className="container mx-auto px-4 md:px-12 relative z-10">
                     <div className="flex flex-col md:flex-row items-baseline gap-4 mb-16">
                         <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter font-display leading-none">
-                            Почему<br /><span className="text-brand-yellow">Авто14?</span>
+                            {t('benefits.title')}<br /><span className="text-brand-yellow">{t('benefits.title2')}</span>
                         </h2>
                         <div className="h-1 flex-grow bg-brand-yellow/20 hidden md:block"></div>
                     </div>
@@ -331,9 +290,9 @@ export default function Home() {
                             <div className="bg-black text-brand-yellow w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform border-2 border-black">
                                 <Target className="w-8 h-8" />
                             </div>
-                            <h3 className="text-2xl font-black uppercase mb-4 font-display leading-tight">3D Стенд<br />Hoffman</h3>
+                            <h3 className="text-2xl font-black uppercase mb-4 font-display leading-tight">{t('benefits.hoffman.title')}<br />{t('benefits.hoffman.title2')}</h3>
                             <p className="font-bold opacity-70 font-sans text-sm md:text-base">
-                                Премиальное немецкое оборудование. Точность регулировки до 0.01°. Гарантируем идеальный результат.
+                                {t('benefits.hoffman.desc')}
                             </p>
                         </div>
 
@@ -342,9 +301,9 @@ export default function Home() {
                             <div className="bg-black text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                                 <UserCheck className="w-8 h-8" />
                             </div>
-                            <h3 className="text-2xl font-black uppercase mb-4 font-display leading-tight">Опытные<br />мастера</h3>
+                            <h3 className="text-2xl font-black uppercase mb-4 font-display leading-tight">{t('benefits.masters.title')}<br />{t('benefits.masters.title2')}</h3>
                             <p className="font-black opacity-80 font-sans text-sm md:text-base">
-                                Специалисты с опытом 10+ лет. Знаем особенности подвески любой марки: от Lada до Porsche.
+                                {t('benefits.masters.desc')}
                             </p>
                         </div>
 
@@ -353,9 +312,9 @@ export default function Home() {
                             <div className="bg-accent-orange text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:-rotate-12 transition-transform border-2 border-black shadow-[4px_4px_0px_#000]">
                                 <Banknote className="w-8 h-8" />
                             </div>
-                            <h3 className="text-2xl font-black uppercase mb-4 font-display leading-tight">Честные<br />цены</h3>
+                            <h3 className="text-2xl font-black uppercase mb-4 font-display leading-tight">{t('benefits.prices.title')}<br />{t('benefits.prices.title2')}</h3>
                             <p className="font-bold opacity-70 font-sans text-sm md:text-base">
-                                Никаких скрытых платежей и «накруток». Согласовываем стоимость до начала работ. Честный подход к каждому клиенту.
+                                {t('benefits.prices.desc')}
                             </p>
                         </div>
                     </div>
@@ -370,7 +329,7 @@ export default function Home() {
             {/* GALLERY SECTION (Expanded) */}
             <section id="gallery" className="py-12 px-4 md:px-12 max-w-7xl mx-auto">
                 <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-[0.8] mb-12 text-center md:text-left">
-                    Галерея
+                    {t('gallery_section.title')}
                 </h2>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[200px] md:auto-rows-[300px]">
                     {/* Gallery Items */}
@@ -413,7 +372,7 @@ export default function Home() {
                 <div className="container mx-auto px-4 md:px-12 max-w-5xl">
                     <div className="mb-16 text-center md:text-left">
                         <h2 className="text-4xl md:text-7xl font-black uppercase tracking-tighter font-display mb-4">
-                            {t('faq.title').split(' ')[0]}<br /><span className="text-accent-orange">& {t('faq.title').split(' ').slice(1).join(' ')}</span>
+                            {t('faq.title')}<br /><span className="text-accent-orange">{t('faq.title2')}</span>
                         </h2>
                         <div className="h-2 w-32 bg-brand-yellow hidden md:block"></div>
                     </div>
@@ -454,17 +413,14 @@ export default function Home() {
                     {/* SEO KEYWORDS CLOUD */}
                     <div className="mt-24 p-6 md:p-8 bg-black text-white rounded-3xl border-4 border-black shadow-[4px_4px_0px_#FEE500] md:shadow-[8px_8px_0px_#FEE500]">
                         <h3 className="text-xl font-black uppercase mb-6 text-brand-yellow font-display">
-                            {language === 'ru' ? 'Популярные услуги в Казани' : 'Popular Services in Kazan'}
+                            {t('seo.title')}
                         </h3>
                         <div className="flex flex-wrap gap-x-4 gap-y-2 font-bold text-xs md:text-sm opacity-60">
-                            <span>Развал</span> <span className="text-brand-yellow">•</span>
-                            <span>Сход-развал</span> <span className="text-brand-yellow">•</span>
-                            <span>Шиномонтаж</span> <span className="text-brand-yellow">•</span>
-                            <span>Замена масла</span> <span className="text-brand-yellow">•</span>
-                            <span>Ремонт ходовой</span> <span className="text-brand-yellow">•</span>
-                            <span>Диагностика подвески</span> <span className="text-brand-yellow">•</span>
-                            <span>3D Сход-развал Казань</span> <span className="text-brand-yellow">•</span>
-                            <span>Автосервис Казань</span>
+                            {(t('seo.keywords') as string[]).map((kw: string, idx: number) => (
+                                <span key={idx}>
+                                    {kw}{idx < (t('seo.keywords') as string[]).length - 1 && <span className="text-brand-yellow ml-4">•</span>}
+                                </span>
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -476,7 +432,7 @@ export default function Home() {
                     {/* Address & Map */}
                     <div className="bg-black text-[#FFF500] p-0 rounded-[2rem] border-4 border-black shadow-xl overflow-hidden flex flex-col h-[400px]">
                         <div className="p-8 pb-4 text-center">
-                            <h3 className="font-black uppercase text-xl mb-2">{language === 'ru' ? 'На карте' : 'On Map'}</h3>
+                            <h3 className="font-black uppercase text-xl mb-2">{t('footer.map_title')}</h3>
                             <p className="font-black text-sm mb-4">{t('common.address')}</p>
                         </div>
                         <div className="flex-grow w-full relative h-[300px]">
@@ -528,7 +484,7 @@ export default function Home() {
                     {/* Branding/Hours */}
                     <div className="bg-[#FFF500] text-black p-8 rounded-[2rem] border-4 border-black shadow-xl flex flex-col items-center text-center justify-center">
                         <h2 className="text-5xl font-black uppercase tracking-tighter mb-4 text-black">
-                            Авто14
+                            {t('footer.brand')}
                         </h2>
                         <div className="mt-4 font-black text-xl">
                             {t('common.working_hours')}

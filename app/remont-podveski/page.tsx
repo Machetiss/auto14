@@ -1,78 +1,85 @@
 "use client";
 
 import ServicePageLayout from '../components/ServicePageLayout';
-import { Settings, ShieldCheck, Search, PenTool, Wrench, Activity } from 'lucide-react';
+import { Settings, Search, ShieldCheck, Wrench } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function RemontPodveski() {
+    const { language } = useLanguage();
+    const l = (ru: string, en: string) => language === 'ru' ? ru : en;
+
     return (
         <ServicePageLayout
-            title="Ремонт Ходовой"
-            description="Диагностика и устранение любых стуков. Вернем вашему авто комфорт и безопасность."
-            price="от 600₽"
+            title={l("Ремонт Ходовой", "Suspension Repair")}
+            description={l(
+                "Диагностика и устранение любых стуков. Вернем вашему авто комфорт и безопасность.",
+                "Diagnostics and repair of any knocking or rattling. We'll restore your car's comfort and safety."
+            )}
+            price={l("от 600₽", "from 600₽")}
             heroImage="/job/hodovaya.jpg"
             symptoms={[
-                "Стук или гул при проезде неровностей",
-                "Хруст при повороте руля",
-                "Раскачка кузова после кочек",
-                "Скрипы в подвеске (сайлентблоки)",
-                "Вибрация на руле или по кузову",
-                "Автомобиль 'рыскает' по дороге"
+                l("Стук или гул при проезде неровностей", "Knocking or humming over bumps"),
+                l("Хруст при повороте руля", "Crunching when turning the wheel"),
+                l("Раскачка кузова после кочек", "Body swaying after bumps"),
+                l("Скрипы в подвеске (сайлентблоки)", "Squeaking in suspension (bushings)"),
+                l("Вибрация на руле или по кузову", "Vibration in steering or body"),
+                l("Автомобиль 'рыскает' по дороге", "Car wanders on the road")
             ]}
             features={[
                 {
                     icon: Search,
-                    title: "Точная диагностика",
-                    desc: "Найдем реальную причину стука, а не будем менять всё подряд."
+                    title: l("Точная диагностика", "Precise diagnostics"),
+                    desc: l("Найдем реальную причину стука, а не будем менять всё подряд.", "We'll find the real cause — not just replace everything.")
                 },
                 {
                     icon: ShieldCheck,
-                    title: "Гарантия 6 месяцев",
-                    desc: "На многие запчасти и работы даем расширенную гарантию."
+                    title: l("Гарантия 6 месяцев", "6-month warranty"),
+                    desc: l("На многие запчасти и работы даем расширенную гарантию.", "Extended warranty on many parts and labor.")
                 },
                 {
                     icon: Settings,
-                    title: "Быстрая доставка запчастей",
-                    desc: "Привезем любые запчасти в течение 2-х часов. Подберем оригинал или качественный аналог."
+                    title: l("Быстрая доставка запчастей", "Fast parts delivery"),
+                    desc: l("Привезем любые запчасти в течение 2-х часов. Подберем оригинал или качественный аналог.", "Any part delivered within 2 hours. OEM or quality aftermarket.")
                 }
             ]}
             processSteps={[
                 {
-                    title: "Диагностика на подъемнике",
-                    desc: "Осмотр всех узлов: рычаги, шаровые, сайлентблоки, амортизаторы, ступицы."
+                    title: l("Диагностика на подъемнике", "Lift inspection"),
+                    desc: l("Осмотр всех узлов: рычаги, шаровые, сайлентблоки, амортизаторы, ступицы.", "Full inspection: control arms, ball joints, bushings, shocks, hubs.")
                 },
                 {
-                    title: "Согласование сметы",
-                    desc: "Показываем вам неисправности. Называем точную цену работ и запчастей."
+                    title: l("Согласование сметы", "Cost estimate"),
+                    desc: l("Показываем вам неисправности. Называем точную цену работ и запчастей.", "We show you the issues and give an exact price for labor and parts.")
                 },
                 {
-                    title: "Ремонт",
-                    desc: "Замена изношенных деталей. Используем профессиональное оборудование и силовые методы для сложных случаев."
+                    title: l("Ремонт", "Repair"),
+                    desc: l("Замена изношенных деталей. Используем профессиональное оборудование.", "Replacement of worn parts using professional equipment.")
                 },
                 {
-                    title: "Протяжка под нагрузкой",
-                    desc: "Финальная затяжка сайлентблоков производится в рабочем положении подвески."
+                    title: l("Протяжка под нагрузкой", "Loaded torque"),
+                    desc: l("Финальная затяжка сайлентблоков производится в рабочем положении подвески.", "Final bushing torque is applied with the suspension under load.")
                 },
                 {
-                    title: "Развал-схождение",
-                    desc: "При вмешательстве в рулевое или рычаги – обязательная регулировка углов (со скидкой)."
+                    title: l("Развал-схождение", "Wheel alignment"),
+                    desc: l("При вмешательстве в рулевое или рычаги – обязательная регулировка углов (со скидкой).", "After steering or arm work — alignment adjustment included (discounted).")
                 }
             ]}
             faq={[
                 {
-                    question: "Какова минимальная стоимость ремонта?",
-                    answer: "От 600 ₽. Это цена за прессовку одного сайлентблока на снятом рычаге (если вы принесли деталь)."
+                    question: l("Какова минимальная стоимость ремонта?", "What's the minimum repair cost?"),
+                    answer: l("От 600 ₽. Это цена за прессовку одного сайлентблока на снятом рычаге.", "From 600 ₽ — the price for pressing one bushing on a removed arm.")
                 },
                 {
-                    question: "Сколько стоит диагностика?",
-                    answer: "Диагностика ходовой стоит 500₽. При последующем ремонте у нас – диагностика БЕСПЛАТНО."
+                    question: l("Сколько стоит диагностика?", "How much is diagnostics?"),
+                    answer: l("Диагностика ходовой стоит 500₽. При последующем ремонте у нас – БЕСПЛАТНО.", "Suspension diagnostics: 500 ₽. Free if you repair with us.")
                 },
                 {
-                    question: "Можно ли со своими запчастями?",
-                    answer: "Да, можно. Но гарантию мы дадим только на работу. На сами запчасти гарантию дает ваш магазин."
+                    question: l("Можно ли со своими запчастями?", "Can I bring my own parts?"),
+                    answer: l("Да, можно. Но гарантию мы дадим только на работу.", "Yes. Warranty covers labor only in that case.")
                 },
                 {
-                    question: "Как долго длится ремонт?",
-                    answer: "Мелкий ремонт (стойки стабилизатора, колодки) – 30-60 минут. Серьезный ремонт (переборка подвески) – от 3 часов до дня."
+                    question: l("Как долго длится ремонт?", "How long does repair take?"),
+                    answer: l("Мелкий ремонт – 30-60 минут. Серьезный ремонт – от 3 часов.", "Minor repair: 30–60 min. Major work: 3+ hours.")
                 }
             ]}
         />
