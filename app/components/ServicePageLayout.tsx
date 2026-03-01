@@ -6,7 +6,9 @@ import Link from 'next/link';
 import { Check, ChevronDown, ChevronUp, Clock, Settings, Wrench } from 'lucide-react';
 import { useBooking } from '../context/BookingContext';
 import { useLanguage } from '../context/LanguageContext';
-import ReviewsSection from './ReviewsSection';
+import dynamic from 'next/dynamic';
+
+const ReviewsSection = dynamic(() => import('./ReviewsSection'), { ssr: false });
 
 interface ServicePageLayoutProps {
     title: string;

@@ -10,9 +10,12 @@ export const translations = {
             gallery: "Галерея"
         },
         hero: {
-            title: "Сделать вашу машину идеальной",
-            subtitle: "Нам в радость",
-            cta_book: "Записаться",
+            title: "Исправим стуки и вернём управляемость за 1 визит",
+            subtitle: "Ремонт ходовой и 3D сход-развал",
+            subtitle_p1: "Ремонт ходовой",
+            subtitle_p2: "3D сход-развал",
+            subtitle_p3: "Шиномонтаж",
+            cta_book: "Записаться на диагностику",
             cta_route: "Маршрут",
             consultation_free: "Консультация всегда бесплатная",
             pain_points: {
@@ -32,23 +35,23 @@ export const translations = {
             more: "Подробнее",
             alignment: {
                 name: "3D Развал-схождение",
-                desc: "Стенд Hoffman 3D. Высочайшая точность регулировки углов."
+                desc: "Стенд Hoffman 3D. Высочайшая точность регулировки углов. От 1200 ₽."
             },
             suspension: {
                 name: "Ремонт ходовой",
-                desc: "Диагностика и устранение неисправностей подвески."
+                desc: "Диагностика и устранение неисправностей подвески. От 600 ₽."
             },
             tires: {
                 name: "Шиномонтаж",
-                desc: "Сезонная переобувка, балансировка, правка дисков."
+                desc: "Сезонная переобувка, балансировка, правка дисков. От 2200 ₽."
             },
             oil: {
                 name: "Замена масла",
-                desc: "Экспресс-замена масла и фильтров. Качественные расходные материалы."
+                desc: "Экспресс-замена масла и фильтров. Качественные расходные материалы. От 1000 ₽."
             },
             diagnostics: {
                 name: "Диагностика",
-                desc: "Диагностика подвески и ходовой части. Найдем причину стука."
+                desc: "Диагностика подвески и ходовой части. Найдем причину стука. 0 ₽ при ремонте."
             }
         },
         benefits: {
@@ -88,8 +91,8 @@ export const translations = {
             working_hours: "Пн-Сб: 9:00 - 20:00",
             call_us: "Позвонить",
             booking: "Запись",
-            booking_desc: "Оставьте заявку, и мы свяжемся с вами в ближайшее время.",
-            submit: "Отправить",
+            booking_desc: "Оставьте заявку — перезвоним за 5–10 минут, назовём цену и подберём время.",
+            submit: "Жду звонка (перезвоним быстро)",
             sending: "Отправка...",
             policy: "Нажимая кнопку, вы соглашаетесь на обработку персональных данных"
         },
@@ -164,9 +167,12 @@ export const translations = {
             gallery: "Gallery"
         },
         hero: {
-            title: "Make your car perfect",
-            subtitle: "It's our joy",
-            cta_book: "Book Now",
+            title: "Fix knocks & restore handling in 1 visit",
+            subtitle: "Suspension Repair and 3D Alignment",
+            subtitle_p1: "Suspension Repair",
+            subtitle_p2: "3D Alignment",
+            subtitle_p3: "Tire Service",
+            cta_book: "Book a Diagnostic",
             cta_route: "Directions",
             consultation_free: "Free consultation — always",
             pain_points: {
@@ -186,23 +192,23 @@ export const translations = {
             more: "Learn more",
             alignment: {
                 name: "3D Wheel Alignment",
-                desc: "Hoffman 3D stand. Precision angle adjustment to factory specs."
+                desc: "Hoffman 3D stand. Precision angle adjustment to factory specs. From 1200 ₽."
             },
             suspension: {
                 name: "Suspension Repair",
-                desc: "Full diagnostics and repair of suspension components."
+                desc: "Full diagnostics and repair of suspension components. From 600 ₽."
             },
             tires: {
                 name: "Tire Service",
-                desc: "Seasonal tire swaps, balancing, and rim straightening."
+                desc: "Seasonal tire swaps, balancing, and rim straightening. From 2200 ₽."
             },
             oil: {
                 name: "Oil Change",
-                desc: "Express oil & filter replacement. Premium materials only."
+                desc: "Express oil & filter replacement. Premium materials only. From 1000 ₽."
             },
             diagnostics: {
                 name: "Diagnostics",
-                desc: "Full suspension and chassis inspection. We'll find the source of that noise."
+                desc: "Full suspension and chassis inspection. We'll find the source of that noise. Free with repair."
             }
         },
         benefits: {
@@ -242,8 +248,8 @@ export const translations = {
             working_hours: "Mon–Sat: 9 AM – 8 PM",
             call_us: "Call Us",
             booking: "Booking",
-            booking_desc: "Leave a request and we'll get back to you shortly.",
-            submit: "Submit",
+            booking_desc: "Leave a request — we'll call back in 5–10 minutes, name the price and schedule your visit.",
+            submit: "Waiting for a call (we'll call back quickly)",
             sending: "Sending...",
             policy: "By clicking, you agree to the processing of personal data"
         },

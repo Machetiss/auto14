@@ -42,11 +42,17 @@ export default function RootLayout({
     return (
         <LanguageProvider>
             <html lang="ru">
+                <head>
+                    <link rel="preconnect" href="https://mc.yandex.ru" crossOrigin="anonymous" />
+                    <link rel="dns-prefetch" href="https://mc.yandex.ru" />
+                </head>
                 <body className="antialiased">
                     <Suspense fallback={null}>
                         <YandexMetrika />
                     </Suspense>
-                    <Analytics />
+                    <Suspense fallback={null}>
+                        <Analytics />
+                    </Suspense>
                     <SchemaMarkup />
 
                     <BookingProvider>

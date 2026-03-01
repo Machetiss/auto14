@@ -63,7 +63,7 @@ export default function Home() {
             </header>
 
             {/* HERO SECTION - "GIRL DESIGN" */}
-            <main className="container mx-auto px-4 pt-24 min-h-screen flex flex-col md:flex-row items-center relative gap-8 md:gap-0">
+            <main className="container mx-auto px-4 pt-24 pb-12 md:pt-32 min-h-screen flex flex-col md:flex-row items-center relative gap-12 md:gap-0 font-display">
 
                 {/* Background Grid Pattern (Subtle) */}
                 <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #000 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
@@ -73,28 +73,29 @@ export default function Home() {
 
 
 
-                <div className="z-20 relative md:w-[60%] flex flex-col items-start text-left mb-12 md:mb-0 pl-0 md:pl-4">
+                <div className="z-20 relative md:w-[70%] flex flex-col items-start text-left mb-12 md:mb-0 pl-0 md:pl-4">
 
                     {/* Top Logo/Brand Block */}
-                    <div className="relative flex items-center mb-6 mt-8 md:mt-0">
-                        <span className="text-black text-[10vw] md:text-[6vw] leading-[0.8] font-black uppercase tracking-tighter font-display">
+                    <div className="relative flex items-center mb-1 mt-8 md:mt-0">
+                        <span className="text-black text-[8vw] md:text-[4vw] leading-[0.8] font-black uppercase tracking-tighter font-display">
                             АВТ
                         </span>
-                        <div className="relative w-[8vw] h-[8vw] md:w-[5vw] md:h-[5vw] animate-spin-slow-custom mx-[-0.2vw]">
+                        <div className="relative w-[6vw] h-[6vw] md:w-[3.5vw] md:h-[3.5vw] animate-spin-slow-custom mx-[-0.2vw]">
                             <Image
                                 src="/logo-wheel.png"
                                 alt="О"
                                 fill
                                 className="object-contain scale-110"
+                                sizes="(max-width: 768px) 6vw, 3.5vw"
                             />
                         </div>
-                        <span className="text-black text-[10vw] md:text-[6vw] leading-[0.8] font-black uppercase tracking-tighter font-display">
+                        <span className="text-black text-[8vw] md:text-[4vw] leading-[0.8] font-black uppercase tracking-tighter font-display">
                             14
                         </span>
                     </div>
 
                     {/* Symptoms / Pain Points as structured tags */}
-                    <div className="flex flex-wrap gap-2 mb-8 max-w-2xl">
+                    <div className="flex flex-wrap gap-2 mb-6 max-w-2xl">
                         {[
                             t('hero.pain_points.pulls_aside'),
                             t('hero.pain_points.wheel_crooked'),
@@ -109,11 +110,13 @@ export default function Home() {
                         ))}
                     </div>
 
-                    {/* MAIN TAGLINE - HUGE & MODERN */}
-                    <h1 className="text-[12vw] md:text-[8vw] leading-[0.9] md:leading-[0.8] font-black tracking-tighter uppercase mb-4 text-black font-display">
-                        {t('hero.subtitle')}
+                    {/* MAIN TAGLINE - STEPPED LAYOUT */}
+                    <h1 className="flex flex-col w-full text-[10vw] md:text-[5vw] leading-[1.1] font-black tracking-tighter uppercase mb-6 text-black drop-shadow-sm">
+                        <span className="self-start">{t('hero.subtitle_p1')}</span>
+                        <span className="self-start">{t('hero.subtitle_p2')}</span>
+                        <span className="self-start text-[9vw] md:text-[4vw]">{t('hero.subtitle_p3')}</span>
                     </h1>
-                    <p className="text-[4.5vw] md:text-[2.2vw] font-black uppercase leading-[1.3] md:leading-[1.1] text-black opacity-90 mb-6 max-w-xl font-sans">
+                    <p className="text-[4.5vw] md:text-[1.6vw] font-black uppercase leading-[1.2] md:leading-[1.1] text-black opacity-90 mb-6 max-w-xl font-sans">
                         {t('hero.title')}
                     </p>
 
@@ -156,6 +159,16 @@ export default function Home() {
                                 <MapPin className="w-5 h-5" />
                             </button>
                         </div>
+                    </div>
+
+                    {/* SOCIAL PROOF BADGES */}
+                    <div className="flex flex-wrap gap-3 mt-6">
+                        <a href="https://yandex.com/maps/org/avto14/108623850068/reviews/" target="_blank" rel="noopener noreferrer" className="bg-black text-[#FFF500] px-4 py-2 rounded-xl font-black text-xs uppercase tracking-wider border-2 border-black hover:bg-black/80 transition-colors flex items-center gap-2">
+                            ★ 5.0 {language === 'ru' ? 'Яндекс Карты' : 'Yandex Maps'}
+                        </a>
+                        <span className="bg-black/10 text-black px-4 py-2 rounded-xl font-black text-xs uppercase tracking-wider border-2 border-black/20">
+                            13 000+ {language === 'ru' ? 'авто обслужено' : 'cars serviced'}
+                        </span>
                     </div>
                 </div>
 
@@ -212,7 +225,7 @@ export default function Home() {
                         <h3 className="text-2xl font-black uppercase mb-4">{t('services_section.alignment.name')}</h3>
                         <p className="text-sm font-black opacity-60 mb-6 flex-grow">{t('services_section.alignment.desc')}</p>
                         <div className="flex justify-between items-center border-t-2 border-black pt-4">
-                            <span className="font-black text-xl">{t('services_section.more')}</span>
+                            <span className="font-black text-xl">{language === 'ru' ? 'от 1200 ₽' : 'from 1200 ₽'}</span>
                             <ChevronRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                         </div>
                     </Link>
@@ -225,7 +238,7 @@ export default function Home() {
                         <h3 className="text-2xl font-black uppercase mb-4">{t('services_section.suspension.name')}</h3>
                         <p className="text-sm font-black opacity-80 mb-6 flex-grow">{t('services_section.suspension.desc')}</p>
                         <div className="flex justify-between items-center border-t-2 border-[#FFF500]/30 pt-4">
-                            <span className="font-black text-xl">{t('services_section.more')}</span>
+                            <span className="font-black text-xl">{language === 'ru' ? 'от 600 ₽' : 'from 600 ₽'}</span>
                             <ChevronRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                         </div>
                     </Link>
@@ -238,7 +251,7 @@ export default function Home() {
                         <h3 className="text-2xl font-black uppercase mb-4">{t('services_section.tires.name')}</h3>
                         <p className="text-sm font-black opacity-60 mb-6 flex-grow">{t('services_section.tires.desc')}</p>
                         <div className="flex justify-between items-center border-t-2 border-black pt-4">
-                            <span className="font-black text-xl">{t('services_section.more')}</span>
+                            <span className="font-black text-xl">{language === 'ru' ? 'от 2200 ₽' : 'from 2200 ₽'}</span>
                             <ChevronRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                         </div>
                     </Link>
@@ -251,7 +264,7 @@ export default function Home() {
                         <h3 className="text-2xl font-black uppercase mb-4">{t('services_section.oil.name')}</h3>
                         <p className="text-sm font-black opacity-80 mb-6 flex-grow">{t('services_section.oil.desc')}</p>
                         <div className="flex justify-between items-center border-t-2 border-[#FFF500]/30 pt-4">
-                            <span className="font-black text-xl">{t('services_section.more')}</span>
+                            <span className="font-black text-xl">{language === 'ru' ? 'от 1000 ₽' : 'from 1000 ₽'}</span>
                             <ChevronRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                         </div>
                     </Link>
@@ -264,7 +277,7 @@ export default function Home() {
                         <h3 className="text-2xl font-black uppercase mb-4">{t('services_section.diagnostics.name')}</h3>
                         <p className="text-sm font-black opacity-60 mb-6 flex-grow">{t('services_section.diagnostics.desc')}</p>
                         <div className="flex justify-between items-center border-t-2 border-black pt-4">
-                            <span className="font-black text-xl">{t('services_section.more')}</span>
+                            <span className="font-black text-xl text-accent-orange">{language === 'ru' ? '0 ₽' : 'Free'}</span>
                             <ChevronRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                         </div>
                     </Link>
@@ -317,6 +330,33 @@ export default function Home() {
                                 {t('benefits.prices.desc')}
                             </p>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* КАК МЫ РАБОТАЕМ / HOW WE WORK — 3 STEPS */}
+            <section className="py-24 px-4 md:px-12 max-w-7xl mx-auto">
+                <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-[0.8] mb-16 text-center md:text-left font-display">
+                    {language === 'ru' ? 'Как мы' : 'How we'} <span className="text-accent-orange">{language === 'ru' ? 'работаем' : 'work'}</span>
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {/* Step 1 */}
+                    <div className="relative bg-white p-8 rounded-[2rem] border-4 border-black shadow-[8px_8px_0px_#FEE500] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+                        <div className="bg-black text-brand-yellow w-14 h-14 rounded-full flex items-center justify-center font-black text-2xl mb-6 border-4 border-brand-yellow">1</div>
+                        <h3 className="text-xl font-black uppercase mb-3 font-display">{language === 'ru' ? 'Запись' : 'Book'}</h3>
+                        <p className="font-bold opacity-70 font-sans">{language === 'ru' ? 'Оставьте заявку — перезвоним за 5–10 минут' : "Leave a request — we'll call back in 5–10 minutes"}</p>
+                    </div>
+                    {/* Step 2 */}
+                    <div className="relative bg-brand-yellow p-8 rounded-[2rem] border-4 border-black shadow-[8px_8px_0px_#000] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+                        <div className="bg-black text-brand-yellow w-14 h-14 rounded-full flex items-center justify-center font-black text-2xl mb-6 border-4 border-brand-yellow">2</div>
+                        <h3 className="text-xl font-black uppercase mb-3 font-display">{language === 'ru' ? 'Диагностика' : 'Diagnostics'}</h3>
+                        <p className="font-black opacity-80 font-sans">{language === 'ru' ? 'Приезжаете на диагностику. Находим причину, называем цену' : 'You come in for diagnostics. We find the cause and name the price'}</p>
+                    </div>
+                    {/* Step 3 */}
+                    <div className="relative bg-white p-8 rounded-[2rem] border-4 border-black shadow-[8px_8px_0px_#FF4500] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+                        <div className="bg-accent-orange text-white w-14 h-14 rounded-full flex items-center justify-center font-black text-2xl mb-6 border-4 border-black">3</div>
+                        <h3 className="text-xl font-black uppercase mb-3 font-display">{language === 'ru' ? 'Результат' : 'Result'}</h3>
+                        <p className="font-bold opacity-70 font-sans">{language === 'ru' ? 'Заберите исправный автомобиль с гарантией' : 'Pick up your fixed car with a warranty'}</p>
                     </div>
                 </div>
             </section>
