@@ -31,14 +31,14 @@ export default function Home() {
             <header className="fixed top-0 left-0 right-0 z-50 pt-4 pb-4 px-4 bg-brand-yellow shadow-md border-b-2 border-black">
                 <div className="container mx-auto flex justify-between items-center">
                     {/* Left: Nav Links */}
-                    <nav className="flex gap-4 md:gap-6 font-black uppercase text-xs md:text-sm tracking-widest text-black font-sans">
+                    <nav className="flex gap-2 sm:gap-4 md:gap-6 font-black uppercase text-[10px] sm:text-xs md:text-sm tracking-widest text-black font-sans">
                         <Link href="#services" className="hover:text-accent-orange transition-colors">{t('nav.services')}</Link>
-                        <Link href="#reviews" className="hover:text-accent-orange transition-colors">{t('nav.reviews')}</Link>
-                        <Link href="#gallery" className="hover:text-accent-orange transition-colors">{t('nav.gallery')}</Link>
+                        <Link href="#reviews" className="hidden sm:block hover:text-accent-orange transition-colors">{t('nav.reviews')}</Link>
+                        <Link href="#gallery" className="hidden md:block hover:text-accent-orange transition-colors">{t('nav.gallery')}</Link>
                     </nav>
 
                     {/* Right: CTA & Phone & Address */}
-                    <div className="flex items-center gap-6">
+                    <div className="flex items-center gap-2 sm:gap-4 md:gap-6">
                         <div className="hidden lg:flex flex-col items-end">
                             <a href="tel:+79992699359" className="flex items-center gap-2 font-black text-xl xl:text-2xl uppercase tracking-wider text-black group hover:text-accent-orange transition-colors">
                                 <Phone className="w-6 h-6 text-accent-orange fill-current" />
@@ -51,11 +51,11 @@ export default function Home() {
                         </div>
                         <button
                             onClick={toggleLanguage}
-                            className="px-3 py-1 border-2 border-black rounded-lg font-black text-xs uppercase tracking-wider hover:bg-black hover:text-brand-yellow transition-colors"
+                            className="px-2 py-1 md:px-3 border-2 border-black rounded-lg font-black text-xs uppercase tracking-wider hover:bg-black hover:text-brand-yellow transition-colors"
                         >
                             {language === 'ru' ? 'EN' : 'RU'}
                         </button>
-                        <button onClick={() => setIsBookingOpen(true)} className="btn-primary !px-6 !py-2 !text-[10px] md:!text-xs md:!px-8 md:!py-3 shadow-none hover:shadow-none">
+                        <button onClick={() => setIsBookingOpen(true)} className="btn-primary !px-4 !py-2 !text-[10px] md:!text-xs md:!px-8 md:!py-3 shadow-none hover:shadow-none whitespace-nowrap">
                             {t('hero.cta_book')}
                         </button>
                     </div>
