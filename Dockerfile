@@ -36,6 +36,7 @@ ENV DATABASE_URL="file:./prisma/dev.db"
 # Create SQLite DB, run migrations, seed data, then build Next.js
 RUN npx prisma migrate deploy || npx prisma db push --accept-data-loss
 RUN npx tsx prisma/seed.ts
+COPY .env.amvera .env.production
 RUN npm run build
 
 # Production image, copy all the files and run next
