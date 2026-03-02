@@ -29,7 +29,7 @@ export default function Home() {
 
             {/* HEADER */}
             <header className="fixed top-0 left-0 right-0 z-50 pt-4 pb-4 px-4 bg-brand-yellow shadow-md border-b-2 border-black">
-                <div className="container mx-auto flex justify-between items-center">
+                <div className="w-full max-w-[1920px] mx-auto xl:px-8 flex justify-between items-center">
                     {/* Left: Nav Links */}
                     <nav className="flex gap-2 sm:gap-4 md:gap-6 font-black uppercase text-[10px] sm:text-xs md:text-sm tracking-widest text-black font-sans">
                         <Link href="#services" className="hover:text-accent-orange transition-colors">{t('nav.services')}</Link>
@@ -63,7 +63,7 @@ export default function Home() {
             </header>
 
             {/* HERO SECTION - "GIRL DESIGN" */}
-            <main className="container mx-auto px-4 pt-24 pb-12 md:pt-32 min-h-screen flex flex-col md:flex-row items-center relative gap-12 md:gap-0 font-display">
+            <main className="w-full max-w-[1920px] mx-auto px-4 md:px-12 xl:px-24 pt-24 pb-12 md:pt-32 min-h-screen flex flex-col md:flex-row items-center relative gap-12 md:gap-0 font-display">
 
                 {/* Background Grid Pattern (Subtle) */}
                 <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #000 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
@@ -205,7 +205,7 @@ export default function Home() {
             </div>
 
             {/* SERVICES GRID */}
-            <section id="services" className="py-24 px-4 md:px-12 max-w-7xl mx-auto">
+            <section id="services" className="py-24 px-4 md:px-12 xl:px-24 w-full max-w-[1920px] mx-auto">
                 {/* ... (Existing Services Grid Content - Minimal changes needed here, keeping it structured) ... */}
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                     <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-[0.8]">
@@ -289,7 +289,7 @@ export default function Home() {
                 {/* Background Accent */}
                 <div className="absolute top-0 right-0 w-64 h-64 bg-brand-yellow/5 rounded-full blur-3xl -mr-32 -mt-32"></div>
 
-                <div className="container mx-auto px-4 md:px-12 relative z-10">
+                <div className="w-full max-w-[1920px] mx-auto px-4 md:px-12 xl:px-24 relative z-10">
                     <div className="flex flex-col md:flex-row items-baseline gap-4 mb-16">
                         <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter font-display leading-none">
                             {t('benefits.title')}<br /><span className="text-brand-yellow">{t('benefits.title2')}</span>
@@ -335,7 +335,7 @@ export default function Home() {
             </section>
 
             {/* КАК МЫ РАБОТАЕМ / HOW WE WORK — 3 STEPS */}
-            <section className="py-24 px-4 md:px-12 max-w-7xl mx-auto">
+            <section className="py-24 px-4 md:px-12 xl:px-24 w-full max-w-[1920px] mx-auto">
                 <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-[0.8] mb-16 text-center md:text-left font-display">
                     {language === 'ru' ? 'Как мы' : 'How we'} <span className="text-accent-orange">{language === 'ru' ? 'работаем' : 'work'}</span>
                 </h2>
@@ -367,7 +367,7 @@ export default function Home() {
             </div>
 
             {/* GALLERY SECTION (Expanded) */}
-            <section id="gallery" className="py-12 px-4 md:px-12 max-w-7xl mx-auto">
+            <section id="gallery" className="py-12 px-4 md:px-12 xl:px-24 w-full max-w-[1920px] mx-auto">
                 <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-[0.8] mb-12 text-center md:text-left">
                     {t('gallery_section.title')}
                 </h2>
@@ -467,7 +467,7 @@ export default function Home() {
             </section>
 
             {/* CONTACTS / FOOTER */}
-            <footer id="contacts" className="py-24 px-4 md:px-12 max-w-7xl mx-auto pb-32">
+            <footer id="contacts" className="py-24 px-4 md:px-12 xl:px-24 w-full max-w-[1920px] mx-auto pb-32">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {/* Address & Map */}
                     <div className="bg-black text-[#FFF500] p-0 rounded-[2rem] border-4 border-black shadow-xl overflow-hidden flex flex-col h-[400px]">

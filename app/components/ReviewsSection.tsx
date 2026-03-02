@@ -121,7 +121,7 @@ export default function ReviewsSection() {
                 <Settings className="w-96 h-96 absolute -top-20 -left-20 animate-spin-slow" />
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 md:px-12 relative z-10">
+            <div className="w-full max-w-[1920px] mx-auto px-4 md:px-12 xl:px-24 relative z-10">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                     <div>
                         <h2 className="text-3xl sm:text-5xl md:text-7xl font-black tracking-tighter uppercase leading-[1.1] md:leading-[1.1] text-brand-yellow mb-6 font-display">
