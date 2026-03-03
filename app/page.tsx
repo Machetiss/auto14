@@ -374,34 +374,34 @@ export default function Home() {
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[200px] md:auto-rows-[300px]">
                     {/* Gallery Items */}
                     <div className="relative rounded-2xl overflow-hidden border-2 border-black group">
-                        <Image src="/gallery/1.jpg" alt="Автосервис Avto14 — рабочий процесс" fill loading="lazy" className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <Image src="/gallery/1.jpg" alt="Автосервис Avto14 — рабочий процесс" fill sizes="(max-width: 768px) 50vw, 33vw" loading="lazy" className="object-cover group-hover:scale-110 transition-transform duration-500" />
                     </div>
                     <div className="relative rounded-2xl overflow-hidden border-2 border-black group md:col-span-2">
-                        <Image src="/gallery/2.jpg" alt="3D развал-схождение на стенде Hoffman" fill loading="lazy" className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <Image src="/gallery/2.jpg" alt="3D развал-схождение на стенде Hoffman" fill sizes="(max-width: 768px) 50vw, 66vw" loading="lazy" className="object-cover group-hover:scale-110 transition-transform duration-500" />
                     </div>
                     <div className="relative rounded-2xl overflow-hidden border-2 border-black group md:col-span-2">
-                        <Image src="/gallery/4.jpg" alt="Ремонт ходовой части автомобиля" fill loading="lazy" className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <Image src="/gallery/4.jpg" alt="Ремонт ходовой части автомобиля" fill sizes="(max-width: 768px) 50vw, 66vw" loading="lazy" className="object-cover group-hover:scale-110 transition-transform duration-500" />
                     </div>
                     <div className="relative rounded-2xl overflow-hidden border-2 border-black group">
-                        <Image src="/gallery/5.jpg" alt="Диагностика подвески на подъемнике" fill loading="lazy" className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <Image src="/gallery/5.jpg" alt="Диагностика подвески на подъемнике" fill sizes="(max-width: 768px) 50vw, 33vw" loading="lazy" className="object-cover group-hover:scale-110 transition-transform duration-500" />
                     </div>
                     <div className="relative rounded-2xl overflow-hidden border-2 border-black group">
-                        <Image src="/gallery/6.jpg" alt="Шиномонтаж и балансировка колес" fill loading="lazy" className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <Image src="/gallery/6.jpg" alt="Шиномонтаж и балансировка колес" fill sizes="(max-width: 768px) 50vw, 33vw" loading="lazy" className="object-cover group-hover:scale-110 transition-transform duration-500" />
                     </div>
                     <div className="relative rounded-2xl overflow-hidden border-2 border-black group">
-                        <Image src="/gallery/7.jpg" alt="Замена масла и фильтров" fill loading="lazy" className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <Image src="/gallery/7.jpg" alt="Замена масла и фильтров" fill sizes="(max-width: 768px) 50vw, 33vw" loading="lazy" className="object-cover group-hover:scale-110 transition-transform duration-500" />
                     </div>
                     <div className="relative rounded-2xl overflow-hidden border-2 border-black group">
-                        <Image src="/gallery/8.jpg" alt="Профессиональное оборудование автосервиса" fill loading="lazy" className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <Image src="/gallery/8.jpg" alt="Профессиональное оборудование автосервиса" fill sizes="(max-width: 768px) 50vw, 33vw" loading="lazy" className="object-cover group-hover:scale-110 transition-transform duration-500" />
                     </div>
                     <div className="relative rounded-2xl overflow-hidden border-2 border-black group">
-                        <Image src="/gallery/9.jpg" alt="Результат работы — довольный клиент" fill loading="lazy" className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <Image src="/gallery/9.jpg" alt="Результат работы — довольный клиент" fill sizes="(max-width: 768px) 50vw, 33vw" loading="lazy" className="object-cover group-hover:scale-110 transition-transform duration-500" />
                     </div>
                     <div className="relative rounded-2xl overflow-hidden border-2 border-black group md:col-span-2">
-                        <Image src="/gallery/10.jpg" alt="Автосервис Avto14 — вид изнутри" fill loading="lazy" className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <Image src="/gallery/10.jpg" alt="Автосервис Avto14 — вид изнутри" fill sizes="(max-width: 768px) 50vw, 66vw" loading="lazy" className="object-cover group-hover:scale-110 transition-transform duration-500" />
                     </div>
                     <div className="relative rounded-2xl overflow-hidden border-2 border-black group">
-                        <Image src="/gallery/11.jpg" alt="Команда автосервиса Avto14" fill loading="lazy" className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <Image src="/gallery/11.jpg" alt="Команда автосервиса Avto14" fill sizes="(max-width: 768px) 50vw, 33vw" loading="lazy" className="object-cover group-hover:scale-110 transition-transform duration-500" />
                     </div>
                 </div>
             </section>
@@ -464,10 +464,10 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* CONTACTS / FOOTER */}
-            <footer id="contacts" className="py-24 px-4 md:px-12 xl:px-24 w-full max-w-[1920px] mx-auto pb-32">
+            < footer id="contacts" className="py-24 px-4 md:px-12 xl:px-24 w-full max-w-[1920px] mx-auto pb-32" >
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {/* Address & Map */}
                     <div className="bg-black text-[#FFF500] p-0 rounded-[2rem] border-4 border-black shadow-xl overflow-hidden flex flex-col h-[400px]">
@@ -534,8 +534,8 @@ export default function Home() {
                         </p>
                     </div>
                 </div>
-            </footer>
+            </footer >
 
-        </div>
+        </div >
     );
 }
