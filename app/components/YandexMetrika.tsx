@@ -16,9 +16,8 @@ export default function YandexMetrika() {
     }, [pathname, searchParams]);
 
     return (
-        <>
-            <Script id="yandex-metrika" strategy="afterInteractive">
-                {`
+        <Script id="yandex-metrika" strategy="afterInteractive">
+            {`
         (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
         m[i].l=1*new Date();
         for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
@@ -32,12 +31,6 @@ export default function YandexMetrika() {
             webvisor:true
         });
       `}
-            </Script>
-            <noscript>
-                <div>
-                    <img src={`https://mc.yandex.ru/watch/${process.env.NEXT_PUBLIC_YANDEX_METRIKA_ID}`} style={{ position: 'absolute', left: '-9999px' }} alt="" />
-                </div>
-            </noscript>
-        </>
+        </Script>
     );
 }
