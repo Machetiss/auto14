@@ -33,10 +33,14 @@ COPY . .
 # Set DATABASE_URL for SQLite during build
 ENV DATABASE_URL="file:./prisma/dev.db"
 
+# NEXT_PUBLIC_* variables must be available at build time (they get inlined into JS bundles)
+# These are NOT secrets — they are visible in the browser source code anyway
+ENV NEXT_PUBLIC_SITE_URL="https://auto-14.ru"
+ENV NEXT_PUBLIC_YANDEX_METRIKA_ID="106881681"
+
 # Create SQLite DB, run migrations, seed data, then build Next.js
 RUN npx prisma migrate deploy || npx prisma db push --accept-data-loss
 RUN npx tsx prisma/seed.ts
-COPY .env.amvera .env.production
 RUN npm run build
 
 # Production image, copy all the files and run next
