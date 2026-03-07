@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://auto-14.ru'),
+    metadataBase: new URL('https://www.auto-14.ru'),
     title: {
         template: '%s | Авто14',
         default: 'Авто14 — Автосервис в Казани | Ремонт ходовой, Сход-развал 3D',
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'Авто14 — Честный автосервис в Казани',
         description: 'Сделаем вашу машину идеальной! Сход-развал, ремонт ходовой, ТО. Записывайтесь!',
-        url: 'https://auto-14.ru',
+        url: 'https://www.auto-14.ru',
         siteName: 'Авто14',
         locale: 'ru_RU',
         type: 'website',
