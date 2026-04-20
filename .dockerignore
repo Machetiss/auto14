@@ -42,6 +42,5 @@ playwright.config.ts
 tests/
 src/
 components/
-data/
 tsconfig.tsbuildinfo
 Ui Ux Proposal

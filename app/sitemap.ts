@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { carBrands } from '@/data/carBrands';
+import { services } from '@/data/services';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://www.auto-14.ru';
@@ -55,12 +56,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
     ];
 
+    // /brands/[brand] — 35 страниц
     const dynamicBrandRoutes: MetadataRoute.Sitemap = carBrands.map((brand) => ({
         url: `${baseUrl}/brands/${brand.slug}`,
         lastModified: new Date(),
-        changeFrequency: 'monthly',
+        changeFrequency: 'monthly' as const,
         priority: 0.6,
     }));
 
-    return [...staticRoutes, ...dynamicBrandRoutes];
+    // /uslugi/[service]/[brand] — 280 страниц (8 услуг × 35 брендов)
+    const dynamicServiceBrandRoutes: MetadataRoute.Sitemap = services.flatMap((service) =>
+        carBrands.map((brand) => ({
+            url: `${baseUrl}/uslugi/${service.slug}/${brand.slug}`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly' as const,
+            priority: 0.65,
+        }))
+    );
+
+    return [...staticRoutes, ...dynamicBrandRoutes, ...dynamicServiceBrandRoutes];
 }

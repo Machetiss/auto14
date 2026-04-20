@@ -5,8 +5,9 @@ export interface CarBrand {
 }
 
 export const carBrands: CarBrand[] = [
+  // Самые популярные в РФ / Татарстане
   { slug: "kia", name: "KIA", nameRu: "Киа" },
-  { slug: "hyundai", name: "Hyundai", nameRu: "Хендай" },
+  { slug: "hyundai", name: "Hyundai", nameRu: "Хёндай" },
   { slug: "lada", name: "LADA", nameRu: "Лада" },
   { slug: "toyota", name: "Toyota", nameRu: "Тойота" },
   { slug: "volkswagen", name: "Volkswagen", nameRu: "Фольксваген" },
@@ -22,7 +23,24 @@ export const carBrands: CarBrand[] = [
   { slug: "audi", name: "Audi", nameRu: "Ауди" },
   { slug: "honda", name: "Honda", nameRu: "Хонда" },
   { slug: "lexus", name: "Lexus", nameRu: "Лексус" },
+  // Китайские (растут в Татарстане)
   { slug: "chery", name: "Chery", nameRu: "Чери" },
   { slug: "haval", name: "Haval", nameRu: "Хавейл" },
   { slug: "geely", name: "Geely", nameRu: "Джили" },
+  { slug: "changan", name: "Changan", nameRu: "Чанган" },
+  { slug: "exeed", name: "Exeed", nameRu: "Эксид" },
+  { slug: "omoda", name: "Omoda", nameRu: "Омода" },
+  { slug: "jaecoo", name: "Jaecoo", nameRu: "Джеку" },
+  // Дополнительные европейские и азиатские
+  { slug: "suzuki", name: "Suzuki", nameRu: "Сузуки" },
+  { slug: "subaru", name: "Subaru", nameRu: "Субару" },
+  { slug: "opel", name: "Opel", nameRu: "Опель" },
+  { slug: "peugeot", name: "Peugeot", nameRu: "Пежо" },
+  { slug: "citroen", name: "Citroën", nameRu: "Ситроен" },
+  { slug: "daewoo", name: "Daewoo", nameRu: "Дэу" },
+  { slug: "infiniti", name: "Infiniti", nameRu: "Инфинити" },
+  { slug: "land-rover", name: "Land Rover", nameRu: "Ленд Ровер" },
+  { slug: "volvo", name: "Volvo", nameRu: "Вольво" },
+  { slug: "uaz", name: "UAZ", nameRu: "УАЗ" },
+  { slug: "gaz", name: "GAZ", nameRu: "ГАЗ" },
 ];
