@@ -1,5 +1,5 @@
-import { carBrands } from '@/data/carBrands';
-import { services } from '@/data/services';
+import { carBrands } from '@/app/data/carBrands';
+import { services } from '@/app/data/services';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import ServiceBrandClientPage from './ServiceBrandClientPage';

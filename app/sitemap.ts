@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
-import { carBrands } from '@/data/carBrands';
-import { services } from '@/data/services';
+import { carBrands } from '@/app/data/carBrands';
+import { services } from '@/app/data/services';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://www.auto-14.ru';

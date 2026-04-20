@@ -3,7 +3,7 @@
 import ServicePageLayout from '@/app/components/ServicePageLayout';
 import { Settings, Search, ShieldCheck, Wrench } from 'lucide-react';
 import { useLanguage } from '@/app/context/LanguageContext';
-import { CarBrand } from '@/data/carBrands';
+import { CarBrand } from '@/app/data/carBrands';
 
 export default function BrandClientPage({ brand }: { brand: CarBrand }) {
     const { language } = useLanguage();

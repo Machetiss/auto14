@@ -1,4 +1,4 @@
-import { carBrands } from '@/data/carBrands';
+import { carBrands } from '@/app/data/carBrands';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import BrandClientPage from './BrandClientPage';

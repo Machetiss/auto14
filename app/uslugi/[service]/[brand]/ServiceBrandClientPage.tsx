@@ -3,8 +3,8 @@
 import ServicePageLayout from '@/app/components/ServicePageLayout';
 import { Wrench, Settings, ShieldCheck, Clock } from 'lucide-react';
 import { useLanguage } from '@/app/context/LanguageContext';
-import { CarBrand } from '@/data/carBrands';
-import { Service } from '@/data/services';
+import { CarBrand } from '@/app/data/carBrands';
+import { Service } from '@/app/data/services';
 
 interface Props {
   service: Service;
