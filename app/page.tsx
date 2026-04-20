@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { Settings, MoveRight, CornerRightDown, Phone, Wrench, ChevronRight, PackageSearch, MapPin, Target, UserCheck, Banknote, ChevronDown, ChevronUp } from 'lucide-react';
 import BookingModal from './components/BookingModal';
 import NavigatorModal from './components/NavigatorModal';
+import SpinWheelPopup from './components/SpinWheelPopup';
 import ReviewsSection from './components/ReviewsSection';
 import CarWheel from './components/CarWheel';
 import { WhatsAppIcon } from './components/icons/WhatsAppIcon';
@@ -18,6 +19,10 @@ export default function Home() {
     const [isBookingOpen, setIsBookingOpen] = useState(false);
     const [isNavigatorOpen, setIsNavigatorOpen] = useState(false);
     const [activeFaq, setActiveFaq] = useState<number | null>(null);
+    const [showAllGallery, setShowAllGallery] = useState(false);
+    const [showAllFaq, setShowAllFaq] = useState(false);
+    const [showHowWeWork, setShowHowWeWork] = useState(false);
+    const [showServices, setShowServices] = useState(false);
 
     const faqs = t('faq.items') as Array<{ q: string, a: string }>;
 
@@ -26,6 +31,7 @@ export default function Home() {
 
             <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
             <NavigatorModal isOpen={isNavigatorOpen} onClose={() => setIsNavigatorOpen(false)} />
+            <SpinWheelPopup />
 
             {/* HEADER */}
             <header className="fixed top-0 left-0 right-0 z-50 pt-4 pb-4 px-4 bg-brand-yellow shadow-md border-b-2 border-black">
@@ -104,21 +110,26 @@ export default function Home() {
                             t('hero.pain_points.something_knocks'),
                             t('hero.pain_points.alignment_check')
                         ].map((tag, idx) => (
-                            <span key={idx} className="bg-black/5 border border-black/10 px-3 py-1 text-[10px] md:text-sm font-bold uppercase tracking-wider text-black/70 rounded-md">
+                            <span key={idx} className="bg-black/5 border border-black/10 px-3 py-1 text-[10px] md:text-sm font-medium uppercase tracking-wider text-black/60 rounded-md">
                                 {tag}
                             </span>
                         ))}
                     </div>
 
-                    {/* MAIN TAGLINE - STEPPED LAYOUT */}
-                    <h1 className="flex flex-col w-full text-[10vw] md:text-[5vw] leading-[1.1] font-black tracking-tighter uppercase mb-6 text-black drop-shadow-sm">
-                        <span className="self-start">{t('hero.subtitle_p1')}</span>
-                        <span className="self-start">{t('hero.subtitle_p2')}</span>
-                        <span className="self-start text-[9vw] md:text-[4vw]">{t('hero.subtitle_p3')}</span>
+                    {/* MAIN TAGLINE - H1 and Subtitle */}
+                    <h1 className="w-full text-[7.5vw] md:text-[3.9vw] leading-tight font-black tracking-tight uppercase mb-6 text-black drop-shadow-sm max-w-4xl">
+                        {t('hero.title_pt1')}{" "}
+                        <span className="bg-black text-white px-3 md:px-4 py-1 mx-1 rounded-xl inline-block -rotate-[2deg] shadow-[4px_4px_0px_0px_#FF4500] leading-none transform -translate-y-1">
+                            {t('hero.title_highlight')}
+                        </span>{" "}
+                        {t('hero.title_pt2')}
                     </h1>
-                    <p className="text-[4.5vw] md:text-[1.6vw] font-black uppercase leading-[1.2] md:leading-[1.1] text-black opacity-90 mb-6 max-w-xl font-sans">
-                        {t('hero.title')}
-                    </p>
+                    <div className="bg-white/90 backdrop-blur-sm border-4 border-black rounded-2xl px-5 py-4 mb-6 max-w-2xl shadow-[4px_4px_0px_#FF4500] relative overflow-hidden">
+                        <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-accent-orange"></div>
+                        <p className="text-[3.5vw] md:text-[1.2vw] font-black leading-snug text-black pl-3 font-sans">
+                            {t('hero.subtitle')}
+                        </p>
+                    </div>
 
                     {/* NEW: Free Consultation Message */}
                     <p className="flex items-center gap-2 text-xs md:text-sm font-black uppercase text-accent-orange mb-8 animate-pulse italic">
@@ -128,10 +139,13 @@ export default function Home() {
 
                     {/* Action Buttons */}
                     <div className="flex flex-col gap-4 w-full sm:w-auto z-30 relative">
-                        <button onClick={() => setIsBookingOpen(true)} className="btn-primary group w-full sm:w-80">
-                            {t('hero.cta_book')}
-                            <MoveRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </button>
+                        <div className="w-full sm:w-80 flex flex-col gap-2">
+                            <button onClick={() => setIsBookingOpen(true)} className="btn-primary group w-full">
+                                {t('hero.cta_book')}
+                                <MoveRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            </button>
+                            <p className="text-[10px] sm:text-xs text-center font-bold opacity-70 uppercase tracking-widest leading-tight text-black">{t('hero.guarantee')}</p>
+                        </div>
 
                         <div className="flex flex-col sm:flex-row gap-3 items-center">
                             <div className="flex flex-col gap-2 items-center w-full sm:w-auto flex-1">
@@ -204,19 +218,39 @@ export default function Home() {
                 </div>
             </div>
 
-            {/* SERVICES GRID */}
-            <section id="services" className="py-24 px-4 md:px-12 xl:px-24 w-full max-w-[1920px] mx-auto">
-                {/* ... (Existing Services Grid Content - Minimal changes needed here, keeping it structured) ... */}
-                <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-                    <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-[0.8]">
-                        {t('services_section.title')}<br />{t('services_section.title2')}
-                    </h2>
-                    <p className="max-w-md text-lg font-black opacity-60 text-right md:text-left">
-                        {t('services_section.subtitle')} <br />{t('services_section.subtitle2')}
-                    </p>
-                </div>
+            {/* SERVICES GRID — COLLAPSIBLE */}
+            <section id="services" className="py-16 px-4 md:px-12 xl:px-24 w-full max-w-[1920px] mx-auto">
+                <button
+                    onClick={() => setShowServices(!showServices)}
+                    className="w-full flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-6 text-left cursor-pointer group"
+                >
+                    <div>
+                        <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-[0.8]">
+                            {t('services_section.title')}<br />{t('services_section.title2')}
+                        </h2>
+                    </div>
+                    <div className="flex items-center gap-3">
+                        <p className="text-base font-black opacity-60 text-right">
+                            {t('services_section.subtitle')} <br />{t('services_section.subtitle2')}
+                        </p>
+                        <ChevronDown className={`w-8 h-8 md:w-10 md:h-10 flex-shrink-0 transition-transform duration-300 ${showServices ? 'rotate-180' : ''}`} />
+                    </div>
+                </button>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {/* Expand button when collapsed */}
+                {!showServices && (
+                    <div className="flex justify-center">
+                        <button
+                            onClick={() => setShowServices(true)}
+                            className="bg-black text-brand-yellow px-10 py-5 rounded-2xl font-black uppercase tracking-wider text-base border-4 border-black shadow-[6px_6px_0_#FF4500] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all flex items-center gap-3 animate-pulse hover:animate-none"
+                        >
+                            {language === 'ru' ? 'Развернуть все услуги' : 'Show all services'}
+                            <ChevronDown className="w-6 h-6" />
+                        </button>
+                    </div>
+                )}
+
+                <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-500 ease-in-out origin-top ${showServices ? 'max-h-[3000px] opacity-100 mt-4' : 'max-h-0 opacity-0 overflow-hidden'}`}>
                     {/* Service 1: Alignment */}
                     <Link href="/razval-shozhdenie" className="bg-[#FFF500] text-black p-8 rounded-[2rem] border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all cursor-pointer group flex flex-col h-[400px]">
                         <div className="bg-black text-[#FFF500] w-16 h-16 rounded-full flex items-center justify-center border-2 border-black mb-6 group-hover:scale-110 transition-transform">
@@ -334,12 +368,32 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* КАК МЫ РАБОТАЕМ / HOW WE WORK — 3 STEPS */}
-            <section className="py-24 px-4 md:px-12 xl:px-24 w-full max-w-[1920px] mx-auto">
-                <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-[0.8] mb-16 text-center md:text-left font-display">
-                    {language === 'ru' ? 'Как мы' : 'How we'} <span className="text-accent-orange">{language === 'ru' ? 'работаем' : 'work'}</span>
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* КАК МЫ РАБОТАЕМ / HOW WE WORK — COLLAPSIBLE */}
+            <section className="py-16 px-4 md:px-12 xl:px-24 w-full max-w-[1920px] mx-auto">
+                <button
+                    onClick={() => setShowHowWeWork(!showHowWeWork)}
+                    className="w-full flex items-center justify-between mb-8 group"
+                >
+                    <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase leading-[0.8] text-left font-display">
+                        {language === 'ru' ? 'Как мы' : 'How we'} <span className="text-accent-orange">{language === 'ru' ? 'работаем' : 'work'}</span>
+                    </h2>
+                    <ChevronDown className={`w-8 h-8 md:w-10 md:h-10 transition-transform duration-300 ${showHowWeWork ? 'rotate-180' : ''}`} />
+                </button>
+
+                {/* Expand button when collapsed */}
+                {!showHowWeWork && (
+                    <div className="flex justify-center">
+                        <button
+                            onClick={() => setShowHowWeWork(true)}
+                            className="bg-black text-brand-yellow px-10 py-5 rounded-2xl font-black uppercase tracking-wider text-base border-4 border-black shadow-[6px_6px_0_#FF4500] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all flex items-center gap-3 animate-pulse hover:animate-none"
+                        >
+                            {language === 'ru' ? 'Развернуть' : 'Expand'}
+                            <ChevronDown className="w-6 h-6" />
+                        </button>
+                    </div>
+                )}
+
+                <div className={`grid grid-cols-1 md:grid-cols-3 gap-8 transition-all duration-500 ease-in-out origin-top ${showHowWeWork ? 'max-h-[1200px] opacity-100 mt-4' : 'max-h-0 opacity-0 overflow-hidden'}`}>
                     {/* Step 1 */}
                     <div className="relative bg-white p-8 rounded-[2rem] border-4 border-black shadow-[8px_8px_0px_#FEE500] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
                         <div className="bg-black text-brand-yellow w-14 h-14 rounded-full flex items-center justify-center font-black text-2xl mb-6 border-4 border-brand-yellow">1</div>
@@ -366,13 +420,13 @@ export default function Home() {
                 <ReviewsSection />
             </div>
 
-            {/* GALLERY SECTION (Expanded) */}
+            {/* GALLERY SECTION (with spoiler) */}
             <section id="gallery" className="py-12 px-4 md:px-12 xl:px-24 w-full max-w-[1920px] mx-auto">
                 <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-[0.8] mb-12 text-center md:text-left">
                     {t('gallery_section.title')}
                 </h2>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[200px] md:auto-rows-[300px]">
-                    {/* Gallery Items — pre-optimized WebP, served as static files */}
+                    {/* Always visible: first 3 images */}
                     <div className="relative rounded-2xl overflow-hidden border-2 border-black group">
                         <Image src="/gallery/1.webp" alt="Автосервис Avto14 — рабочий процесс" fill sizes="(max-width: 768px) 50vw, 33vw" loading="lazy" unoptimized className="object-cover group-hover:scale-110 transition-transform duration-500" />
                     </div>
@@ -382,30 +436,46 @@ export default function Home() {
                     <div className="relative rounded-2xl overflow-hidden border-2 border-black group md:col-span-2">
                         <Image src="/gallery/4.webp" alt="Ремонт ходовой части автомобиля" fill sizes="(max-width: 768px) 50vw, 66vw" loading="lazy" unoptimized className="object-cover group-hover:scale-110 transition-transform duration-500" />
                     </div>
-                    <div className="relative rounded-2xl overflow-hidden border-2 border-black group">
-                        <Image src="/gallery/5.webp" alt="Диагностика подвески на подъемнике" fill sizes="(max-width: 768px) 50vw, 33vw" loading="lazy" unoptimized className="object-cover group-hover:scale-110 transition-transform duration-500" />
-                    </div>
-                    <div className="relative rounded-2xl overflow-hidden border-2 border-black group">
-                        <Image src="/gallery/6.webp" alt="Шиномонтаж и балансировка колес" fill sizes="(max-width: 768px) 50vw, 33vw" loading="lazy" unoptimized className="object-cover group-hover:scale-110 transition-transform duration-500" />
-                    </div>
-                    <div className="relative rounded-2xl overflow-hidden border-2 border-black group">
-                        <Image src="/gallery/7.webp" alt="Замена масла и фильтров" fill sizes="(max-width: 768px) 50vw, 33vw" loading="lazy" unoptimized className="object-cover group-hover:scale-110 transition-transform duration-500" />
-                    </div>
-                    <div className="relative rounded-2xl overflow-hidden border-2 border-black group">
-                        <Image src="/gallery/8.webp" alt="Профессиональное оборудование автосервиса" fill sizes="(max-width: 768px) 50vw, 33vw" loading="lazy" unoptimized className="object-cover group-hover:scale-110 transition-transform duration-500" />
-                    </div>
-                    <div className="relative rounded-2xl overflow-hidden border-2 border-black group">
-                        <Image src="/gallery/9.webp" alt="Результат работы — довольный клиент" fill sizes="(max-width: 768px) 50vw, 33vw" loading="lazy" unoptimized className="object-cover group-hover:scale-110 transition-transform duration-500" />
-                    </div>
-                    <div className="relative rounded-2xl overflow-hidden border-2 border-black group md:col-span-2">
-                        <Image src="/gallery/10.webp" alt="Автосервис Avto14 — вид изнутри" fill sizes="(max-width: 768px) 50vw, 66vw" loading="lazy" unoptimized className="object-cover group-hover:scale-110 transition-transform duration-500" />
-                    </div>
-                    <div className="relative rounded-2xl overflow-hidden border-2 border-black group">
-                        <Image src="/gallery/11.webp" alt="Команда автосервиса Avto14" fill sizes="(max-width: 768px) 50vw, 33vw" loading="lazy" unoptimized className="object-cover group-hover:scale-110 transition-transform duration-500" />
-                    </div>
-                </div>
-            </section>
 
+                    {/* Hidden images under spoiler */}
+                    {showAllGallery && (
+                        <>
+                            <div className="relative rounded-2xl overflow-hidden border-2 border-black group">
+                                <Image src="/gallery/5.webp" alt="Диагностика подвески на подъемнике" fill sizes="(max-width: 768px) 50vw, 33vw" loading="lazy" unoptimized className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                            </div>
+                            <div className="relative rounded-2xl overflow-hidden border-2 border-black group">
+                                <Image src="/gallery/6.webp" alt="Шиномонтаж и балансировка колес" fill sizes="(max-width: 768px) 50vw, 33vw" loading="lazy" unoptimized className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                            </div>
+                            <div className="relative rounded-2xl overflow-hidden border-2 border-black group">
+                                <Image src="/gallery/7.webp" alt="Замена масла и фильтров" fill sizes="(max-width: 768px) 50vw, 33vw" loading="lazy" unoptimized className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                            </div>
+                            <div className="relative rounded-2xl overflow-hidden border-2 border-black group">
+                                <Image src="/gallery/8.webp" alt="Профессиональное оборудование автосервиса" fill sizes="(max-width: 768px) 50vw, 33vw" loading="lazy" unoptimized className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                            </div>
+                            <div className="relative rounded-2xl overflow-hidden border-2 border-black group">
+                                <Image src="/gallery/9.webp" alt="Результат работы — довольный клиент" fill sizes="(max-width: 768px) 50vw, 33vw" loading="lazy" unoptimized className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                            </div>
+                            <div className="relative rounded-2xl overflow-hidden border-2 border-black group md:col-span-2">
+                                <Image src="/gallery/10.webp" alt="Автосервис Avto14 — вид изнутри" fill sizes="(max-width: 768px) 50vw, 66vw" loading="lazy" unoptimized className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                            </div>
+                            <div className="relative rounded-2xl overflow-hidden border-2 border-black group">
+                                <Image src="/gallery/11.webp" alt="Команда автосервиса Avto14" fill sizes="(max-width: 768px) 50vw, 33vw" loading="lazy" unoptimized className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                            </div>
+                        </>
+                    )}
+                </div>
+                {!showAllGallery && (
+                    <div className="mt-8 flex justify-center">
+                        <button
+                            onClick={() => setShowAllGallery(true)}
+                            className="bg-black text-brand-yellow px-8 py-4 rounded-2xl font-black uppercase tracking-wider text-sm border-4 border-black shadow-[4px_4px_0_#000] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all flex items-center gap-2"
+                        >
+                            {language === 'ru' ? 'Показать ещё фото' : 'Show more photos'}
+                            <ChevronDown className="w-5 h-5" />
+                        </button>
+                    </div>
+                )}
+            </section>
 
             {/* SEO & FAQ BLOCK - Refreshed */}
             <section className="bg-white text-black py-24 border-t-4 border-black font-sans overflow-hidden">
@@ -418,7 +488,7 @@ export default function Home() {
                     </div>
 
                     <div className="space-y-4">
-                        {faqs.map((faq, idx) => (
+                        {faqs.slice(0, showAllFaq ? faqs.length : 4).map((faq, idx) => (
                             <div
                                 key={idx}
                                 className={`border-4 border-black rounded-2xl overflow-hidden transition-all duration-300 ${activeFaq === idx ? 'shadow-[4px_4px_0px_#FEE500] md:shadow-[8px_8px_0px_#FEE500]' : 'shadow-[2px_2px_0px_#000] md:shadow-[4px_4px_0px_#000]'
@@ -448,6 +518,17 @@ export default function Home() {
                                 </div>
                             </div>
                         ))}
+                        {!showAllFaq && faqs.length > 4 && (
+                            <div className="flex justify-center pt-4">
+                                <button
+                                    onClick={() => setShowAllFaq(true)}
+                                    className="bg-black text-white px-8 py-4 rounded-2xl font-black uppercase tracking-wider text-sm border-4 border-black shadow-[4px_4px_0_#FEE500] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all flex items-center gap-2"
+                                >
+                                    {language === 'ru' ? `Ещё ${faqs.length - 4} вопросов` : `${faqs.length - 4} more questions`}
+                                    <ChevronDown className="w-5 h-5" />
+                                </button>
+                            </div>
+                        )}
                     </div>
 
                     {/* SEO KEYWORDS CLOUD */}
@@ -532,6 +613,43 @@ export default function Home() {
                         <p className="font-bold opacity-60 mt-8 text-sm">
                             © 2024–{new Date().getFullYear()}
                         </p>
+                    </div>
+                </div>
+
+                {/* SEO internal links for generated Brand pages */}
+                <div className="mt-16 pt-8 border-t-2 border-black/10">
+                    <h3 className="font-black uppercase text-center mb-6 opacity-50">Ремонт по маркам авто</h3>
+                    <div className="flex flex-wrap justify-center gap-x-4 gap-y-2">
+                        {[
+                            { slug: "kia", name: "KIA" },
+                            { slug: "hyundai", name: "Hyundai" },
+                            { slug: "lada", name: "LADA" },
+                            { slug: "toyota", name: "Toyota" },
+                            { slug: "volkswagen", name: "Volkswagen" },
+                            { slug: "skoda", name: "Skoda" },
+                            { slug: "renault", name: "Renault" },
+                            { slug: "nissan", name: "Nissan" },
+                            { slug: "chevrolet", name: "Chevrolet" },
+                            { slug: "ford", name: "Ford" },
+                            { slug: "mazda", name: "Mazda" },
+                            { slug: "mitsubishi", name: "Mitsubishi" },
+                            { slug: "bmw", name: "BMW" },
+                            { slug: "mercedes", name: "Mercedes-Benz" },
+                            { slug: "audi", name: "Audi" },
+                            { slug: "honda", name: "Honda" },
+                            { slug: "lexus", name: "Lexus" },
+                            { slug: "chery", name: "Chery" },
+                            { slug: "haval", name: "Haval" },
+                            { slug: "geely", name: "Geely" }
+                        ].map((brand, idx) => (
+                            <Link 
+                                key={idx} 
+                                href={`/brands/${brand.slug}`} 
+                                className="text-xs md:text-sm font-bold opacity-50 hover:opacity-100 hover:text-brand-yellow hover:bg-black px-2 py-1 rounded transition-all"
+                            >
+                                Ремонт {brand.name}
+                            </Link>
+                        ))}
                     </div>
                 </div>
             </footer >

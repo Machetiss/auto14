@@ -10,12 +10,16 @@ export const translations = {
             gallery: "Галерея"
         },
         hero: {
-            title: "Исправим стуки и вернём управляемость за 1 визит",
-            subtitle: "Ремонт ходовой и 3D сход-развал",
+            title: "Профессиональный 3D сход-развал и ремонт ходовой в Казани",
+            title_pt1: "Профессиональный",
+            title_highlight: "3D сход-развал",
+            title_pt2: "и ремонт ходовой в Казани",
+            subtitle: "Исправим стуки, вернем управляемость и защитим шины от износа за 1 визит на эталонном немецком стенде Hoffman.",
             subtitle_p1: "Ремонт ходовой",
             subtitle_p2: "3D сход-развал",
             subtitle_p3: "Шиномонтаж",
-            cta_book: "Записаться на диагностику",
+            cta_book: "Узнать причину стука бесплатно",
+            guarantee: "Согласуем цену до начала работ. Никаких скрытых платежей",
             cta_route: "Маршрут",
             consultation_free: "Консультация всегда бесплатная",
             pain_points: {
@@ -55,8 +59,8 @@ export const translations = {
             }
         },
         benefits: {
-            title: "Почему",
-            title2: "Авто14?",
+            title: "Нам доверяют",
+            title2: "13 000+ клиентов",
             hoffman: {
                 title: "3D Стенд",
                 title2: "Hoffman",
@@ -156,6 +160,46 @@ export const translations = {
                     a: "Наш главный инструмент — профессиональный немецкий 3D стенд Hoffman. Это эталон точности в мире авторемонта, исключающий человеческий фактор."
                 }
             ]
+        },
+        pricing: {
+            title: "Честные",
+            title2: "Цены",
+            tabs: {
+                domestic: "Отечественные",
+                foreign: "Иномарки",
+                commercial: "Коммерческие"
+            },
+            disclaimer: "Это базовые цены. Точную стоимость назовём после бесплатной диагностики конкретно вашего автомобиля.",
+            from: "от",
+            rub: "₽",
+            categories: {
+                alignment: "Развал-схождение",
+                suspension: "Регулярный ремонт",
+                oil: "Тех. обслуживание",
+                tires: "Шиномонтаж"
+            }
+        },
+        spinWheel: {
+            title: "Подожди!",
+            subtitle: "Крути колесо — получи подарок от Авто14",
+            phonePlaceholder: "+7 (___) ___-__-__",
+            phoneLabel: "Твой телефон",
+            spinButton: "Крутить колесо! 🎰",
+            prizes: [
+                "Бесплатная диагностика",
+                "Скидка 10% на развал",
+                "Скидка 10% на шиномонтаж",
+                "Скидка 10% на замену масла",
+                "Балансировка 4 колёс",
+                "Попробуй ещё раз"
+            ],
+            winTitle: "🎉 Поздравляем!",
+            winSubtitle: "Ты выиграл:",
+            timerText: "Приз действует:",
+            claimButton: "Записаться и забрать приз →",
+            declineText: "Нет, спасибо",
+            policy: "Нажимая кнопку, вы соглашаетесь на обработку персональных данных",
+            slotsLeft: "Осталось записей на эту неделю:"
         }
     },
     en: {
@@ -167,12 +211,16 @@ export const translations = {
             gallery: "Gallery"
         },
         hero: {
-            title: "Fix knocks & restore handling in 1 visit",
-            subtitle: "Suspension Repair and 3D Alignment",
+            title: "Professional 3D Wheel Alignment and Suspension Repair in Kazan",
+            title_pt1: "Professional",
+            title_highlight: "3D Wheel Alignment",
+            title_pt2: "and Suspension Repair in Kazan",
+            subtitle: "We'll fix knocks, restore handling, and protect your tires from wear in 1 visit on the benchmark German Hoffman stand.",
             subtitle_p1: "Suspension Repair",
             subtitle_p2: "3D Alignment",
             subtitle_p3: "Tire Service",
-            cta_book: "Book a Diagnostic",
+            cta_book: "Find out the cause for free",
+            guarantee: "We agree on the price before starting work. No hidden fees",
             cta_route: "Directions",
             consultation_free: "Free consultation — always",
             pain_points: {
@@ -212,8 +260,8 @@ export const translations = {
             }
         },
         benefits: {
-            title: "Why",
-            title2: "Avto14?",
+            title: "Trusted by",
+            title2: "13,000+ clients",
             hoffman: {
                 title: "3D Stand",
                 title2: "Hoffman",
@@ -313,6 +361,46 @@ export const translations = {
                     a: "Our main tool is a professional German Hoffman 3D stand — the benchmark for precision in automotive repair, eliminating human error."
                 }
             ]
+        },
+        pricing: {
+            title: "Fair",
+            title2: "Pricing",
+            tabs: {
+                domestic: "Domestic",
+                foreign: "Foreign",
+                commercial: "Commercial"
+            },
+            disclaimer: "These are starting prices. We'll give you an exact quote after a free inspection of your vehicle.",
+            from: "from",
+            rub: "₽",
+            categories: {
+                alignment: "Wheel Alignment",
+                suspension: "General Repair",
+                oil: "Maintenance",
+                tires: "Tire Service"
+            }
+        },
+        spinWheel: {
+            title: "Wait!",
+            subtitle: "Spin the wheel — get a gift from Avto14",
+            phonePlaceholder: "+7 (___) ___-__-__",
+            phoneLabel: "Your phone",
+            spinButton: "Spin the wheel! 🎰",
+            prizes: [
+                "Free diagnostics",
+                "10% off alignment",
+                "10% off tire service",
+                "10% off oil change",
+                "Free 4-wheel balancing",
+                "Try again"
+            ],
+            winTitle: "🎉 Congratulations!",
+            winSubtitle: "You won:",
+            timerText: "Prize valid for:",
+            claimButton: "Book & claim your prize →",
+            declineText: "No, thanks",
+            policy: "By clicking, you agree to the processing of personal data",
+            slotsLeft: "Slots left this week:"
         }
     }
 };

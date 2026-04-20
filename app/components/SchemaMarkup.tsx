@@ -10,6 +10,12 @@ export default function SchemaMarkup() {
         "image": "https://auto-14.ru/logo-wheel.png",
         "@id": "https://auto-14.ru/#organization",
         "url": "https://auto-14.ru",
+        "description": "Автосервис в Советском районе, п. Константиновка. 3D сход-развал Hoffman и ремонт ходовой.",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "128"
+        },
         "telephone": "+79992699359",
         "address": {
             "@type": "PostalAddress",

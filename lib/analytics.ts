@@ -8,11 +8,19 @@ declare global {
 
 export const sendEvent = (eventName: string, params?: EventParams) => {
   if (typeof window !== 'undefined') {
+    // 1. GTM dataLayer
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       event: eventName,
       ...params,
     });
+    
+    // 2. Direct Yandex Metrika Goal Trigger
+    const ymId = Number(process.env.NEXT_PUBLIC_YANDEX_METRIKA_ID);
+    if ((window as any).ym && ymId) {
+      (window as any).ym(ymId, 'reachGoal', eventName, params);
+    }
+
     // Optional: Log to console in development
     if (process.env.NODE_ENV === 'development') {
       console.log('[Analytics]', eventName, params);

@@ -147,9 +147,10 @@ export default function BookingModal({ isOpen, onClose, initialService = 'Схо
                     {/* Conditionally render description for 'Others' */}
                     {service === 'Другое' && (
                         <div className="animate-in fade-in slide-in-from-top-2 duration-300">
-                            <label className="block font-bold text-sm uppercase mb-1 ml-2">{t('booking.problem_label')}</label>
+                            <label className="block font-bold text-sm uppercase mb-1 ml-2">
+                                {t('booking.problem_label')} <span className="text-[10px] opacity-50 lowercase tracking-normal font-normal">(необязательно)</span>
+                            </label>
                             <textarea
-                                required
                                 rows={3}
                                 placeholder={t('booking.problem_placeholder')}
                                 value={description}
@@ -160,10 +161,11 @@ export default function BookingModal({ isOpen, onClose, initialService = 'Схо
                     )}
 
                     <div>
-                        <label className="block font-bold text-sm uppercase mb-1 ml-2">{t('booking.car_label')}</label>
+                        <label className="block font-bold text-sm uppercase mb-1 ml-2">
+                            {t('booking.car_label')} <span className="text-[10px] opacity-50 lowercase tracking-normal font-normal">(необязательно)</span>
+                        </label>
                         <input
                             type="text"
-                            required
                             placeholder={t('booking.car_placeholder')}
                             value={car}
                             onChange={(e) => setCar(e.target.value)}

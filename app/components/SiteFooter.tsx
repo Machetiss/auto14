@@ -130,6 +130,43 @@ export default function SiteFooter() {
                     </p>
                 </div>
             </div>
+
+            {/* SEO internal links for generated Brand pages */}
+            <div className="mt-16 pt-8 border-t-2 border-black/10">
+                <h3 className="font-black uppercase text-center mb-6 opacity-50">Ремонт по маркам авто</h3>
+                <div className="flex flex-wrap justify-center gap-x-4 gap-y-2">
+                    {[
+                        { slug: "kia", name: "KIA" },
+                        { slug: "hyundai", name: "Hyundai" },
+                        { slug: "lada", name: "LADA" },
+                        { slug: "toyota", name: "Toyota" },
+                        { slug: "volkswagen", name: "Volkswagen" },
+                        { slug: "skoda", name: "Skoda" },
+                        { slug: "renault", name: "Renault" },
+                        { slug: "nissan", name: "Nissan" },
+                        { slug: "chevrolet", name: "Chevrolet" },
+                        { slug: "ford", name: "Ford" },
+                        { slug: "mazda", name: "Mazda" },
+                        { slug: "mitsubishi", name: "Mitsubishi" },
+                        { slug: "bmw", name: "BMW" },
+                        { slug: "mercedes", name: "Mercedes-Benz" },
+                        { slug: "audi", name: "Audi" },
+                        { slug: "honda", name: "Honda" },
+                        { slug: "lexus", name: "Lexus" },
+                        { slug: "chery", name: "Chery" },
+                        { slug: "haval", name: "Haval" },
+                        { slug: "geely", name: "Geely" }
+                    ].map((brand, idx) => (
+                        <a 
+                            key={idx} 
+                            href={`/brands/${brand.slug}`} 
+                            className="text-xs md:text-sm font-bold opacity-50 hover:opacity-100 hover:text-brand-yellow hover:bg-black px-2 py-1 rounded transition-all"
+                        >
+                            Ремонт {brand.name}
+                        </a>
+                    ))}
+                </div>
+            </div>
         </footer>
     );
 }

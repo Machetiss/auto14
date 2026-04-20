@@ -1,9 +1,10 @@
 import { MetadataRoute } from 'next';
+import { carBrands } from '@/data/carBrands';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://www.auto-14.ru';
 
-    return [
+    const staticRoutes: MetadataRoute.Sitemap = [
         {
             url: baseUrl,
             lastModified: new Date(),
@@ -53,4 +54,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.7,
         },
     ];
+
+    const dynamicBrandRoutes: MetadataRoute.Sitemap = carBrands.map((brand) => ({
+        url: `${baseUrl}/brands/${brand.slug}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly',
+        priority: 0.6,
+    }));
+
+    return [...staticRoutes, ...dynamicBrandRoutes];
 }
