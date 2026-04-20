@@ -611,7 +611,7 @@ export default function Home() {
                             {t('common.working_hours')}
                         </div>
                         <p className="font-bold opacity-60 mt-8 text-sm">
-                            © 2024–{new Date().getFullYear()}
+                            © 2022–{new Date().getFullYear()}
                         </p>
                     </div>
                 </div>
