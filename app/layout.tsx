@@ -30,7 +30,10 @@ export const metadata: Metadata = {
     robots: {
         index: true,
         follow: true,
-    }
+    },
+    verification: {
+        google: 'google04462874207b7ab6',
+    },
 };
 
 import { BookingProvider } from './context/BookingContext';
