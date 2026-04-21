@@ -27,7 +27,7 @@ export default function Home() {
     const faqs = t('faq.items') as Array<{ q: string, a: string }>;
 
     return (
-        <div className={`min-h-screen bg-brand-yellow text-black font-sans selection:bg-black selection:text-brand-yellow relative overflow-x-hidden`}>
+        <div className={`min-h-screen bg-brand-yellow text-black font-sans selection:bg-black selection:text-brand-yellow relative`} style={{ overflowX: 'clip' }}>
 
             <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
             <NavigatorModal isOpen={isNavigatorOpen} onClose={() => setIsNavigatorOpen(false)} />
@@ -117,9 +117,9 @@ export default function Home() {
                     </div>
 
                     {/* MAIN TAGLINE - H1 and Subtitle */}
-                    <h1 className="w-full text-[7.5vw] md:text-[3.9vw] leading-tight font-black tracking-tight uppercase mb-6 text-black drop-shadow-sm max-w-4xl">
+                    <h1 className="w-full text-[5.8vw] md:text-[3.9vw] leading-tight font-black tracking-tight uppercase mb-6 text-black drop-shadow-sm max-w-4xl" style={{ overflowWrap: 'break-word', wordBreak: 'break-word' }}>
                         {t('hero.title_pt1')}{" "}
-                        <span className="bg-black text-white px-3 md:px-4 py-1 mx-1 rounded-xl inline-block -rotate-[2deg] shadow-[4px_4px_0px_0px_#FF4500] leading-none transform -translate-y-1">
+                        <span className="bg-black text-white px-2 md:px-4 py-1 mx-0 md:mx-1 rounded-xl inline-block -rotate-[2deg] shadow-[3px_3px_0px_0px_#FF4500] leading-none transform -translate-y-1">
                             {t('hero.title_highlight')}
                         </span>{" "}
                         {t('hero.title_pt2')}
