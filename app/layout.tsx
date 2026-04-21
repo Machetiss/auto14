@@ -1,6 +1,12 @@
 import { Suspense } from 'react';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import './globals.css';
+
+export const viewport: Viewport = {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+};
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://www.auto-14.ru'),
@@ -43,6 +49,7 @@ export default function RootLayout({
         <LanguageProvider>
             <html lang="ru">
                 <head>
+                    <meta name="viewport" content="width=device-width, initial-scale=1" />
                 </head>
                 <body className="antialiased">
                     <Suspense fallback={null}>
