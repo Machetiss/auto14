@@ -57,3 +57,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* iOS Safari fix: position:relative prevents marquee from breaking overflow boundary */
+body {
+  position: relative;
+}

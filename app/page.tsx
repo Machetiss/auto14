@@ -206,7 +206,7 @@ export default function Home() {
             </main>
 
             {/* SERVICES TICKER */}
-            <div className="bg-black text-[#FFF500] py-6 overflow-hidden border-y-4 border-black">
+            <div className="bg-black text-[#FFF500] py-6 overflow-hidden border-y-4 border-black" style={{ isolation: 'isolate', transform: 'translateZ(0)' }}>
                 <div className="animate-marquee whitespace-nowrap flex gap-16 text-3xl font-black uppercase tracking-widest min-w-full">
                     <span>• {t('booking.services.suspension')}</span>
                     <span>• {t('booking.services.alignment')}</span>
