@@ -205,19 +205,6 @@ export default function Home() {
                 </div>
             </main>
 
-            {/* SERVICES TICKER */}
-            <div className="bg-black text-[#FFF500] py-6 overflow-hidden border-y-4 border-black" style={{ clipPath: 'inset(0)', WebkitClipPath: 'inset(0)' }}>
-                <div className="animate-marquee whitespace-nowrap flex gap-16 text-3xl font-black uppercase tracking-widest min-w-full">
-                    <span>• {t('booking.services.suspension')}</span>
-                    <span>• {t('booking.services.alignment')}</span>
-                    <span>• {t('booking.services.maintenance')}</span>
-                    <span>• {t('booking.services.parts')}</span>
-                    <span>• {t('hero.title')}</span>
-                    <span>• {t('booking.services.suspension')}</span>
-                    <span>• {t('booking.services.alignment')}</span>
-                </div>
-            </div>
-
             {/* SERVICES GRID — COLLAPSIBLE */}
             <section id="services" className="py-16 px-4 md:px-12 xl:px-24 w-full max-w-[1920px] mx-auto">
                 <button
