@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Замена масла в двигателе Казань | Плановое ТО | Avto14',
+    title: 'Замена масла в двигателе Казань | Плановое ТО',
     description: 'Экспресс замена масла в двигателе и фильтров. Плановое ТО автомобиля в Константиновке (Казань). Качественные масла и расходники в наличии.',
     alternates: {
         canonical: 'https://auto-14.ru/zamena-masla',

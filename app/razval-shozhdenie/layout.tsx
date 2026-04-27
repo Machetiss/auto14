@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: '3D Развал-схождение в Казани | Стенд Hoffman | Автосервис Avto14',
+    title: '3D Развал-схождение в Казани | Стенд Hoffman',
     description: 'Сделать 3D развал-схождение в Казани (Константиновка). Высокоточный стенд Hoffman, гарантия на работы. Цены от 1200 руб.',
     alternates: {
         canonical: 'https://auto-14.ru/razval-shozhdenie',

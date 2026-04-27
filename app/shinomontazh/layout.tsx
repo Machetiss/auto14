@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Шиномонтаж в Казани (Константиновка) | Балансировка колес | Avto14',
+    title: 'Шиномонтаж в Казани (Константиновка) | Балансировка колес',
     description: 'Услуги шиномонтажа в Казани: сезонная переобувка, точная балансировка, ремонт проколов. Быстро, качественно, без очередей (по записи).',
     alternates: {
         canonical: 'https://auto-14.ru/shinomontazh',

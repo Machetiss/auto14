@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Ремонт ходовой и подвески в Казани | Диагностика | Avto14',
+    title: 'Ремонт ходовой и подвески в Казани | Диагностика',
     description: 'Профессиональный ремонт ходовой части и подвески автомобиля в Казани. Диагностика, замена рычагов, сайлентблоков, амортизаторов. Гарантия.',
     alternates: {
         canonical: 'https://auto-14.ru/remont-podveski',
