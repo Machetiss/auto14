@@ -35,8 +35,8 @@ const nextConfig = {
                         value: 'nosniff'
                     },
                     {
-                        key: 'X-Frame-Options',
-                        value: 'DENY'
+                        key: 'Content-Security-Policy',
+                        value: "frame-ancestors 'self' *.yandex.ru *.yandex.com *.yandex.by *.yandex.com.tr *.webvisor.com"
                     },
                     {
                         key: 'X-XSS-Protection',
