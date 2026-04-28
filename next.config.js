@@ -15,6 +15,11 @@ const nextConfig = {
                 destination: 'https://www.auto-14.ru/:path*',
                 permanent: true,
             },
+            {
+                source: '/uslugi',
+                destination: '/',
+                permanent: true,
+            },
         ];
     },
     async headers() {
