@@ -7,7 +7,8 @@ export const translations = {
             services: "Услуги",
             reviews: "Отзывы",
             contacts: "Контакты",
-            gallery: "Галерея"
+            gallery: "Галерея",
+            catalog: "Справочник ТО"
         },
         hero: {
             title: "Профессиональный 3D сход-развал и ремонт ходовой в Казани",
@@ -208,7 +209,8 @@ export const translations = {
             services: "Services",
             reviews: "Reviews",
             contacts: "Contacts",
-            gallery: "Gallery"
+            gallery: "Gallery",
+            catalog: "Technical Catalog"
         },
         hero: {
             title: "Professional 3D Wheel Alignment and Suspension Repair in Kazan",

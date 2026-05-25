@@ -25,6 +25,7 @@ export default function SiteHeader({ onOpenBooking }: SiteHeaderProps) {
                     </Link>
                     <Link href="/#services" className="hover:text-accent-orange transition-colors">{t('nav.services')}</Link>
                     <Link href="/#reviews" className="hover:text-accent-orange transition-colors">{t('nav.reviews')}</Link>
+                    <Link href="/catalog" className="hover:text-accent-orange transition-colors text-accent-orange font-black underline decoration-2 underline-offset-4">{t('nav.catalog')}</Link>
                     <Link href="/#contacts" className="hover:text-accent-orange transition-colors">{t('nav.contacts')}</Link>
                 </nav>
 

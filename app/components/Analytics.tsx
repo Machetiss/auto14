@@ -3,9 +3,29 @@
 import Script from "next/script";
 
 export default function Analytics() {
+    const gaId = process.env.NEXT_PUBLIC_GA_ID;
+
     return (
         <>
-            {/* Noscript fallback for Yandex Metrika (main counter is in YandexMetrika.tsx) */}
+            {/* Google Analytics (GA4) */}
+            {gaId && (
+                <>
+                    <Script
+                        src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+                        strategy="afterInteractive"
+                    />
+                    <Script id="google-analytics" strategy="afterInteractive">
+                        {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${gaId}');
+            `}
+                    </Script>
+                </>
+            )}
+
+            {/* Noscript fallback for Yandex Metrika */}
             <noscript>
                 <div>
                     {/* eslint-disable-next-line @next/next/no-img-element */}

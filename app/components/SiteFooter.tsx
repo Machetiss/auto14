@@ -131,8 +131,20 @@ export default function SiteFooter() {
                 </div>
             </div>
 
+            {/* Catalog & Blog Links */}
+            <div className="mt-16 pt-8 border-t-2 border-black/10 text-center">
+                <div className="flex flex-wrap justify-center gap-8 mb-8">
+                    <a href="/catalog" className="text-xl font-black uppercase hover:text-accent-orange transition-all flex items-center gap-2">
+                        Справочник ТО
+                    </a>
+                    <a href="/blog" className="text-xl font-black uppercase hover:text-accent-orange transition-all flex items-center gap-2">
+                        Блог
+                    </a>
+                </div>
+            </div>
+
             {/* SEO internal links for generated Brand pages */}
-            <div className="mt-16 pt-8 border-t-2 border-black/10">
+            <div className="mt-8 pt-8 border-t-2 border-black/10">
                 <h3 className="font-black uppercase text-center mb-6 opacity-50">Ремонт по маркам авто</h3>
                 <div className="flex flex-wrap justify-center gap-x-4 gap-y-2">
                     {[

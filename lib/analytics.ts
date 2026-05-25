@@ -14,8 +14,13 @@ export const sendEvent = (eventName: string, params?: EventParams) => {
       event: eventName,
       ...params,
     });
+
+    // 2. Direct GA4 (gtag)
+    if ((window as any).gtag) {
+      (window as any).gtag('event', eventName, params);
+    }
     
-    // 2. Direct Yandex Metrika Goal Trigger
+    // 3. Direct Yandex Metrika Goal Trigger
     const ymId = Number(process.env.NEXT_PUBLIC_YANDEX_METRIKA_ID);
     if ((window as any).ym && ymId) {
       (window as any).ym(ymId, 'reachGoal', eventName, params);
