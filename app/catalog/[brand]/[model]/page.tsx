@@ -10,6 +10,9 @@ export async function generateMetadata({ params }: { params: { brand: string, mo
     return {
         title: `Объем масла и фильтры ${brand} ${model} | Справочник Авто14`,
         description: `Технические характеристики ТО для ${brand} ${model}: объем масла, допуски, артикулы фильтров MANN. Профессиональное обслуживание в Казани.`,
+        alternates: {
+            canonical: `/catalog/${params.brand.toLowerCase()}/${encodeURIComponent(params.model)}`,
+        },
     };
 }
 

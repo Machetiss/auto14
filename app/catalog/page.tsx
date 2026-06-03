@@ -5,6 +5,9 @@ import { PackageSearch, ChevronRight } from 'lucide-react';
 export const metadata = {
     title: 'Каталог масел и фильтров по маркам авто | Авто14',
     description: 'Узнайте точный объем масла и артикулы фильтров для вашего автомобиля. Официальные допуски и рекомендации.',
+    alternates: {
+        canonical: '/catalog',
+    },
 };
 
 export default function CatalogPage() {

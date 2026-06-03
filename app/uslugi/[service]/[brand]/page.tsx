@@ -43,6 +43,9 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
       description,
       type: 'website',
     },
+    alternates: {
+      canonical: `/uslugi/${serviceData.slug}/${brandData.slug}`,
+    },
   };
 }
 

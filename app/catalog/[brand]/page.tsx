@@ -8,6 +8,9 @@ export async function generateMetadata({ params }: { params: { brand: string } }
     return {
         title: `Каталог моделей ${brandName} | Характеристики ТО | Авто14`,
         description: `Выберите модель ${brandName}, чтобы узнать заправочные объемы масла и артикулы расходников.`,
+        alternates: {
+            canonical: `/catalog/${params.brand.toLowerCase()}`,
+        },
     };
 }
 

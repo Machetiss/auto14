@@ -24,6 +24,9 @@ export async function generateMetadata({ params }: { params: { brand: string } }
     return {
         title: `Ремонт и Сход-развал ${brandData.name} (${brandData.nameRu}) в Казани`,
         description: `Стук в подвеске? Профессиональный ремонт ходовой, ТО и 3D сход-развал для автомобилей ${brandData.name} в Казани. Опытные мастера, честные цены от 600 рублей.`,
+        alternates: {
+            canonical: `/brands/${brandData.slug}`,
+        },
     };
 }
 

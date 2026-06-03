@@ -24,9 +24,6 @@ export const metadata: Metadata = {
         locale: 'ru_RU',
         type: 'website',
     },
-    alternates: {
-        canonical: '/',
-    },
     robots: {
         index: true,
         follow: true,
