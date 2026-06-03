@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: '3D Развал-схождение в Казани | Стенд Hoffman',
-    description: 'Сделать 3D развал-схождение в Казани (Константиновка). Высокоточный стенд Hoffman, гарантия на работы. Цены от 1200 руб.',
+    description: 'Сделать 3D развал-схождение в Казани (Константиновка). Высокоточный стенд Hoffman, гарантия на работы. Цены от 1400 руб.',
     alternates: {
-        canonical: 'https://auto-14.ru/razval-shozhdenie',
+        canonical: '/razval-shozhdenie',
     },
     openGraph: {
         title: '3D Развал-схождение в Казани | Стенд Hoffman | Автосервис Avto14',
@@ -33,7 +33,7 @@ export default function Layout({
             "description": "Идеальная точность на стенде Hoffman. Устраним жор резины и увод руля за 20 минут.",
             "offers": {
                 "@type": "Offer",
-                "price": "1200",
+                "price": "1400",
                 "priceCurrency": "RUB",
                 "description": "Цена за одну ось"
             }
@@ -47,7 +47,7 @@ export default function Layout({
                     "name": "Сколько стоит развал-схождение?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "От 1200 ₽ за одну ось (например, Kia Rio). Две оси — от 2200 ₽ (схождение) до 2600 ₽ (полный комплекс)."
+                        "text": "От 1400 ₽ за одну ось (например, Kia Rio). Две оси — от 2200 ₽ (схождение) до 2600 ₽ (полный комплекс)."
                     }
                 },
                 {

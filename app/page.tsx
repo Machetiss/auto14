@@ -246,7 +246,7 @@ export default function Home() {
                         <h3 className="text-2xl font-black uppercase mb-4">{t('services_section.alignment.name')}</h3>
                         <p className="text-sm font-black opacity-60 mb-6 flex-grow">{t('services_section.alignment.desc')}</p>
                         <div className="flex justify-between items-center border-t-2 border-black pt-4">
-                            <span className="font-black text-xl">{language === 'ru' ? 'от 1200 ₽' : 'from 1200 ₽'}</span>
+                            <span className="font-black text-xl">{language === 'ru' ? 'от 1400 ₽' : 'from 1400 ₽'}</span>
                             <ChevronRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                         </div>
                     </Link>

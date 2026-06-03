@@ -15,7 +15,7 @@ export default function RazvalShozhdenie() {
                 "Идеальная точность на стенде Hoffman. Устраним жор резины и увод руля за 20 минут.",
                 "Perfect precision on a Hoffman stand. We'll fix tire wear and steering pull in 20 minutes."
             )}
-            price={l("от 1200₽", "from 1200₽")}
+            price={l("от 1400₽", "from 1400₽")}
             heroImage="/job/razval.jpg"
             symptoms={[
                 l("Машину тянет в сторону на ровной дороге", "Car pulls to one side on a straight road"),
@@ -67,7 +67,7 @@ export default function RazvalShozhdenie() {
             faq={[
                 {
                     question: l("Сколько стоит развал-схождение?", "How much does wheel alignment cost?"),
-                    answer: l("От 1200 ₽ за одну ось (например, Kia Rio). Две оси — от 2200 ₽ (схождение) до 2600 ₽ (полный комплекс).", "From 1,200 ₽ for one axle (e.g. Kia Rio). Two axles — from 2,200 ₽ (toe) to 2,600 ₽ (full package).")
+                    answer: l("От 1400 ₽ за одну ось (например, Kia Rio). Две оси — от 2200 ₽ (схождение) до 2600 ₽ (полный комплекс).", "From 1,400 ₽ for one axle (e.g. Kia Rio). Two axles — from 2,200 ₽ (toe) to 2,600 ₽ (full package).")
                 },
                 {
                     question: l("Нужно ли делать развал после смены резины?", "Do I need alignment after changing tires?"),

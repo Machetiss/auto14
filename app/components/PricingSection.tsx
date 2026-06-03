@@ -15,7 +15,7 @@ interface PriceItem {
 }
 
 const alignmentData: PriceItem[] = [
-    { name: 'Веста / Иномарки — только схождение спереди', nameEn: 'Vesta / Foreign — front toe only', price: 1200 },
+    { name: 'Веста / Иномарки — только схождение спереди', nameEn: 'Vesta / Foreign — front toe only', price: 1400 },
     { name: 'Land Cruiser, Prado — только схождение спереди', nameEn: 'Land Cruiser, Prado — front toe only', price: 1500 },
     { name: 'Гранта, Приора, Калина, Богдан, Он-До', nameEn: 'Granta, Priora, Kalina, Bogdan, On-Do', price: 1800, note: 'зависит от состояния рег. элементов', noteEn: 'depends on adjustment bolt condition' },
     { name: 'Иномарки — схождение перед + зад (2 оси)', nameEn: 'Foreign — front + rear toe (2 axles)', price: 2200 },

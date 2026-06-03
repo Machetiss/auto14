@@ -104,7 +104,7 @@ export default function ServicePageLayout({
             <section className="py-24 bg-ui-dark text-white border-y-4 border-black">
                 <div className="container mx-auto px-4">
                     <h2 className="text-2xl sm:text-3xl md:text-6xl font-black uppercase mb-16 tracking-tighter font-display">
-                        {l('Почему', 'Why')} <span className="text-brand-yellow">{l('Авто14', 'Avto14')}?</span>
+                        {l('Почему более 13 000 клиентов', 'Why more than 13,000 clients')} <span className="text-brand-yellow">{l('выбрали нас', 'chose us')}?</span>
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {features.map((feature, idx) => (

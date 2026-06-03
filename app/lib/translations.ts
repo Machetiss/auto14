@@ -40,7 +40,7 @@ export const translations = {
             more: "Подробнее",
             alignment: {
                 name: "3D Развал-схождение",
-                desc: "Стенд Hoffman 3D. Высочайшая точность регулировки углов. От 1200 ₽."
+                desc: "Стенд Hoffman 3D. Высочайшая точность регулировки углов. От 1400 ₽."
             },
             suspension: {
                 name: "Ремонт ходовой",
@@ -93,7 +93,7 @@ export const translations = {
         common: {
             phone: "+7 (999) 269-93-59",
             address: "ул. Заречная 5Б, Казань",
-            working_hours: "Пн-Сб: 9:00 - 20:00",
+            working_hours: "Пн-Сб: 9:00 - 19:00",
             call_us: "Позвонить",
             booking: "Запись",
             booking_desc: "Оставьте заявку — перезвоним за 5–10 минут, назовём цену и подберём время.",
@@ -242,7 +242,7 @@ export const translations = {
             more: "Learn more",
             alignment: {
                 name: "3D Wheel Alignment",
-                desc: "Hoffman 3D stand. Precision angle adjustment to factory specs. From 1200 ₽."
+                desc: "Hoffman 3D stand. Precision angle adjustment to factory specs. From 1400 ₽."
             },
             suspension: {
                 name: "Suspension Repair",
@@ -295,7 +295,7 @@ export const translations = {
         common: {
             phone: "+7 (999) 269-93-59",
             address: "5B Zarechnaya St, Kazan",
-            working_hours: "Mon–Sat: 9 AM – 8 PM",
+            working_hours: "Mon–Sat: 9 AM – 7 PM",
             call_us: "Call Us",
             booking: "Booking",
             booking_desc: "Leave a request — we'll call back in 5–10 minutes, name the price and schedule your visit.",
