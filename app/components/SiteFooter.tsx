@@ -8,7 +8,7 @@ import { handleContactClick } from '@/lib/analytics';
 export default function SiteFooter() {
     return (
         <footer id="contacts" className="py-24 px-4 md:px-12 max-w-7xl mx-auto pb-32">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
                 {/* Address & Map */}
                 <div className="bg-black text-[#FFF500] p-0 rounded-[2rem] border-4 border-black shadow-xl overflow-hidden flex flex-col h-[400px]">
                     <div className="p-8 pb-4 text-center">
@@ -125,18 +125,37 @@ export default function SiteFooter() {
                     </div>
                 </div>
 
-                {/* Branding/Hours */}
-                <div className="bg-[#FFF500] text-black p-8 rounded-[2rem] border-4 border-black shadow-xl flex flex-col items-center text-center justify-center">
-                    <h2 className="text-5xl font-black uppercase tracking-tighter mb-4 text-black">
-                        Авто14
-                    </h2>
-                    <div className="mt-4 font-black text-xl">
-                        Пн – Сб<br />09:00 – 19:00
+                {/* 2GIS Map */}
+                <div className="bg-black text-[#FFF500] p-0 rounded-[2rem] border-4 border-black shadow-xl overflow-hidden flex flex-col h-[400px]">
+                    <div className="p-8 pb-4 text-center">
+                        <h3 className="font-black uppercase text-xl mb-2">На карте 2ГИС</h3>
+                        <p className="font-bold text-sm mb-4">г. Казань, Константиновка, ул. Заречная 5Б</p>
                     </div>
-                    <p className="font-bold opacity-60 mt-8 text-sm">
-                        © 2022–{new Date().getFullYear()}
-                    </p>
+                    <div className="flex-grow w-full relative h-[300px]">
+                        <iframe
+                            src="https://widgets.2gis.com/widget?type=firmsonmap&options=%7B%22pos%22%3A%7B%22lat%22%3A55.809049%2C%22lon%22%3A49.264877%2C%22zoom%22%3A16%7D%2C%22opt%22%3A%7B%22city%22%3A%22kazan%22%7D%2C%22org%22%3A%2270000001083074068%22%7D"
+                            width="100%"
+                            height="100%"
+                            frameBorder="0"
+                            className="grayscale hover:grayscale-0 transition-all duration-500 relative z-10"
+                            title="Адрес автосервиса Авто14 на 2ГИС"
+                            loading="lazy"
+                        ></iframe>
+                    </div>
                 </div>
+            </div>
+
+            {/* Branding/Hours */}
+            <div className="bg-[#FFF500] text-black p-8 rounded-[2rem] border-4 border-black shadow-xl flex flex-col items-center text-center justify-center max-w-3xl mx-auto">
+                <h2 className="text-5xl font-black uppercase tracking-tighter mb-4 text-black">
+                    Авто14
+                </h2>
+                <div className="mt-4 font-black text-xl">
+                    Пн – Сб<br />09:00 – 19:00
+                </div>
+                <p className="font-bold opacity-60 mt-8 text-sm">
+                    © 2022–{new Date().getFullYear()}
+                </p>
             </div>
 
             {/* Catalog & Blog Links */}
