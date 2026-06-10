@@ -551,6 +551,8 @@ export default function Home() {
                                 height="100%"
                                 frameBorder="0"
                                 className="grayscale hover:grayscale-0 transition-all duration-500 relative z-10"
+                                title="Адрес автосервиса Авто14 на Яндекс.Картах"
+                                loading="lazy"
                             ></iframe>
                         </div>
                     </div>
@@ -564,8 +566,8 @@ export default function Home() {
                             <div className="flex flex-col items-center border-b border-black/10 pb-4 last:border-0 last:pb-0">
                                 <a href="tel:+79992699359" className="text-xl font-black hover:text-[#dba800] transition-colors mb-2">+7 (999) 269-93-59</a>
                                 <div className="flex gap-4">
-                                    <a href="https://wa.me/79992699359" className="text-[#25D366] hover:scale-110 transition-transform"><WhatsAppIcon className="w-6 h-6" /></a>
-                                    <a href="https://t.me/+79992699359" className="text-[#0088cc] hover:scale-110 transition-transform"><TelegramIcon className="w-6 h-6" /></a>
+                                    <a href="https://wa.me/79992699359" aria-label="WhatsApp" className="text-[#25D366] hover:scale-110 transition-transform"><WhatsAppIcon className="w-6 h-6" /></a>
+                                    <a href="https://t.me/+79992699359" aria-label="Telegram" className="text-[#0088cc] hover:scale-110 transition-transform"><TelegramIcon className="w-6 h-6" /></a>
                                 </div>
                             </div>
 
@@ -573,8 +575,8 @@ export default function Home() {
                             <div className="flex flex-col items-center border-b border-black/10 pb-4 last:border-0 last:pb-0">
                                 <a href="tel:+79294945174" className="text-xl font-black hover:text-[#dba800] transition-colors mb-2">+7 (929) 494-51-74</a>
                                 <div className="flex gap-4">
-                                    <a href="https://wa.me/79294945174" className="text-[#25D366] hover:scale-110 transition-transform"><WhatsAppIcon className="w-6 h-6" /></a>
-                                    <a href="https://t.me/+79294945174" className="text-[#0088cc] hover:scale-110 transition-transform"><TelegramIcon className="w-6 h-6" /></a>
+                                    <a href="https://wa.me/79294945174" aria-label="WhatsApp" className="text-[#25D366] hover:scale-110 transition-transform"><WhatsAppIcon className="w-6 h-6" /></a>
+                                    <a href="https://t.me/+79294945174" aria-label="Telegram" className="text-[#0088cc] hover:scale-110 transition-transform"><TelegramIcon className="w-6 h-6" /></a>
                                 </div>
                             </div>
 
@@ -582,8 +584,8 @@ export default function Home() {
                             <div className="flex flex-col items-center border-b border-black/10 pb-4 last:border-0 last:pb-0">
                                 <a href="tel:+79241619754" className="text-xl font-black hover:text-[#dba800] transition-colors mb-2">+7 (924) 161-97-54</a>
                                 <div className="flex gap-4">
-                                    <a href="https://wa.me/79241619754" className="text-[#25D366] hover:scale-110 transition-transform"><WhatsAppIcon className="w-6 h-6" /></a>
-                                    <a href="https://t.me/+79241619754" className="text-[#0088cc] hover:scale-110 transition-transform"><TelegramIcon className="w-6 h-6" /></a>
+                                    <a href="https://wa.me/79241619754" aria-label="WhatsApp" className="text-[#25D366] hover:scale-110 transition-transform"><WhatsAppIcon className="w-6 h-6" /></a>
+                                    <a href="https://t.me/+79241619754" aria-label="Telegram" className="text-[#0088cc] hover:scale-110 transition-transform"><TelegramIcon className="w-6 h-6" /></a>
                                 </div>
                             </div>
                         </div>
@@ -605,7 +607,7 @@ export default function Home() {
 
                 {/* SEO internal links for generated Brand pages */}
                 <div className="mt-16 pt-8 border-t-2 border-black/10">
-                    <h3 className="font-black uppercase text-center mb-6 opacity-50">Ремонт по маркам авто</h3>
+                    <h3 className="font-black uppercase text-center mb-6 opacity-80">Ремонт по маркам авто</h3>
                     <div className="flex flex-wrap justify-center gap-x-4 gap-y-2">
                         {[
                             { slug: "kia", name: "KIA" },
@@ -632,7 +634,7 @@ export default function Home() {
                             <Link 
                                 key={idx} 
                                 href={`/brands/${brand.slug}`} 
-                                className="text-xs md:text-sm font-bold opacity-50 hover:opacity-100 hover:text-brand-yellow hover:bg-black px-2 py-1 rounded transition-all"
+                                className="text-xs md:text-sm font-bold opacity-80 hover:opacity-100 hover:text-brand-yellow hover:bg-black px-2 py-1 rounded transition-all"
                             >
                                 Ремонт {brand.name}
                             </Link>

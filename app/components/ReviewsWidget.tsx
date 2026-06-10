@@ -64,6 +64,7 @@ export default function ReviewsWidget() {
                             className="w-full h-full border-none"
                             src="https://yandex.ru/maps-reviews-widget/108623850068?comments"
                             title="Отзывы на Яндекс.Картах"
+                            loading="lazy"
                         />
                         <div className="absolute bottom-4 right-4 z-10">
                             <a

@@ -23,6 +23,8 @@ export default function SiteFooter() {
                             height="100%"
                             frameBorder="0"
                             className="grayscale hover:grayscale-0 transition-all duration-500 relative z-10"
+                            title="Адрес автосервиса Авто14 на Яндекс.Картах"
+                            loading="lazy"
                         ></iframe>
                     </div>
                 </div>
@@ -46,6 +48,7 @@ export default function SiteFooter() {
                                     href="https://wa.me/79992699359"
                                     className="text-[#25D366] hover:scale-110 transition-transform"
                                     onClick={() => handleContactClick('messenger', 'whatsapp', '+79992699359')}
+                                    aria-label="WhatsApp"
                                 >
                                     <WhatsAppIcon className="w-6 h-6" />
                                 </a>
@@ -53,6 +56,7 @@ export default function SiteFooter() {
                                     href="https://t.me/avto14_bot"
                                     className="text-[#0088cc] hover:scale-110 transition-transform"
                                     onClick={() => handleContactClick('messenger', 'telegram', 'avto14_bot')}
+                                    aria-label="Telegram"
                                 >
                                     <TelegramIcon className="w-6 h-6" />
                                 </a>
@@ -73,6 +77,7 @@ export default function SiteFooter() {
                                     href="https://wa.me/79294945174"
                                     className="text-[#25D366] hover:scale-110 transition-transform"
                                     onClick={() => handleContactClick('messenger', 'whatsapp', '+79294945174')}
+                                    aria-label="WhatsApp"
                                 >
                                     <WhatsAppIcon className="w-6 h-6" />
                                 </a>
@@ -81,6 +86,7 @@ export default function SiteFooter() {
                                     href="https://t.me/+79294945174"
                                     className="text-[#0088cc] hover:scale-110 transition-transform"
                                     onClick={() => handleContactClick('messenger', 'telegram', '+79294945174')}
+                                    aria-label="Telegram"
                                 >
                                     <TelegramIcon className="w-6 h-6" />
                                 </a>
@@ -101,6 +107,7 @@ export default function SiteFooter() {
                                     href="https://wa.me/79241619754"
                                     className="text-[#25D366] hover:scale-110 transition-transform"
                                     onClick={() => handleContactClick('messenger', 'whatsapp', '+79241619754')}
+                                    aria-label="WhatsApp"
                                 >
                                     <WhatsAppIcon className="w-6 h-6" />
                                 </a>
@@ -108,6 +115,7 @@ export default function SiteFooter() {
                                     href="https://t.me/avto14_bot"
                                     className="text-[#0088cc] hover:scale-110 transition-transform"
                                     onClick={() => handleContactClick('messenger', 'telegram', 'avto14_bot')}
+                                    aria-label="Telegram"
                                 >
                                     <TelegramIcon className="w-6 h-6" />
                                 </a>
@@ -145,7 +153,7 @@ export default function SiteFooter() {
 
             {/* SEO internal links for generated Brand pages */}
             <div className="mt-8 pt-8 border-t-2 border-black/10">
-                <h3 className="font-black uppercase text-center mb-6 opacity-50">Ремонт по маркам авто</h3>
+                <h3 className="font-black uppercase text-center mb-6 opacity-80">Ремонт по маркам авто</h3>
                 <div className="flex flex-wrap justify-center gap-x-4 gap-y-2">
                     {[
                         { slug: "kia", name: "KIA" },
@@ -172,7 +180,7 @@ export default function SiteFooter() {
                         <a 
                             key={idx} 
                             href={`/brands/${brand.slug}`} 
-                            className="text-xs md:text-sm font-bold opacity-50 hover:opacity-100 hover:text-brand-yellow hover:bg-black px-2 py-1 rounded transition-all"
+                            className="text-xs md:text-sm font-bold opacity-80 hover:opacity-100 hover:text-brand-yellow hover:bg-black px-2 py-1 rounded transition-all"
                         >
                             Ремонт {brand.name}
                         </a>

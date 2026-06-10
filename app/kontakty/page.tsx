@@ -128,6 +128,8 @@ export default function Kontakty() {
                                 height="100%"
                                 frameBorder="0"
                                 className="grayscale group-hover:grayscale-0 transition-all duration-700"
+                                title="Адрес автосервиса Авто14 на Яндекс.Картах"
+                                loading="lazy"
                             ></iframe>
                             <div className="absolute bottom-6 right-6 bg-black text-[#FFF500] px-6 py-2 rounded-xl font-black uppercase text-xs border-2 border-[#FFF500] z-20 pointer-events-none">
                                 {l('Константиновка', 'Konstantinovka')}

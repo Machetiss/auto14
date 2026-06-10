@@ -41,7 +41,7 @@ const nextConfig = {
                     },
                     {
                         key: 'Content-Security-Policy',
-                        value: "frame-ancestors 'self' *.yandex.ru *.yandex.com *.yandex.by *.yandex.com.tr *.webvisor.com"
+                        value: "frame-ancestors 'self' *.yandex.ru *.yandex.com *.yandex.by *.yandex.com.tr *.webvisor.com; object-src 'none'; base-uri 'none';"
                     },
                     {
                         key: 'X-XSS-Protection',
@@ -50,6 +50,10 @@ const nextConfig = {
                     {
                         key: 'Referrer-Policy',
                         value: 'origin-when-cross-origin'
+                    },
+                    {
+                        key: 'Cross-Origin-Opener-Policy',
+                        value: 'same-origin-allow-popups'
                     }
                 ]
             }

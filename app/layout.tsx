@@ -1,6 +1,28 @@
 import { Suspense } from 'react';
 import type { Metadata, Viewport } from 'next';
+import { Inter, Unbounded, Caveat } from 'next/font/google';
 import './globals.css';
+
+const inter = Inter({
+    subsets: ['cyrillic', 'latin'],
+    weight: ['400', '700', '900'],
+    variable: '--font-inter',
+    display: 'swap',
+});
+
+const unbounded = Unbounded({
+    subsets: ['cyrillic', 'latin'],
+    weight: ['400', '700', '900'],
+    variable: '--font-unbounded',
+    display: 'swap',
+});
+
+const caveat = Caveat({
+    subsets: ['cyrillic', 'latin'],
+    weight: ['400', '700'],
+    variable: '--font-caveat',
+    display: 'swap',
+});
 
 export const viewport: Viewport = {
     width: 'device-width',
@@ -52,7 +74,7 @@ export default function RootLayout({
                     <meta name="viewport" content="width=device-width, initial-scale=1" />
                     <meta name="google-site-verification" content="ezvh9INv48dll0s1Q9eGkHoUoQWSVrqfPaB9rSZs05Q" />
                 </head>
-                <body className="antialiased">
+                <body className={`antialiased ${inter.variable} ${unbounded.variable} ${caveat.variable}`}>
                     <Suspense fallback={null}>
                         <YandexMetrika />
                     </Suspense>
