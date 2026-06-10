@@ -117,7 +117,7 @@ export default function Home() {
                     </div>
 
                     {/* MAIN TAGLINE - H1 and Subtitle */}
-                    <h1 className="w-full text-[5.8vw] md:text-[3.9vw] leading-tight font-black tracking-tight uppercase mb-6 text-black drop-shadow-sm max-w-4xl" style={{ overflowWrap: 'break-word', wordBreak: 'break-word' }}>
+                    <h1 className="w-full text-[5.8vw] md:text-[3.9vw] leading-tight font-black tracking-tight uppercase mb-6 text-black drop-shadow-sm max-w-4xl">
                         {t('hero.title_pt1')}{" "}
                         <span className="bg-black text-white px-2 md:px-4 py-1 mx-0 md:mx-1 rounded-xl inline-block -rotate-[2deg] shadow-[3px_3px_0px_0px_#FF4500] leading-none transform -translate-y-1">
                             {t('hero.title_highlight')}
