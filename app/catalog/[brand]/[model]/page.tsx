@@ -122,8 +122,8 @@ export default function ModelSpecPage({ params }: { params: { brand: string, mod
 
                     {/* CTA Section */}
                     <div className="bg-brand-yellow/30 p-10 md:p-12 border-t-8 border-black text-center">
-                        <h3 className="text-2xl md:text-3xl font-black uppercase mb-4">Запишитесь на ТО в Авто14</h3>
-                        <p className="font-bold mb-8 opacity-70">Быстрая доставка запчастей от 2 часов. Гарантия на работы и запчасти.</p>
+                        <h3 className="text-2xl md:text-3xl font-black uppercase mb-4">Узнали объем? Приезжайте на замену масла в Казани!</h3>
+                        <p className="font-bold text-lg mb-8 opacity-90">Доставим нужное масло и фильтры за 2 часа. Запишитесь сейчас!</p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <Link href="/#contacts" className="bg-black text-white px-8 py-4 rounded-2xl font-black uppercase tracking-wider shadow-[6px_6px_0_#FF4500] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all flex items-center justify-center gap-2">
                                 <Phone className="w-5 h-5" />
