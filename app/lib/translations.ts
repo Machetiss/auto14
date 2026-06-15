@@ -159,6 +159,22 @@ export const translations = {
                 {
                     q: "На каком оборудовании вы работаете?",
                     a: "Наш главный инструмент — профессиональный немецкий 3D стенд Hoffman. Это эталон точности в мире авторемонта, исключающий человеческий фактор."
+                },
+                {
+                    q: "Где в Казани (в Константиновке) сделать качественную диагностику ходовой и нужно ли записываться?",
+                    a: "Наш автосервис «Авто14» находится по адресу ул. Заречная 5Б (жилой массив Константиновка, Советский район). Мы проводим тщательную диагностику подвески на подъемнике: проверяем сайлентблоки, шаровые, стойки и рулевое управление. Рекомендуем записываться заранее, чтобы не ждать в очереди. Осмотр занимает около 30 минут."
+                },
+                {
+                    q: "Сколько стоит 3D сход-развал на Заречной 5Б и сколько времени это занимает?",
+                    a: "Цена на 3D развал-схождение начинается от 1400 рублей (зависит от оси и марки авто). Мы используем точный немецкий стенд Hoffman. Если все регулировочные болты откручиваются нормально, настройка геометрии колес занимает 30-40 минут."
+                },
+                {
+                    q: "Даете ли вы гарантию на ремонт подвески и запчасти?",
+                    a: "Да, СТО «Авто14» дает честную гарантию на все выполненные работы по ремонту ходовой части. Если вы заказываете автозапчасти через нас, на них также действует официальная гарантия производителя. Мы всегда на связи и не бросаем своих клиентов."
+                },
+                {
+                    q: "Машину тянет в сторону или неравномерно изнашивается резина. Где это исправить в Казани?",
+                    a: "Скорее всего, нарушена геометрия колес или есть износ элементов ходовой. Приезжайте в автосервис «Авто14» (ул. Заречная 5Б). Наши мастера найдут причину и при необходимости сделают высокоточный 3D сход-развал, чтобы вернуть автомобилю идеальную управляемость и спасти ваши шины."
                 }
             ]
         },
@@ -361,6 +377,22 @@ export const translations = {
                 {
                     q: "What equipment do you use?",
                     a: "Our main tool is a professional German Hoffman 3D stand — the benchmark for precision in automotive repair, eliminating human error."
+                },
+                {
+                    q: "Where can I get quality suspension diagnostics in Kazan (Konstantinovka), and do I need to book?",
+                    a: "Avto14 is located at 5B Zarechnaya St (Konstantinovka, Sovetsky District). We perform thorough suspension inspections on a lift, checking bushings, ball joints, struts, and steering. We recommend booking in advance to avoid waiting. The inspection takes about 30 minutes."
+                },
+                {
+                    q: "How much does a 3D wheel alignment cost at 5B Zarechnaya St, and how long does it take?",
+                    a: "Prices for 3D alignment start from 1400 ₽ (depending on the axle and car make). We use a precise German Hoffman stand. If the adjustment bolts aren't seized, setting the wheel geometry takes 30-40 minutes."
+                },
+                {
+                    q: "Do you provide a warranty on suspension repairs and parts?",
+                    a: "Yes, Avto14 gives an honest warranty on all suspension repair work. If you order parts through us, they also come with the official manufacturer's warranty. We are always reachable and never abandon our clients."
+                },
+                {
+                    q: "My car pulls to the side or tires wear unevenly. Where can I fix this in Kazan?",
+                    a: "Most likely, the wheel geometry is off or suspension elements are worn. Come to Avto14 (5B Zarechnaya St). Our mechanics will find the cause and, if necessary, perform a highly accurate 3D wheel alignment to restore perfect handling and save your tires."
                 }
             ]
         },
