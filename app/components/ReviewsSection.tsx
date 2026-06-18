@@ -904,9 +904,9 @@ export default function ReviewsSection() {
                                 ))}
                             </div>
                         </div>
-                        <p className="font-bold text-lg mb-4 opacity-90 flex-grow">
-                            &quot;{reviews.yandex.text}&quot;
-                        </p>
+                        <div className="font-bold text-lg mb-4 opacity-90 flex-grow h-[150px] overflow-y-auto pr-2 custom-scrollbar">
+                            <p>&quot;{reviews.yandex.text}&quot;</p>
+                        </div>
                         <div className="flex items-center gap-3 opacity-60 mt-auto">
                             <div className="w-10 h-10 bg-gray-600 rounded-full flex items-center justify-center font-bold text-xl">{reviews.yandex.author[0]}</div>
                             <div>
@@ -926,9 +926,9 @@ export default function ReviewsSection() {
                                 ))}
                             </div>
                         </div>
-                        <p className="font-bold text-lg mb-4 opacity-90 flex-grow font-sans">
-                            &quot;{reviews.gis.text}&quot;
-                        </p>
+                        <div className="font-bold text-lg mb-4 opacity-90 flex-grow font-sans h-[150px] overflow-y-auto pr-2 custom-scrollbar">
+                            <p>&quot;{reviews.gis.text}&quot;</p>
+                        </div>
                         <div className="flex items-center gap-3 opacity-60 mt-auto font-sans">
                             <div className="w-10 h-10 bg-gray-600 rounded-full flex items-center justify-center font-bold text-xl">{reviews.gis.author[0]}</div>
                             <div>
@@ -948,9 +948,9 @@ export default function ReviewsSection() {
                                 ))}
                             </div>
                         </div>
-                        <p className="font-bold text-lg mb-4 opacity-90 flex-grow font-sans">
-                            &quot;{reviews.avito.text}&quot;
-                        </p>
+                        <div className="font-bold text-lg mb-4 opacity-90 flex-grow font-sans h-[150px] overflow-y-auto pr-2 custom-scrollbar">
+                            <p>&quot;{reviews.avito.text}&quot;</p>
+                        </div>
                         <div className="flex items-center gap-3 opacity-60 mt-auto font-sans">
                             <div className="w-10 h-10 bg-gray-600 rounded-full flex items-center justify-center font-bold text-xl">{reviews.avito.author[0]}</div>
                             <div>

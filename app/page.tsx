@@ -57,11 +57,12 @@ export default function Home() {
                         </div>
                         <button
                             onClick={toggleLanguage}
+                            aria-label="Сменить язык / Change language"
                             className="px-2 py-1 md:px-3 border-2 border-black rounded-lg font-black text-xs uppercase tracking-wider hover:bg-black hover:text-brand-yellow transition-colors"
                         >
                             {language === 'ru' ? 'EN' : 'RU'}
                         </button>
-                        <button onClick={() => setIsBookingOpen(true)} className="btn-primary !px-4 !py-2 !text-[10px] md:!text-xs md:!px-8 md:!py-3 shadow-none hover:shadow-none whitespace-nowrap">
+                        <button onClick={() => setIsBookingOpen(true)} aria-label="Записаться онлайн" className="btn-primary !px-4 !py-2 !text-[10px] md:!text-xs md:!px-8 md:!py-3 shadow-none hover:shadow-none whitespace-nowrap">
                             {t('hero.cta_book')}
                         </button>
                     </div>
@@ -140,7 +141,7 @@ export default function Home() {
                     {/* Action Buttons */}
                     <div className="flex flex-col gap-4 w-full sm:w-auto z-30 relative">
                         <div className="w-full sm:w-80 flex flex-col gap-2">
-                            <button onClick={() => setIsBookingOpen(true)} className="btn-primary group w-full">
+                            <button onClick={() => setIsBookingOpen(true)} aria-label="Записаться онлайн" className="btn-primary group w-full">
                                 {t('hero.cta_book')}
                                 <MoveRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </button>
@@ -167,6 +168,7 @@ export default function Home() {
 
                             <button
                                 onClick={() => setIsNavigatorOpen(true)}
+                                aria-label="Проложить маршрут до автосервиса"
                                 className="btn-secondary w-full sm:w-auto flex-1 bg-black text-[#FFF500] hover:bg-black/80"
                             >
                                 {t('hero.cta_route')}
@@ -543,7 +545,7 @@ export default function Home() {
                             <h3 className="font-black uppercase text-xl mb-2">{t('footer.map_title')}</h3>
                             <p className="font-black text-sm mb-4">{t('common.address')}</p>
                         </div>
-                        <div className="flex-grow w-full relative h-[300px]">
+                        <div className="flex-grow w-full relative h-[300px] bg-neutral-900 animate-pulse" aria-label="Карта загружается">
                             {/* Yandex Map Widget */}
                             <iframe
                                 src="https://yandex.ru/map-widget/v1/?ll=49.264877%2C55.809049&z=16&pt=49.264877%2C55.809049&z=17&l=map"
