@@ -73,6 +73,8 @@ export default function RootLayout({
                 <head>
                     <meta name="viewport" content="width=device-width, initial-scale=1" />
                     <meta name="google-site-verification" content="ezvh9INv48dll0s1Q9eGkHoUoQWSVrqfPaB9rSZs05Q" />
+                    <link rel="preconnect" href="https://mc.yandex.ru" />
+                    <link rel="dns-prefetch" href="https://mc.yandex.ru" />
                 </head>
                 <body className={`antialiased ${inter.variable} ${unbounded.variable} ${caveat.variable}`}>
                     <Suspense fallback={null}>
