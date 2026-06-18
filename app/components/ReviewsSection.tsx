@@ -919,7 +919,7 @@ export default function ReviewsSection() {
                     {/* 2GIS */}
                     <a href="https://2gis.ru/kazan/firm/70000001065947100/tab/reviews" target="_blank" rel="noopener noreferrer" className="bg-white/5 p-8 rounded-[2rem] hover:bg-white/10 transition-colors group border border-white/10 hover:border-brand-yellow/50 flex flex-col h-[400px] transform hover:-translate-y-2 transition-transform duration-300">
                         <div className="flex justify-between items-start mb-6">
-                            <div className="bg-[#78c331] text-white font-bold px-3 py-1 rounded text-[10px] uppercase tracking-wider font-sans">2GIS</div>
+                            <div className="bg-[#78c331] text-black font-bold px-3 py-1 rounded text-[10px] uppercase tracking-wider font-sans">2GIS</div>
                             <div className="flex text-brand-yellow">
                                 {[1, 2, 3, 4, 5].map((star) => (
                                     <svg key={star} className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
@@ -941,7 +941,7 @@ export default function ReviewsSection() {
                     {/* Avito */}
                     <a href="https://www.avito.ru/kazan/predlozheniya_uslug/avtoservis_shod-razval_3d_remont_avto_kazan_2642374619" target="_blank" rel="noopener noreferrer" className="bg-white/5 p-8 rounded-[2rem] hover:bg-white/10 transition-colors group border border-white/10 hover:border-brand-yellow/50 flex flex-col h-[400px] transform hover:-translate-y-2 transition-transform duration-300">
                         <div className="flex justify-between items-start mb-6">
-                            <div className="bg-[#00aaff] text-white font-bold px-3 py-1 rounded text-[10px] uppercase tracking-wider font-sans">Авито</div>
+                            <div className="bg-[#00aaff] text-black font-bold px-3 py-1 rounded text-[10px] uppercase tracking-wider font-sans">Авито</div>
                             <div className="flex text-brand-yellow">
                                 {[1, 2, 3, 4, 5].map((star) => (
                                     <svg key={star} className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>

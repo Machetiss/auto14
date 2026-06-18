@@ -417,38 +417,38 @@ export default function Home() {
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[200px] md:auto-rows-[300px]">
                     {/* Always visible: first 3 images */}
                     <div className="relative rounded-2xl overflow-hidden border-2 border-black group">
-                        <Image src="/gallery/1.webp" alt="Автосервис Avto14 — рабочий процесс" fill sizes="(max-width: 768px) 50vw, 33vw" loading="lazy" unoptimized className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <Image src="/gallery/1.webp" alt="Автосервис Avto14 — рабочий процесс" fill sizes="(max-width: 768px) 50vw, 33vw" loading="lazy"  className="object-cover group-hover:scale-110 transition-transform duration-500" />
                     </div>
                     <div className="relative rounded-2xl overflow-hidden border-2 border-black group md:col-span-2">
-                        <Image src="/gallery/2.webp" alt="3D развал-схождение на стенде Hoffman" fill sizes="(max-width: 768px) 50vw, 66vw" loading="lazy" unoptimized className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <Image src="/gallery/2.webp" alt="3D развал-схождение на стенде Hoffman" fill sizes="(max-width: 768px) 50vw, 66vw" loading="lazy"  className="object-cover group-hover:scale-110 transition-transform duration-500" />
                     </div>
                     <div className="relative rounded-2xl overflow-hidden border-2 border-black group md:col-span-2">
-                        <Image src="/gallery/4.webp" alt="Ремонт ходовой части автомобиля" fill sizes="(max-width: 768px) 50vw, 66vw" loading="lazy" unoptimized className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <Image src="/gallery/4.webp" alt="Ремонт ходовой части автомобиля" fill sizes="(max-width: 768px) 50vw, 66vw" loading="lazy"  className="object-cover group-hover:scale-110 transition-transform duration-500" />
                     </div>
 
                     {/* Hidden images under spoiler */}
                     {showAllGallery && (
                         <>
                             <div className="relative rounded-2xl overflow-hidden border-2 border-black group">
-                                <Image src="/gallery/5.webp" alt="Диагностика подвески на подъемнике" fill sizes="(max-width: 768px) 50vw, 33vw" loading="lazy" unoptimized className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                                <Image src="/gallery/5.webp" alt="Диагностика подвески на подъемнике" fill sizes="(max-width: 768px) 50vw, 33vw" loading="lazy"  className="object-cover group-hover:scale-110 transition-transform duration-500" />
                             </div>
                             <div className="relative rounded-2xl overflow-hidden border-2 border-black group">
-                                <Image src="/gallery/6.webp" alt="Шиномонтаж и балансировка колес" fill sizes="(max-width: 768px) 50vw, 33vw" loading="lazy" unoptimized className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                                <Image src="/gallery/6.webp" alt="Шиномонтаж и балансировка колес" fill sizes="(max-width: 768px) 50vw, 33vw" loading="lazy"  className="object-cover group-hover:scale-110 transition-transform duration-500" />
                             </div>
                             <div className="relative rounded-2xl overflow-hidden border-2 border-black group">
-                                <Image src="/gallery/7.webp" alt="Замена масла и фильтров" fill sizes="(max-width: 768px) 50vw, 33vw" loading="lazy" unoptimized className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                                <Image src="/gallery/7.webp" alt="Замена масла и фильтров" fill sizes="(max-width: 768px) 50vw, 33vw" loading="lazy"  className="object-cover group-hover:scale-110 transition-transform duration-500" />
                             </div>
                             <div className="relative rounded-2xl overflow-hidden border-2 border-black group">
-                                <Image src="/gallery/8.webp" alt="Профессиональное оборудование автосервиса" fill sizes="(max-width: 768px) 50vw, 33vw" loading="lazy" unoptimized className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                                <Image src="/gallery/8.webp" alt="Профессиональное оборудование автосервиса" fill sizes="(max-width: 768px) 50vw, 33vw" loading="lazy"  className="object-cover group-hover:scale-110 transition-transform duration-500" />
                             </div>
                             <div className="relative rounded-2xl overflow-hidden border-2 border-black group">
-                                <Image src="/gallery/9.webp" alt="Результат работы — довольный клиент" fill sizes="(max-width: 768px) 50vw, 33vw" loading="lazy" unoptimized className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                                <Image src="/gallery/9.webp" alt="Результат работы — довольный клиент" fill sizes="(max-width: 768px) 50vw, 33vw" loading="lazy"  className="object-cover group-hover:scale-110 transition-transform duration-500" />
                             </div>
                             <div className="relative rounded-2xl overflow-hidden border-2 border-black group md:col-span-2">
-                                <Image src="/gallery/10.webp" alt="Автосервис Avto14 — вид изнутри" fill sizes="(max-width: 768px) 50vw, 66vw" loading="lazy" unoptimized className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                                <Image src="/gallery/10.webp" alt="Автосервис Avto14 — вид изнутри" fill sizes="(max-width: 768px) 50vw, 66vw" loading="lazy"  className="object-cover group-hover:scale-110 transition-transform duration-500" />
                             </div>
                             <div className="relative rounded-2xl overflow-hidden border-2 border-black group">
-                                <Image src="/gallery/11.webp" alt="Команда автосервиса Avto14" fill sizes="(max-width: 768px) 50vw, 33vw" loading="lazy" unoptimized className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                                <Image src="/gallery/11.webp" alt="Команда автосервиса Avto14" fill sizes="(max-width: 768px) 50vw, 33vw" loading="lazy"  className="object-cover group-hover:scale-110 transition-transform duration-500" />
                             </div>
                         </>
                     )}

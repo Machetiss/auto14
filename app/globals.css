@@ -26,7 +26,7 @@
 
 @layer components {
   .btn-primary {
-    @apply px-8 py-4 rounded-[12px] border-2 border-black bg-[var(--accent-orange)] text-white font-black uppercase text-sm tracking-widest transition-all inline-flex items-center justify-center gap-2;
+    @apply px-8 py-4 rounded-[12px] border-2 border-black bg-[var(--accent-orange)] text-black font-black uppercase text-sm tracking-widest transition-all inline-flex items-center justify-center gap-2;
     box-shadow: 4px 4px 0px 0px var(--brand-black);
   }
 
