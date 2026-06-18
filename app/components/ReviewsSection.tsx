@@ -895,7 +895,7 @@ export default function ReviewsSection() {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {/* Yandex Maps */}
-                    <a href="https://yandex.ru/maps/org/avto14/108623850068/reviews/?ll=49.264877%2C55.809049&z=16" target="_blank" rel="noopener noreferrer" className="bg-white/5 p-8 rounded-[2rem] hover:bg-white/10 transition-colors group border border-white/10 hover:border-brand-yellow/50 flex flex-col h-full transform hover:-translate-y-2 transition-transform duration-300">
+                    <a href="https://yandex.ru/maps/org/avto14/108623850068/reviews/?ll=49.264877%2C55.809049&z=16" target="_blank" rel="noopener noreferrer" className="bg-white/5 p-8 rounded-[2rem] hover:bg-white/10 transition-colors group border border-white/10 hover:border-brand-yellow/50 flex flex-col h-[400px] transform hover:-translate-y-2 transition-transform duration-300">
                         <div className="flex justify-between items-start mb-6">
                             <div className="bg-red-600 text-white font-bold px-3 py-1 rounded text-[10px] uppercase tracking-wider font-sans">Яндекс</div>
                             <div className="flex text-brand-yellow">
@@ -917,7 +917,7 @@ export default function ReviewsSection() {
                     </a>
 
                     {/* 2GIS */}
-                    <a href="https://2gis.ru/kazan/firm/70000001065947100/tab/reviews" target="_blank" rel="noopener noreferrer" className="bg-white/5 p-8 rounded-[2rem] hover:bg-white/10 transition-colors group border border-white/10 hover:border-brand-yellow/50 flex flex-col h-full transform hover:-translate-y-2 transition-transform duration-300">
+                    <a href="https://2gis.ru/kazan/firm/70000001065947100/tab/reviews" target="_blank" rel="noopener noreferrer" className="bg-white/5 p-8 rounded-[2rem] hover:bg-white/10 transition-colors group border border-white/10 hover:border-brand-yellow/50 flex flex-col h-[400px] transform hover:-translate-y-2 transition-transform duration-300">
                         <div className="flex justify-between items-start mb-6">
                             <div className="bg-[#78c331] text-white font-bold px-3 py-1 rounded text-[10px] uppercase tracking-wider font-sans">2GIS</div>
                             <div className="flex text-brand-yellow">
@@ -939,7 +939,7 @@ export default function ReviewsSection() {
                     </a>
 
                     {/* Avito */}
-                    <a href="https://www.avito.ru/kazan/predlozheniya_uslug/avtoservis_shod-razval_3d_remont_avto_kazan_2642374619" target="_blank" rel="noopener noreferrer" className="bg-white/5 p-8 rounded-[2rem] hover:bg-white/10 transition-colors group border border-white/10 hover:border-brand-yellow/50 flex flex-col h-full transform hover:-translate-y-2 transition-transform duration-300">
+                    <a href="https://www.avito.ru/kazan/predlozheniya_uslug/avtoservis_shod-razval_3d_remont_avto_kazan_2642374619" target="_blank" rel="noopener noreferrer" className="bg-white/5 p-8 rounded-[2rem] hover:bg-white/10 transition-colors group border border-white/10 hover:border-brand-yellow/50 flex flex-col h-[400px] transform hover:-translate-y-2 transition-transform duration-300">
                         <div className="flex justify-between items-start mb-6">
                             <div className="bg-[#00aaff] text-white font-bold px-3 py-1 rounded text-[10px] uppercase tracking-wider font-sans">Авито</div>
                             <div className="flex text-brand-yellow">

@@ -7,21 +7,21 @@ const inter = Inter({
     subsets: ['cyrillic', 'latin'],
     weight: ['400', '700', '900'],
     variable: '--font-inter',
-    display: 'swap',
+    display: 'optional',
 });
 
 const unbounded = Unbounded({
     subsets: ['cyrillic', 'latin'],
     weight: ['400', '700', '900'],
     variable: '--font-unbounded',
-    display: 'swap',
+    display: 'optional',
 });
 
 const caveat = Caveat({
     subsets: ['cyrillic', 'latin'],
     weight: ['400', '700'],
     variable: '--font-caveat',
-    display: 'swap',
+    display: 'optional',
 });
 
 export const viewport: Viewport = {
