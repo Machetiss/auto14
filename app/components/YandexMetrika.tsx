@@ -11,7 +11,7 @@ export default function YandexMetrika() {
     useEffect(() => {
         // Trigger hit on route change
         if (typeof window !== 'undefined' && (window as any).ym) {
-            (window as any).ym(Number(process.env.NEXT_PUBLIC_YANDEX_METRIKA_ID), 'hit', window.location.href);
+            (window as any).ym(106881681, 'hit', window.location.href);
         }
     }, [pathname, searchParams]);
 
@@ -25,7 +25,7 @@ export default function YandexMetrika() {
             k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
             (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-            ym(${process.env.NEXT_PUBLIC_YANDEX_METRIKA_ID}, "init", {
+            ym(106881681, "init", {
                 clickmap:true,
                 trackLinks:true,
                 accurateTrackBounce:true,
