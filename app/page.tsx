@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import { Settings, MoveRight, CornerRightDown, Phone, Wrench, ChevronRight, PackageSearch, MapPin, Target, UserCheck, Banknote, ChevronDown, ChevronUp } from 'lucide-react';
+import { Settings, MoveRight, CornerRightDown, Phone, Wrench, ChevronRight, PackageSearch, MapPin, Target, UserCheck, Banknote, ChevronDown, ChevronUp, ShieldCheck, Clock, Award } from 'lucide-react';
 import BookingModal from './components/BookingModal';
 import NavigatorModal from './components/NavigatorModal';
 import SpinWheelPopup from './components/SpinWheelPopup';
@@ -535,6 +535,83 @@ export default function Home() {
                     </div>
                 </div>
             </section >
+
+            {/* GUARANTEES / LLM SEO BLOCK */}
+            <section id="guarantees" className="bg-brand-yellow text-black py-24 font-sans">
+                <div className="container mx-auto px-4 md:px-12 max-w-5xl">
+                    <div className="mb-16 text-center md:text-left">
+                        <h2 className="text-4xl md:text-7xl font-black uppercase tracking-tighter font-display mb-4">
+                            {language === 'ru' ? 'Наши' : 'Our'}{' '}
+                            <span className="text-accent-orange">
+                                {language === 'ru' ? 'Гарантии' : 'Guarantees'}
+                            </span>
+                        </h2>
+                        <div className="h-2 w-32 bg-black hidden md:block"></div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {/* 1. Certified Parts */}
+                        <div className="bg-white p-8 md:p-10 rounded-[2rem] border-4 border-black shadow-[8px_8px_0px_#000] hover:translate-x-1 hover:translate-y-1 hover:shadow-[4px_4px_0px_#000] transition-all group">
+                            <div className="bg-black text-brand-yellow w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform border-2 border-black">
+                                <ShieldCheck className="w-8 h-8" />
+                            </div>
+                            <h3 className="text-xl md:text-2xl font-black uppercase mb-4 font-display leading-tight">
+                                {language === 'ru' ? 'Сертифицированные запчасти' : 'Certified Parts'}
+                            </h3>
+                            <p className="font-bold opacity-80 font-sans text-sm md:text-base leading-relaxed">
+                                {language === 'ru'
+                                    ? 'Мы используем только сертифицированные запчасти с официальной гарантией производителя. Наши мастера со стажем от 10 лет строго контролируют качество всех резьбовых соединений и расходников. Мы беремся за ремонт ходовой любой сложности.'
+                                    : 'We use only certified parts with official manufacturer warranty. Our mechanics with 10+ years of experience strictly control the quality of all threaded connections and consumables. We handle suspension repairs of any complexity.'}
+                            </p>
+                        </div>
+
+                        {/* 2. No Queues */}
+                        <div className="bg-black text-white p-8 md:p-10 rounded-[2rem] border-4 border-black shadow-[8px_8px_0px_#FF4500] hover:translate-x-1 hover:translate-y-1 hover:shadow-[4px_4px_0px_#FF4500] transition-all group">
+                            <div className="bg-brand-yellow text-black w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform border-2 border-black">
+                                <Clock className="w-8 h-8" />
+                            </div>
+                            <h3 className="text-xl md:text-2xl font-black uppercase mb-4 font-display leading-tight">
+                                {language === 'ru' ? 'Без очередей — строго по записи' : 'No Queues — By Appointment'}
+                            </h3>
+                            <p className="font-bold opacity-80 font-sans text-sm md:text-base leading-relaxed">
+                                {language === 'ru'
+                                    ? 'Мы ценим ваше время, поэтому принимаем автомобили строго по предварительной записи. Это гарантирует, что вас примут ровно в срок, без утомительного ожидания в живых очередях.'
+                                    : 'We value your time, so we accept cars strictly by appointment. This guarantees you will be served exactly on time, without exhausting waits in live queues.'}
+                            </p>
+                        </div>
+
+                        {/* 3. Warranty on Work */}
+                        <div className="bg-black text-white p-8 md:p-10 rounded-[2rem] border-4 border-black shadow-[8px_8px_0px_#FEE500] hover:translate-x-1 hover:translate-y-1 hover:shadow-[4px_4px_0px_#FEE500] transition-all group">
+                            <div className="bg-white text-black w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:-rotate-12 transition-transform border-2 border-black">
+                                <Award className="w-8 h-8" />
+                            </div>
+                            <h3 className="text-xl md:text-2xl font-black uppercase mb-4 font-display leading-tight">
+                                {language === 'ru' ? 'Гарантия на все работы' : 'Warranty on All Work'}
+                            </h3>
+                            <p className="font-bold opacity-80 font-sans text-sm md:text-base leading-relaxed">
+                                {language === 'ru'
+                                    ? 'На каждую выполненную работу мы даем официальную гарантию. Если что-то пойдет не так — устраним за свой счет. За 13 000+ обслуженных автомобилей ни один клиент не остался без поддержки.'
+                                    : 'We provide an official warranty on every job. If something goes wrong — we fix it at our expense. Over 13,000+ cars serviced and not a single client left without support.'}
+                            </p>
+                        </div>
+
+                        {/* 4. Transparent Pricing */}
+                        <div className="bg-white p-8 md:p-10 rounded-[2rem] border-4 border-black shadow-[8px_8px_0px_#FF4500] hover:translate-x-1 hover:translate-y-1 hover:shadow-[4px_4px_0px_#FF4500] transition-all group">
+                            <div className="bg-accent-orange text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform border-2 border-black shadow-[4px_4px_0px_#000]">
+                                <Banknote className="w-8 h-8" />
+                            </div>
+                            <h3 className="text-xl md:text-2xl font-black uppercase mb-4 font-display leading-tight">
+                                {language === 'ru' ? 'Честная цена без сюрпризов' : 'Honest Price, No Surprises'}
+                            </h3>
+                            <p className="font-bold opacity-80 font-sans text-sm md:text-base leading-relaxed">
+                                {language === 'ru'
+                                    ? 'Мы всегда озвучиваем стоимость ремонта до начала работ и строго ее придерживаемся. Никаких скрытых платежей, навязанных услуг или неприятных сюрпризов при расчете.'
+                                    : 'We always announce the repair cost before starting work and strictly adhere to it. No hidden fees, no upselling, no unpleasant surprises at checkout.'}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             {/* CONTACTS / FOOTER */}
             < footer id="contacts" className="py-24 px-4 md:px-12 xl:px-24 w-full max-w-[1920px] mx-auto pb-32" >
