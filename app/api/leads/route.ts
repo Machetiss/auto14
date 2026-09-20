@@ -21,9 +21,10 @@ export async function POST(request: Request) {
         }
 
         const { service, name, phone, car, description, utm } = body;
+        const fallbackId = `lead-${Date.now()}`;
+        let leadId: string | number = fallbackId;
 
-        // Save to Database (isolated so SQLite lock on Amvera doesn't prevent Telegram alert)
-        let leadId: string | number = 'offline-' + Date.now();
+        // Save to Database (isolated try-catch so DB issues never drop a lead)
         try {
             const lead = await prisma.lead.create({
                 data: {
@@ -38,10 +39,10 @@ export async function POST(request: Request) {
             });
             leadId = lead.id;
         } catch (dbError) {
-            console.error("Database save failed (continuing to Telegram):", dbError);
+            console.error("Database lead creation failed, continuing with notification:", dbError);
         }
 
-        // Send to Telegram (Guaranteed lead notification)
+        // Send to Telegram (Always notify team, even if DB write failed)
         if (TELEGRAM_BOT_TOKEN && TELEGRAM_CHAT_ID) {
             try {
                 let message = `
@@ -68,6 +69,7 @@ export async function POST(request: Request) {
                 });
             } catch (tgError) {
                 console.error("Telegram notification failed:", tgError);
+                // Don't fail the request if TG fails, but log it.
             }
         }
 

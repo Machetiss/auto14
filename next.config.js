@@ -21,13 +21,13 @@ const nextConfig = {
                 permanent: true,
             },
             {
-                source: '/brands/:brand/:model+',
+                source: '/brands/:brand/:submodel+',
                 destination: '/brands/:brand',
                 permanent: true,
             },
             {
-                source: '/catalog/:path*',
-                destination: '/razval-shozhdenie',
+                source: '/catalog/:brand/:submodel+',
+                destination: '/catalog/:brand',
                 permanent: true,
             },
         ];

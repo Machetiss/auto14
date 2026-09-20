@@ -24,10 +24,7 @@ export default function MobileStickyBar() {
                 </a>
                 <button
                     type="button"
-                    onClick={() => {
-                        handleContactClick('booking', 'mobile_sticky_booking', 'modal');
-                        openBooking();
-                    }}
+                    onClick={() => openBooking('Сход-развал 3D')}
                     className="flex-1 bg-white text-black font-black uppercase text-xs sm:text-sm py-3 px-2 rounded-xl border-2 border-black flex items-center justify-center gap-1.5 active:scale-95 transition-transform shadow-[2px_2px_0px_#000]"
                 >
                     <CalendarCheck className="w-4 h-4 text-black flex-shrink-0" />
