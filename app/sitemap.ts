@@ -1,17 +1,16 @@
 import { MetadataRoute } from 'next';
 import { carBrands } from '@/app/data/carBrands';
-import { services } from '@/app/data/services';
-import { getCarSpecs } from '@/lib/cars';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://www.auto-14.ru';
 
+    // Основные конверсионные посадочные страницы (высокий приоритет)
     const staticRoutes: MetadataRoute.Sitemap = [
         {
             url: baseUrl,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 1,
+            changeFrequency: 'weekly',
+            priority: 1.0,
         },
         {
             url: `${baseUrl}/razval-shozhdenie`,
@@ -23,7 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             url: `${baseUrl}/remont-podveski`,
             lastModified: new Date(),
             changeFrequency: 'weekly',
-            priority: 0.8,
+            priority: 0.9,
         },
         {
             url: `${baseUrl}/zamena-masla`,
@@ -46,7 +45,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         {
             url: `${baseUrl}/otzyvy`,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
+            changeFrequency: 'weekly',
             priority: 0.7,
         },
         {
@@ -57,54 +56,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
     ];
 
-    // /brands/[brand] — 35 страниц
+    // Целевые брендовые хабы (35 популярных марок в Татарстане)
     const dynamicBrandRoutes: MetadataRoute.Sitemap = carBrands.map((brand) => ({
         url: `${baseUrl}/brands/${brand.slug}`,
         lastModified: new Date(),
-        changeFrequency: 'monthly' as const,
-        priority: 0.6,
+        changeFrequency: 'weekly' as const,
+        priority: 0.8,
     }));
 
-    // /uslugi/[service]/[brand] — 280 страниц (8 услуг × 35 брендов)
-    const dynamicServiceBrandRoutes: MetadataRoute.Sitemap = services.flatMap((service) =>
-        carBrands.map((brand) => ({
-            url: `${baseUrl}/uslugi/${service.slug}/${brand.slug}`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly' as const,
-            priority: 0.65,
-        }))
-    );
-
-    // /catalog — Главная страница каталога
-    const catalogMainRoute: MetadataRoute.Sitemap = [
-        {
-            url: `${baseUrl}/catalog`,
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.8,
-        },
-    ];
-
-    // /catalog/[brand] и /catalog/[brand]/[model]
-    const catalogRoutes: MetadataRoute.Sitemap = getCarSpecs().flatMap((spec) => [
-        {
-            url: `${baseUrl}/catalog/${spec.brand.toLowerCase()}`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-        {
-            url: `${baseUrl}/catalog/${spec.brand.toLowerCase()}/${encodeURIComponent(spec.model)}`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.75,
-        },
-    ]);
-
-    // Удаление дубликатов для брендов
-    const uniqueCatalogRoutes = Array.from(new Map(catalogRoutes.map(route => [route.url, route])).values());
-
-    // /blog
+    // Полезные статьи блога
     const blogRoutes: MetadataRoute.Sitemap = [
         {
             url: `${baseUrl}/blog`,
@@ -123,8 +83,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.6,
-        }
+        },
     ];
 
-    return [...staticRoutes, ...dynamicBrandRoutes, ...dynamicServiceBrandRoutes, ...catalogMainRoute, ...uniqueCatalogRoutes, ...blogRoutes];
+    // Очищенный sitemap без 3300+ пустых дублей: спасаем краулинговый бюджет для Яндекса
+    return [...staticRoutes, ...dynamicBrandRoutes, ...blogRoutes];
 }

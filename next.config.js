@@ -20,6 +20,16 @@ const nextConfig = {
                 destination: '/',
                 permanent: true,
             },
+            {
+                source: '/brands/:brand/:model+',
+                destination: '/brands/:brand',
+                permanent: true,
+            },
+            {
+                source: '/catalog/:path*',
+                destination: '/razval-shozhdenie',
+                permanent: true,
+            },
         ];
     },
     async headers() {

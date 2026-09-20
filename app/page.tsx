@@ -6,7 +6,6 @@ import { useState } from 'react';
 import { Settings, MoveRight, CornerRightDown, Phone, Wrench, ChevronRight, PackageSearch, MapPin, Target, UserCheck, Banknote, ChevronDown, ChevronUp, ShieldCheck, Clock, Award } from 'lucide-react';
 import BookingModal from './components/BookingModal';
 import NavigatorModal from './components/NavigatorModal';
-import SpinWheelPopup from './components/SpinWheelPopup';
 import ReviewsSection from './components/ReviewsSection';
 import CarWheel from './components/CarWheel';
 import { WhatsAppIcon } from './components/icons/WhatsAppIcon';
@@ -31,7 +30,6 @@ export default function Home() {
 
             <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
             <NavigatorModal isOpen={isNavigatorOpen} onClose={() => setIsNavigatorOpen(false)} />
-            <SpinWheelPopup />
 
             {/* HEADER */}
             <header className="fixed top-0 left-0 right-0 z-50 pt-4 pb-4 px-4 bg-brand-yellow shadow-md border-b-2 border-black">
@@ -177,10 +175,44 @@ export default function Home() {
                         </div>
                     </div>
 
+                    {/* NEO-BRUTALISM DOUBLE IRON GUARANTEE */}
+                    <div className="w-full max-w-2xl mt-6 p-4 md:p-5 bg-white border-4 border-black rounded-2xl shadow-[6px_6px_0px_#000] relative">
+                        <div className="flex items-center gap-2 mb-3">
+                            <ShieldCheck className="w-6 h-6 text-black flex-shrink-0" />
+                            <span className="font-black uppercase text-sm md:text-base tracking-tight text-black">
+                                {language === 'ru' ? 'Двойная железная гарантия Авто14' : 'Avto14 Double Iron Guarantee'}
+                            </span>
+                        </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs md:text-sm font-sans">
+                            <div className="bg-[#FFF500] p-3 rounded-xl border-2 border-black">
+                                <div className="font-black uppercase text-black mb-1 flex items-center gap-1.5">
+                                    <span className="bg-black text-[#FFF500] px-1.5 py-0.5 rounded text-[11px]">0 ₽</span>
+                                    <span>{language === 'ru' ? 'Скрытых доплат' : 'Hidden Fees'}</span>
+                                </div>
+                                <p className="text-black/80 font-bold leading-tight">
+                                    {language === 'ru' 
+                                        ? 'Смета неизменна. Допработы только после видео в WhatsApp.'
+                                        : 'Fixed estimate. Extra work approved via WhatsApp video only.'}
+                                </p>
+                            </div>
+                            <div className="bg-black text-white p-3 rounded-xl border-2 border-black">
+                                <div className="font-black uppercase text-[#FFF500] mb-1 flex items-center gap-1.5">
+                                    <span className="bg-[#FFF500] text-black px-1.5 py-0.5 rounded text-[11px]">14 {language === 'ru' ? 'дней' : 'days'}</span>
+                                    <span>{language === 'ru' ? 'Честный тест' : 'Honest Test'}</span>
+                                </div>
+                                <p className="text-white/80 font-bold leading-tight">
+                                    {language === 'ru'
+                                        ? 'Руль не по центру или уводит? Бесплатная повторная регулировка.'
+                                        : 'Wheel off-center or pulls? Free realignment on 3D Hoffman.'}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
                     {/* SOCIAL PROOF BADGES */}
-                    <div className="flex flex-wrap gap-3 mt-6">
+                    <div className="flex flex-wrap gap-3 mt-4">
                         <a href="https://yandex.com/maps/org/avto14/108623850068/reviews/" target="_blank" rel="noopener noreferrer" className="bg-black text-[#FFF500] px-4 py-2 rounded-xl font-black text-xs uppercase tracking-wider border-2 border-black hover:bg-black/80 transition-colors flex items-center gap-2">
-                            ★ 5.0 {language === 'ru' ? 'Яндекс Карты' : 'Yandex Maps'}
+                            ★ 5.0 {language === 'ru' ? 'Яндекс Карты • Хорошее место 2026' : 'Yandex Maps • Top Rated 2026'}
                         </a>
                         <span className="bg-black/10 text-black px-4 py-2 rounded-xl font-black text-xs uppercase tracking-wider border-2 border-black/20">
                             13 000+ {language === 'ru' ? 'авто обслужено' : 'cars serviced'}

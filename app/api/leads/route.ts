@@ -22,25 +22,30 @@ export async function POST(request: Request) {
 
         const { service, name, phone, car, description, utm } = body;
 
-        // Save to Database
-        const lead = await prisma.lead.create({
-            data: {
-                name,
-                phone,
-                message: description, // Map description to message
-                service: service || null,
-                car: car || null,
-                source: utm?.source || 'direct',
-                status: 'new'
-            }
-        });
+        // Save to Database (isolated so SQLite lock on Amvera doesn't prevent Telegram alert)
+        let leadId: string | number = 'offline-' + Date.now();
+        try {
+            const lead = await prisma.lead.create({
+                data: {
+                    name,
+                    phone,
+                    message: description, // Map description to message
+                    service: service || null,
+                    car: car || null,
+                    source: utm?.source || 'direct',
+                    status: 'new'
+                }
+            });
+            leadId = lead.id;
+        } catch (dbError) {
+            console.error("Database save failed (continuing to Telegram):", dbError);
+        }
 
-        // Send to Telegram (Fire and forget or await?)
-        // Better to await to report error if telegram fails, or catch it separately.
+        // Send to Telegram (Guaranteed lead notification)
         if (TELEGRAM_BOT_TOKEN && TELEGRAM_CHAT_ID) {
             try {
                 let message = `
-🔥 *Новая заявка!* (ID: ${lead.id})
+🔥 *Новая заявка!* (ID: ${leadId})
 🛠 *Услуга:* ${service || 'Не указано'}
 👤 *Имя:* ${name || 'Не указано'}
 📞 *Телефон:* ${phone}
@@ -63,7 +68,6 @@ export async function POST(request: Request) {
                 });
             } catch (tgError) {
                 console.error("Telegram notification failed:", tgError);
-                // Don't fail the request if TG fails, but log it.
             }
         }
 
@@ -92,7 +96,7 @@ export async function POST(request: Request) {
             });
         }
 
-        return NextResponse.json({ success: true, leadId: lead.id });
+        return NextResponse.json({ success: true, leadId });
     } catch (error) {
         return handleApiError(error);
     }
