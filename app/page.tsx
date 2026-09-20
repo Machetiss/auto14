@@ -191,13 +191,13 @@ export default function Home() {
                                 </div>
                                 <p className="text-black/80 font-bold leading-tight">
                                     {language === 'ru' 
-                                        ? 'Смета неизменна. Допработы только после видео в WhatsApp.'
-                                        : 'Fixed estimate. Extra work approved via WhatsApp video only.'}
+                                        ? 'Смета неизменна. Допработы — строго по согласованию с вами.'
+                                        : 'Fixed estimate. Any extra work strictly upon your approval.'}
                                 </p>
                             </div>
                             <div className="bg-black text-white p-3 rounded-xl border-2 border-black">
                                 <div className="font-black uppercase text-[#FFF500] mb-1 flex items-center gap-1.5">
-                                    <span className="bg-[#FFF500] text-black px-1.5 py-0.5 rounded text-[11px]">14 {language === 'ru' ? 'дней' : 'days'}</span>
+                                    <span className="bg-[#FFF500] text-black px-1.5 py-0.5 rounded text-[11px]">7 {language === 'ru' ? 'дней' : 'days'}</span>
                                     <span>{language === 'ru' ? 'Честный тест' : 'Honest Test'}</span>
                                 </div>
                                 <p className="text-white/80 font-bold leading-tight">

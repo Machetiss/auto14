@@ -27,7 +27,7 @@ export default function DoubleGuarantee() {
                             <h4 className="font-black text-sm uppercase">0 ₽ скрытых доплат</h4>
                         </div>
                         <p className="text-xs sm:text-sm text-neutral-800 leading-relaxed font-medium">
-                            Смету фиксируем <span className="font-black">до заезда на подъемник</span>. Любые скрытые дефекты — строго после видеофиксации и согласования в WhatsApp. В чеке не появится ни одного лишнего рубля.
+                            Смету фиксируем <span className="font-black">до заезда на подъемник</span>. Любые дополнительные работы — строго по согласованию с вами до начала ремонта. В чеке не появится ни одного лишнего рубля.
                         </p>
                     </div>
                 </div>
@@ -39,7 +39,7 @@ export default function DoubleGuarantee() {
                             <span className="bg-black text-white font-black text-xs px-2 py-0.5 uppercase">
                                 Гарантия 2
                             </span>
-                            <h4 className="font-black text-sm uppercase">14 дней тест-драйва</h4>
+                            <h4 className="font-black text-sm uppercase">7 дней тест-драйва</h4>
                         </div>
                         <p className="text-xs sm:text-sm text-neutral-800 leading-relaxed font-medium">
                             Если после сход-развала руль смещен хоть на 1° или машину тянет в сторону — <span className="font-black">бесплатная повторная калибровка</span> на стенде 3D Hoffman без лишних споров и экспертиз.
