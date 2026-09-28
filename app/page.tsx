@@ -13,6 +13,7 @@ import { TelegramIcon } from './components/icons/TelegramIcon';
 import { handleContactClick } from '@/lib/analytics';
 import { useLanguage } from './context/LanguageContext';
 import { getCurrentSeasonYear } from './lib/season';
+import Footer from './components/Footer';
 
 export default function Home() {
     const { t, language, toggleLanguage } = useLanguage();
@@ -750,114 +751,7 @@ export default function Home() {
             </section>
 
             {/* CONTACTS / FOOTER */}
-            < footer id="contacts" className="py-24 px-4 md:px-12 xl:px-24 w-full max-w-[1920px] mx-auto pb-32" >
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {/* Address & Map */}
-                    <div className="bg-black text-[#FFF500] p-0 rounded-[2rem] border-4 border-black shadow-xl overflow-hidden flex flex-col h-[400px]">
-                        <div className="p-8 pb-4 text-center">
-                            <h3 className="font-black uppercase text-xl mb-2">{t('footer.map_title')}</h3>
-                            <p className="font-black text-sm mb-4">{t('common.address')}</p>
-                        </div>
-                        <div className="flex-grow w-full relative h-[300px] bg-neutral-900 animate-pulse" aria-label="Карта загружается">
-                            {/* Yandex Map Widget */}
-                            <iframe
-                                src="https://yandex.ru/map-widget/v1/?ll=49.264877%2C55.809049&z=16&pt=49.264877%2C55.809049&z=17&l=map"
-                                width="100%"
-                                height="100%"
-                                frameBorder="0"
-                                className="grayscale hover:grayscale-0 transition-all duration-500 relative z-10"
-                                title="Адрес автосервиса Авто14 на Яндекс.Картах"
-                                loading="lazy"
-                            ></iframe>
-                        </div>
-                    </div>
-
-                    {/* Phones (3 Numbers with WA/TG) */}
-                    <div className="bg-white p-8 rounded-[2rem] border-4 border-black shadow-xl flex flex-col items-center text-center justify-center">
-                        <h3 className="font-black uppercase text-xl mb-6">{t('nav.contacts')}</h3>
-                        <div className="flex flex-col gap-6 w-full">
-
-                            {/* Number 1 */}
-                            <div className="flex flex-col items-center border-b border-black/10 pb-4 last:border-0 last:pb-0">
-                                <a href="tel:+79992699359" className="text-xl font-black hover:text-[#dba800] transition-colors mb-2">+7 (999) 269-93-59</a>
-                                <div className="flex gap-4">
-                                    <a href="https://wa.me/79992699359" aria-label="WhatsApp" className="text-[#25D366] hover:scale-110 transition-transform"><WhatsAppIcon className="w-6 h-6" /></a>
-                                    <a href="https://t.me/+79992699359" aria-label="Telegram" className="text-[#0088cc] hover:scale-110 transition-transform"><TelegramIcon className="w-6 h-6" /></a>
-                                </div>
-                            </div>
-
-                            {/* Number 2 */}
-                            <div className="flex flex-col items-center border-b border-black/10 pb-4 last:border-0 last:pb-0">
-                                <a href="tel:+79294945174" className="text-xl font-black hover:text-[#dba800] transition-colors mb-2">+7 (929) 494-51-74</a>
-                                <div className="flex gap-4">
-                                    <a href="https://wa.me/79294945174" aria-label="WhatsApp" className="text-[#25D366] hover:scale-110 transition-transform"><WhatsAppIcon className="w-6 h-6" /></a>
-                                    <a href="https://t.me/+79294945174" aria-label="Telegram" className="text-[#0088cc] hover:scale-110 transition-transform"><TelegramIcon className="w-6 h-6" /></a>
-                                </div>
-                            </div>
-
-                            {/* Number 3 */}
-                            <div className="flex flex-col items-center border-b border-black/10 pb-4 last:border-0 last:pb-0">
-                                <a href="tel:+79241619754" className="text-xl font-black hover:text-[#dba800] transition-colors mb-2">+7 (924) 161-97-54</a>
-                                <div className="flex gap-4">
-                                    <a href="https://wa.me/79241619754" aria-label="WhatsApp" className="text-[#25D366] hover:scale-110 transition-transform"><WhatsAppIcon className="w-6 h-6" /></a>
-                                    <a href="https://t.me/+79241619754" aria-label="Telegram" className="text-[#0088cc] hover:scale-110 transition-transform"><TelegramIcon className="w-6 h-6" /></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Branding/Hours */}
-                    <div className="bg-[#FFF500] text-black p-8 rounded-[2rem] border-4 border-black shadow-xl flex flex-col items-center text-center justify-center">
-                        <h2 className="text-5xl font-black uppercase tracking-tighter mb-4 text-black">
-                            {t('footer.brand')}
-                        </h2>
-                        <div className="mt-4 font-black text-xl">
-                            {t('common.working_hours')}
-                        </div>
-                        <p className="font-bold opacity-60 mt-8 text-sm">
-                            © 2022–{new Date().getFullYear()}
-                        </p>
-                    </div>
-                </div>
-
-                {/* SEO internal links for generated Brand pages */}
-                <div className="mt-16 pt-8 border-t-2 border-black/10">
-                    <h3 className="font-black uppercase text-center mb-6 opacity-80">Ремонт по маркам авто</h3>
-                    <div className="flex flex-wrap justify-center gap-x-4 gap-y-2">
-                        {[
-                            { slug: "kia", name: "KIA" },
-                            { slug: "hyundai", name: "Hyundai" },
-                            { slug: "lada", name: "LADA" },
-                            { slug: "toyota", name: "Toyota" },
-                            { slug: "volkswagen", name: "Volkswagen" },
-                            { slug: "skoda", name: "Skoda" },
-                            { slug: "renault", name: "Renault" },
-                            { slug: "nissan", name: "Nissan" },
-                            { slug: "chevrolet", name: "Chevrolet" },
-                            { slug: "ford", name: "Ford" },
-                            { slug: "mazda", name: "Mazda" },
-                            { slug: "mitsubishi", name: "Mitsubishi" },
-                            { slug: "bmw", name: "BMW" },
-                            { slug: "mercedes", name: "Mercedes-Benz" },
-                            { slug: "audi", name: "Audi" },
-                            { slug: "honda", name: "Honda" },
-                            { slug: "lexus", name: "Lexus" },
-                            { slug: "chery", name: "Chery" },
-                            { slug: "haval", name: "Haval" },
-                            { slug: "geely", name: "Geely" }
-                        ].map((brand, idx) => (
-                            <Link 
-                                key={idx} 
-                                href={`/brands/${brand.slug}`} 
-                                className="text-xs md:text-sm font-bold opacity-80 hover:opacity-100 hover:text-brand-yellow hover:bg-black px-2 py-1 rounded transition-all"
-                            >
-                                Ремонт {brand.name}
-                            </Link>
-                        ))}
-                    </div>
-                </div>
-            </footer >
-
-        </div >
+            <Footer />
+        </div>
     );
 }

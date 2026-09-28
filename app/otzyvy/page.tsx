@@ -2,9 +2,10 @@ import Link from 'next/link';
 import { Star, ShieldCheck, MapPin, ExternalLink, Award, Users } from 'lucide-react';
 import ReviewsSection from '../components/ReviewsSection';
 import { getCurrentSeasonYear } from '../lib/season';
+import Footer from '../components/Footer';
 
 export const metadata = {
-    title: 'Отзывы об автосервисе Авто14 в Казани | Рейтинг 5.0 на Картах и 2ГИС',
+    title: 'Отзывы об автосервисе в Казани | Рейтинг 5.0',
     description: 'Более 160 реальных отзывов об автосервисе Авто14 на Заречной 5Б. Высокий рейтинг 5.0 на Яндекс Картах, 2ГИС и Авито. Читайте мнения автовладельцев.',
 };
 
@@ -128,6 +129,31 @@ export default function OtzyvyPage() {
                     </div>
                 </div>
 
+                {/* Trust Factors Section */}
+                <div className="bg-white p-6 md:p-8 rounded-[2rem] border-4 border-black shadow-[8px_8px_0_#000] mb-16">
+                    <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight mb-4">
+                        За что нас чаще всего благодарят в отзывах
+                    </h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-bold text-sm md:text-base">
+                        <div className="border-2 border-black/10 rounded-xl p-4 bg-brand-yellow/10">
+                            <h3 className="font-black uppercase mb-1">Точность 3D сход-развала</h3>
+                            <p className="opacity-80">Настройка углов установки колёс на немецком стенде Hoffman решает проблемы увода автомобиля в сторону и неравномерного износа протектора с первого заезда.</p>
+                        </div>
+                        <div className="border-2 border-black/10 rounded-xl p-4 bg-brand-yellow/10">
+                            <h3 className="font-black uppercase mb-1">Бесплатная диагностика 0 ₽</h3>
+                            <p className="opacity-80">Осмотр ходовой части на подъёмнике проводится бесплатно при ремонте. Мастер лично показывает каждый люфт в шаровых, сайлентблоках и рулевых тягах.</p>
+                        </div>
+                        <div className="border-2 border-black/10 rounded-xl p-4 bg-brand-yellow/10">
+                            <h3 className="font-black uppercase mb-1">Быстрый подбор запчастей</h3>
+                            <p className="opacity-80">Собственная логистика по оптовым складам Казани позволяет привезти оригинальные детали и проверенные аналоги в течение 30–60 минут прямо в бокс.</p>
+                        </div>
+                        <div className="border-2 border-black/10 rounded-xl p-4 bg-brand-yellow/10">
+                            <h3 className="font-black uppercase mb-1">Честная смета без навязывания</h3>
+                            <p className="opacity-80">Стоимость работ и необходимых деталей рассчитывается и согласовывается до начала ремонта. Никаких неожиданных доплат при выдаче автомобиля.</p>
+                        </div>
+                    </div>
+                </div>
+
                 {/* Section with live rotating reviews */}
                 <div className="mb-16">
                     <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tight mb-6">
@@ -159,6 +185,10 @@ export default function OtzyvyPage() {
                         </Link>
                     </div>
                 </div>
+            </div>
+
+            <div className="mt-20">
+                <Footer />
             </div>
         </main>
     );

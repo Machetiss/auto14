@@ -7,6 +7,7 @@ import { TelegramIcon } from '../components/icons/TelegramIcon';
 import { handleContactClick } from '@/lib/analytics';
 import ContactForm from '../components/ContactForm';
 import { useLanguage } from '../context/LanguageContext';
+import Footer from '../components/Footer';
 
 export default function Kontakty() {
     const { language } = useLanguage();
@@ -56,7 +57,7 @@ export default function Kontakty() {
                                     <MapPin className="w-8 h-8" />
                                 </div>
                                 <div>
-                                    <h3 className="text-xs font-black uppercase tracking-widest opacity-40 mb-2">{l('Адрес автосервиса', 'Service location')}</h3>
+                                    <h2 className="text-xs font-black uppercase tracking-widest opacity-60 mb-2">{l('Адрес автосервиса и схема проезда', 'Service location & route')}</h2>
                                     <p className="text-2xl font-black uppercase tracking-tight leading-none">
                                         {l('г. Казань, Константиновка,', 'Kazan, Konstantinovka,')}<br />{l('ул. Заречная 5Б', '5B Zarechnaya St')}
                                     </p>
@@ -77,7 +78,7 @@ export default function Kontakty() {
                                     <Clock className="w-8 h-8" />
                                 </div>
                                 <div>
-                                    <h3 className="text-xs font-black uppercase tracking-widest opacity-40 mb-2">{l('Режим работы', 'Working hours')}</h3>
+                                    <h2 className="text-xs font-black uppercase tracking-widest opacity-60 mb-2">{l('Режим работы мастерской', 'Working hours')}</h2>
                                     <p className="text-2xl font-black uppercase tracking-tight leading-none">
                                         {l('Понедельник – Суббота', 'Monday – Saturday')}<br />
                                         <span className="text-4xl">09:00 – 19:00</span>
@@ -92,7 +93,7 @@ export default function Kontakty() {
                                     <Phone className="w-8 h-8" />
                                 </div>
                                 <div className="space-y-6">
-                                    <h3 className="text-xs font-black uppercase tracking-widest opacity-40 mb-2">{l('Наши телефоны', 'Our phones')}</h3>
+                                    <h2 className="text-xs font-black uppercase tracking-widest opacity-60 mb-2">{l('Наши телефоны для записи', 'Our booking phones')}</h2>
                                     {phones.map((phone, idx) => (
                                         <div key={idx} className="flex flex-col gap-2">
                                             <a
@@ -149,6 +150,73 @@ export default function Kontakty() {
                         <ContactForm />
                     </div>
                 </div>
+
+                {/* Additional directions and details section */}
+                <div className="mt-20 pt-12 border-t-4 border-black">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                        <div>
+                            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight mb-6 font-display">
+                                {l('Как проехать в автосервис Авто14', 'How to reach Avto14 service')}
+                            </h2>
+                            <div className="space-y-4 font-bold text-sm md:text-base leading-relaxed opacity-90">
+                                <p>
+                                    {l(
+                                        "Автосервис расположен в Советском районе Казани, в жилом массиве Константиновка. Удобный подъезд как со стороны Мамадышского тракта (всего 200 метров после поворота на улицу Заречная), так и со стороны трассы М7. На въезде установлена яркая вывеска «Авто14».",
+                                        "Our auto service is located in the Sovetsky district of Kazan (Konstantinovka). Easy access from Mamadyshsky Tract (just 200 meters after turning onto Zarechnaya Street) or from the M7 highway. Look for the bright Avto14 sign at the entrance."
+                                    )}
+                                </p>
+                                <p>
+                                    {l(
+                                        "Перед сервисом обустроена бесплатная заасфальтированная парковка на 10 автомобилей. Для клиентов открыта комфортная зона ожидания с бесплатным зерновым кофе, чаем, быстрым Wi-Fi и монитором с видеотрансляцией из ремонтной зоны. По согласованию с мастером вы можете пройти в бокс и лично присутствовать при диагностике автомобиля на подъёмнике.",
+                                        "Free paved customer parking for 10 cars is available directly in front of the workshop. Enjoy our comfortable customer lounge with complimentary coffee, tea, fast Wi-Fi, and live CCTV monitors of the service bays. You are also welcome to accompany the mechanic to the lift during diagnostics."
+                                    )}
+                                </p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight mb-6 font-display">
+                                {l('Навигационные данные и ориентиры', 'Navigation details & coordinates')}
+                            </h2>
+                            <div className="overflow-x-auto bg-brand-yellow/10 border-4 border-black rounded-2xl p-4 shadow-[6px_6px_0px_#000]">
+                                <table className="w-full text-left border-collapse font-bold text-xs md:text-sm">
+                                    <thead>
+                                        <tr className="border-b-2 border-black bg-black text-white">
+                                            <th className="p-3">{l('Параметр', 'Parameter')}</th>
+                                            <th className="p-3">{l('Значение', 'Value')}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="divide-y divide-black/20">
+                                        <tr>
+                                            <td className="p-3 font-black">{l('Фактический адрес', 'Physical address')}</td>
+                                            <td className="p-3">{l('г. Казань, пос. Константиновка, ул. Заречная 5Б', 'Kazan, Konstantinovka, 5B Zarechnaya St')}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className="p-3 font-black">{l('GPS-координаты', 'GPS Coordinates')}</td>
+                                            <td className="p-3 font-mono">55.809049, 49.264877</td>
+                                        </tr>
+                                        <tr>
+                                            <td className="p-3 font-black">{l('Ориентир', 'Landmark')}</td>
+                                            <td className="p-3">{l('200 м от Мамадышского тракта', '200m from Mamadyshsky Tract')}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className="p-3 font-black">{l('Телефон записи', 'Booking phone')}</td>
+                                            <td className="p-3">+7 (999) 269-93-59</td>
+                                        </tr>
+                                        <tr>
+                                            <td className="p-3 font-black">{l('Приём без очереди', 'Zero queue entry')}</td>
+                                            <td className="p-3">{l('Строго по предварительной записи ко времени', 'Strictly on appointment time')}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="mt-20">
+                <Footer />
             </div>
         </main>
     );

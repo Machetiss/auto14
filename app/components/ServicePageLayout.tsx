@@ -7,6 +7,7 @@ import { Check, ChevronDown, ChevronUp, Clock, Settings, Wrench } from 'lucide-r
 import { useBooking } from '../context/BookingContext';
 import { useLanguage } from '../context/LanguageContext';
 import dynamic from 'next/dynamic';
+import Footer from './Footer';
 
 const ReviewsSection = dynamic(() => import('./ReviewsSection'), { ssr: false });
 
@@ -201,6 +202,8 @@ export default function ServicePageLayout({
                     </button>
                 </div>
             </section>
+
+            <Footer />
         </main>
     );
 }
