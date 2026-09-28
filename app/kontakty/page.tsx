@@ -161,14 +161,14 @@ export default function Kontakty() {
                             <div className="space-y-4 font-bold text-sm md:text-base leading-relaxed opacity-90">
                                 <p>
                                     {l(
-                                        "Автосервис расположен в Советском районе Казани, в жилом массиве Константиновка. Удобный подъезд как со стороны Мамадышского тракта (всего 200 метров после поворота на улицу Заречная), так и со стороны трассы М7. На въезде установлена яркая вывеска «Авто14».",
-                                        "Our auto service is located in the Sovetsky district of Kazan (Konstantinovka). Easy access from Mamadyshsky Tract (just 200 meters after turning onto Zarechnaya Street) or from the M7 highway. Look for the bright Avto14 sign at the entrance."
+                                        "Автосервис расположен в Советском районе Казани, в жилом массиве Константиновка по адресу ул. Заречная, 5Б. Удобный подъезд со стороны Мамадышского тракта (200 метров после съезда на улицу Заречная), а также со стороны трассы М7.",
+                                        "Our auto service is located in the Sovetsky district of Kazan (Konstantinovka) at 5B Zarechnaya Street. Convenient access from Mamadyshsky Tract (200 meters after turning onto Zarechnaya Street) and from the M7 highway."
                                     )}
                                 </p>
                                 <p>
                                     {l(
-                                        "Перед сервисом обустроена бесплатная заасфальтированная парковка на 10 автомобилей. Для клиентов открыта комфортная зона ожидания с бесплатным зерновым кофе, чаем, быстрым Wi-Fi и монитором с видеотрансляцией из ремонтной зоны. По согласованию с мастером вы можете пройти в бокс и лично присутствовать при диагностике автомобиля на подъёмнике.",
-                                        "Free paved customer parking for 10 cars is available directly in front of the workshop. Enjoy our comfortable customer lounge with complimentary coffee, tea, fast Wi-Fi, and live CCTV monitors of the service bays. You are also welcome to accompany the mechanic to the lift during diagnostics."
+                                        "Сервис работает строго по предварительной записи ко времени, поэтому подъёмник и мастер свободны сразу к вашему приезду, без очередей. Вы можете оставить автомобиль на ремонт и забрать его по готовности либо лично присутствовать в боксе при диагностике: мастер наглядно покажет состояние узлов подвески, люфты и износ прямо на автомобиле.",
+                                        "We operate strictly by appointment, so the lift and mechanic are ready upon your arrival with zero queues. You can leave your vehicle for repair and pick it up when done, or personally accompany the mechanic in the service bay during diagnostics to inspect any wear and play firsthand."
                                     )}
                                 </p>
                             </div>

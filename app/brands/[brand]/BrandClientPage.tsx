@@ -74,8 +74,8 @@ export default function BrandClientPage({ brand }: { brand: CarBrand }) {
         <ServicePageLayout
             title={l(`Ремонт и обслуживание ${brand.name}`, `Repair and Service for ${brand.name}`)}
             description={l(
-                `Профессиональный ремонт ходовой части, плановое техобслуживание и высокоточный 3D сход-развал для автомобилей ${brand.name} (${brand.nameRu}) в автосервисе «Авто14» в Казани (Константиновка, ул. Заречная 5Б). Опытные мастера с профильным стажем более 10 лет, немецкий стенд Hoffman, подбор оригинальных запчастей и проверенных аналогов по VIN-коду за 15 минут. Гарантия на работы до 12 месяцев. Диагностика подвески при ремонте — 0 ₽.`,
-                `Professional chassis repair, scheduled maintenance, and high-precision 3D wheel alignment for ${brand.name} (${brand.nameRu}) at Avto14 auto service in Kazan (5B Zarechnaya St, Konstantinovka). Certified technicians with 10+ years experience, German Hoffman alignment rack, VIN parts lookup in 15 minutes. Up to 12 months warranty. Suspension diagnostics with repair is free (0 ₽).`
+                `Профессиональный ремонт ходовой части, плановое техобслуживание и высокоточный 3D сход-развал для автомобилей ${brand.name} (${brand.nameRu}) в автосервисе «Авто14» в Казани (Константиновка, ул. Заречная 5Б). Опытные мастера с профильным стажем более 10 лет, немецкий стенд Hoffman, подбор оригинальных запчастей и проверенных аналогов по VIN-коду. Гарантия на работы до 12 месяцев. Бесплатная диагностика подвески — 0 ₽.`,
+                `Professional chassis repair, scheduled maintenance, and high-precision 3D wheel alignment for ${brand.name} (${brand.nameRu}) at Avto14 auto service in Kazan (5B Zarechnaya St, Konstantinovka). Experienced technicians with 10+ years experience, German Hoffman alignment rack, VIN parts lookup. Up to 12 months warranty. Suspension diagnostics is free (0 ₽).`
             )}
             price={l("от 600₽", "from 600₽")}
             heroImage="/job/hodovaya.jpg"
@@ -97,12 +97,12 @@ export default function BrandClientPage({ brand }: { brand: CarBrand }) {
                 {
                     icon: Settings,
                     title: l("Запчасти со складов Казани", "Fast parts delivery"),
-                    desc: l(`Быстрая доставка оригинальных деталей и проверенных аналогов под ваш ${brand.nameRu} за 30–60 минут прямо в наш автосервис.`, `Fast delivery of OEM and reliable aftermarket parts for your ${brand.name} within 30-60 minutes directly to our shop.`)
+                    desc: l(`Доставка оригинальных деталей и проверенных аналогов со складов партнеров в Казани (ПартКом, Росско и др.) за 1–2 часа прямо в автосервис.`, `Fast delivery of OEM and reliable aftermarket parts from Kazan warehouse partners (PartKom, Rossko, etc.) within 1-2 hours directly to our shop.`)
                 },
                 {
                     icon: ShieldCheck,
                     title: l("Гарантия на все работы", "Comprehensive warranty"),
-                    desc: l("Предоставляем официальную гарантию на выполненный ремонт ходовой и установленные детали до 12 месяцев.", "We provide an official warranty on suspension repairs and installed parts for up to 12 months.")
+                    desc: l("Предоставляем честную гарантию на выполненный ремонт ходовой и установленные детали до 12 месяцев.", "We provide an honest warranty on suspension repairs and installed parts for up to 12 months.")
                 }
             ]}
             processSteps={[
@@ -130,7 +130,7 @@ export default function BrandClientPage({ brand }: { brand: CarBrand }) {
                 },
                 {
                     question: l("Как быстро привозят автозапчасти?", "How fast do parts arrive?"),
-                    answer: l(`Собственный отдел снабжения «Авто14» заказывает запчасти со складов Казани. Доставка занимает от 30 минут до 2 часов, машина не простаивает на подъёмнике.`, `Our logistics team sources parts from major Kazan warehouses within 30 minutes to 2 hours with zero bay downtime.`)
+                    answer: l(`Заказываем запчасти напрямую со складов партнеров в Казани (ПартКом, Росско и др.). Доставка занимает от 1 до 2 часов прямо в бокс, машина не простаивает на подъёмнике.`, `We source parts directly from partner warehouses in Kazan (PartKom, Rossko, etc.). Delivery takes 1 to 2 hours directly to the bay with zero downtime.`)
                 }
             ]}
         />

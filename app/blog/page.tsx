@@ -118,7 +118,7 @@ export default function BlogPage() {
                                     <td className="p-3 md:p-4 font-black">Диагностика подвески</td>
                                     <td className="p-3 md:p-4 opacity-80">Каждые 10 000–15 000 км</td>
                                     <td className="p-3 md:p-4 opacity-80">Глухие стуки, люфты, раскачка</td>
-                                    <td className="p-3 md:p-4 font-black text-accent-orange">0 ₽ (Бесплатно)</td>
+                                    <td className="p-3 md:p-4 font-black text-accent-orange">0 ₽ (Бесплатно для всех)</td>
                                 </tr>
                                 <tr>
                                     <td className="p-3 md:p-4 font-black">Замена масла и фильтра</td>
@@ -127,10 +127,10 @@ export default function BlogPage() {
                                     <td className="p-3 md:p-4 font-black text-accent-orange">от 600 ₽</td>
                                 </tr>
                                 <tr>
-                                    <td className="p-3 md:p-4 font-black">Балансировка колес</td>
-                                    <td className="p-3 md:p-4 opacity-80">Каждые 10 000 км / переобувка</td>
-                                    <td className="p-3 md:p-4 opacity-80">Дрожь и биение руля на 90+ км/ч</td>
-                                    <td className="p-3 md:p-4 font-black text-accent-orange">от 200 ₽/колесо</td>
+                                    <td className="p-3 md:p-4 font-black">Замена тормозных колодок</td>
+                                    <td className="p-3 md:p-4 opacity-80">Каждые 30 000–40 000 км</td>
+                                    <td className="p-3 md:p-4 opacity-80">Скрип, биение педали, износ накладок</td>
+                                    <td className="p-3 md:p-4 font-black text-accent-orange">от 800 ₽</td>
                                 </tr>
                             </tbody>
                         </table>
