@@ -207,6 +207,14 @@ export default function Kontakty() {
                                             <td className="p-3 font-black">{l('Приём без очереди', 'Zero queue entry')}</td>
                                             <td className="p-3">{l('Строго по предварительной записи ко времени', 'Strictly on appointment time')}</td>
                                         </tr>
+                                        <tr>
+                                            <td className="p-3 font-black">{l('Способы оплаты', 'Payment methods')}</td>
+                                            <td className="p-3">{l('Наличные, перевод на карту', 'Cash, card transfer')}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className="p-3 font-black">{l('Гарантия', 'Warranty')}</td>
+                                            <td className="p-3">{l('До 12 месяцев на подвеску, 14 дней на сход-развал', 'Up to 12 months on suspension, 14 days on wheel alignment')}</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
