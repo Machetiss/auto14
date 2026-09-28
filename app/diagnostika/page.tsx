@@ -13,8 +13,8 @@ export default function Diagnostika() {
         <ServicePageLayout
             title={l("Диагностика подвески", "Suspension Diagnostics")}
             description={l(
-                "Комплексная диагностика ходовой части и рулевого управления в Казани (Константиновка, Заречная 5Б). Мастер проверяет сайлентблоки, шаровые опоры, амортизаторы, ступицы и рулевые тяги на подъёмнике. Осмотр занимает 20–35 минут. Диагностика ходовой части в сервисе «Авто14» полностью бесплатна (0 ₽). Мастер наглядно показывает все люфты и износ деталей непосредственно на подъёмнике.",
-                "Comprehensive suspension and steering diagnostics in Kazan at 5B Zarechnaya St. Our technician inspects bushings, ball joints, shock absorbers, hubs, and tie rods on a lift in 20–35 minutes. Chassis inspection at Avto14 is completely free (0 ₽). The mechanic clearly demonstrates any wear directly on the lift."
+                "Комплексная диагностика ходовой части и рулевого управления в Казани (Константиновка, Заречная 5Б). Мастер проверяет сайлентблоки, шаровые опоры, амортизаторы, ступицы и рулевые тяги на подъёмнике. Осмотр занимает 20–35 минут. Диагностика подвески бесплатна. Мастер наглядно показывает все люфты и износ деталей непосредственно на подъёмнике.",
+                "Comprehensive suspension and steering diagnostics in Kazan at 5B Zarechnaya St. Our technician inspects bushings, ball joints, shock absorbers, hubs, and tie rods on a lift in 20–35 minutes. Suspension diagnostics is free. The mechanic clearly demonstrates any wear directly on the lift."
             )}
             price={l("0₽ (Бесплатно)", "0₽ (Free)")}
             heroImage="/gallery/1.jpg"
@@ -71,7 +71,7 @@ export default function Diagnostika() {
                         {l("Регламент бесплатной диагностики ходовой", "Free Chassis Inspection Procedure")}
                     </h2>
                     <p className="text-xs md:text-sm font-bold opacity-60 mb-6 uppercase tracking-wider">
-                        {l("Казань, ул. Заречная 5Б • Без скрытых условий • 0 ₽ для всех клиентов", "Kazan, 5B Zarechnaya St • 0 ₽ for all customers")}
+                        {l("Казань, ул. Заречная 5Б • Диагностика подвески бесплатна", "Kazan, 5B Zarechnaya St • Free suspension diagnostics")}
                     </p>
                     <div className="overflow-x-auto">
                         <table className="w-full text-left border-collapse">
@@ -120,7 +120,7 @@ export default function Diagnostika() {
             faq={[
                 {
                     question: l("Диагностика действительно бесплатная?", "Is the diagnostics really free?"),
-                    answer: l("Да, диагностика подвески в автосервисе «Авто14» полностью бесплатна (0 ₽). Никаких скрытых платежей, даже если вы не будете ремонтироваться сразу.", "Yes, suspension diagnostics at Avto14 is completely free (0 ₽) with no hidden conditions.")
+                    answer: l("Да, диагностика подвески бесплатна. Никаких скрытых условий, даже если вы не будете ремонтироваться сразу.", "Yes, suspension diagnostics is free with zero conditions.")
                 },
                 {
                     question: l("Сколько времени занимает осмотр?", "How long does it take?"),

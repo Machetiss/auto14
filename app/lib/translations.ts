@@ -150,7 +150,7 @@ export const translations = {
                 },
                 {
                     q: "Бесплатная ли у вас диагностика?",
-                    a: "Диагностика ходовой части проводится бесплатно при условии, что выявленные неисправности вы будете устранять в нашем автосервисе."
+                    a: "Да, диагностика подвески бесплатна. Мастер осматривает ходовую часть на подъёмнике и наглядно показывает состояние всех узлов."
                 },
                 {
                     q: "Сколько времени занимает процедура развала?",
@@ -368,7 +368,7 @@ export const translations = {
                 },
                 {
                     q: "Is your diagnostics free?",
-                    a: "Chassis diagnostics are free if you choose to have the repairs done at our shop."
+                    a: "Yes, suspension diagnostics is free. Our technician inspects the chassis on a lift and shows you the condition of all components."
                 },
                 {
                     q: "How long does a wheel alignment take?",

@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   }
 
   const title = `${serviceData.nameRu} ${brandData.name} в Казани`;
-  const description = `${serviceData.nameRu} для ${brandData.nameRu} (${brandData.name}) в Казани. Опытные мастера, честные цены от ${serviceData.priceFrom > 0 ? serviceData.priceFrom + ' руб' : 'бесплатно при ремонте'}, гарантия на работы. Запись по телефону или онлайн.`;
+  const description = `${serviceData.nameRu} для ${brandData.nameRu} (${brandData.name}) в Казани. Опытные мастера, цены ${serviceData.priceFrom > 0 ? 'от ' + serviceData.priceFrom + ' руб' : 'бесплатно'}, гарантия на работы. Запись по телефону или онлайн.`;
 
   return {
     title,

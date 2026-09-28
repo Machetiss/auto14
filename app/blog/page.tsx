@@ -118,13 +118,13 @@ export default function BlogPage() {
                                     <td className="p-3 md:p-4 font-black">Диагностика подвески</td>
                                     <td className="p-3 md:p-4 opacity-80">Каждые 10 000–15 000 км</td>
                                     <td className="p-3 md:p-4 opacity-80">Глухие стуки, люфты, раскачка</td>
-                                    <td className="p-3 md:p-4 font-black text-accent-orange">0 ₽ (Бесплатно для всех)</td>
+                                    <td className="p-3 md:p-4 font-black text-accent-orange">0 ₽ (Бесплатно)</td>
                                 </tr>
                                 <tr>
                                     <td className="p-3 md:p-4 font-black">Замена масла и фильтра</td>
                                     <td className="p-3 md:p-4 opacity-80">Каждые 7 000–8 000 км</td>
                                     <td className="p-3 md:p-4 opacity-80">Потемнение масла, плановое ТО</td>
-                                    <td className="p-3 md:p-4 font-black text-accent-orange">от 600 ₽</td>
+                                    <td className="p-3 md:p-4 font-black text-accent-orange">от 1000 ₽</td>
                                 </tr>
                                 <tr>
                                     <td className="p-3 md:p-4 font-black">Замена тормозных колодок</td>

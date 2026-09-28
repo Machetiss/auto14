@@ -37,7 +37,7 @@ const tiresData: PriceItem[] = [
 ];
 
 const repairData: PriceItem[] = [
-    { name: 'Диагностика ходовой', nameEn: 'Suspension diagnostics', price: 0, note: 'бесплатно при ремонте у нас', noteEn: 'free when repaired at our shop' },
+    { name: 'Диагностика ходовой', nameEn: 'Suspension diagnostics', price: 0, note: 'бесплатно', noteEn: 'free' },
     { name: 'Замена рулевого наконечника', nameEn: 'Tie rod end replacement', price: 700 },
     { name: 'Замена шаровой опоры (болтовая)', nameEn: 'Ball joint replacement (bolted)', price: 800 },
     { name: 'Замена масла в ДВС', nameEn: 'Engine oil change', price: 1000 },

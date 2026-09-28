@@ -50,7 +50,7 @@ export default function BrandClientPage({ brand }: { brand: CarBrand }) {
                             <td className="p-3 md:p-4 font-black">Замена моторного масла и масляного фильтра</td>
                             <td className="p-3 md:p-4 opacity-80">30 мин</td>
                             <td className="p-3 md:p-4 opacity-80">10 000 км</td>
-                            <td className="p-3 md:p-4 font-black text-accent-orange">от 600 ₽</td>
+                            <td className="p-3 md:p-4 font-black text-accent-orange">от 1000 ₽</td>
                         </tr>
                         <tr>
                             <td className="p-3 md:p-4 font-black">Замена передних тормозных колодок</td>
@@ -74,10 +74,10 @@ export default function BrandClientPage({ brand }: { brand: CarBrand }) {
         <ServicePageLayout
             title={l(`Ремонт и обслуживание ${brand.name}`, `Repair and Service for ${brand.name}`)}
             description={l(
-                `Профессиональный ремонт ходовой части, плановое техобслуживание и высокоточный 3D сход-развал для автомобилей ${brand.name} (${brand.nameRu}) в автосервисе «Авто14» в Казани (Константиновка, ул. Заречная 5Б). Опытные мастера с профильным стажем более 10 лет, немецкий стенд Hoffman, подбор оригинальных запчастей и проверенных аналогов по VIN-коду. Гарантия на работы до 12 месяцев. Бесплатная диагностика подвески — 0 ₽.`,
-                `Professional chassis repair, scheduled maintenance, and high-precision 3D wheel alignment for ${brand.name} (${brand.nameRu}) at Avto14 auto service in Kazan (5B Zarechnaya St, Konstantinovka). Experienced technicians with 10+ years experience, German Hoffman alignment rack, VIN parts lookup. Up to 12 months warranty. Suspension diagnostics is free (0 ₽).`
+                `Профессиональный ремонт ходовой части, плановое техобслуживание и высокоточный 3D сход-развал для автомобилей ${brand.name} (${brand.nameRu}) в автосервисе «Авто14» в Казани (Константиновка, ул. Заречная 5Б). Опытные мастера с профильным стажем более 10 лет, немецкий стенд Hoffman, подбор оригинальных запчастей и проверенных аналогов по VIN-коду. Гарантия на работы до 12 месяцев. Диагностика подвески бесплатна.`,
+                `Professional chassis repair, scheduled maintenance, and high-precision 3D wheel alignment for ${brand.name} (${brand.nameRu}) at Avto14 auto service in Kazan (5B Zarechnaya St, Konstantinovka). Experienced technicians with 10+ years experience, German Hoffman alignment rack, VIN parts lookup. Up to 12 months warranty. Suspension diagnostics is free.`
             )}
-            price={l("от 600₽", "from 600₽")}
+            price={l("от 800₽", "from 800₽")}
             heroImage="/job/hodovaya.jpg"
             priceTable={brandPriceTable}
             symptoms={[

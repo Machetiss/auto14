@@ -44,8 +44,8 @@ export default function Kontakty() {
                         <div className="bg-brand-yellow/20 border-2 border-black rounded-2xl p-5 mb-8 max-w-xl">
                             <p className="text-sm md:text-base font-bold leading-relaxed">
                                 {l(
-                                    "Автосервис «Авто14» расположен в Советском районе Казани по адресу: посёлок Константиновка, ул. Заречная, дом 5Б (200 метров от Мамадышского тракта). Работаем с понедельника по субботу с 9:00 до 19:00, воскресенье — выходной. Телефон для записи: +7 (999) 269-93-59, также принимаем заявки через WhatsApp и Telegram. Среднее время ожидания заезда по записи — 0 минут.",
-                                    "Avto14 auto service is located in the Sovetsky district of Kazan at 5B Zarechnaya St, Konstantinovka (200m off Mamadyshsky Tract). Open Monday to Saturday 9:00 to 19:00, Sunday closed. Direct booking phone: +7 (999) 269-93-59 or via WhatsApp and Telegram. Zero queue waiting time for scheduled visits."
+                                    "Автосервис «Авто14» расположен в Советском районе Казани по адресу: посёлок Константиновка, ул. Заречная, дом 5Б (съезд с Мамадышского тракта на улицу Заречная). Работаем с понедельника по субботу с 9:00 до 19:00, воскресенье — выходной. Телефон для записи: +7 (999) 269-93-59, также принимаем заявки через WhatsApp и Telegram. Среднее время ожидания заезда по записи — 0 минут.",
+                                    "Avto14 auto service is located in the Sovetsky district of Kazan at 5B Zarechnaya St, Konstantinovka (turn from Mamadyshsky Tract onto Zarechnaya St). Open Monday to Saturday 9:00 to 19:00, Sunday closed. Direct booking phone: +7 (999) 269-93-59 or via WhatsApp and Telegram. Zero queue waiting time for scheduled visits."
                                 )}
                             </p>
                         </div>
@@ -161,8 +161,8 @@ export default function Kontakty() {
                             <div className="space-y-4 font-bold text-sm md:text-base leading-relaxed opacity-90">
                                 <p>
                                     {l(
-                                        "Автосервис расположен в Советском районе Казани, в жилом массиве Константиновка по адресу ул. Заречная, 5Б. Удобный подъезд со стороны Мамадышского тракта (200 метров после съезда на улицу Заречная), а также со стороны трассы М7.",
-                                        "Our auto service is located in the Sovetsky district of Kazan (Konstantinovka) at 5B Zarechnaya Street. Convenient access from Mamadyshsky Tract (200 meters after turning onto Zarechnaya Street) and from the M7 highway."
+                                        "Автосервис расположен в Советском районе Казани, в жилом массиве Константиновка по адресу ул. Заречная, 5Б. Удобный подъезд со стороны Мамадышского тракта (поворот на улицу Заречная), а также со стороны трассы М7.",
+                                        "Our auto service is located in the Sovetsky district of Kazan (Konstantinovka) at 5B Zarechnaya Street. Convenient access from Mamadyshsky Tract (turn onto Zarechnaya Street) and from the M7 highway."
                                     )}
                                 </p>
                                 <p>
@@ -197,7 +197,7 @@ export default function Kontakty() {
                                         </tr>
                                         <tr>
                                             <td className="p-3 font-black">{l('Ориентир', 'Landmark')}</td>
-                                            <td className="p-3">{l('200 м от Мамадышского тракта', '200m from Mamadyshsky Tract')}</td>
+                                            <td className="p-3">{l('Поворот с Мамадышского тракта на ул. Заречная', 'Turn from Mamadyshsky Tract onto Zarechnaya St')}</td>
                                         </tr>
                                         <tr>
                                             <td className="p-3 font-black">{l('Телефон записи', 'Booking phone')}</td>

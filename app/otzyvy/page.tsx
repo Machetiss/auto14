@@ -140,8 +140,8 @@ export default function OtzyvyPage() {
                             <p className="opacity-80">Настройка углов установки колёс на немецком стенде Hoffman решает проблемы увода автомобиля в сторону и неравномерного износа протектора с первого заезда.</p>
                         </div>
                         <div className="border-2 border-black/10 rounded-xl p-4 bg-brand-yellow/10">
-                            <h3 className="font-black uppercase mb-1">Бесплатная диагностика 0 ₽</h3>
-                            <p className="opacity-80">Осмотр ходовой части на подъёмнике проводится бесплатно для всех без скрытых условий. Мастер наглядно показывает каждый люфт в шаровых, сайлентблоках и рулевых тягах.</p>
+                            <h3 className="font-black uppercase mb-1">Диагностика подвески бесплатна</h3>
+                            <p className="opacity-80">Осмотр ходовой части на подъёмнике бесплатный. Мастер наглядно показывает состояние узлов, люфты в сайлентблоках, шаровых опорах и рулевых тягах.</p>
                         </div>
                         <div className="border-2 border-black/10 rounded-xl p-4 bg-brand-yellow/10">
                             <h3 className="font-black uppercase mb-1">Быстрый подбор автозапчастей</h3>
