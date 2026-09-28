@@ -1,7 +1,6 @@
 import { MetadataRoute } from 'next';
 import { carBrands } from '@/app/data/carBrands';
 import { services } from '@/app/data/services';
-import { getCarSpecs } from '@/lib/cars';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://www.auto-14.ru';
@@ -75,35 +74,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         }))
     );
 
-    // /catalog — Главная страница каталога
-    const catalogMainRoute: MetadataRoute.Sitemap = [
-        {
-            url: `${baseUrl}/catalog`,
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.8,
-        },
-    ];
-
-    // /catalog/[brand] и /catalog/[brand]/[model]
-    const catalogRoutes: MetadataRoute.Sitemap = getCarSpecs().flatMap((spec) => [
-        {
-            url: `${baseUrl}/catalog/${spec.brand.toLowerCase()}`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-        {
-            url: `${baseUrl}/catalog/${spec.brand.toLowerCase()}/${encodeURIComponent(spec.model)}`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.75,
-        },
-    ]);
-
-    // Удаление дубликатов для брендов
-    const uniqueCatalogRoutes = Array.from(new Map(catalogRoutes.map(route => [route.url, route])).values());
-
     // /blog
     const blogRoutes: MetadataRoute.Sitemap = [
         {
@@ -126,5 +96,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
         }
     ];
 
-    return [...staticRoutes, ...dynamicBrandRoutes, ...dynamicServiceBrandRoutes, ...catalogMainRoute, ...uniqueCatalogRoutes, ...blogRoutes];
+    return [...staticRoutes, ...dynamicBrandRoutes, ...dynamicServiceBrandRoutes, ...blogRoutes];
 }

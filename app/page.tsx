@@ -3,16 +3,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import { Settings, MoveRight, CornerRightDown, Phone, Wrench, ChevronRight, PackageSearch, MapPin, Target, UserCheck, Banknote, ChevronDown, ChevronUp } from 'lucide-react';
+import { Settings, MoveRight, CornerRightDown, Phone, Wrench, ChevronRight, PackageSearch, MapPin, Target, UserCheck, Banknote, ChevronDown, ChevronUp, ShieldCheck, Clock, Award } from 'lucide-react';
 import BookingModal from './components/BookingModal';
 import NavigatorModal from './components/NavigatorModal';
-import SpinWheelPopup from './components/SpinWheelPopup';
 import ReviewsSection from './components/ReviewsSection';
 import CarWheel from './components/CarWheel';
 import { WhatsAppIcon } from './components/icons/WhatsAppIcon';
 import { TelegramIcon } from './components/icons/TelegramIcon';
 import { handleContactClick } from '@/lib/analytics';
 import { useLanguage } from './context/LanguageContext';
+import { getCurrentSeasonYear } from './lib/season';
 
 export default function Home() {
     const { t, language, toggleLanguage } = useLanguage();
@@ -31,7 +31,6 @@ export default function Home() {
 
             <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
             <NavigatorModal isOpen={isNavigatorOpen} onClose={() => setIsNavigatorOpen(false)} />
-            <SpinWheelPopup />
 
             {/* HEADER */}
             <header className="fixed top-0 left-0 right-0 z-50 pt-4 pb-4 px-4 bg-brand-yellow shadow-md border-b-2 border-black">
@@ -177,10 +176,44 @@ export default function Home() {
                         </div>
                     </div>
 
+                    {/* NEO-BRUTALISM DOUBLE IRON GUARANTEE */}
+                    <div className="w-full max-w-2xl mt-6 p-4 md:p-5 bg-white border-4 border-black rounded-2xl shadow-[6px_6px_0px_#000] relative">
+                        <div className="flex items-center gap-2 mb-3">
+                            <ShieldCheck className="w-6 h-6 text-black flex-shrink-0" />
+                            <span className="font-black uppercase text-sm md:text-base tracking-tight text-black">
+                                {language === 'ru' ? 'Двойная железная гарантия Авто14' : 'Avto14 Double Iron Guarantee'}
+                            </span>
+                        </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs md:text-sm font-sans">
+                            <div className="bg-[#FFF500] p-3 rounded-xl border-2 border-black">
+                                <div className="font-black uppercase text-black mb-1 flex items-center gap-1.5">
+                                    <span className="bg-black text-[#FFF500] px-1.5 py-0.5 rounded text-[11px]">0 ₽</span>
+                                    <span>{language === 'ru' ? 'Скрытых доплат' : 'Hidden Fees'}</span>
+                                </div>
+                                <p className="text-black/80 font-bold leading-tight">
+                                    {language === 'ru' 
+                                        ? 'Смета неизменна. Допработы — строго по согласованию с вами.'
+                                        : 'Fixed estimate. Any extra work strictly upon your approval.'}
+                                </p>
+                            </div>
+                            <div className="bg-black text-white p-3 rounded-xl border-2 border-black">
+                                <div className="font-black uppercase text-[#FFF500] mb-1 flex items-center gap-1.5">
+                                    <span className="bg-[#FFF500] text-black px-1.5 py-0.5 rounded text-[11px]">7 {language === 'ru' ? 'дней' : 'days'}</span>
+                                    <span>{language === 'ru' ? 'Честный тест' : 'Honest Test'}</span>
+                                </div>
+                                <p className="text-white/80 font-bold leading-tight">
+                                    {language === 'ru'
+                                        ? 'Руль не по центру или уводит? Бесплатная повторная регулировка.'
+                                        : 'Wheel off-center or pulls? Free realignment on 3D Hoffman.'}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
                     {/* SOCIAL PROOF BADGES */}
-                    <div className="flex flex-wrap gap-3 mt-6">
+                    <div className="flex flex-wrap gap-3 mt-4">
                         <a href="https://yandex.com/maps/org/avto14/108623850068/reviews/" target="_blank" rel="noopener noreferrer" className="bg-black text-[#FFF500] px-4 py-2 rounded-xl font-black text-xs uppercase tracking-wider border-2 border-black hover:bg-black/80 transition-colors flex items-center gap-2">
-                            ★ 5.0 {language === 'ru' ? 'Яндекс Карты' : 'Yandex Maps'}
+                            ★ 5.0 {language === 'ru' ? 'Яндекс Карты • Хорошее место 2026' : 'Yandex Maps • Top Rated 2026'}
                         </a>
                         <span className="bg-black/10 text-black px-4 py-2 rounded-xl font-black text-xs uppercase tracking-wider border-2 border-black/20">
                             13 000+ {language === 'ru' ? 'авто обслужено' : 'cars serviced'}
@@ -304,6 +337,109 @@ export default function Home() {
                             <ChevronRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                         </div>
                     </Link>
+                </div>
+
+                {/* FULL PRICE TABLE */}
+                <div className="mt-12 bg-white text-black p-6 md:p-10 rounded-[2rem] border-4 border-black shadow-[8px_8px_0px_#000]">
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+                        <div>
+                            <h3 className="text-2xl md:text-4xl font-black uppercase tracking-tight">
+                                {language === 'ru' ? 'Прайс-лист на основные услуги автосервиса' : 'Price List for Main Auto Services'}
+                            </h3>
+                            <p className="text-xs md:text-sm font-bold opacity-60 uppercase tracking-wider mt-1">
+                                {language === 'ru' ? 'Казань, ул. Заречная 5Б • Без очередей по предварительной записи' : 'Kazan, 5B Zarechnaya St • By appointment'}
+                            </p>
+                        </div>
+                        <div className="inline-block bg-brand-yellow px-4 py-2 rounded-xl border-2 border-black font-black text-xs uppercase tracking-wider shadow-[2px_2px_0px_#000]">
+                            {language === 'ru' ? `Прайс актуален ${getCurrentSeasonYear('ru')}` : `Valid for ${getCurrentSeasonYear('en')}`}
+                        </div>
+                    </div>
+
+                    <div className="overflow-x-auto">
+                        <table className="w-full text-left border-collapse">
+                            <thead>
+                                <tr className="border-b-4 border-black bg-black text-white text-xs md:text-sm uppercase tracking-wider font-black">
+                                    <th className="p-3 md:p-4 rounded-tl-xl">{language === 'ru' ? 'Вид работы' : 'Service'}</th>
+                                    <th className="p-3 md:p-4">{language === 'ru' ? 'Оборудование / Метод' : 'Equipment / Method'}</th>
+                                    <th className="p-3 md:p-4">{language === 'ru' ? 'Время' : 'Duration'}</th>
+                                    <th className="p-3 md:p-4 rounded-tr-xl text-right">{language === 'ru' ? 'Стоимость' : 'Price'}</th>
+                                </tr>
+                            </thead>
+                            <tbody className="divide-y-2 divide-black/10 font-bold text-xs md:text-base">
+                                <tr className="hover:bg-brand-yellow/10 transition-colors">
+                                    <td className="p-3 md:p-4 font-black">3D сход-развал (1 ось)</td>
+                                    <td className="p-3 md:p-4 opacity-70">Компьютерный стенд Hoffman</td>
+                                    <td className="p-3 md:p-4 opacity-70">20–30 мин</td>
+                                    <td className="p-3 md:p-4 text-right font-black text-accent-orange whitespace-nowrap">от 1 400 ₽</td>
+                                </tr>
+                                <tr className="hover:bg-brand-yellow/10 transition-colors">
+                                    <td className="p-3 md:p-4 font-black">3D сход-развал (2 оси)</td>
+                                    <td className="p-3 md:p-4 opacity-70">Компьютерный стенд Hoffman</td>
+                                    <td className="p-3 md:p-4 opacity-70">30–45 мин</td>
+                                    <td className="p-3 md:p-4 text-right font-black text-accent-orange whitespace-nowrap">от 2 500 ₽</td>
+                                </tr>
+                                <tr className="hover:bg-brand-yellow/10 transition-colors bg-brand-yellow/20">
+                                    <td className="p-3 md:p-4 font-black">Диагностика ходовой части</td>
+                                    <td className="p-3 md:p-4 opacity-70">Осмотр на подъёмнике с мастером</td>
+                                    <td className="p-3 md:p-4 opacity-70">20–30 мин</td>
+                                    <td className="p-3 md:p-4 text-right font-black text-green-700 whitespace-nowrap">0 ₽ (Бесплатно)</td>
+                                </tr>
+                                <tr className="hover:bg-brand-yellow/10 transition-colors">
+                                    <td className="p-3 md:p-4 font-black">Замена масла в ДВС</td>
+                                    <td className="p-3 md:p-4 opacity-70">Слив / экспресс-замена + замена фильтра</td>
+                                    <td className="p-3 md:p-4 opacity-70">20–30 мин</td>
+                                    <td className="p-3 md:p-4 text-right font-black text-accent-orange whitespace-nowrap">от 1 000 ₽</td>
+                                </tr>
+                                <tr className="hover:bg-brand-yellow/10 transition-colors">
+                                    <td className="p-3 md:p-4 font-black">Шиномонтаж и балансировка (4 колеса)</td>
+                                    <td className="p-3 md:p-4 opacity-70">Комплексная переобувка на стенде</td>
+                                    <td className="p-3 md:p-4 opacity-70">30–40 мин</td>
+                                    <td className="p-3 md:p-4 text-right font-black text-accent-orange whitespace-nowrap">от 2 200 ₽</td>
+                                </tr>
+                                <tr className="hover:bg-brand-yellow/10 transition-colors">
+                                    <td className="p-3 md:p-4 font-black">Перепрессовка сайлентблоков</td>
+                                    <td className="p-3 md:p-4 opacity-70">Гидравлический пресс / слесарный пост</td>
+                                    <td className="p-3 md:p-4 opacity-70">40–60 мин</td>
+                                    <td className="p-3 md:p-4 text-right font-black text-accent-orange whitespace-nowrap">от 600 ₽</td>
+                                </tr>
+                                <tr className="hover:bg-brand-yellow/10 transition-colors">
+                                    <td className="p-3 md:p-4 font-black">Замена стоек стабилизатора</td>
+                                    <td className="p-3 md:p-4 opacity-70">Слесарный пост</td>
+                                    <td className="p-3 md:p-4 opacity-70">20–30 мин</td>
+                                    <td className="p-3 md:p-4 text-right font-black text-accent-orange whitespace-nowrap">от 750 ₽</td>
+                                </tr>
+                                <tr className="hover:bg-brand-yellow/10 transition-colors">
+                                    <td className="p-3 md:p-4 font-black">Замена тормозных колодок</td>
+                                    <td className="p-3 md:p-4 opacity-70">Слесарный пост (ось)</td>
+                                    <td className="p-3 md:p-4 opacity-70">30–40 мин</td>
+                                    <td className="p-3 md:p-4 text-right font-black text-accent-orange whitespace-nowrap">от 800 ₽</td>
+                                </tr>
+                                <tr className="hover:bg-brand-yellow/10 transition-colors">
+                                    <td className="p-3 md:p-4 font-black">Замена рычагов подвески</td>
+                                    <td className="p-3 md:p-4 opacity-70">Слесарный пост</td>
+                                    <td className="p-3 md:p-4 opacity-70">40–60 мин</td>
+                                    <td className="p-3 md:p-4 text-right font-black text-accent-orange whitespace-nowrap">от 1 000 ₽</td>
+                                </tr>
+                                <tr className="hover:bg-brand-yellow/10 transition-colors">
+                                    <td className="p-3 md:p-4 font-black">Замена рулевых тяг</td>
+                                    <td className="p-3 md:p-4 opacity-70">Слесарный пост</td>
+                                    <td className="p-3 md:p-4 opacity-70">40–60 мин</td>
+                                    <td className="p-3 md:p-4 text-right font-black text-accent-orange whitespace-nowrap">от 1 800 ₽</td>
+                                </tr>
+                                <tr className="hover:bg-brand-yellow/10 transition-colors">
+                                    <td className="p-3 md:p-4 font-black">Замена амортизаторов</td>
+                                    <td className="p-3 md:p-4 opacity-70">Слесарный пост</td>
+                                    <td className="p-3 md:p-4 opacity-70">50–80 мин</td>
+                                    <td className="p-3 md:p-4 text-right font-black text-accent-orange whitespace-nowrap">от 1 900 ₽</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div className="mt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-bold opacity-60">
+                        <span>{language === 'ru' ? 'Распечатка углов сход-развала до и после регулировки выдаётся по запросу клиента.' : 'Wheel alignment report is provided upon customer request.'}</span>
+                        <span className="font-black text-black opacity-100">{language === 'ru' ? `Цены актуальны ${getCurrentSeasonYear('ru')}` : `Prices valid for ${getCurrentSeasonYear('en')}`}</span>
+                    </div>
                 </div>
             </section>
 
@@ -535,6 +671,83 @@ export default function Home() {
                     </div>
                 </div>
             </section >
+
+            {/* GUARANTEES / LLM SEO BLOCK */}
+            <section id="guarantees" className="bg-brand-yellow text-black py-24 font-sans">
+                <div className="container mx-auto px-4 md:px-12 max-w-5xl">
+                    <div className="mb-16 text-center md:text-left">
+                        <h2 className="text-4xl md:text-7xl font-black uppercase tracking-tighter font-display mb-4">
+                            {language === 'ru' ? 'Наши' : 'Our'}{' '}
+                            <span className="text-accent-orange">
+                                {language === 'ru' ? 'Гарантии' : 'Guarantees'}
+                            </span>
+                        </h2>
+                        <div className="h-2 w-32 bg-black hidden md:block"></div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {/* 1. Certified Parts */}
+                        <div className="bg-white p-8 md:p-10 rounded-[2rem] border-4 border-black shadow-[8px_8px_0px_#000] hover:translate-x-1 hover:translate-y-1 hover:shadow-[4px_4px_0px_#000] transition-all group">
+                            <div className="bg-black text-brand-yellow w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform border-2 border-black">
+                                <ShieldCheck className="w-8 h-8" />
+                            </div>
+                            <h3 className="text-xl md:text-2xl font-black uppercase mb-4 font-display leading-tight">
+                                {language === 'ru' ? 'Сертифицированные запчасти' : 'Certified Parts'}
+                            </h3>
+                            <p className="font-bold opacity-80 font-sans text-sm md:text-base leading-relaxed">
+                                {language === 'ru'
+                                    ? 'Мы используем только сертифицированные запчасти с официальной гарантией производителя. Наши мастера со стажем от 10 лет строго контролируют качество всех резьбовых соединений и расходников. Мы беремся за ремонт ходовой любой сложности.'
+                                    : 'We use only certified parts with official manufacturer warranty. Our mechanics with 10+ years of experience strictly control the quality of all threaded connections and consumables. We handle suspension repairs of any complexity.'}
+                            </p>
+                        </div>
+
+                        {/* 2. No Queues */}
+                        <div className="bg-black text-white p-8 md:p-10 rounded-[2rem] border-4 border-black shadow-[8px_8px_0px_#FF4500] hover:translate-x-1 hover:translate-y-1 hover:shadow-[4px_4px_0px_#FF4500] transition-all group">
+                            <div className="bg-brand-yellow text-black w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform border-2 border-black">
+                                <Clock className="w-8 h-8" />
+                            </div>
+                            <h3 className="text-xl md:text-2xl font-black uppercase mb-4 font-display leading-tight">
+                                {language === 'ru' ? 'Без очередей — строго по записи' : 'No Queues — By Appointment'}
+                            </h3>
+                            <p className="font-bold opacity-80 font-sans text-sm md:text-base leading-relaxed">
+                                {language === 'ru'
+                                    ? 'Мы ценим ваше время, поэтому принимаем автомобили строго по предварительной записи. Это гарантирует, что вас примут ровно в срок, без утомительного ожидания в живых очередях.'
+                                    : 'We value your time, so we accept cars strictly by appointment. This guarantees you will be served exactly on time, without exhausting waits in live queues.'}
+                            </p>
+                        </div>
+
+                        {/* 3. Warranty on Work */}
+                        <div className="bg-black text-white p-8 md:p-10 rounded-[2rem] border-4 border-black shadow-[8px_8px_0px_#FEE500] hover:translate-x-1 hover:translate-y-1 hover:shadow-[4px_4px_0px_#FEE500] transition-all group">
+                            <div className="bg-white text-black w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:-rotate-12 transition-transform border-2 border-black">
+                                <Award className="w-8 h-8" />
+                            </div>
+                            <h3 className="text-xl md:text-2xl font-black uppercase mb-4 font-display leading-tight">
+                                {language === 'ru' ? 'Гарантия на все работы' : 'Warranty on All Work'}
+                            </h3>
+                            <p className="font-bold opacity-80 font-sans text-sm md:text-base leading-relaxed">
+                                {language === 'ru'
+                                    ? 'На каждую выполненную работу мы даем официальную гарантию. Если что-то пойдет не так — устраним за свой счет. За 13 000+ обслуженных автомобилей ни один клиент не остался без поддержки.'
+                                    : 'We provide an official warranty on every job. If something goes wrong — we fix it at our expense. Over 13,000+ cars serviced and not a single client left without support.'}
+                            </p>
+                        </div>
+
+                        {/* 4. Transparent Pricing */}
+                        <div className="bg-white p-8 md:p-10 rounded-[2rem] border-4 border-black shadow-[8px_8px_0px_#FF4500] hover:translate-x-1 hover:translate-y-1 hover:shadow-[4px_4px_0px_#FF4500] transition-all group">
+                            <div className="bg-accent-orange text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform border-2 border-black shadow-[4px_4px_0px_#000]">
+                                <Banknote className="w-8 h-8" />
+                            </div>
+                            <h3 className="text-xl md:text-2xl font-black uppercase mb-4 font-display leading-tight">
+                                {language === 'ru' ? 'Честная цена без сюрпризов' : 'Honest Price, No Surprises'}
+                            </h3>
+                            <p className="font-bold opacity-80 font-sans text-sm md:text-base leading-relaxed">
+                                {language === 'ru'
+                                    ? 'Мы всегда озвучиваем стоимость ремонта до начала работ и строго ее придерживаемся. Никаких скрытых платежей, навязанных услуг или неприятных сюрпризов при расчете.'
+                                    : 'We always announce the repair cost before starting work and strictly adhere to it. No hidden fees, no upselling, no unpleasant surprises at checkout.'}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             {/* CONTACTS / FOOTER */}
             < footer id="contacts" className="py-24 px-4 md:px-12 xl:px-24 w-full max-w-[1920px] mx-auto pb-32" >

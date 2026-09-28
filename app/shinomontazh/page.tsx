@@ -3,6 +3,7 @@
 import ServicePageLayout from '../components/ServicePageLayout';
 import { Settings, Disc, ShieldCheck, Clock } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { getCurrentSeasonYear } from '../lib/season';
 
 export default function Shinomontazh() {
     const { language } = useLanguage();
@@ -12,8 +13,8 @@ export default function Shinomontazh() {
         <ServicePageLayout
             title={l("Шиномонтаж и Балансировка", "Tire Service & Balancing")}
             description={l(
-                "Сезонная переобувка без очередей (по записи). Бережное отношение к датчикам давления и низкому профилю.",
-                "Seasonal tire swap by appointment — no waiting. Careful handling of pressure sensors and low-profile tires."
+                "Сезонный шиномонтаж и балансировка колёс в Казани на ул. Заречная 5Б по предварительной записи без очередей. Полный комплекс работ для четырёх колёс R13–R16 занимает 30 минут, для R17–R20 — до 45 минут. Цена комплекса переобувки начинается от 2200 рублей за комплект по прайс-листу сервиса. Применяем калиброванные станки и затягиваем болты с контролем момента.",
+                "Seasonal tire mounting and wheel balancing in Kazan at 5B Zarechnaya St by appointment without waiting. A full swap for four wheels R13–R16 takes 30 minutes, for R17–R20 up to 45 minutes. Complete seasonal package starts from 2200 ₽ per set. We use calibrated machines and torque wrench control."
             )}
             price={l("от 2200₽", "from 2200₽")}
             heroImage="/job/shin.jpg"
@@ -53,17 +54,69 @@ export default function Shinomontazh() {
                 },
                 {
                     title: l("Установка на авто", "Mounting on car"),
-                    desc: l("Затяжка болтов крест-накрест.", "Cross-pattern bolt tightening.")
+                    desc: l("Затяжка болтов крест-накрест с финишным контролем момента.", "Cross-pattern bolt tightening with final torque check.")
                 },
                 {
                     title: l("Упаковка", "Packaging"),
                     desc: l("Старые шины упакуем в плотные пакеты, чтобы не испачкать салон.", "Old tires packed in bags to keep your car clean.")
                 }
             ]}
+            priceTable={
+                <div className="bg-white p-6 md:p-8 rounded-[2rem] border-4 border-black shadow-[6px_6px_0_#000] max-w-4xl mx-auto text-black">
+                    <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight mb-2">
+                        {l("Прайс-лист на сезонный шиномонтаж (4 колеса)", "Tire Service Price List (Set of 4)")}
+                    </h2>
+                    <p className="text-xs md:text-sm font-bold opacity-60 mb-6 uppercase tracking-wider">
+                        {l("Казань, ул. Заречная 5Б • Снятие, перебортовка, балансировка и установка", "Kazan, 5B Zarechnaya St • Full Swap & Balance")}
+                    </p>
+                    <div className="overflow-x-auto">
+                        <table className="w-full text-left border-collapse">
+                            <thead>
+                                <tr className="border-b-4 border-black bg-black text-white text-xs md:text-sm uppercase tracking-wider font-black">
+                                    <th className="p-3 md:p-4 rounded-tl-xl">{l("Диаметр дисков", "Rim Diameter")}</th>
+                                    <th className="p-3 md:p-4">{l("Комплекс (4 колеса)", "Package (4 Wheels)")}</th>
+                                    <th className="p-3 md:p-4">{l("Время", "Duration")}</th>
+                                    <th className="p-3 md:p-4 rounded-tr-xl text-right">{l("Стоимость", "Price")}</th>
+                                </tr>
+                            </thead>
+                            <tbody className="divide-y-2 divide-black/10 font-bold text-sm md:text-base">
+                                <tr>
+                                    <td className="p-3 md:p-4 font-black">R13 – R14</td>
+                                    <td className="p-3 md:p-4 opacity-70">Снятие, перебортовка, балансировка, установка</td>
+                                    <td className="p-3 md:p-4 opacity-70">30 мин</td>
+                                    <td className="p-3 md:p-4 text-right font-black text-accent-orange whitespace-nowrap">от 2 200 ₽</td>
+                                </tr>
+                                <tr>
+                                    <td className="p-3 md:p-4 font-black">R15 – R16</td>
+                                    <td className="p-3 md:p-4 opacity-70">Снятие, перебортовка, балансировка, установка</td>
+                                    <td className="p-3 md:p-4 opacity-70">30–35 мин</td>
+                                    <td className="p-3 md:p-4 text-right font-black text-accent-orange whitespace-nowrap">уточняйте</td>
+                                </tr>
+                                <tr>
+                                    <td className="p-3 md:p-4 font-black">R17 – R18</td>
+                                    <td className="p-3 md:p-4 opacity-70">Снятие, перебортовка, балансировка, установка</td>
+                                    <td className="p-3 md:p-4 opacity-70">35–45 мин</td>
+                                    <td className="p-3 md:p-4 text-right font-black text-accent-orange whitespace-nowrap">уточняйте</td>
+                                </tr>
+                                <tr>
+                                    <td className="p-3 md:p-4 font-black">R19 – R20+</td>
+                                    <td className="p-3 md:p-4 opacity-70">Снятие, перебортовка, балансировка, установка</td>
+                                    <td className="p-3 md:p-4 opacity-70">40–50 мин</td>
+                                    <td className="p-3 md:p-4 text-right font-black text-accent-orange whitespace-nowrap">уточняйте</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div className="mt-4 flex flex-col sm:flex-row justify-between items-center text-xs font-bold opacity-60 gap-2">
+                        <span>{l("Точную стоимость по вашему типоразмеру шин мастер назовёт при записи.", "Exact price for your tire size is confirmed upon booking.")}</span>
+                        <span className="font-black text-black opacity-100">{l(`Цены актуальны ${getCurrentSeasonYear('ru')}`, `Valid for ${getCurrentSeasonYear('en')}`)}</span>
+                    </div>
+                </div>
+            }
             faq={[
                 {
                     question: l("Какая цена на шиномонтаж?", "What's the price for tire service?"),
-                    answer: l("Комплексная переобувка (R14) — от 2200 ₽ за комплект. В цену входит снятие/установка, монтаж и балансировка.", "Full swap (R14) — from 2,200 ₽ per set. Includes removal, mounting, and balancing.")
+                    answer: l("Комплексная переобувка — от 2200 ₽ за 4 колеса. В стоимость входит полный комплекс: снятие, мойка/чистка дисков, перебортовка, балансировка и затяжка с контролем момента.", "Full swap — from 2,200 ₽ for 4 wheels. Includes removal, cleaning, mounting, balancing, and torque check.")
                 },
                 {
                     question: l("Можно ли записаться день в день?", "Can I book same-day?"),

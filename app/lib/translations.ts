@@ -15,7 +15,7 @@ export const translations = {
             title_pt1: "Профессиональный",
             title_highlight: "3D сход-развал",
             title_pt2: "и ремонт ходовой в Казани",
-            subtitle: "Исправим стуки, вернем управляемость и защитим шины от износа за 1 визит на эталонном немецком стенде Hoffman.",
+            subtitle: "Автосервис «Авто14» на Заречной 5Б (посёлок Константиновка, Советский район Казани) специализируется на компьютерном 3D сход-развале на стенде Hoffman и ремонте ходовой части. Регулировка углов выполняется за 20–35 минут с точностью до 0,01°. Стоимость сход-развала начинается от 1400 рублей по прайс-листу сервиса, диагностика подвески проводится бесплатно. Принимаем без очередей по предварительной записи с понедельника по субботу с 9:00 до 19:00.",
             subtitle_p1: "Ремонт ходовой",
             subtitle_p2: "3D сход-развал",
             subtitle_p3: "Шиномонтаж",
@@ -40,23 +40,23 @@ export const translations = {
             more: "Подробнее",
             alignment: {
                 name: "3D Развал-схождение",
-                desc: "Стенд Hoffman 3D. Высочайшая точность регулировки углов. От 1400 ₽."
+                desc: "Стенд Hoffman 3D. Высочайшая точность регулировки углов. 1 ось от 1400 ₽, 2 оси от 2500 ₽."
             },
             suspension: {
                 name: "Ремонт ходовой",
-                desc: "Диагностика и устранение неисправностей подвески. От 600 ₽."
+                desc: "Диагностика и устранение стуков подвески. Сайлентблоки от 600 ₽, стойки от 750 ₽."
             },
             tires: {
                 name: "Шиномонтаж",
-                desc: "Сезонная переобувка, балансировка, правка дисков. От 2200 ₽."
+                desc: "Сезонная переобувка и балансировка 4 колёс. От 2200 ₽."
             },
             oil: {
                 name: "Замена масла",
-                desc: "Экспресс-замена масла и фильтров. Качественные расходные материалы. От 1000 ₽."
+                desc: "Экспресс-замена масла в ДВС и фильтров. От 1000 ₽."
             },
             diagnostics: {
                 name: "Диагностика",
-                desc: "Диагностика подвески и ходовой части. Найдем причину стука. 0 ₽ при ремонте."
+                desc: "Полная проверка ходовой части на подъёмнике. Бесплатно (0 ₽)."
             }
         },
         benefits: {
@@ -233,7 +233,7 @@ export const translations = {
             title_pt1: "Professional",
             title_highlight: "3D Wheel Alignment",
             title_pt2: "and Suspension Repair in Kazan",
-            subtitle: "We'll fix knocks, restore handling, and protect your tires from wear in 1 visit on the benchmark German Hoffman stand.",
+            subtitle: "Auto service 'Avto14' at 5B Zarechnaya St (Konstantinovka, Kazan) specializes in computerized 3D wheel alignment on a Hoffman stand and suspension repair. Adjustment is completed in 20–35 minutes with 0.01° precision. Wheel alignment pricing starts from 1400 rubles, and suspension inspection is free. Open Mon–Sat 9:00–19:00 by appointment.",
             subtitle_p1: "Suspension Repair",
             subtitle_p2: "3D Alignment",
             subtitle_p3: "Tire Service",
@@ -258,23 +258,23 @@ export const translations = {
             more: "Learn more",
             alignment: {
                 name: "3D Wheel Alignment",
-                desc: "Hoffman 3D stand. Precision angle adjustment to factory specs. From 1400 ₽."
+                desc: "Hoffman 3D stand. Precision adjustment. 1 axle from 1400 ₽, 2 axles from 2500 ₽."
             },
             suspension: {
                 name: "Suspension Repair",
-                desc: "Full diagnostics and repair of suspension components. From 600 ₽."
+                desc: "Diagnostics and repairs. Bushings from 600 ₽, sway bar links from 750 ₽."
             },
             tires: {
                 name: "Tire Service",
-                desc: "Seasonal tire swaps, balancing, and rim straightening. From 2200 ₽."
+                desc: "Seasonal change and balancing for 4 wheels. From 2200 ₽."
             },
             oil: {
                 name: "Oil Change",
-                desc: "Express oil & filter replacement. Premium materials only. From 1000 ₽."
+                desc: "Express engine oil & filter replacement. From 1000 ₽."
             },
             diagnostics: {
                 name: "Diagnostics",
-                desc: "Full suspension and chassis inspection. We'll find the source of that noise. Free with repair."
+                desc: "Full suspension inspection on a lift. Free (0 ₽)."
             }
         },
         benefits: {
