@@ -83,9 +83,9 @@ export default function SiteFooter() {
                                 </a>
                                 {/* Telegram bot is the same for all */}
                                 <a
-                                    href="https://t.me/+79294945174"
+                                    href="https://t.me/avto14_bot"
                                     className="text-[#0088cc] hover:scale-110 transition-transform"
-                                    onClick={() => handleContactClick('messenger', 'telegram', '+79294945174')}
+                                    onClick={() => handleContactClick('messenger', 'telegram', 'avto14_bot')}
                                     aria-label="Telegram"
                                 >
                                     <TelegramIcon className="w-6 h-6" />

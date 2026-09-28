@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { X, Send } from 'lucide-react';
 import { sendEvent } from '@/lib/analytics';
 import { useLanguage } from '../context/LanguageContext';
@@ -19,10 +19,12 @@ export default function BookingModal({ isOpen, onClose, initialService = 'Схо
     const [description, setDescription] = useState('');
     const [isLoading, setIsLoading] = useState(false);
 
-    // Update service when initialService changes (if modal re-opens with different service)
-    if (initialService && service !== initialService && !isOpen) {
-        setService(initialService);
-    }
+    // Update service when initialService changes or modal opens
+    useEffect(() => {
+        if (isOpen && initialService) {
+            setService(initialService);
+        }
+    }, [isOpen, initialService]);
 
     if (!isOpen) return null;
 

@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { Settings, MoveRight, CornerRightDown, Phone, Wrench, ChevronRight, PackageSearch, MapPin, Target, UserCheck, Banknote, ChevronDown, ChevronUp, ShieldCheck, Clock, Award } from 'lucide-react';
-import BookingModal from './components/BookingModal';
 import NavigatorModal from './components/NavigatorModal';
 import ReviewsSection from './components/ReviewsSection';
 import CarWheel from './components/CarWheel';
@@ -12,12 +11,13 @@ import { WhatsAppIcon } from './components/icons/WhatsAppIcon';
 import { TelegramIcon } from './components/icons/TelegramIcon';
 import { handleContactClick } from '@/lib/analytics';
 import { useLanguage } from './context/LanguageContext';
+import { useBooking } from './context/BookingContext';
 import { getCurrentSeasonYear } from './lib/season';
 import Footer from './components/Footer';
 
 export default function Home() {
     const { t, language, toggleLanguage } = useLanguage();
-    const [isBookingOpen, setIsBookingOpen] = useState(false);
+    const { openBooking } = useBooking();
     const [isNavigatorOpen, setIsNavigatorOpen] = useState(false);
     const [activeFaq, setActiveFaq] = useState<number | null>(null);
     const [showAllGallery, setShowAllGallery] = useState(false);
@@ -30,7 +30,6 @@ export default function Home() {
     return (
         <div className={`min-h-screen bg-brand-yellow text-black font-sans selection:bg-black selection:text-brand-yellow relative`} style={{ overflowX: 'clip' }}>
 
-            <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
             <NavigatorModal isOpen={isNavigatorOpen} onClose={() => setIsNavigatorOpen(false)} />
 
             {/* HEADER */}
@@ -62,7 +61,7 @@ export default function Home() {
                         >
                             {language === 'ru' ? 'EN' : 'RU'}
                         </button>
-                        <button onClick={() => setIsBookingOpen(true)} aria-label="Записаться онлайн" className="btn-primary !px-4 !py-2 !text-[10px] md:!text-xs md:!px-8 md:!py-3 shadow-none hover:shadow-none whitespace-nowrap">
+                        <button onClick={() => openBooking()} aria-label="Записаться онлайн" className="btn-primary !px-4 !py-2 !text-[10px] md:!text-xs md:!px-8 md:!py-3 shadow-none hover:shadow-none whitespace-nowrap">
                             {t('hero.cta_book')}
                         </button>
                     </div>
@@ -141,7 +140,7 @@ export default function Home() {
                     {/* Action Buttons */}
                     <div className="flex flex-col gap-4 w-full sm:w-auto z-30 relative">
                         <div className="w-full sm:w-80 flex flex-col gap-2">
-                            <button onClick={() => setIsBookingOpen(true)} aria-label="Записаться онлайн" className="btn-primary group w-full">
+                            <button onClick={() => openBooking()} aria-label="Записаться онлайн" className="btn-primary group w-full">
                                 {t('hero.cta_book')}
                                 <MoveRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </button>

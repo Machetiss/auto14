@@ -44,6 +44,7 @@ export default function NavigatorModal({ isOpen, onClose }: NavigatorModalProps)
     const handleOpen = (nav: typeof navigators[0]) => {
         // Try to open app link, fallback to web
         window.open(nav.link, '_blank');
+        onClose();
     };
 
     return (
