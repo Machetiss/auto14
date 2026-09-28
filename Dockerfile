@@ -1,11 +1,11 @@
 FROM node:20-slim AS base
 
+# Install OpenSSL + ca-certificates for Prisma and HTTPS requests across all stages
+RUN apt-get update && apt-get install -y openssl ca-certificates && rm -rf /var/lib/apt/lists/*
+
 # Install dependencies only when needed
 FROM base AS deps
 WORKDIR /app
-
-# OpenSSL + ca-certificates for Prisma and HTTPS requests
-RUN apt-get update && apt-get install -y openssl ca-certificates && rm -rf /var/lib/apt/lists/*
 
 # Install dependencies based on the preferred package manager
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
@@ -23,9 +23,6 @@ RUN \
 # Rebuild the source code only when needed
 FROM base AS builder
 WORKDIR /app
-
-# OpenSSL needed for Prisma to create/migrate SQLite DB
-RUN apt-get update && apt-get install -y openssl && rm -rf /var/lib/apt/lists/*
 
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
@@ -46,9 +43,6 @@ RUN npm run build
 # Production image, copy all the files and run next
 FROM base AS runner
 WORKDIR /app
-
-# OpenSSL needed at runtime for Prisma engine
-RUN apt-get update && apt-get install -y openssl && rm -rf /var/lib/apt/lists/*
 
 ENV NODE_ENV=production
 ENV DATABASE_URL="file:./prisma/dev.db"

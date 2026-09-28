@@ -1,28 +1,6 @@
 import { Suspense } from 'react';
 import type { Metadata, Viewport } from 'next';
-import { Inter, Unbounded, Caveat } from 'next/font/google';
 import './globals.css';
-
-const inter = Inter({
-    subsets: ['cyrillic', 'latin'],
-    weight: ['400', '700', '900'],
-    variable: '--font-inter',
-    display: 'optional',
-});
-
-const unbounded = Unbounded({
-    subsets: ['cyrillic', 'latin'],
-    weight: ['400', '700', '900'],
-    variable: '--font-unbounded',
-    display: 'optional',
-});
-
-const caveat = Caveat({
-    subsets: ['cyrillic', 'latin'],
-    weight: ['400', '700'],
-    variable: '--font-caveat',
-    display: 'optional',
-});
 
 export const viewport: Viewport = {
     width: 'device-width',
@@ -77,10 +55,10 @@ export default function RootLayout({
                 <head>
                     <meta name="viewport" content="width=device-width, initial-scale=1" />
                     <meta name="google-site-verification" content="ezvh9INv48dll0s1Q9eGkHoUoQWSVrqfPaB9rSZs05Q" />
-                    <link rel="preconnect" href="https://mc.yandex.ru" />
-                    <link rel="dns-prefetch" href="https://mc.yandex.ru" />
+                    <link rel="preload" href="/fonts/inter-cyrillic.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+                    <link rel="preload" href="/fonts/unbounded-cyrillic.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
                 </head>
-                <body className={`antialiased pb-20 md:pb-0 ${inter.variable} ${unbounded.variable} ${caveat.variable}`}>
+                <body className="antialiased pb-20 md:pb-0">
                     <Suspense fallback={null}>
                         <YandexMetrika />
                     </Suspense>
