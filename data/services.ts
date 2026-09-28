@@ -1,4 +1,4 @@
-export interface Service {
+﻿export interface Service {
   slug: string;
   name: string;         // Название для URL и заголовков
   nameRu: string;       // Русское название
@@ -19,7 +19,7 @@ export const services: Service[] = [
     name: "3D Сход-развал",
     nameRu: "3D Сход-развал",
     nameEn: "3D Wheel Alignment",
-    priceFrom: 1200,
+    priceFrom: 1400,
     duration: "от 30 минут",
     durationEn: "from 30 minutes",
     description: "Точная регулировка углов установки колёс на немецком стенде Hoffman 3D. Устраняем увод машины в сторону и неравномерный износ шин.",

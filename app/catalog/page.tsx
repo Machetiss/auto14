@@ -28,6 +28,13 @@ export default function CatalogPage() {
                     </div>
                 </div>
 
+                {/* 48-word answer paragraph after H1 */}
+                <div className="bg-white border-4 border-black rounded-2xl p-6 mb-10 shadow-[6px_6px_0px_#000]">
+                    <p className="text-sm md:text-base font-bold leading-relaxed">
+                        Справочник автосервиса «Авто14» содержит заправочные объёмы моторного масла и артикулы фильтров для 50 000 модификаций автомобилей. Точность данных по заправочным ёмкостям составляет до 0,1 литра согласно заводским регламентам. Выберите марку и модель автомобиля, чтобы за 10 секунд узнать объём заливки масла, допуски вязкости и артикулы расходников для ТО.
+                    </p>
+                </div>
+
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
                     {carBrands.map((brand) => (
                         <Link

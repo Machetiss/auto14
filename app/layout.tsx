@@ -53,6 +53,9 @@ export const metadata: Metadata = {
     verification: {
         google: 'ezvh9INv48dll0s1Q9eGkHoUoQWSVrqfPaB9rSZs05Q',
     },
+    alternates: {
+        canonical: 'https://www.auto-14.ru',
+    },
 };
 
 import { BookingProvider } from './context/BookingContext';
@@ -61,6 +64,7 @@ import Analytics from './components/Analytics';
 
 import YandexMetrika from './components/YandexMetrika';
 import SchemaMarkup from './components/SchemaMarkup';
+import MobileStickyBar from './components/MobileStickyBar';
 
 export default function RootLayout({
     children,
@@ -76,7 +80,7 @@ export default function RootLayout({
                     <link rel="preconnect" href="https://mc.yandex.ru" />
                     <link rel="dns-prefetch" href="https://mc.yandex.ru" />
                 </head>
-                <body className={`antialiased ${inter.variable} ${unbounded.variable} ${caveat.variable}`}>
+                <body className={`antialiased pb-20 md:pb-0 ${inter.variable} ${unbounded.variable} ${caveat.variable}`}>
                     <Suspense fallback={null}>
                         <YandexMetrika />
                     </Suspense>
@@ -87,6 +91,7 @@ export default function RootLayout({
 
                     <BookingProvider>
                         {children}
+                        <MobileStickyBar />
                     </BookingProvider>
                 </body>
             </html>

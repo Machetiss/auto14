@@ -19,6 +19,7 @@ interface ServicePageLayoutProps {
     symptoms: string[];
     processSteps: { title: string; desc: string }[];
     faq: { question: string; answer: string }[];
+    priceTable?: React.ReactNode;
 }
 
 export default function ServicePageLayout({
@@ -29,7 +30,8 @@ export default function ServicePageLayout({
     features,
     symptoms,
     processSteps,
-    faq
+    faq,
+    priceTable
 }: ServicePageLayoutProps) {
     const { openBooking } = useBooking();
     const { language } = useLanguage();
@@ -57,7 +59,7 @@ export default function ServicePageLayout({
                                 {l('Стоимость', 'Service')}<br />{l('услуги', 'price')}
                             </div>
                         </div>
-                        <p className="text-base md:text-2xl font-bold opacity-80 mb-10 max-w-lg text-white font-sans">
+                        <p className="text-sm sm:text-base md:text-lg font-bold opacity-90 mb-10 max-w-xl text-white font-sans leading-relaxed">
                             {description}
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
@@ -99,6 +101,15 @@ export default function ServicePageLayout({
                     ))}
                 </div>
             </section>
+
+            {/* PRICE TABLE SECTION */}
+            {priceTable && (
+                <section className="py-12 bg-black/5 border-t-2 border-black/10">
+                    <div className="container mx-auto px-4">
+                        {priceTable}
+                    </div>
+                </section>
+            )}
 
             {/* FEATURES / ADVANTAGES */}
             <section className="py-24 bg-ui-dark text-white border-y-4 border-black">

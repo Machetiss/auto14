@@ -48,6 +48,13 @@ export default function BlogPage() {
                     </div>
                 </div>
 
+                {/* 44-word answer paragraph after H1 */}
+                <div className="bg-white border-4 border-black rounded-2xl p-6 mb-12 shadow-[6px_6px_0px_#000]">
+                    <p className="text-sm md:text-base font-bold leading-relaxed text-black">
+                        Практические статьи и руководства по ремонту ходовой части, регулировке 3D сход-развала и техобслуживанию автомобилей от мастеров СТО «Авто14» с опытом работы от 10 лет. Публикуем проверенные регламенты ТО и нормативы заправочных объёмов. Материалы актуализируются ежемесячно, ревизия статей проведена в 2026 году.
+                    </p>
+                </div>
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {blogPosts.map((post) => (
                         <Link

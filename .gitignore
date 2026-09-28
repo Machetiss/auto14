@@ -41,3 +41,8 @@ next-env.d.ts
 dev.db
 prisma/dev.db
 /lib/generated/prisma
+ 
+.agent/ 
+.agents/ 
+*.log 
+search_*.json

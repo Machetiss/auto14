@@ -36,9 +36,18 @@ export default function Kontakty() {
                         <div className="inline-block bg-[#FFF500] text-black px-4 py-1 rounded-sm font-black uppercase text-[10px] tracking-widest mb-6 border-2 border-black shadow-[4px_4px_0px_#000]">
                             {l('Свяжитесь с нами', 'Contact Us')}
                         </div>
-                        <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter mb-12 leading-[0.8] font-display">
+                        <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter mb-6 leading-[0.8] font-display">
                             {l('ГДЕ МЫ', 'WHERE')}<br /><span className="text-accent-orange text-outline-black">{l('НАХОДИМСЯ', 'TO FIND US')}</span>
                         </h1>
+
+                        <div className="bg-brand-yellow/20 border-2 border-black rounded-2xl p-5 mb-8 max-w-xl">
+                            <p className="text-sm md:text-base font-bold leading-relaxed">
+                                {l(
+                                    "Автосервис «Авто14» расположен в Советском районе Казани по адресу: посёлок Константиновка, ул. Заречная, дом 5Б (200 метров от Мамадышского тракта). Работаем с понедельника по субботу с 9:00 до 19:00, воскресенье — выходной. Телефон для записи: +7 (999) 269-93-59, также принимаем заявки через WhatsApp и Telegram. Среднее время ожидания заезда по записи — 0 минут.",
+                                    "Avto14 auto service is located in the Sovetsky district of Kazan at 5B Zarechnaya St, Konstantinovka (200m off Mamadyshsky Tract). Open Monday to Saturday 9:00 to 19:00, Sunday closed. Direct booking phone: +7 (999) 269-93-59 or via WhatsApp and Telegram. Zero queue waiting time for scheduled visits."
+                                )}
+                            </p>
+                        </div>
 
                         <div className="space-y-12">
                             {/* Address Block */}

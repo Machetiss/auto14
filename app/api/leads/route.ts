@@ -21,26 +21,32 @@ export async function POST(request: Request) {
         }
 
         const { service, name, phone, car, description, utm } = body;
+        const fallbackId = `lead-${Date.now()}`;
+        let leadId: string | number = fallbackId;
 
-        // Save to Database
-        const lead = await prisma.lead.create({
-            data: {
-                name,
-                phone,
-                message: description, // Map description to message
-                service: service || null,
-                car: car || null,
-                source: utm?.source || 'direct',
-                status: 'new'
-            }
-        });
+        // Save to Database (isolated try-catch so DB issues never drop a lead)
+        try {
+            const lead = await prisma.lead.create({
+                data: {
+                    name,
+                    phone,
+                    message: description, // Map description to message
+                    service: service || null,
+                    car: car || null,
+                    source: utm?.source || 'direct',
+                    status: 'new'
+                }
+            });
+            leadId = lead.id;
+        } catch (dbError) {
+            console.error("Database lead creation failed, continuing with notification:", dbError);
+        }
 
-        // Send to Telegram (Fire and forget or await?)
-        // Better to await to report error if telegram fails, or catch it separately.
+        // Send to Telegram (Always notify team, even if DB write failed)
         if (TELEGRAM_BOT_TOKEN && TELEGRAM_CHAT_ID) {
             try {
                 let message = `
-🔥 *Новая заявка!* (ID: ${lead.id})
+🔥 *Новая заявка!* (ID: ${leadId})
 🛠 *Услуга:* ${service || 'Не указано'}
 👤 *Имя:* ${name || 'Не указано'}
 📞 *Телефон:* ${phone}
@@ -92,7 +98,7 @@ export async function POST(request: Request) {
             });
         }
 
-        return NextResponse.json({ success: true, leadId: lead.id });
+        return NextResponse.json({ success: true, leadId });
     } catch (error) {
         return handleApiError(error);
     }

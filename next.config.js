@@ -20,6 +20,16 @@ const nextConfig = {
                 destination: '/',
                 permanent: true,
             },
+            {
+                source: '/brands/:brand/:submodel+',
+                destination: '/brands/:brand',
+                permanent: true,
+            },
+            {
+                source: '/catalog/:brand/:submodel+',
+                destination: '/catalog/:brand',
+                permanent: true,
+            },
         ];
     },
     async headers() {

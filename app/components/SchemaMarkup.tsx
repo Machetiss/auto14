@@ -1,19 +1,18 @@
-import Script from 'next/script';
-
 export default function SchemaMarkup() {
     const autoRepairSchema = {
         "@context": "https://schema.org",
-        "@type": "AutoRepair",
+        "@type": ["Organization", "LocalBusiness", "AutoRepair"],
         "name": "Авто14",
-        "alternateName": "Автосервис Авто14",
-        "image": "https://auto-14.ru/logo-wheel.png",
-        "@id": "https://auto-14.ru/#organization",
-        "url": "https://auto-14.ru",
-        "description": "Автосервис в Советском районе, п. Константиновка. 3D сход-развал Hoffman и ремонт ходовой.",
+        "alternateName": ["Автосервис Авто14", "СТО Авто14", "Auto14"],
+        "image": "https://www.auto-14.ru/logo-wheel.png",
+        "@id": "https://www.auto-14.ru/#organization",
+        "url": "https://www.auto-14.ru",
+        "dateModified": "2026-09-28",
+        "description": "Автосервис в Казани (Константиновка, ул. Заречная 5Б). Компьютерный 3D сход-развал Hoffman, ремонт подвески, шиномонтаж и ТО.",
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "5.0",
-            "reviewCount": "128"
+            "reviewCount": "165"
         },
         "telephone": "+79992699359",
         "address": {
@@ -26,8 +25,8 @@ export default function SchemaMarkup() {
         },
         "geo": {
             "@type": "GeoCoordinates",
-            "latitude": 55.827663,
-            "longitude": 49.227284
+            "latitude": 55.809049,
+            "longitude": 49.264877
         },
         "openingHoursSpecification": [
             {
@@ -43,6 +42,9 @@ export default function SchemaMarkup() {
             "name": "Казань"
         },
         "sameAs": [
+            "https://yandex.ru/maps/org/avto14/108623850068/",
+            "https://2gis.ru/kazan/firm/70000001065947100",
+            "https://www.avito.ru/brands/i165449740",
             "https://t.me/avto14_bot",
             "https://wa.me/79992699359"
         ],
@@ -138,12 +140,28 @@ export default function SchemaMarkup() {
                     "@type": "Answer",
                     "text": "Скорее всего, нарушена геометрия колес или есть износ элементов ходовой. Приезжайте в автосервис «Авто14» (ул. Заречная 5Б). Наши мастера найдут причину и при необходимости сделают высокоточный 3D сход-развал, чтобы вернуть автомобилю идеальную управляемость и спасти ваши шины."
                 }
+            },
+            {
+                "@type": "Question",
+                "name": "Какие запчасти использует автосервис Авто14 в Казани?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Автосервис «Авто14» использует только сертифицированные запчасти с официальной гарантией производителя. Наши мастера со стажем от 10 лет строго контролируют качество всех резьбовых соединений и расходников. Мы беремся за ремонт ходовой любой сложности — от замены сайлентблоков до полной переборки подвески."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Нужно ли ждать в очереди в автосервисе Авто14?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Нет, в автосервисе «Авто14» не нужно ждать в очереди. Мы принимаем автомобили строго по предварительной записи, что гарантирует обслуживание точно в назначенное время без утомительного ожидания."
+                }
             }
         ]
     };
 
     return (
-        <Script
+        <script
             id="schema-markup"
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify([autoRepairSchema, faqSchema]) }}
