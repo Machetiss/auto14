@@ -46,6 +46,8 @@ export default function SiteFooter() {
                             <div className="flex gap-4">
                                 <a
                                     href="https://wa.me/79992699359"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="text-[#25D366] hover:scale-110 transition-transform"
                                     onClick={() => handleContactClick('messenger', 'whatsapp', '+79992699359')}
                                     aria-label="WhatsApp"
@@ -53,9 +55,11 @@ export default function SiteFooter() {
                                     <WhatsAppIcon className="w-6 h-6" />
                                 </a>
                                 <a
-                                    href="https://t.me/avto14_bot"
+                                    href="https://t.me/+79992699359"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="text-[#0088cc] hover:scale-110 transition-transform"
-                                    onClick={() => handleContactClick('messenger', 'telegram', 'avto14_bot')}
+                                    onClick={() => handleContactClick('messenger', 'telegram', '+79992699359')}
                                     aria-label="Telegram"
                                 >
                                     <TelegramIcon className="w-6 h-6" />
@@ -75,17 +79,20 @@ export default function SiteFooter() {
                             <div className="flex gap-4">
                                 <a
                                     href="https://wa.me/79294945174"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="text-[#25D366] hover:scale-110 transition-transform"
                                     onClick={() => handleContactClick('messenger', 'whatsapp', '+79294945174')}
                                     aria-label="WhatsApp"
                                 >
                                     <WhatsAppIcon className="w-6 h-6" />
                                 </a>
-                                {/* Telegram bot is the same for all */}
                                 <a
-                                    href="https://t.me/avto14_bot"
+                                    href="https://t.me/+79294945174"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="text-[#0088cc] hover:scale-110 transition-transform"
-                                    onClick={() => handleContactClick('messenger', 'telegram', 'avto14_bot')}
+                                    onClick={() => handleContactClick('messenger', 'telegram', '+79294945174')}
                                     aria-label="Telegram"
                                 >
                                     <TelegramIcon className="w-6 h-6" />
@@ -105,6 +112,8 @@ export default function SiteFooter() {
                             <div className="flex gap-4">
                                 <a
                                     href="https://wa.me/79241619754"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="text-[#25D366] hover:scale-110 transition-transform"
                                     onClick={() => handleContactClick('messenger', 'whatsapp', '+79241619754')}
                                     aria-label="WhatsApp"
@@ -112,9 +121,11 @@ export default function SiteFooter() {
                                     <WhatsAppIcon className="w-6 h-6" />
                                 </a>
                                 <a
-                                    href="https://t.me/avto14_bot"
+                                    href="https://t.me/+79241619754"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="text-[#0088cc] hover:scale-110 transition-transform"
-                                    onClick={() => handleContactClick('messenger', 'telegram', 'avto14_bot')}
+                                    onClick={() => handleContactClick('messenger', 'telegram', '+79241619754')}
                                     aria-label="Telegram"
                                 >
                                     <TelegramIcon className="w-6 h-6" />

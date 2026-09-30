@@ -14,9 +14,9 @@ export default function Kontakty() {
     const l = (ru: string, en: string) => language === 'ru' ? ru : en;
 
     const phones = [
-        { number: '+7 (999) 269-93-59', raw: '+79992699359', wa: '79992699359', tg: 'avto14_bot' },
+        { number: '+7 (999) 269-93-59', raw: '+79992699359', wa: '79992699359', tg: '+79992699359' },
         { number: '+7 (929) 494-51-74', raw: '+79294945174', wa: '79294945174', tg: '+79294945174' },
-        { number: '+7 (924) 161-97-54', raw: '+79241619754', wa: '79241619754', tg: 'avto14_bot' }
+        { number: '+7 (924) 161-97-54', raw: '+79241619754', wa: '79241619754', tg: '+79241619754' }
     ];
 
     return (
@@ -106,6 +106,8 @@ export default function Kontakty() {
                                             <div className="flex gap-4">
                                                 <a
                                                     href={`https://wa.me/${phone.wa}`}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
                                                     className="flex items-center gap-2 bg-green-500/10 text-green-600 px-3 py-1 rounded-lg font-bold text-xs hover:bg-green-500 hover:text-white transition-all border border-green-500/20"
                                                     onClick={() => handleContactClick('messenger', 'whatsapp', phone.wa)}
                                                 >
@@ -113,7 +115,9 @@ export default function Kontakty() {
                                                     <span>WhatsApp</span>
                                                 </a>
                                                 <a
-                                                    href={phone.tg.startsWith('+') ? `https://t.me/${phone.tg}` : `https://t.me/${phone.tg}`}
+                                                    href={`https://t.me/${phone.tg}`}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
                                                     className="flex items-center gap-2 bg-blue-500/10 text-blue-600 px-3 py-1 rounded-lg font-bold text-xs hover:bg-blue-500 hover:text-white transition-all border border-blue-500/20"
                                                     onClick={() => handleContactClick('messenger', 'telegram', phone.tg)}
                                                 >

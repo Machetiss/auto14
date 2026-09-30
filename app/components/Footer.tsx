@@ -74,8 +74,8 @@ export default function Footer() {
                         <div className="flex flex-col items-center border-b border-black/10 pb-4">
                             <a href="tel:+79992699359" className="text-xl font-black hover:text-[#dba800] transition-colors mb-2">+7 (999) 269-93-59</a>
                             <div className="flex gap-4">
-                                <a href="https://wa.me/79992699359" aria-label="WhatsApp" className="text-[#25D366] hover:scale-110 transition-transform"><WhatsAppIcon className="w-6 h-6" /></a>
-                                <a href="https://t.me/avto14_bot" aria-label="Telegram" className="text-[#0088cc] hover:scale-110 transition-transform"><TelegramIcon className="w-6 h-6" /></a>
+                                <a href="https://wa.me/79992699359" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="text-[#25D366] hover:scale-110 transition-transform"><WhatsAppIcon className="w-6 h-6" /></a>
+                                <a href="https://t.me/+79992699359" target="_blank" rel="noopener noreferrer" aria-label="Telegram" className="text-[#0088cc] hover:scale-110 transition-transform"><TelegramIcon className="w-6 h-6" /></a>
                             </div>
                         </div>
 
@@ -83,8 +83,8 @@ export default function Footer() {
                         <div className="flex flex-col items-center border-b border-black/10 pb-4">
                             <a href="tel:+79294945174" className="text-xl font-black hover:text-[#dba800] transition-colors mb-2">+7 (929) 494-51-74</a>
                             <div className="flex gap-4">
-                                <a href="https://wa.me/79294945174" aria-label="WhatsApp" className="text-[#25D366] hover:scale-110 transition-transform"><WhatsAppIcon className="w-6 h-6" /></a>
-                                <a href="https://t.me/avto14_bot" aria-label="Telegram" className="text-[#0088cc] hover:scale-110 transition-transform"><TelegramIcon className="w-6 h-6" /></a>
+                                <a href="https://wa.me/79294945174" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="text-[#25D366] hover:scale-110 transition-transform"><WhatsAppIcon className="w-6 h-6" /></a>
+                                <a href="https://t.me/+79294945174" target="_blank" rel="noopener noreferrer" aria-label="Telegram" className="text-[#0088cc] hover:scale-110 transition-transform"><TelegramIcon className="w-6 h-6" /></a>
                             </div>
                         </div>
 
@@ -92,8 +92,8 @@ export default function Footer() {
                         <div className="flex flex-col items-center">
                             <a href="tel:+79241619754" className="text-xl font-black hover:text-[#dba800] transition-colors mb-2">+7 (924) 161-97-54</a>
                             <div className="flex gap-4">
-                                <a href="https://wa.me/79241619754" aria-label="WhatsApp" className="text-[#25D366] hover:scale-110 transition-transform"><WhatsAppIcon className="w-6 h-6" /></a>
-                                <a href="https://t.me/avto14_bot" aria-label="Telegram" className="text-[#0088cc] hover:scale-110 transition-transform"><TelegramIcon className="w-6 h-6" /></a>
+                                <a href="https://wa.me/79241619754" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="text-[#25D366] hover:scale-110 transition-transform"><WhatsAppIcon className="w-6 h-6" /></a>
+                                <a href="https://t.me/+79241619754" target="_blank" rel="noopener noreferrer" aria-label="Telegram" className="text-[#0088cc] hover:scale-110 transition-transform"><TelegramIcon className="w-6 h-6" /></a>
                             </div>
                         </div>
                     </div>
