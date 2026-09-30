@@ -2,6 +2,7 @@
 
 import { WhatsAppIcon } from './icons/WhatsAppIcon';
 import { TelegramIcon } from './icons/TelegramIcon';
+import { MaxIcon } from './icons/MaxIcon';
 
 import { handleContactClick } from '@/lib/analytics';
 
@@ -109,7 +110,7 @@ export default function SiteFooter() {
                             >
                                 +7 (924) 161-97-54
                             </a>
-                            <div className="flex gap-4">
+                            <div className="flex gap-4 items-center">
                                 <a
                                     href="https://wa.me/79241619754"
                                     target="_blank"
@@ -129,6 +130,17 @@ export default function SiteFooter() {
                                     aria-label="Telegram"
                                 >
                                     <TelegramIcon className="w-6 h-6" />
+                                </a>
+                                <a
+                                    href="https://max.ru/u/79241619754"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="hover:scale-110 transition-transform"
+                                    onClick={() => handleContactClick('messenger', 'max', '+79241619754')}
+                                    aria-label="MAX"
+                                    title="MAX"
+                                >
+                                    <MaxIcon className="w-6 h-6 rounded-md shadow-sm" />
                                 </a>
                             </div>
                         </div>

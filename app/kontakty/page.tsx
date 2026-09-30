@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Phone, MapPin, Clock, MessageCircle, ChevronLeft } from 'lucide-react';
 import { WhatsAppIcon } from '../components/icons/WhatsAppIcon';
 import { TelegramIcon } from '../components/icons/TelegramIcon';
+import { MaxIcon } from '../components/icons/MaxIcon';
 import { handleContactClick } from '@/lib/analytics';
 import ContactForm from '../components/ContactForm';
 import { useLanguage } from '../context/LanguageContext';
@@ -16,7 +17,7 @@ export default function Kontakty() {
     const phones = [
         { number: '+7 (999) 269-93-59', raw: '+79992699359', wa: '79992699359', tg: '+79992699359' },
         { number: '+7 (929) 494-51-74', raw: '+79294945174', wa: '79294945174', tg: '+79294945174' },
-        { number: '+7 (924) 161-97-54', raw: '+79241619754', wa: '79241619754', tg: '+79241619754' }
+        { number: '+7 (924) 161-97-54', raw: '+79241619754', wa: '79241619754', tg: '+79241619754', max: 'https://max.ru/u/79241619754' }
     ];
 
     return (
@@ -124,6 +125,18 @@ export default function Kontakty() {
                                                     <TelegramIcon className="w-4 h-4" />
                                                     <span>Telegram</span>
                                                 </a>
+                                                {phone.max && (
+                                                    <a
+                                                        href={phone.max}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="flex items-center gap-2 bg-purple-500/10 text-purple-700 px-3 py-1 rounded-lg font-bold text-xs hover:bg-purple-600 hover:text-white transition-all border border-purple-500/20"
+                                                        onClick={() => handleContactClick('messenger', 'max', phone.raw)}
+                                                    >
+                                                        <MaxIcon className="w-4 h-4 rounded-sm" />
+                                                        <span>MAX</span>
+                                                    </a>
+                                                )}
                                             </div>
                                         </div>
                                     ))}

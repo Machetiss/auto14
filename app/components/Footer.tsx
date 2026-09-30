@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Phone, MapPin, Clock } from 'lucide-react';
 import { WhatsAppIcon } from './icons/WhatsAppIcon';
 import { TelegramIcon } from './icons/TelegramIcon';
+import { MaxIcon } from './icons/MaxIcon';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function Footer() {
@@ -91,9 +92,10 @@ export default function Footer() {
                         {/* Number 3 */}
                         <div className="flex flex-col items-center">
                             <a href="tel:+79241619754" className="text-xl font-black hover:text-[#dba800] transition-colors mb-2">+7 (924) 161-97-54</a>
-                            <div className="flex gap-4">
+                            <div className="flex gap-4 items-center">
                                 <a href="https://wa.me/79241619754" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="text-[#25D366] hover:scale-110 transition-transform"><WhatsAppIcon className="w-6 h-6" /></a>
                                 <a href="https://t.me/+79241619754" target="_blank" rel="noopener noreferrer" aria-label="Telegram" className="text-[#0088cc] hover:scale-110 transition-transform"><TelegramIcon className="w-6 h-6" /></a>
+                                <a href="https://max.ru/u/79241619754" target="_blank" rel="noopener noreferrer" aria-label="MAX" title="MAX" className="hover:scale-110 transition-transform"><MaxIcon className="w-6 h-6 rounded-md shadow-sm" /></a>
                             </div>
                         </div>
                     </div>
