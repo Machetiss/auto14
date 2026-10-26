@@ -41,3 +41,12 @@ next-env.d.ts
 dev.db
 prisma/dev.db
 /lib/generated/prisma
+
+
+# agent workspaces, artifacts and junk
+.agents/
+.agent/skills/
+__pycache__/
+$null
+Copy-Item
+*.bundle
