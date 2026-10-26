@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "skills": {
+    "ai-image-generation": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "a4d927ccfdc220d0ba000ae835ce964e97158c6f4f78d946590ced1d90d13ec5"
+    },
+    "ai-video-generation": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "f027feb585e1c9acb07127842a8d1531c55bcf4cd9e723faf4bd2ee027a43343"
+    },
+    "background-removal": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "119169d188065ca13c014f3f80e0e9e41b9badc11ff9dfb8f7d9a8e5fded16ec"
+    },
+    "llm-models": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "a21a1f035b99c498e23e457c1fe0941d5c7205794c3f39279a775b570a915719"
+    },
+    "web-search": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "05a69e1df97aac9dfc09b87630d684c828a45510356008f59c40ec5d006a9e0e"
+    }
+  }
+}

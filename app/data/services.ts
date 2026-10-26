@@ -1,4 +1,4 @@
-export interface Service {
+﻿export interface Service {
   slug: string;
   name: string;         // Название для URL и заголовков
   nameRu: string;       // Русское название
