@@ -46,7 +46,7 @@
    "Мастерская по ремонту тормозной системы"
   ]
  },
- "equipment": "3D-стенд (марка в реестре не подтверждена)",
+ "equipment": "3D-стенд Hofmann (подтвердил Сергей 26.10.2026)",
  "prices": [
   {
    "key": "alignment_car",
@@ -255,5 +255,6 @@
   "google_review": "https://g.page/r/CQ_2sAxXZ-cOEBM/review",
   "instagram": "https://www.instagram.com/avto14.kazan/",
   "telegram": "https://t.me/avto14rs"
- }
+ },
+ "warranty": "Гарантия на ремонт, если ремонт сделан с нашими запчастями (подтвердил Сергей 26.10.2026). Срок «1 год или 20 000 км» — из описания Google, в реестре фактов пока нет."
 }
