@@ -21,9 +21,12 @@ export const sendEvent = (eventName: string, params?: EventParams) => {
     }
     
     // 3. Direct Yandex Metrika Goal Trigger
-    const ymId = Number(process.env.NEXT_PUBLIC_YANDEX_METRIKA_ID);
-    if ((window as any).ym && ymId) {
-      (window as any).ym(ymId, 'reachGoal', eventName, params);
+    // Цели шлём в оба счётчика: основной (106881681) и Яндекс Бизнес (91798480),
+    // ID совпадают с app/components/YandexMetrika.tsx
+    if ((window as any).ym) {
+      for (const ymId of [106881681, 91798480]) {
+        (window as any).ym(ymId, 'reachGoal', eventName, params);
+      }
     }
 
     // Optional: Log to console in development
