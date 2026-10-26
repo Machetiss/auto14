@@ -1,0 +1,259 @@
+{
+ "generated_at": "2026-10-26",
+ "source": "реестр фактов штаба (таблица facts) + сверка карточек 12.10 и Google Business 20.10",
+ "name": "Авто14",
+ "name_variants": {
+  "yandex": "Авто14",
+  "2gis": "Авто14, г. Казань",
+  "google": "Авто14"
+ },
+ "address": "Казань, Константиновка, ул. Заречная, 5Б",
+ "address_full": "ул. Заречная, 5Б, жилой массив Константиновка, Советский район, Казань, Республика Татарстан, 420083",
+ "geo": {
+  "lat": 55.8097032,
+  "lon": 49.2633641,
+  "source": "Google Business"
+ },
+ "phones": {
+  "main": "+7 999 269-93-59",
+  "second": "+7 929 494-51-74",
+  "sergey": "+7 924 161-97-54"
+ },
+ "whatsapp": "https://wa.me/79992699359",
+ "site": "https://auto-14.ru",
+ "hours": {
+  "mon_sat": "09:00–19:00",
+  "sun": "выходной",
+  "note": "по предварительной записи (2ГИС)"
+ },
+ "opened": "2022-10-01 (Google Business)",
+ "categories": {
+  "yandex": [
+   "Автосервис, автотехцентр",
+   "Развал-схождение",
+   "Шиномонтаж"
+  ],
+  "2gis": [
+   "Шиномонтаж (основная)",
+   "Развал-схождение",
+   "Ремонт ходовой части автомобиля",
+   "Детейлинг (лишняя)"
+  ],
+  "google": [
+   "Автомастерская",
+   "Сход-развал",
+   "Шиномонтажная мастерская",
+   "Мастерская по ремонту тормозной системы"
+  ]
+ },
+ "equipment": "3D-стенд (марка в реестре не подтверждена)",
+ "prices": [
+  {
+   "key": "alignment_car",
+   "service": "Сход-развал, авто с задней балкой — одна ось (Solaris, Rio, Polo, Vesta, Largus, Logan, Rapid, Astra, Cruze)",
+   "price": "от 1 500 ₽",
+   "price_from_rub": 1500,
+   "verified_at": "2026-10-11"
+  },
+  {
+   "key": "alignment_check_only",
+   "service": "Проверка углов на 3D-стенде без регулировки (если все углы в норме — как диагностика)",
+   "price": "от 500 ₽",
+   "price_from_rub": 500,
+   "verified_at": "2026-10-11"
+  },
+  {
+   "key": "alignment_commercial",
+   "service": "Сход-развал, УАЗ Патриот, Toyota Hiace, VW Transporter / Caravelle / Multivan",
+   "price": "от 4 000 ₽",
+   "price_from_rub": 4000,
+   "verified_at": "2026-10-11"
+  },
+  {
+   "key": "alignment_crossover",
+   "service": "Сход-развал, кроссоверы 2 оси (RAV4, Sportage, Tucson, Tiguan, Qashqai, X-Trail, CX-5, CR-V, Outlander, Tiggo 7/8, Haval F7, Monjaro)",
+   "price": "от 3 000 ₽",
+   "price_from_rub": 3000,
+   "verified_at": "2026-10-11"
+  },
+  {
+   "key": "alignment_lada_fwd",
+   "service": "Сход-развал, LADA Granta, Kalina, Priora, ВАЗ 2110–2112 (схождение + развал + кастор)",
+   "price": "от 2 200 ₽",
+   "price_from_rub": 2200,
+   "verified_at": "2026-10-11"
+  },
+  {
+   "key": "alignment_large_suv",
+   "service": "Сход-развал, крупные кроссоверы (Sorento, Santa Fe, Highlander, Pajero, Tank, Subaru) и немецкие авто (BMW, Mercedes, Audi, Touareg, Porsche, Lexus)",
+   "price": "от 2 000 ₽",
+   "price_from_rub": 2000,
+   "verified_at": "2026-10-11"
+  },
+  {
+   "key": "alignment_premium",
+   "service": "Сход-развал, рамные и рычажные внедорожники (Нива, Land Cruiser, Prado, SsangYong) и премиум",
+   "price": "от 3 500 ₽",
+   "price_from_rub": 3500,
+   "verified_at": "2026-10-11"
+  },
+  {
+   "key": "alignment_two_axle",
+   "service": "Сход-развал, легковые 2 оси с многорычажкой (Focus, Ceed, Octavia, Camry, K5, Sonata, Mazda 3/6, Lacetti) и малые паркетники (Duster, Creta)",
+   "price": "от 2 500 ₽",
+   "price_from_rub": 2500,
+   "verified_at": "2026-10-11"
+  },
+  {
+   "key": "alignment_vaz_samara",
+   "service": "Сход-развал, ВАЗ 2108–2115 (Самара: девятка, четырка)",
+   "price": "от 3 000 ₽",
+   "price_from_rub": 3000,
+   "verified_at": "2026-10-11"
+  },
+  {
+   "key": "brakes_caliper_cables",
+   "service": "Обслуживание тормозов: направляющие суппорта от 1 000 ₽, тормозной шланг от 1 000 ₽, замена суппорта с прокачкой от 2 000 ₽, трос ручника от 2 000–2 500 ₽",
+   "price": "от 1 000 ₽",
+   "price_from_rub": 1000,
+   "verified_at": "2026-10-11"
+  },
+  {
+   "key": "brakes_pads_discs",
+   "service": "Замена тормозных колодок (дисковые от 800 ₽/колесо или от 1 600 ₽/ось; с электроручником от 1 200 ₽/колесо; барабанные от 2 000 ₽/колесо) и тормозных дисков с колодками (от 3 000 ₽ за ось)",
+   "price": "от 800 ₽",
+   "price_from_rub": 800,
+   "verified_at": "2026-10-11"
+  },
+  {
+   "key": "oil_change_service",
+   "service": "Замена масла в ДВС и масляного фильтра (от 1 000 ₽; снятие нештатной защиты картера от 300–500 ₽)",
+   "price": "от 1 000 ₽",
+   "price_from_rub": 1000,
+   "verified_at": "2026-10-11"
+  },
+  {
+   "key": "suspension_ball_bolted",
+   "service": "Замена шаровой опоры на болтах без снятия рычага (за 1 шт.)",
+   "price": "от 800 ₽",
+   "price_from_rub": 800,
+   "verified_at": "2026-10-11"
+  },
+  {
+   "key": "suspension_ball_pressed",
+   "service": "Замена прессованной шаровой опоры (со снятием рычага) или шаровой на заводских заклёпках (за 1 шт.)",
+   "price": "от 2 000 ₽",
+   "price_from_rub": 2000,
+   "verified_at": "2026-10-11"
+  },
+  {
+   "key": "suspension_cv_joint",
+   "service": "Замена наружного ШРУСа / пыльника (от 2 500 ₽) и внутреннего ШРУСа / привода в сборе (от 3 000–3 500 ₽)",
+   "price": "от 2 500 ₽",
+   "price_from_rub": 2500,
+   "verified_at": "2026-10-11"
+  },
+  {
+   "key": "suspension_diag",
+   "service": "Диагностика (осмотр) ходовой части на подъёмнике (всегда бесплатно, даже без ремонта)",
+   "price": "бесплатно (0 ₽)",
+   "price_from_rub": 0,
+   "verified_at": "2026-10-11"
+  },
+  {
+   "key": "suspension_front_arm",
+   "service": "Снятие/установка переднего рычага подвески (от 2 000 ₽; со спуском подрамника от 2 500–3 500 ₽; перепрессовка сайлентблока +600…1 000 ₽)",
+   "price": "от 2 000 ₽",
+   "price_from_rub": 2000,
+   "verified_at": "2026-10-11"
+  },
+  {
+   "key": "suspension_front_shock",
+   "service": "Замена передней стойки / пружины / опорного подшипника (обычная на болтах от 2 000 ₽, круглая зажимная VAG/Focus от 3 500–4 500 ₽)",
+   "price": "от 2 000 ₽",
+   "price_from_rub": 2000,
+   "verified_at": "2026-10-11"
+  },
+  {
+   "key": "suspension_rear_arms",
+   "service": "Замена рычагов задней многорычажной подвески (короткая косточка от 1 000 ₽, верхний серп от 1 300 ₽, нижний подпружинный от 2 000 ₽, продольный с ушастым сайлентблоком от 3 500 ₽)",
+   "price": "от 1 000 ₽",
+   "price_from_rub": 1000,
+   "verified_at": "2026-10-11"
+  },
+  {
+   "key": "suspension_rear_beam",
+   "service": "Замена сайлентблоков задней балки (комплект — обе стороны), фиксированная цена",
+   "price": "8 000 ₽",
+   "price_from_rub": 8000,
+   "verified_at": "2026-10-11"
+  },
+  {
+   "key": "suspension_rear_shock",
+   "service": "Замена заднего амортизатора (отдельно от пружины от 1 300 ₽, стойка с пружиной из салона от 2 000 ₽) и задней пружины (от 1 500 ₽)",
+   "price": "от 1 300 ₽",
+   "price_from_rub": 1300,
+   "verified_at": "2026-10-11"
+  },
+  {
+   "key": "suspension_stab_bushing",
+   "service": "Замена втулок стабилизатора (задние от 600 ₽/шт., передние без подрамника от 1 000 ₽/шт., со спуском подрамника от 3 000 ₽ за обе)",
+   "price": "от 600 ₽",
+   "price_from_rub": 600,
+   "verified_at": "2026-10-11"
+  },
+  {
+   "key": "suspension_stab_link",
+   "service": "Замена стойки стабилизатора передней или задней (за 1 шт.; со срезкой болгаркой +500 ₽)",
+   "price": "от 800 ₽",
+   "price_from_rub": 800,
+   "verified_at": "2026-10-11"
+  },
+  {
+   "key": "suspension_steering_rack",
+   "service": "Снятие/установка (замена) рулевой рейки (простые авто Solaris/Rio 6 000–7 000 ₽, сложные до 12 000 ₽)",
+   "price": "от 6 000 ₽",
+   "price_from_rub": 6000,
+   "verified_at": "2026-10-11"
+  },
+  {
+   "key": "suspension_tie_rod_end",
+   "service": "Замена рулевого наконечника (за 1 сторону; срезка гайки болгаркой +500 ₽)",
+   "price": "от 800 ₽",
+   "price_from_rub": 800,
+   "verified_at": "2026-10-11"
+  },
+  {
+   "key": "suspension_tie_rod_inner",
+   "service": "Замена рулевой тяги (за 1 сторону, наконечник и пыльник с этой же стороны входят; пара от 3 600 ₽)",
+   "price": "от 1 800 ₽",
+   "price_from_rub": 1800,
+   "verified_at": "2026-10-11"
+  },
+  {
+   "key": "suspension_wheel_bearing",
+   "service": "Замена ступицы в сборе на болтах (от 3 000 ₽) и ступичного подшипника с перепрессовкой (от 3 500 ₽)",
+   "price": "от 3 000 ₽",
+   "price_from_rub": 3000,
+   "verified_at": "2026-10-11"
+  }
+ ],
+ "promos": [
+  {
+   "key": "promo_review",
+   "text": "Акция «Отзыв»: оставили честный отзыв — скидка 5% на следующий визит, разовая, действует месяц, показать сообщение мастеру; с акцией «Две машины» не суммируется"
+  },
+  {
+   "key": "promo_two_cars",
+   "text": "Акция «Две машины»: две свои машины сразу — скидка 10% на сход-развал одной машины (только сход-развал, не ремонт)"
+  }
+ ],
+ "links": {
+  "yandex": "https://yandex.ru/maps/org/avto14/108623850068/",
+  "2gis": "https://2gis.ru/kazan/firm/70000001065947100",
+  "avito": "https://www.avito.ru/kazan/predlozheniya_uslug/avtoservis_shod-razval_3d_remont_avto_kazan_2642374619",
+  "google_review": "https://g.page/r/CQ_2sAxXZ-cOEBM/review",
+  "instagram": "https://www.instagram.com/avto14.kazan/",
+  "telegram": "https://t.me/avto14rs"
+ }
+}
