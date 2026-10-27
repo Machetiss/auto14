@@ -71,7 +71,7 @@ export const translations = {
             masters: {
                 title: "Опытные",
                 title2: "мастера",
-                desc: "Специалисты с опытом 10+ лет. Знаем особенности подвески любой марки: от Lada до Porsche."
+                desc: "Главный мастер — более 20 лет в ремонте авто. Знаем особенности подвески любой марки: от Lada до Porsche."
             },
             prices: {
                 title: "Честные",
@@ -290,7 +290,7 @@ export const translations = {
             masters: {
                 title: "Expert",
                 title2: "mechanics",
-                desc: "Specialists with 10+ years of experience. We know the suspension specifics of every brand — from Lada to Porsche."
+                desc: "Lead mechanic with 20+ years of experience. We know the suspension specifics of every brand — from Lada to Porsche."
             },
             prices: {
                 title: "Transparent",

@@ -39,7 +39,7 @@ export default function Diagnostika() {
                 },
                 {
                     icon: UserCheck,
-                    title: l("Опыт мастеров от 10 лет", "10+ Years Experience"),
+                    title: l("Опыт мастера 20+ лет", "20+ Years Experience"),
                     desc: l("Точно определяем причину стука без лишних навязанных замен.", "Accurately identifying knocking sounds without unnecessary parts replacement.")
                 }
             ]}

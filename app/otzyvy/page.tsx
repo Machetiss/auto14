@@ -50,8 +50,8 @@ export default function OtzyvyPage() {
                         <div className="text-xs font-bold uppercase opacity-60 mt-1">Рекомендуют нас</div>
                     </div>
                     <div className="bg-black text-white p-5 rounded-2xl border-2 border-black shadow-[4px_4px_0_#000] text-center">
-                        <div className="text-3xl md:text-4xl font-black text-accent-orange">10+ лет</div>
-                        <div className="text-xs font-bold uppercase opacity-80 mt-1">Опыт мастеров</div>
+                        <div className="text-3xl md:text-4xl font-black text-accent-orange">20+ лет</div>
+                        <div className="text-xs font-bold uppercase opacity-80 mt-1">Опыт главного мастера</div>
                     </div>
                 </div>
 

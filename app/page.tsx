@@ -704,8 +704,8 @@ export default function Home() {
                             </h3>
                             <p className="font-bold opacity-80 font-sans text-sm md:text-base leading-relaxed">
                                 {language === 'ru'
-                                    ? 'Мы используем только сертифицированные запчасти с официальной гарантией производителя. Наши мастера со стажем от 10 лет строго контролируют качество всех резьбовых соединений и расходников. Мы беремся за ремонт ходовой любой сложности.'
-                                    : 'We use only certified parts with official manufacturer warranty. Our mechanics with 10+ years of experience strictly control the quality of all threaded connections and consumables. We handle suspension repairs of any complexity.'}
+                                    ? 'Мы используем только сертифицированные запчасти с официальной гарантией производителя. Главный мастер со стажем более 20 лет строго контролируют качество всех резьбовых соединений и расходников. Мы беремся за ремонт ходовой любой сложности.'
+                                    : 'We use only certified parts with official manufacturer warranty. Our lead mechanic with 20+ years of experience strictly controls the quality of all threaded connections and consumables. We handle suspension repairs of any complexity.'}
                             </p>
                         </div>
 
