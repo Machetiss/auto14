@@ -13,6 +13,7 @@
 
 ## Октябрь 2026
 
+- 2026-10-27 · Next.js 14.2.35; база заявок в /data на Amvera; Telegram без Markdown при ошибке; форма записи при сбое показывает телефон; убран POST /api/reviews; блог без 404; план в docs/CONVERSION_PLAN.md · Ветка desktop-prices-2026-10-26, в прод не выкачено · Claude Code
 - 2026-10-27 · Цены приведены к реестру штаба (data/hq/card.json): развал по классам авто, ходовая, тормоза; шиномонтаж R13–R15 2 500 ₽, R16–R22 «уточняйте»; Hoffman → Hofmann; влиты data/hq и ветка fix/phones-and-schema · Ветка desktop-prices-2026-10-26, в прод не выкачено · Claude Code
 - 2026-10-10 · Удалена публичная CSV-ссылка на таблицу CRM из `data/compare_crm.py`, переведено на Google Sheets API через сервисный аккаунт и `.env` · Защита клиентской базы · Antigravity
 
