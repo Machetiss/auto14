@@ -29,7 +29,13 @@ const alignmentData: PriceItem[] = [
 
 const tiresData: PriceItem[] = [
     { name: 'R13 – R15 (комплект 4 колеса с балансировкой)', nameEn: 'R13 – R15 (set of 4 with balancing)', price: 2500, note: 'единая цена за комплект', noteEn: 'fixed price for set' },
-    { name: 'R16 – R22 (комплект с балансировкой)', nameEn: 'R16 – R22 (set with balancing)', price: null, note: 'цену назовём по телефону', noteEn: 'price on request' },
+    { name: 'R16 (легковые 2 800 ₽ / кроссоверы до 3 200 ₽)', nameEn: 'R16 (sedans 2,800 ₽ / SUVs up to 3,200 ₽)', price: 2800, note: 'кроссоверы до 3 200 ₽', noteEn: 'SUVs up to 3,200 ₽' },
+    { name: 'R17 (легковые 3 000 ₽ / кроссоверы до 3 600 ₽)', nameEn: 'R17 (sedans 3,000 ₽ / SUVs up to 3,600 ₽)', price: 3000, note: 'кроссоверы до 3 600 ₽', noteEn: 'SUVs up to 3,600 ₽' },
+    { name: 'R18 (легковые 3 300 ₽ / кроссоверы до 3 800 ₽)', nameEn: 'R18 (sedans 3,300 ₽ / SUVs up to 3,800 ₽)', price: 3300, note: 'кроссоверы до 3 800 ₽', noteEn: 'SUVs up to 3,800 ₽' },
+    { name: 'R19 (легковые от 3 500 ₽ / кроссоверы до 4 000 ₽)', nameEn: 'R19 (sedans from 3,500 ₽ / SUVs up to 4,000 ₽)', price: 3500, note: 'до 4 000 ₽ для больших авто', noteEn: 'up to 4,000 ₽ for large vehicles' },
+    { name: 'R20 (легковые от 3 700 ₽ / большие авто до 4 500 ₽)', nameEn: 'R20 (sedans from 3,700 ₽ / large vehicles up to 4,500 ₽)', price: 3700, note: 'до 4 500 ₽ для больших авто', noteEn: 'up to 4,500 ₽ for large vehicles' },
+    { name: 'R21 (комплект с балансировкой)', nameEn: 'R21 (set with balancing)', price: 4700, note: 'до 4 700 ₽', noteEn: 'up to 4,700 ₽' },
+    { name: 'R22 (комплект с балансировкой)', nameEn: 'R22 (set with balancing)', price: 5000, note: 'до 5 000 ₽', noteEn: 'up to 5,000 ₽' },
 ];
 
 const repairData: PriceItem[] = [
