@@ -9,7 +9,7 @@ type TabKey = 'alignment' | 'tires' | 'repair';
 interface PriceItem {
     name: string;
     nameEn: string;
-    price: number;
+    price: number | null; // null — цены нет в реестре штаба, показываем «Уточняйте»
     note?: string;
     noteEn?: string;
 }
@@ -18,24 +18,18 @@ const alignmentData: PriceItem[] = [
     { name: 'Проверка углов на 3D-стенде (без регулировки)', nameEn: '3D alignment check (without adjustment)', price: 500, note: 'если углы в норме', noteEn: 'if angles are within spec' },
     { name: 'Авто с задней балкой — схождение 1 ось (Vesta, Rio, Solaris, Polo, Logan)', nameEn: 'Rear torsion beam cars — front toe 1 axle (Vesta, Rio, Solaris, Polo)', price: 1500 },
     { name: 'LADA Granta, Kalina, Priora, ВАЗ 2110–2112 (схождение + развал + кастор)', nameEn: 'LADA Granta, Kalina, Priora, VAZ 2110–2112 (toe + camber + caster)', price: 2200, note: 'зависит от состояния рег. элементов', noteEn: 'depends on adjustment bolt condition' },
-    { name: 'Легковые с многорычажкой и малые паркетники (Focus, Ceed, Octavia, Camry, Creta, Duster)', nameEn: 'Multi-link cars & compact SUVs (Focus, Ceed, Octavia, Camry, Creta, Duster)', price: 1500, note: '1–2 оси: от 1 500 до 3 000 ₽', noteEn: '1–2 axles: 1,500–3,000 ₽' },
-    { name: 'Среднеразмерные кроссоверы (RAV4, Sportage, Tucson, Tiguan, CX-5, Tiggo 7/8, Haval, Monjaro)', nameEn: 'Mid-size SUVs (RAV4, Sportage, Tucson, Tiguan, CX-5, Chery, Haval, Geely)', price: 1500, note: '1–2 оси: от 1 500 до 3 500 ₽', noteEn: '1–2 axles: 1,500–3,500 ₽' },
+    { name: 'Легковые с многорычажкой и малые паркетники (Focus, Ceed, Octavia, Camry, Creta, Duster)', nameEn: 'Multi-link cars & compact SUVs (Focus, Ceed, Octavia, Camry, Creta, Duster)', price: 2500, note: '2 оси', noteEn: '2 axles' },
+    { name: 'Среднеразмерные кроссоверы (RAV4, Sportage, Tucson, Tiguan, CX-5, Tiggo 7/8, Haval, Monjaro)', nameEn: 'Mid-size SUVs (RAV4, Sportage, Tucson, Tiguan, CX-5, Chery, Haval, Geely)', price: 3000, note: '2 оси', noteEn: '2 axles' },
     { name: 'ВАЗ 2108–2115 (Самара: девятка, четырка) — развал + схождение + кастор', nameEn: 'VAZ 2108–2115 — camber + toe + caster', price: 3000 },
     { name: 'Нива (Legend, Travel, 4x4), ВАЗ Классика 2101–2107', nameEn: 'LADA Niva, VAZ Classic 2101–2107', price: 3500 },
     { name: 'Land Cruiser 100/200/300, Prado 120/150, SsangYong — развал + кастор + схождение', nameEn: 'Land Cruiser, Prado, SsangYong — camber + caster + toe', price: 3500 },
-    { name: 'Крупные кроссоверы и немецкий премиум (Sorento, Santa Fe, BMW, Mercedes, Audi, Touareg, Cayenne)', nameEn: 'Large SUVs & German premium (Sorento, Santa Fe, BMW, Mercedes, Audi, Touareg, Cayenne)', price: 2000, note: '1–2 оси: от 2 000 до 4 500 ₽', noteEn: '1–2 axles: 2,000–4,500 ₽' },
-    { name: 'УАЗ Патриот / Хантер, Toyota Hiace, VW Transporter / Caravelle / Multivan', nameEn: 'UAZ Patriot / Hunter, Toyota Hiace, VW Transporter / Multivan', price: 4000, note: 'Transporter 2 оси — до 5 500 ₽', noteEn: 'Transporter 2 axles — up to 5,500 ₽' },
+    { name: 'Крупные кроссоверы и немецкий премиум (Sorento, Santa Fe, BMW, Mercedes, Audi, Touareg, Cayenne)', nameEn: 'Large SUVs & German premium (Sorento, Santa Fe, BMW, Mercedes, Audi, Touareg, Cayenne)', price: 2000, note: 'даже если регулируем только перед', noteEn: 'even for front axle only' },
+    { name: 'УАЗ Патриот / Хантер, Toyota Hiace, VW Transporter / Caravelle / Multivan', nameEn: 'UAZ Patriot / Hunter, Toyota Hiace, VW Transporter / Multivan', price: 4000 },
 ];
 
 const tiresData: PriceItem[] = [
     { name: 'R13 – R15 (комплект 4 колеса с балансировкой)', nameEn: 'R13 – R15 (set of 4 with balancing)', price: 2500, note: 'единая цена за комплект', noteEn: 'fixed price for set' },
-    { name: 'R16 (легковые 2 800 ₽ / кроссоверы до 3 200 ₽)', nameEn: 'R16 (sedans 2,800 ₽ / SUVs up to 3,200 ₽)', price: 2800, note: 'кроссоверы до 3 200 ₽', noteEn: 'SUVs up to 3,200 ₽' },
-    { name: 'R17 (легковые 3 000 ₽ / кроссоверы до 3 600 ₽)', nameEn: 'R17 (sedans 3,000 ₽ / SUVs up to 3,600 ₽)', price: 3000, note: 'кроссоверы до 3 600 ₽', noteEn: 'SUVs up to 3,600 ₽' },
-    { name: 'R18 (легковые 3 300 ₽ / кроссоверы до 3 800 ₽)', nameEn: 'R18 (sedans 3,300 ₽ / SUVs up to 3,800 ₽)', price: 3300, note: 'кроссоверы до 3 800 ₽', noteEn: 'SUVs up to 3,800 ₽' },
-    { name: 'R19 (легковые от 3 500 ₽ / кроссоверы до 4 000 ₽)', nameEn: 'R19 (sedans from 3,500 ₽ / SUVs up to 4,000 ₽)', price: 3500, note: 'до 4 000 ₽ для больших авто', noteEn: 'up to 4,000 ₽ for large vehicles' },
-    { name: 'R20 (легковые от 3 700 ₽ / большие авто до 4 500 ₽)', nameEn: 'R20 (sedans from 3,700 ₽ / large vehicles up to 4,500 ₽)', price: 3700, note: 'до 4 500 ₽ для больших авто', noteEn: 'up to 4,500 ₽ for large vehicles' },
-    { name: 'R21 (комплект с балансировкой)', nameEn: 'R21 (set with balancing)', price: 4700, note: 'до 4 700 ₽', noteEn: 'up to 4,700 ₽' },
-    { name: 'R22 (комплект с балансировкой)', nameEn: 'R22 (set with balancing)', price: 5000, note: 'до 5 000 ₽', noteEn: 'up to 5,000 ₽' },
+    { name: 'R16 – R22 (комплект с балансировкой)', nameEn: 'R16 – R22 (set with balancing)', price: null, note: 'цену назовём по телефону', noteEn: 'price on request' },
 ];
 
 const repairData: PriceItem[] = [
@@ -49,7 +43,8 @@ const repairData: PriceItem[] = [
     { name: 'Замена рулевой тяги', nameEn: 'Inner tie rod replacement', price: 1800, note: 'наконечник и пыльник с этой стороны входят в цену', noteEn: 'includes tie rod end & boot on same side' },
     { name: 'Замена передней стойки в сборе (на болтах)', nameEn: 'Front strut assembly replacement (bolted)', price: 2000, note: 'за 1 сторону, зажимная VAG/Focus — от 3 500 ₽', noteEn: 'per side, pinch-bolt VAG/Focus — from 3,500 ₽' },
     { name: 'Замена шаровой опоры (прессованная / на заклёпках)', nameEn: 'Ball joint replacement (pressed / riveted / arm removal)', price: 2000, note: 'со снятием рычага', noteEn: 'includes arm removal' },
-    { name: 'Снятие / установка переднего рычага подвески', nameEn: 'Front control arm removal / installation', price: 2000, note: 'перепрессовка сайлентблока от 600 ₽', noteEn: 'bushing press from 600 ₽' },
+    { name: 'Снятие / установка переднего рычага подвески', nameEn: 'Front control arm removal / installation', price: 2000, note: 'со спуском подрамника — от 2 500 ₽', noteEn: 'with subframe lowering — from 2,500 ₽' },
+    { name: 'Перепрессовка сайлентблока в снятом рычаге', nameEn: 'Bushing press-in on a removed arm', price: 600, note: 'рычаг привезли сами, за 1 шт.', noteEn: 'arm brought in, per unit' },
     { name: 'Замена наружного ШРУСа (гранаты) или пыльника', nameEn: 'Outer CV joint or boot replacement', price: 2500, note: 'внутренний ШРУС / привод — от 3 000 ₽', noteEn: 'inner CV joint / axle — from 3,000 ₽' },
     { name: 'Замена тормозных дисков (за ось, оба диска)', nameEn: 'Brake discs replacement (per axle, both discs)', price: 3000, note: 'замена колодок входит в цену', noteEn: 'includes brake pads replacement' },
     { name: 'Замена ступичного подшипника (с перепрессовкой)', nameEn: 'Wheel bearing replacement (pressed)', price: 3500, note: 'ступица на болтах без пресса — от 3 000 ₽', noteEn: 'bolt-on hub assembly — from 3,000 ₽' },
@@ -132,7 +127,11 @@ export default function PricingSection({ onBookClick }: { onBookClick: () => voi
                                     )}
                                 </div>
                                 <div className="flex items-center gap-3">
-                                    {item.price === 0 ? (
+                                    {item.price === null ? (
+                                        <span className="font-black text-lg md:text-xl whitespace-nowrap">
+                                            {language === 'ru' ? 'Уточняйте' : 'Ask'}
+                                        </span>
+                                    ) : item.price === 0 ? (
                                         <span className="font-black text-lg md:text-xl text-accent-orange uppercase whitespace-nowrap">
                                             {language === 'ru' ? 'Бесплатно' : 'Free'}
                                         </span>

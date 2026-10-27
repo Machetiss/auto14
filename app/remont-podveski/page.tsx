@@ -62,7 +62,7 @@ export default function RemontPodveski() {
                 },
                 {
                     title: l("Развал-схождение", "Wheel alignment"),
-                    desc: l("При замене рычагов или рулевых тяг — регулировка углов на стенде Hoffman 3D.", "Precise alignment adjustment on the Hoffman 3D stand after suspension work.")
+                    desc: l("При замене рычагов или рулевых тяг — регулировка углов на стенде Hofmann 3D.", "Precise alignment adjustment on the Hofmann 3D stand after suspension work.")
                 }
             ]}
             priceTable={

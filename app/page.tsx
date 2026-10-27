@@ -204,7 +204,7 @@ export default function Home() {
                                 <p className="text-white/80 font-bold leading-tight">
                                     {language === 'ru'
                                         ? 'Руль не по центру или уводит? Бесплатная повторная регулировка.'
-                                        : 'Wheel off-center or pulls? Free realignment on 3D Hoffman.'}
+                                        : 'Wheel off-center or pulls? Free realignment on 3D Hofmann.'}
                                 </p>
                             </div>
                         </div>
@@ -368,13 +368,13 @@ export default function Home() {
                             <tbody className="divide-y-2 divide-black/10 font-bold text-xs md:text-base">
                                 <tr className="hover:bg-brand-yellow/10 transition-colors">
                                     <td className="p-3 md:p-4 font-black">3D сход-развал (1 ось)</td>
-                                    <td className="p-3 md:p-4 opacity-70">Компьютерный стенд Hoffman</td>
+                                    <td className="p-3 md:p-4 opacity-70">Компьютерный стенд Hofmann</td>
                                     <td className="p-3 md:p-4 opacity-70">20–30 мин</td>
-                                    <td className="p-3 md:p-4 text-right font-black text-accent-orange whitespace-nowrap">от 1 400 ₽</td>
+                                    <td className="p-3 md:p-4 text-right font-black text-accent-orange whitespace-nowrap">от 1 500 ₽</td>
                                 </tr>
                                 <tr className="hover:bg-brand-yellow/10 transition-colors">
                                     <td className="p-3 md:p-4 font-black">3D сход-развал (2 оси)</td>
-                                    <td className="p-3 md:p-4 opacity-70">Компьютерный стенд Hoffman</td>
+                                    <td className="p-3 md:p-4 opacity-70">Компьютерный стенд Hofmann</td>
                                     <td className="p-3 md:p-4 opacity-70">30–45 мин</td>
                                     <td className="p-3 md:p-4 text-right font-black text-accent-orange whitespace-nowrap">от 2 500 ₽</td>
                                 </tr>
@@ -394,11 +394,11 @@ export default function Home() {
                                     <td className="p-3 md:p-4 font-black">Шиномонтаж и балансировка (4 колеса)</td>
                                     <td className="p-3 md:p-4 opacity-70">Комплексная переобувка на стенде</td>
                                     <td className="p-3 md:p-4 opacity-70">30–40 мин</td>
-                                    <td className="p-3 md:p-4 text-right font-black text-accent-orange whitespace-nowrap">от 2 200 ₽</td>
+                                    <td className="p-3 md:p-4 text-right font-black text-accent-orange whitespace-nowrap">от 2 500 ₽</td>
                                 </tr>
                                 <tr className="hover:bg-brand-yellow/10 transition-colors">
                                     <td className="p-3 md:p-4 font-black">Перепрессовка сайлентблоков</td>
-                                    <td className="p-3 md:p-4 opacity-70">Гидравлический пресс / слесарный пост</td>
+                                    <td className="p-3 md:p-4 opacity-70">В снятом рычаге, за 1 шт.</td>
                                     <td className="p-3 md:p-4 opacity-70">40–60 мин</td>
                                     <td className="p-3 md:p-4 text-right font-black text-accent-orange whitespace-nowrap">от 600 ₽</td>
                                 </tr>
@@ -457,7 +457,7 @@ export default function Home() {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {/* Benefit 1: Hoffman */}
+                        {/* Benefit 1: Hofmann */}
                         <div className="bg-white text-black p-8 rounded-[2rem] border-4 border-black shadow-[4px_4px_0px_#FEE500] md:shadow-[8px_8px_0px_#FEE500] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all group">
                             <div className="bg-black text-brand-yellow w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform border-2 border-black">
                                 <Target className="w-8 h-8" />
@@ -556,7 +556,7 @@ export default function Home() {
                         <Image src="/gallery/1.webp" alt="Автосервис Avto14 — рабочий процесс" fill sizes="(max-width: 768px) 50vw, 33vw" loading="lazy"  className="object-cover group-hover:scale-110 transition-transform duration-500" />
                     </div>
                     <div className="relative rounded-2xl overflow-hidden border-2 border-black group md:col-span-2">
-                        <Image src="/gallery/2.webp" alt="3D развал-схождение на стенде Hoffman" fill sizes="(max-width: 768px) 50vw, 66vw" loading="lazy"  className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <Image src="/gallery/2.webp" alt="3D развал-схождение на стенде Hofmann" fill sizes="(max-width: 768px) 50vw, 66vw" loading="lazy"  className="object-cover group-hover:scale-110 transition-transform duration-500" />
                     </div>
                     <div className="relative rounded-2xl overflow-hidden border-2 border-black group md:col-span-2">
                         <Image src="/gallery/4.webp" alt="Ремонт ходовой части автомобиля" fill sizes="(max-width: 768px) 50vw, 66vw" loading="lazy"  className="object-cover group-hover:scale-110 transition-transform duration-500" />

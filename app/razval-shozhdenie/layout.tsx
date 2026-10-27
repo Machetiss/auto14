@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: '3D Развал-схождение в Казани | Стенд Hoffman',
-    description: 'Сделать 3D развал-схождение в Казани (Константиновка). Высокоточный стенд Hoffman, гарантия на работы. Цены от 1500 руб.',
+    title: '3D Развал-схождение в Казани | Стенд Hofmann',
+    description: 'Сделать 3D развал-схождение в Казани (Константиновка). Высокоточный стенд Hofmann, гарантия на работы. Цены от 1500 руб.',
     alternates: {
         canonical: '/razval-shozhdenie',
     },
     openGraph: {
-        title: '3D Развал-схождение в Казани | Стенд Hoffman | Автосервис Avto14',
-        description: 'Идеальная точность на стенде Hoffman. Устраним жор резины и увод руля за 20 минут. Гарантия 2 недели.',
+        title: '3D Развал-схождение в Казани | Стенд Hofmann | Автосервис Avto14',
+        description: 'Идеальная точность на стенде Hofmann. Устраним жор резины и увод руля за 20 минут. Гарантия 2 недели.',
         url: 'https://auto-14.ru/razval-shozhdenie',
         siteName: 'Автосервис Avto14',
         locale: 'ru_RU',
@@ -30,7 +30,7 @@ export default function Layout({
             "image": "https://auto-14.ru/job/razval.jpg",
             "provider": { "@id": "https://auto-14.ru/#organization" },
             "areaServed": "Казань",
-            "description": "Идеальная точность на стенде Hoffman. Устраним жор резины и увод руля за 20 минут.",
+            "description": "Идеальная точность на стенде Hofmann. Устраним жор резины и увод руля за 20 минут.",
             "offers": {
                 "@type": "Offer",
                 "price": "1500",

@@ -13,8 +13,8 @@ export default function RazvalShozhdenie() {
         <ServicePageLayout
             title={l("3D Развал-схождение", "3D Wheel Alignment")}
             description={l(
-                "Регулировка сход-развала 3D в Казани проводится в техцентре «Авто14» по адресу ул. Заречная, 5Б. Настройка выполняется на компьютерном стенде Hoffman с четырьмя оптическими камерами и калиброванными мишенями с точностью до 0,01 градуса. Процедура занимает от 20 до 35 минут. Стоимость регулировки одной оси составляет от 1500 рублей, двух осей — от 2500 рублей по прайс-листу сервиса. Распечатку углов до и после регулировки выдаём по запросу клиента.",
-                "3D wheel alignment in Kazan at Avto14 service center, 5B Zarechnaya St. Adjustments are performed on a computerized Hoffman 3D stand with 0.01° precision in 20–35 minutes. One axle adjustment starts from 1500 ₽, two axles from 2500 ₽ per service price list. Before & after angle printout is provided upon customer request."
+                "Регулировка сход-развала 3D в Казани проводится в техцентре «Авто14» по адресу ул. Заречная, 5Б. Настройка выполняется на компьютерном стенде Hofmann с четырьмя оптическими камерами и калиброванными мишенями с точностью до 0,01 градуса. Процедура занимает от 20 до 35 минут. Стоимость регулировки одной оси составляет от 1500 рублей, двух осей — от 2500 рублей по прайс-листу сервиса. Распечатку углов до и после регулировки выдаём по запросу клиента.",
+                "3D wheel alignment in Kazan at Avto14 service center, 5B Zarechnaya St. Adjustments are performed on a computerized Hofmann 3D stand with 0.01° precision in 20–35 minutes. One axle adjustment starts from 1500 ₽, two axles from 2500 ₽ per service price list. Before & after angle printout is provided upon customer request."
             )}
             price={l("от 1500₽", "from 1500₽")}
             heroImage="/job/razval.jpg"
@@ -30,7 +30,7 @@ export default function RazvalShozhdenie() {
                 {
                     icon: Target,
                     title: l("Точность 0.01°", "0.01° Precision"),
-                    desc: l("Стенд Hoffman (Германия) с 3D-технологией исключает ошибки.", "Hoffman stand (Germany) with 3D technology eliminates errors.")
+                    desc: l("Стенд Hofmann (Германия) с 3D-технологией исключает ошибки.", "Hofmann stand (Germany) with 3D technology eliminates errors.")
                 },
                 {
                     icon: Clock,
@@ -71,7 +71,7 @@ export default function RazvalShozhdenie() {
                         {l("Прайс-лист на 3D сход-развал", "3D Wheel Alignment Price List")}
                     </h2>
                     <p className="text-xs md:text-sm font-bold opacity-60 mb-6 uppercase tracking-wider">
-                        {l("Казань, ул. Заречная 5Б • Немецкий стенд Hoffman • Распечатка по запросу", "Kazan, 5B Zarechnaya St • Hoffman 3D Stand")}
+                        {l("Казань, ул. Заречная 5Б • Немецкий стенд Hofmann • Распечатка по запросу", "Kazan, 5B Zarechnaya St • Hofmann 3D Stand")}
                     </p>
                     <div className="overflow-x-auto">
                         <table className="w-full text-left border-collapse">

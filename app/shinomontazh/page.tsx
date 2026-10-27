@@ -13,8 +13,8 @@ export default function Shinomontazh() {
         <ServicePageLayout
             title={l("Шиномонтаж и Балансировка", "Tire Service & Balancing")}
             description={l(
-                "Сезонный шиномонтаж и балансировка колёс в Казани на ул. Заречная 5Б по предварительной записи без очередей. Полный комплекс переобувки четырёх колёс занимает 30–45 минут. Цена комплекса начинается от 2500 рублей за комплект (R13–R15 единая цена 2500 ₽, R16 от 2800 ₽). Применяем калиброванные станки и затягиваем болты с контролем момента.",
-                "Seasonal tire mounting and wheel balancing in Kazan at 5B Zarechnaya St by appointment without waiting. A full swap for four wheels takes 30–45 minutes. Complete seasonal package starts from 2500 ₽ per set (R13–R15: 2500 ₽, R16: from 2800 ₽). We use calibrated machines and torque wrench control."
+                "Сезонный шиномонтаж и балансировка колёс в Казани на ул. Заречная 5Б по предварительной записи без очередей. Полный комплекс переобувки четырёх колёс занимает 30–45 минут. Цена комплекса начинается от 2500 рублей за комплект (R13–R15 — 2500 ₽, до R22 — цену уточняйте). Применяем калиброванные станки и затягиваем болты с контролем момента.",
+                "Seasonal tire mounting and wheel balancing in Kazan at 5B Zarechnaya St by appointment without waiting. A full swap for four wheels takes 30–45 minutes. Complete seasonal package starts from 2500 ₽ per set (R13–R15: 2500 ₽, up to R22 on request). We use calibrated machines and torque wrench control."
             )}
             price={l("от 2500₽", "from 2500₽")}
             heroImage="/job/shin.jpg"
@@ -87,46 +87,10 @@ export default function Shinomontazh() {
                                     <td className="p-3 md:p-4 text-right font-black text-accent-orange whitespace-nowrap">2 500 ₽</td>
                                 </tr>
                                 <tr>
-                                    <td className="p-3 md:p-4 font-black">R16</td>
-                                    <td className="p-3 md:p-4 opacity-70">Легковые 2 800 ₽ / Кроссоверы и внедорожники до 3 200 ₽</td>
-                                    <td className="p-3 md:p-4 opacity-70">30–35 мин</td>
-                                    <td className="p-3 md:p-4 text-right font-black text-accent-orange whitespace-nowrap">2 800 – 3 200 ₽</td>
-                                </tr>
-                                <tr>
-                                    <td className="p-3 md:p-4 font-black">R17</td>
-                                    <td className="p-3 md:p-4 opacity-70">Легковые 3 000 ₽ / Кроссоверы и внедорожники до 3 600 ₽</td>
-                                    <td className="p-3 md:p-4 opacity-70">35–40 мин</td>
-                                    <td className="p-3 md:p-4 text-right font-black text-accent-orange whitespace-nowrap">3 000 – 3 600 ₽</td>
-                                </tr>
-                                <tr>
-                                    <td className="p-3 md:p-4 font-black">R18</td>
-                                    <td className="p-3 md:p-4 opacity-70">Легковые 3 300 ₽ / Кроссоверы и внедорожники до 3 800 ₽</td>
-                                    <td className="p-3 md:p-4 opacity-70">35–45 мин</td>
-                                    <td className="p-3 md:p-4 text-right font-black text-accent-orange whitespace-nowrap">3 300 – 3 800 ₽</td>
-                                </tr>
-                                <tr>
-                                    <td className="p-3 md:p-4 font-black">R19</td>
-                                    <td className="p-3 md:p-4 opacity-70">Легковые от 3 500 ₽ / Кроссоверы и внедорожники до 4 000 ₽</td>
-                                    <td className="p-3 md:p-4 opacity-70">40–45 мин</td>
-                                    <td className="p-3 md:p-4 text-right font-black text-accent-orange whitespace-nowrap">3 500 – 4 000 ₽</td>
-                                </tr>
-                                <tr>
-                                    <td className="p-3 md:p-4 font-black">R20</td>
-                                    <td className="p-3 md:p-4 opacity-70">Легковые от 3 700 ₽ / Большие авто до 4 500 ₽</td>
-                                    <td className="p-3 md:p-4 opacity-70">40–50 мин</td>
-                                    <td className="p-3 md:p-4 text-right font-black text-accent-orange whitespace-nowrap">3 700 – 4 500 ₽</td>
-                                </tr>
-                                <tr>
-                                    <td className="p-3 md:p-4 font-black">R21</td>
-                                    <td className="p-3 md:p-4 opacity-70">Бережный монтаж и калиброванная балансировка</td>
-                                    <td className="p-3 md:p-4 opacity-70">45–50 мин</td>
-                                    <td className="p-3 md:p-4 text-right font-black text-accent-orange whitespace-nowrap">до 4 700 ₽</td>
-                                </tr>
-                                <tr>
-                                    <td className="p-3 md:p-4 font-black">R22</td>
-                                    <td className="p-3 md:p-4 opacity-70">Бережный монтаж низкого профиля на стенде</td>
-                                    <td className="p-3 md:p-4 opacity-70">45–60 мин</td>
-                                    <td className="p-3 md:p-4 text-right font-black text-accent-orange whitespace-nowrap">до 5 000 ₽</td>
+                                    <td className="p-3 md:p-4 font-black">R16 – R22</td>
+                                    <td className="p-3 md:p-4 opacity-70">Комплекс (4 колеса): монтаж, балансировка, затяжка</td>
+                                    <td className="p-3 md:p-4 opacity-70">30–60 мин</td>
+                                    <td className="p-3 md:p-4 text-right font-black text-accent-orange whitespace-nowrap">уточняйте</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -140,7 +104,7 @@ export default function Shinomontazh() {
             faq={[
                 {
                     question: l("Какая цена на шиномонтаж?", "What's the price for tire service?"),
-                    answer: l("Комплексная переобувка — от 2500 ₽ за 4 колеса (R13–R15 — 2500 ₽, R16 — от 2800 ₽). В стоимость входит полный комплекс: снятие, мойка/чистка дисков, перебортовка, балансировка и затяжка с контролем момента.", "Full swap — from 2,500 ₽ for 4 wheels. Includes removal, cleaning, mounting, balancing, and torque check.")
+                    answer: l("Комплексная переобувка — от 2500 ₽ за 4 колеса (R13–R15 — 2500 ₽, R16–R22 — уточняйте по телефону). В стоимость входит полный комплекс: снятие, мойка/чистка дисков, перебортовка, балансировка и затяжка с контролем момента.", "Full swap — from 2,500 ₽ for 4 wheels. Includes removal, cleaning, mounting, balancing, and torque check.")
                 },
                 {
                     question: l("Можно ли записаться день в день?", "Can I book same-day?"),

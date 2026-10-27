@@ -137,7 +137,7 @@ export default function OtzyvyPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-bold text-sm md:text-base">
                         <div className="border-2 border-black/10 rounded-xl p-4 bg-brand-yellow/10">
                             <h3 className="font-black uppercase mb-1">Точность 3D сход-развала</h3>
-                            <p className="opacity-80">Настройка углов установки колёс на немецком стенде Hoffman решает проблемы увода автомобиля в сторону и неравномерного износа протектора с первого заезда.</p>
+                            <p className="opacity-80">Настройка углов установки колёс на немецком стенде Hofmann решает проблемы увода автомобиля в сторону и неравномерного износа протектора с первого заезда.</p>
                         </div>
                         <div className="border-2 border-black/10 rounded-xl p-4 bg-brand-yellow/10">
                             <h3 className="font-black uppercase mb-1">Диагностика подвески бесплатна</h3>
@@ -168,7 +168,7 @@ export default function OtzyvyPage() {
                         Приезжайте и убедитесь сами
                     </h2>
                     <p className="text-base md:text-xl font-bold opacity-80 max-w-xl mx-auto mb-8">
-                        Сделаем бесплатную диагностику подвески и точный 3D сход-развал на немецком стенде Hoffman. Без навязанных услуг.
+                        Сделаем бесплатную диагностику подвески и точный 3D сход-развал на немецком стенде Hofmann. Без навязанных услуг.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <a

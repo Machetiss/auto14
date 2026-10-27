@@ -60,10 +60,10 @@ export default function ServiceBrandClientPage({ service, brand }: Props) {
         },
         {
           icon: Settings,
-          title: ru ? 'Стенд Hoffman 3D' : 'Hoffman 3D Stand',
+          title: ru ? 'Стенд Hofmann 3D' : 'Hofmann 3D Stand',
           desc: ru
-            ? 'После ремонта ходовой делаем сход-развал на немецком стенде Hoffman. Точность до 0,01°.'
-            : 'After suspension repair, we perform alignment on a German Hoffman stand. Accuracy to 0.01°.',
+            ? 'После ремонта ходовой делаем сход-развал на немецком стенде Hofmann. Точность до 0,01°.'
+            : 'After suspension repair, we perform alignment on a German Hofmann stand. Accuracy to 0.01°.',
         },
       ]}
       processSteps={[

@@ -74,8 +74,8 @@ export default function BrandClientPage({ brand }: { brand: CarBrand }) {
         <ServicePageLayout
             title={l(`Ремонт и обслуживание ${brand.name}`, `Repair and Service for ${brand.name}`)}
             description={l(
-                `Профессиональный ремонт ходовой части, плановое техобслуживание и высокоточный 3D сход-развал для автомобилей ${brand.name} (${brand.nameRu}) в автосервисе «Авто14» в Казани (Константиновка, ул. Заречная 5Б). Опытные мастера с профильным стажем более 10 лет, немецкий стенд Hoffman, подбор оригинальных запчастей и проверенных аналогов по VIN-коду. Гарантия на работы до 12 месяцев. Диагностика подвески бесплатна.`,
-                `Professional chassis repair, scheduled maintenance, and high-precision 3D wheel alignment for ${brand.name} (${brand.nameRu}) at Avto14 auto service in Kazan (5B Zarechnaya St, Konstantinovka). Experienced technicians with 10+ years experience, German Hoffman alignment rack, VIN parts lookup. Up to 12 months warranty. Suspension diagnostics is free.`
+                `Профессиональный ремонт ходовой части, плановое техобслуживание и высокоточный 3D сход-развал для автомобилей ${brand.name} (${brand.nameRu}) в автосервисе «Авто14» в Казани (Константиновка, ул. Заречная 5Б). Опытные мастера с профильным стажем более 10 лет, немецкий стенд Hofmann, подбор оригинальных запчастей и проверенных аналогов по VIN-коду. Гарантия на работы до 12 месяцев. Диагностика подвески бесплатна.`,
+                `Professional chassis repair, scheduled maintenance, and high-precision 3D wheel alignment for ${brand.name} (${brand.nameRu}) at Avto14 auto service in Kazan (5B Zarechnaya St, Konstantinovka). Experienced technicians with 10+ years experience, German Hofmann alignment rack, VIN parts lookup. Up to 12 months warranty. Suspension diagnostics is free.`
             )}
             price={l("от 800₽", "from 800₽")}
             heroImage="/job/hodovaya.jpg"
@@ -116,7 +116,7 @@ export default function BrandClientPage({ brand }: { brand: CarBrand }) {
                 },
                 {
                     title: l("Ремонт и 3D сход-развал", "Repair & 3D Alignment"),
-                    desc: l("Заменяем неисправные детали и калибруем углы установки колёс на немецком компьютерном 3D стенде Hoffman.", "We replace worn components and calibrate wheel geometry on our high-precision German 3D Hoffman rack.")
+                    desc: l("Заменяем неисправные детали и калибруем углы установки колёс на немецком компьютерном 3D стенде Hofmann.", "We replace worn components and calibrate wheel geometry on our high-precision German 3D Hofmann rack.")
                 }
             ]}
             faq={[
@@ -126,7 +126,7 @@ export default function BrandClientPage({ brand }: { brand: CarBrand }) {
                 },
                 {
                     question: l(`Нужно ли делать сход-развал на ${brand.name} после ремонта подвески?`, `Is wheel alignment needed after suspension repair on ${brand.name}?`),
-                    answer: l("Да, замена любых рулевых тяг, наконечников, шаровых опор или амортизаторов смещает заводские углы. Регулировка на стенде Hoffman сохраняет резину и возвращает стабильность на трассе.", "Yes, replacing tie rods, ball joints, or struts alters geometry. Hoffman adjustment protects tires and restores highway stability.")
+                    answer: l("Да, замена любых рулевых тяг, наконечников, шаровых опор или амортизаторов смещает заводские углы. Регулировка на стенде Hofmann сохраняет резину и возвращает стабильность на трассе.", "Yes, replacing tie rods, ball joints, or struts alters geometry. Hofmann adjustment protects tires and restores highway stability.")
                 },
                 {
                     question: l("Как быстро привозят автозапчасти?", "How fast do parts arrive?"),

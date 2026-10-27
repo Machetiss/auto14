@@ -15,7 +15,7 @@ export const translations = {
             title_pt1: "Профессиональный",
             title_highlight: "3D сход-развал",
             title_pt2: "и ремонт ходовой в Казани",
-            subtitle: "Автосервис «Авто14» на Заречной 5Б (посёлок Константиновка, Советский район Казани) специализируется на компьютерном 3D сход-развале на стенде Hoffman и ремонте ходовой части. Регулировка углов выполняется за 20–35 минут с точностью до 0,01°. Стоимость сход-развала начинается от 1500 рублей по прайс-листу сервиса, диагностика подвески проводится бесплатно. Принимаем без очередей по предварительной записи с понедельника по субботу с 9:00 до 19:00.",
+            subtitle: "Автосервис «Авто14» на Заречной 5Б (посёлок Константиновка, Советский район Казани) специализируется на компьютерном 3D сход-развале на стенде Hofmann и ремонте ходовой части. Регулировка углов выполняется за 20–35 минут с точностью до 0,01°. Стоимость сход-развала начинается от 1500 рублей по прайс-листу сервиса, диагностика подвески проводится бесплатно. Принимаем без очередей по предварительной записи с понедельника по субботу с 9:00 до 19:00.",
             subtitle_p1: "Ремонт ходовой",
             subtitle_p2: "3D сход-развал",
             subtitle_p3: "Шиномонтаж",
@@ -40,11 +40,11 @@ export const translations = {
             more: "Подробнее",
             alignment: {
                 name: "3D Развал-схождение",
-                desc: "Стенд Hoffman 3D. Высочайшая точность регулировки углов. 1 ось от 1500 ₽, 2 оси от 2500 ₽."
+                desc: "Стенд Hofmann 3D. Высочайшая точность регулировки углов. 1 ось от 1500 ₽, 2 оси от 2500 ₽."
             },
             suspension: {
                 name: "Ремонт ходовой",
-                desc: "Диагностика и устранение стуков подвески. Сайлентблоки от 600 ₽, стойки от 750 ₽."
+                desc: "Диагностика и устранение стуков подвески. Перепрессовка сайлентблока от 600 ₽, стойки стабилизатора от 800 ₽."
             },
             tires: {
                 name: "Шиномонтаж",
@@ -64,7 +64,7 @@ export const translations = {
             title2: "13 000+ клиентов",
             hoffman: {
                 title: "3D Стенд",
-                title2: "Hoffman",
+                title2: "Hofmann",
                 desc: "Премиальное немецкое оборудование. Точность регулировки до 0.01°. Гарантируем идеальный результат."
             },
             masters: {
@@ -122,7 +122,7 @@ export const translations = {
             items: [
                 {
                     q: "Где сделать 3D развал-схождение в Казани?",
-                    a: "Автосервис Авто14 находится в Константиновке по адресу ул. Заречная 5Б. Мы используем современный 3D стенд Hoffman, который гарантирует высочайшую точность регулировки."
+                    a: "Автосервис Авто14 находится в Константиновке по адресу ул. Заречная 5Б. Мы используем современный 3D стенд Hofmann, который гарантирует высочайшую точность регулировки."
                 },
                 {
                     q: "Как часто и когда нужно проверять развал-схождение?",
@@ -158,7 +158,7 @@ export const translations = {
                 },
                 {
                     q: "На каком оборудовании вы работаете?",
-                    a: "Наш главный инструмент — профессиональный немецкий 3D стенд Hoffman. Это эталон точности в мире авторемонта, исключающий человеческий фактор."
+                    a: "Наш главный инструмент — профессиональный немецкий 3D стенд Hofmann. Это эталон точности в мире авторемонта, исключающий человеческий фактор."
                 },
                 {
                     q: "Где в Казани (в Константиновке) сделать качественную диагностику ходовой и нужно ли записываться?",
@@ -166,7 +166,7 @@ export const translations = {
                 },
                 {
                     q: "Сколько стоит 3D сход-развал на Заречной 5Б и сколько времени это занимает?",
-                    a: "Цена на 3D развал-схождение начинается от 1500 рублей (зависит от оси и марки авто). Мы используем точный немецкий стенд Hoffman. Если все регулировочные болты откручиваются нормально, настройка геометрии колес занимает 30-40 минут."
+                    a: "Цена на 3D развал-схождение начинается от 1500 рублей (зависит от оси и марки авто). Мы используем точный немецкий стенд Hofmann. Если все регулировочные болты откручиваются нормально, настройка геометрии колес занимает 30-40 минут."
                 },
                 {
                     q: "Даете ли вы гарантию на ремонт подвески и запчасти?",
@@ -233,7 +233,7 @@ export const translations = {
             title_pt1: "Professional",
             title_highlight: "3D Wheel Alignment",
             title_pt2: "and Suspension Repair in Kazan",
-            subtitle: "Auto service 'Avto14' at 5B Zarechnaya St (Konstantinovka, Kazan) specializes in computerized 3D wheel alignment on a Hoffman stand and suspension repair. Adjustment is completed in 20–35 minutes with 0.01° precision. Wheel alignment pricing starts from 1500 rubles, and suspension inspection is free. Open Mon–Sat 9:00–19:00 by appointment.",
+            subtitle: "Auto service 'Avto14' at 5B Zarechnaya St (Konstantinovka, Kazan) specializes in computerized 3D wheel alignment on a Hofmann stand and suspension repair. Adjustment is completed in 20–35 minutes with 0.01° precision. Wheel alignment pricing starts from 1500 rubles, and suspension inspection is free. Open Mon–Sat 9:00–19:00 by appointment.",
             subtitle_p1: "Suspension Repair",
             subtitle_p2: "3D Alignment",
             subtitle_p3: "Tire Service",
@@ -258,11 +258,11 @@ export const translations = {
             more: "Learn more",
             alignment: {
                 name: "3D Wheel Alignment",
-                desc: "Hoffman 3D stand. Precision adjustment. 1 axle from 1500 ₽, 2 axles from 2500 ₽."
+                desc: "Hofmann 3D stand. Precision adjustment. 1 axle from 1500 ₽, 2 axles from 2500 ₽."
             },
             suspension: {
                 name: "Suspension Repair",
-                desc: "Diagnostics and repairs. Bushings from 600 ₽, sway bar links from 750 ₽."
+                desc: "Diagnostics and repairs. Bushing press-in from 600 ₽, sway bar links from 800 ₽."
             },
             tires: {
                 name: "Tire Service",
@@ -282,7 +282,7 @@ export const translations = {
             title2: "13,000+ clients",
             hoffman: {
                 title: "3D Stand",
-                title2: "Hoffman",
+                title2: "Hofmann",
                 desc: "Premium German equipment. Alignment precision to 0.01°. We guarantee a perfect result."
             },
             masters: {
@@ -340,7 +340,7 @@ export const translations = {
             items: [
                 {
                     q: "Where can I get 3D wheel alignment in Kazan?",
-                    a: "Avto14 is located at 5B Zarechnaya St in Konstantinovka. We use a Hoffman 3D alignment stand — the gold standard in precision."
+                    a: "Avto14 is located at 5B Zarechnaya St in Konstantinovka. We use a Hofmann 3D alignment stand — the gold standard in precision."
                 },
                 {
                     q: "How often should I check my alignment?",
@@ -376,7 +376,7 @@ export const translations = {
                 },
                 {
                     q: "What equipment do you use?",
-                    a: "Our main tool is a professional German Hoffman 3D stand — the benchmark for precision in automotive repair, eliminating human error."
+                    a: "Our main tool is a professional German Hofmann 3D stand — the benchmark for precision in automotive repair, eliminating human error."
                 },
                 {
                     q: "Where can I get quality suspension diagnostics in Kazan (Konstantinovka), and do I need to book?",
@@ -384,7 +384,7 @@ export const translations = {
                 },
                 {
                     q: "How much does a 3D wheel alignment cost at 5B Zarechnaya St, and how long does it take?",
-                    a: "Prices for 3D alignment start from 1500 ₽ (depending on the axle and car make). We use a precise German Hoffman stand. If the adjustment bolts aren't seized, setting the wheel geometry takes 30-40 minutes."
+                    a: "Prices for 3D alignment start from 1500 ₽ (depending on the axle and car make). We use a precise German Hofmann stand. If the adjustment bolts aren't seized, setting the wheel geometry takes 30-40 minutes."
                 },
                 {
                     q: "Do you provide a warranty on suspension repairs and parts?",

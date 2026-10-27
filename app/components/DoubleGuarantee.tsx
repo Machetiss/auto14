@@ -42,7 +42,7 @@ export default function DoubleGuarantee() {
                             <h4 className="font-black text-sm uppercase">7 дней тест-драйва</h4>
                         </div>
                         <p className="text-xs sm:text-sm text-neutral-800 leading-relaxed font-medium">
-                            Если после сход-развала руль смещен хоть на 1° или машину тянет в сторону — <span className="font-black">бесплатная повторная калибровка</span> на стенде 3D Hoffman без лишних споров и экспертиз.
+                            Если после сход-развала руль смещен хоть на 1° или машину тянет в сторону — <span className="font-black">бесплатная повторная калибровка</span> на стенде 3D Hofmann без лишних споров и экспертиз.
                         </p>
                     </div>
                 </div>

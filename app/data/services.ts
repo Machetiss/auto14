@@ -22,8 +22,8 @@ export const services: Service[] = [
     priceFrom: 1500,
     duration: "от 30 минут",
     durationEn: "from 30 minutes",
-    description: "Точная регулировка углов установки колёс на немецком стенде Hoffman 3D. Устраняем увод машины в сторону и неравномерный износ шин.",
-    descriptionEn: "Precise wheel angle adjustment on a German Hoffman 3D stand. We eliminate pulling to the side and uneven tire wear.",
+    description: "Точная регулировка углов установки колёс на немецком стенде Hofmann 3D. Устраняем увод машины в сторону и неравномерный износ шин.",
+    descriptionEn: "Precise wheel angle adjustment on a German Hofmann 3D stand. We eliminate pulling to the side and uneven tire wear.",
     symptoms: [
       "Машину уводит в сторону на прямой дороге",
       "Руль стоит не прямо при езде прямо",
