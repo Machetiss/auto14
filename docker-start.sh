@@ -9,11 +9,16 @@ echo "[db] uid=$(id -u) data: $(ls -ld /data 2>&1)"
 if [ -d /data ]; then
     echo "[db] mount: $(grep ' /data ' /proc/mounts 2>&1)"
     chown 1001:1001 /data 2>/dev/null
+    # Prisma считает file:./prisma/dev.db от папки схемы, поэтому база образа лежит в prisma/prisma/dev.db
+    SEED_DB=./prisma/prisma/dev.db
+    [ -f "$SEED_DB" ] || SEED_DB=./prisma/dev.db
+    [ -f "$SEED_DB" ] || SEED_DB=$(find ./prisma -name dev.db 2>/dev/null | head -n 1)
+    echo "[db] seed db: ${SEED_DB:-not found}"
     if [ ! -f /data/dev.db ]; then
         # сначала от root, если нельзя — от nextjs (на NFS root часто превращается в nobody)
-        if cp ./prisma/dev.db /data/dev.db 2>/tmp/cp.err; then
+        if cp "$SEED_DB" /data/dev.db 2>/tmp/cp.err; then
             echo "[db] copied seed db to /data (root)"
-        elif setpriv --reuid=1001 --regid=1001 --clear-groups cp ./prisma/dev.db /data/dev.db 2>>/tmp/cp.err; then
+        elif setpriv --reuid=1001 --regid=1001 --clear-groups cp "$SEED_DB" /data/dev.db 2>>/tmp/cp.err; then
             echo "[db] copied seed db to /data (uid 1001)"
         else
             echo "[db] copy to /data failed: $(cat /tmp/cp.err)"
