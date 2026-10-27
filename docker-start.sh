@@ -1,0 +1,28 @@
+#!/bin/sh
+# Старт контейнера на Amvera.
+# Заявки храним в постоянном хранилище /data: всё остальное стирается при пересборке.
+# Контейнер стартует от root только чтобы выдать права на /data, сам сайт работает от nextjs (uid 1001).
+# Любой сбой здесь не мешает запуску: сайт поднимется на базе из образа, как раньше.
+
+echo "[db] uid=$(id -u) data: $(ls -ld /data 2>&1)"
+
+if [ -d /data ]; then
+    chown 1001:1001 /data 2>/dev/null
+    if [ ! -f /data/dev.db ]; then
+        cp ./prisma/dev.db /data/dev.db 2>/dev/null && echo "[db] copied seed db to /data"
+    fi
+    chown 1001:1001 /data/dev.db 2>/dev/null
+fi
+
+if [ -f /data/dev.db ] && setpriv --reuid=1001 --regid=1001 --clear-groups test -w /data/dev.db 2>/dev/null; then
+    export DATABASE_URL=file:/data/dev.db
+    echo "[db] using /data/dev.db"
+else
+    echo "[db] /data unavailable, using image db"
+fi
+
+if command -v setpriv >/dev/null 2>&1; then
+    exec setpriv --reuid=1001 --regid=1001 --clear-groups node server.js
+fi
+echo "[start] setpriv not found, running as $(id -u)"
+exec node server.js
