@@ -27,7 +27,7 @@ export default function ContactForm() {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     service: 'Контактная форма',
-                    name: name || 'Клиент',
+                    name: name.trim().length >= 2 ? name.trim() : 'Клиент',
                     phone,
                     description: message,
                     utm: { source: 'contacts_page' }
@@ -44,11 +44,11 @@ export default function ContactForm() {
                 setPhone('');
                 setMessage('');
             } else {
-                alert('Произошла ошибка. Пожалуйста, попробуйте позже.');
+                alert('Заявка не отправилась. Позвоните нам: +7 (999) 269-93-59');
             }
         } catch (error) {
             console.error('Submit Error:', error);
-            alert('Произошла ошибка сети.');
+            alert('Нет связи с сервером. Позвоните нам: +7 (999) 269-93-59');
         } finally {
             setIsLoading(false);
         }

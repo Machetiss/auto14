@@ -18,6 +18,7 @@ export default function BookingModal({ isOpen, onClose, initialService = 'Схо
     const [phone, setPhone] = useState('');
     const [description, setDescription] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+    const [submitError, setSubmitError] = useState(false);
 
     // Update service when initialService changes or modal opens
     useEffect(() => {
@@ -39,6 +40,7 @@ export default function BookingModal({ isOpen, onClose, initialService = 'Схо
         }
 
         setIsLoading(true);
+        setSubmitError(false);
 
         try {
             // Send to server API — handles Telegram, DB, and Google Sheets
@@ -59,6 +61,10 @@ export default function BookingModal({ isOpen, onClose, initialService = 'Схо
             if (!response.ok) {
                 const errorData = await response.json().catch(() => ({}));
                 console.error('API Error:', errorData);
+                // Заявка не дошла: не отправляем на «Спасибо», а предлагаем позвонить
+                setSubmitError(true);
+                setIsLoading(false);
+                return;
             }
 
             sendEvent('generate_lead', {
@@ -69,8 +75,8 @@ export default function BookingModal({ isOpen, onClose, initialService = 'Схо
             window.location.href = '/thank-you';
         } catch (error) {
             console.error('Submit Error:', error);
-            // Still redirect — the lead may have been partially saved
-            window.location.href = '/thank-you';
+            setSubmitError(true);
+            setIsLoading(false);
         }
     };
 
@@ -202,6 +208,15 @@ export default function BookingModal({ isOpen, onClose, initialService = 'Схо
                             </>
                         )}
                     </button>
+
+                    {submitError && (
+                        <div role="alert" className="bg-white border-2 border-black rounded-xl px-4 py-3 text-sm font-bold text-black">
+                            {language === 'ru'
+                                ? 'Заявка не отправилась. Позвоните нам, запишем сразу: '
+                                : 'Request failed. Please call us: '}
+                            <a href="tel:+79992699359" className="underline font-black whitespace-nowrap">+7 (999) 269-93-59</a>
+                        </div>
+                    )}
 
                     <p className="text-xs text-center font-bold opacity-40 mt-2">
                         {t('common.policy')}
