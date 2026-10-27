@@ -14,7 +14,7 @@ export default function SchemaMarkup() {
             "ratingValue": "5.0",
             "reviewCount": "165"
         },
-        "telephone": "+79992699359",
+        "telephone": ["+79992699359", "+79294945174"],
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Заречная ул., 5Б",
@@ -45,7 +45,6 @@ export default function SchemaMarkup() {
             "https://yandex.ru/maps/org/avto14/108623850068/",
             "https://2gis.ru/kazan/firm/70000001065947100",
             "https://www.avito.ru/brands/i165449740",
-            "https://t.me/avto14_bot",
             "https://wa.me/79992699359"
         ],
         "hasOfferCatalog": {
