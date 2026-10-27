@@ -230,7 +230,7 @@ export default function Kontakty() {
                                         </tr>
                                         <tr>
                                             <td className="p-3 font-black">{l('Гарантия', 'Warranty')}</td>
-                                            <td className="p-3">{l('До 12 месяцев на подвеску, 14 дней на сход-развал', 'Up to 12 months on suspension, 14 days on wheel alignment')}</td>
+                                            <td className="p-3">{l('Ремонт: 1 год или 20 000 км (с нашими запчастями). Сход-развал: 7 дней, повторно бесплатно', 'Repairs: 1 year or 20,000 km (with our parts). Alignment: 7 days, free re-adjustment')}</td>
                                         </tr>
                                     </tbody>
                                 </table>

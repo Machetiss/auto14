@@ -31,13 +31,13 @@ export default function BrandClientPage({ brand }: { brand: CarBrand }) {
                         <tr>
                             <td className="p-3 md:p-4 font-black">3D сход-развал (1 ось)</td>
                             <td className="p-3 md:p-4 opacity-80">30–40 мин</td>
-                            <td className="p-3 md:p-4 opacity-80">30 дней / 1000 км</td>
+                            <td className="p-3 md:p-4 opacity-80">7 дней: повторно бесплатно</td>
                             <td className="p-3 md:p-4 font-black text-accent-orange">от 1500 ₽</td>
                         </tr>
                         <tr>
                             <td className="p-3 md:p-4 font-black">3D сход-развал (2 оси)</td>
                             <td className="p-3 md:p-4 opacity-80">40–50 мин</td>
-                            <td className="p-3 md:p-4 opacity-80">30 дней / 1000 км</td>
+                            <td className="p-3 md:p-4 opacity-80">7 дней: повторно бесплатно</td>
                             <td className="p-3 md:p-4 font-black text-accent-orange">от 2500 ₽</td>
                         </tr>
                         <tr>
@@ -61,8 +61,8 @@ export default function BrandClientPage({ brand }: { brand: CarBrand }) {
                         <tr>
                             <td className="p-3 md:p-4 font-black">Замена сайлентблоков / рычагов подвески</td>
                             <td className="p-3 md:p-4 opacity-80">от 1 часа</td>
-                            <td className="p-3 md:p-4 opacity-80">до 12 месяцев</td>
-                            <td className="p-3 md:p-4 font-black text-accent-orange">от 1200 ₽</td>
+                            <td className="p-3 md:p-4 opacity-80">1 год / 20 000 км</td>
+                            <td className="p-3 md:p-4 font-black text-accent-orange">от 1000 ₽</td>
                         </tr>
                     </tbody>
                 </table>
@@ -74,8 +74,8 @@ export default function BrandClientPage({ brand }: { brand: CarBrand }) {
         <ServicePageLayout
             title={l(`Ремонт и обслуживание ${brand.name}`, `Repair and Service for ${brand.name}`)}
             description={l(
-                `Профессиональный ремонт ходовой части, плановое техобслуживание и высокоточный 3D сход-развал для автомобилей ${brand.name} (${brand.nameRu}) в автосервисе «Авто14» в Казани (Константиновка, ул. Заречная 5Б). Опытные мастера с профильным стажем более 10 лет, немецкий стенд Hofmann, подбор оригинальных запчастей и проверенных аналогов по VIN-коду. Гарантия на работы до 12 месяцев. Диагностика подвески бесплатна.`,
-                `Professional chassis repair, scheduled maintenance, and high-precision 3D wheel alignment for ${brand.name} (${brand.nameRu}) at Avto14 auto service in Kazan (5B Zarechnaya St, Konstantinovka). Experienced technicians with 10+ years experience, German Hofmann alignment rack, VIN parts lookup. Up to 12 months warranty. Suspension diagnostics is free.`
+                `Профессиональный ремонт ходовой части, плановое техобслуживание и высокоточный 3D сход-развал для автомобилей ${brand.name} (${brand.nameRu}) в автосервисе «Авто14» в Казани (Константиновка, ул. Заречная 5Б). Опытные мастера с профильным стажем более 10 лет, немецкий стенд Hofmann, подбор оригинальных запчастей и проверенных аналогов по VIN-коду. Гарантия на ремонт 1 год или 20 000 км при установке наших запчастей, на сход-развал 7 дней (повторная регулировка бесплатно). Диагностика подвески бесплатна.`,
+                `Professional chassis repair, scheduled maintenance, and high-precision 3D wheel alignment for ${brand.name} (${brand.nameRu}) at Avto14 auto service in Kazan (5B Zarechnaya St, Konstantinovka). Experienced technicians with 10+ years experience, German Hofmann alignment rack, VIN parts lookup. Repair warranty 1 year or 20,000 km with our parts; 7-day free re-alignment. Suspension diagnostics is free.`
             )}
             price={l("от 800₽", "from 800₽")}
             heroImage="/job/hodovaya.jpg"
@@ -102,7 +102,7 @@ export default function BrandClientPage({ brand }: { brand: CarBrand }) {
                 {
                     icon: ShieldCheck,
                     title: l("Гарантия на все работы", "Comprehensive warranty"),
-                    desc: l("Предоставляем честную гарантию на выполненный ремонт ходовой и установленные детали до 12 месяцев.", "We provide an honest warranty on suspension repairs and installed parts for up to 12 months.")
+                    desc: l("Гарантия на ремонт ходовой 1 год или 20 000 км, если ставим наши запчасти.", "Suspension repair warranty: 1 year or 20,000 km when we supply the parts.")
                 }
             ]}
             processSteps={[

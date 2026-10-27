@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: { brand: string } }
 
     return {
         title: `Ремонт и Сход-развал ${brandData.name} (${brandData.nameRu}) в Казани`,
-        description: `Ремонт ходовой части, ТО и 3D сход-развал для автомобилей ${brandData.name} в Казани (Константиновка, Заречная 5Б). Бесплатная диагностика подвески, гарантия до 12 месяцев.`,
+        description: `Ремонт ходовой части, ТО и 3D сход-развал для автомобилей ${brandData.name} в Казани (Константиновка, Заречная 5Б). Бесплатная диагностика подвески, гарантия на ремонт 1 год или 20 000 км (с нашими запчастями).`,
         alternates: {
             canonical: `/brands/${brandData.slug}`,
         },
