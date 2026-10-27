@@ -112,7 +112,7 @@ export default function BlogPage() {
                                     <td className="p-3 md:p-4 font-black">3D сход-развал</td>
                                     <td className="p-3 md:p-4 opacity-80">Каждые 15 000 км или при смене шин</td>
                                     <td className="p-3 md:p-4 opacity-80">Увод руля, истирание кромки шин</td>
-                                    <td className="p-3 md:p-4 font-black text-accent-orange">от 1400 ₽</td>
+                                    <td className="p-3 md:p-4 font-black text-accent-orange">от 1500 ₽</td>
                                 </tr>
                                 <tr>
                                     <td className="p-3 md:p-4 font-black">Диагностика подвески</td>

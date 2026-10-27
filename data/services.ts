@@ -1,4 +1,4 @@
-﻿export interface Service {
+export interface Service {
   slug: string;
   name: string;         // Название для URL и заголовков
   nameRu: string;       // Русское название
@@ -19,7 +19,7 @@ export const services: Service[] = [
     name: "3D Сход-развал",
     nameRu: "3D Сход-развал",
     nameEn: "3D Wheel Alignment",
-    priceFrom: 1400,
+    priceFrom: 1500,
     duration: "от 30 минут",
     durationEn: "from 30 minutes",
     description: "Точная регулировка углов установки колёс на немецком стенде Hoffman 3D. Устраняем увод машины в сторону и неравномерный износ шин.",
@@ -43,11 +43,11 @@ export const services: Service[] = [
     name: "Шиномонтаж",
     nameRu: "Шиномонтаж и балансировка",
     nameEn: "Tire Service & Balancing",
-    priceFrom: 2200,
+    priceFrom: 2500,
     duration: "от 30 минут",
     durationEn: "from 30 minutes",
-    description: "Сезонная смена резины, балансировка колёс и проверка давления. Работаем с дисками R13–R21.",
-    descriptionEn: "Seasonal tire change, wheel balancing and pressure check. We work with R13–R21 rims.",
+    description: "Сезонная смена резины, балансировка колёс и проверка давления. Работаем с дисками R13–R22.",
+    descriptionEn: "Seasonal tire change, wheel balancing and pressure check. We work with R13–R22 rims.",
     symptoms: [
       "Вибрация руля на скорости 60–120 км/ч",
       "Нужна сезонная смена резины",

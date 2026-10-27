@@ -1,4 +1,4 @@
-﻿export interface Service {
+export interface Service {
   slug: string;
   name: string;         // Название для URL и заголовков
   nameRu: string;       // Русское название
@@ -19,7 +19,7 @@ export const services: Service[] = [
     name: "3D Сход-развал",
     nameRu: "3D Сход-развал",
     nameEn: "3D Wheel Alignment",
-    priceFrom: 1400,
+    priceFrom: 1500,
     duration: "от 30 минут",
     durationEn: "from 30 minutes",
     description: "Точная регулировка углов установки колёс на немецком стенде Hoffman 3D. Устраняем увод машины в сторону и неравномерный износ шин.",
@@ -43,11 +43,11 @@ export const services: Service[] = [
     name: "Шиномонтаж",
     nameRu: "Шиномонтаж и балансировка",
     nameEn: "Tire Service & Balancing",
-    priceFrom: 2200,
+    priceFrom: 2500,
     duration: "от 30 минут",
     durationEn: "from 30 minutes",
-    description: "Сезонная смена резины, балансировка колёс и проверка давления. Работаем с дисками R13–R21.",
-    descriptionEn: "Seasonal tire change, wheel balancing and pressure check. We work with R13–R21 rims.",
+    description: "Сезонная смена резины, балансировка колёс и проверка давления. Работаем с дисками R13–R22.",
+    descriptionEn: "Seasonal tire change, wheel balancing and pressure check. We work with R13–R22 rims.",
     symptoms: [
       "Вибрация руля на скорости 60–120 км/ч",
       "Нужна сезонная смена резины",
@@ -115,11 +115,11 @@ export const services: Service[] = [
     name: "Замена рулевого наконечника",
     nameRu: "Замена рулевого наконечника",
     nameEn: "Tie Rod End Replacement",
-    priceFrom: 700,
+    priceFrom: 800,
     duration: "от 40 минут",
     durationEn: "from 40 minutes",
-    description: "Замена изношенных рулевых наконечников и тяг. После замены обязательно делаем сход-развал для корректной управляемости.",
-    descriptionEn: "Replacement of worn tie rod ends and rods. After replacement, we always perform wheel alignment for proper handling.",
+    description: "Замена изношенных рулевых наконечников (от 800 ₽) и рулевых тяг (от 1 800 ₽ — попутная замена наконечника и пыльника входит в цену). После замены делаем 3D сход-развал.",
+    descriptionEn: "Replacement of worn tie rod ends (from 800 ₽) and inner tie rods (from 1,800 ₽ — includes tie rod end and boot on the same side). Followed by 3D wheel alignment.",
     symptoms: [
       "Люфт руля, нечёткая реакция на поворот",
       "Стук в рулевой при движении по кочкам",
@@ -142,8 +142,8 @@ export const services: Service[] = [
     priceFrom: 800,
     duration: "от 1 часа",
     durationEn: "from 1 hour",
-    description: "Замена шаровых опор болтового и прессованного типа. Неисправная шаровая — прямая угроза безопасности. Проверим и заменим в день обращения.",
-    descriptionEn: "Replacement of both bolt-in and pressed ball joints. A worn ball joint is a direct safety hazard. We will inspect and replace it same day.",
+    description: "Замена шаровых опор на болтах (от 800 ₽) и прессованных / на заводских заклёпках со снятием рычага (от 2 000 ₽). Проверим и заменим в день обращения.",
+    descriptionEn: "Replacement of bolt-on ball joints (from 800 ₽) and pressed / riveted joints with arm removal (from 2,000 ₽). Same-day inspection and replacement.",
     symptoms: [
       "Стук при повороте и торможении",
       "Скрип при вращении руля на месте",
@@ -163,11 +163,11 @@ export const services: Service[] = [
     name: "Замена амортизаторов",
     nameRu: "Замена амортизаторов",
     nameEn: "Shock Absorber Replacement",
-    priceFrom: 1700,
+    priceFrom: 1300,
     duration: "от 1 часа",
     durationEn: "from 1 hour",
-    description: "Диагностика и замена передних и задних амортизаторов. Восстанавливаем комфорт, безопасность и управляемость автомобиля.",
-    descriptionEn: "Inspection and replacement of front and rear shock absorbers. We restore comfort, safety and handling.",
+    description: "Замена задних амортизаторов (от 1 300 ₽) и передних стоек в сборе (от 2 000 ₽, замена пружины, пыльника и опорного подшипника входит в цену).",
+    descriptionEn: "Replacement of rear shock absorbers (from 1,300 ₽) and front strut assemblies (from 2,000 ₽, including coil spring, boot and strut mount).",
     symptoms: [
       "Машину сильно раскачивает на кочках",
       "Долгое раскачивание после проезда лежачего полицейского",
@@ -190,8 +190,8 @@ export const services: Service[] = [
     priceFrom: 0,
     duration: "от 20 минут",
     durationEn: "from 20 minutes",
-    description: "Бесплатная диагностика ходовой части при заказе ремонта. Поднимем автомобиль на подъёмник, осмотрим все узлы и честно скажем что нужно заменить.",
-    descriptionEn: "Free chassis diagnostics with any repair order. We will lift your car, inspect all components and honestly tell you what needs to be replaced.",
+    description: "Бесплатная диагностика (осмотр) ходовой части на подъёмнике — всегда бесплатно, даже без ремонта. Поднимем автомобиль, осмотрим все узлы и честно скажем, что нужно заменить.",
+    descriptionEn: "Free suspension inspection on a lift — always free, even without repairs. We lift your car, inspect all components and honestly tell you what needs attention.",
     symptoms: [
       "Слышен подозрительный звук, но непонятно откуда",
       "Хотите знать состояние ходовой перед покупкой авто",

@@ -15,7 +15,7 @@ export const translations = {
             title_pt1: "Профессиональный",
             title_highlight: "3D сход-развал",
             title_pt2: "и ремонт ходовой в Казани",
-            subtitle: "Автосервис «Авто14» на Заречной 5Б (посёлок Константиновка, Советский район Казани) специализируется на компьютерном 3D сход-развале на стенде Hoffman и ремонте ходовой части. Регулировка углов выполняется за 20–35 минут с точностью до 0,01°. Стоимость сход-развала начинается от 1400 рублей по прайс-листу сервиса, диагностика подвески проводится бесплатно. Принимаем без очередей по предварительной записи с понедельника по субботу с 9:00 до 19:00.",
+            subtitle: "Автосервис «Авто14» на Заречной 5Б (посёлок Константиновка, Советский район Казани) специализируется на компьютерном 3D сход-развале на стенде Hoffman и ремонте ходовой части. Регулировка углов выполняется за 20–35 минут с точностью до 0,01°. Стоимость сход-развала начинается от 1500 рублей по прайс-листу сервиса, диагностика подвески проводится бесплатно. Принимаем без очередей по предварительной записи с понедельника по субботу с 9:00 до 19:00.",
             subtitle_p1: "Ремонт ходовой",
             subtitle_p2: "3D сход-развал",
             subtitle_p3: "Шиномонтаж",
@@ -40,7 +40,7 @@ export const translations = {
             more: "Подробнее",
             alignment: {
                 name: "3D Развал-схождение",
-                desc: "Стенд Hoffman 3D. Высочайшая точность регулировки углов. 1 ось от 1400 ₽, 2 оси от 2500 ₽."
+                desc: "Стенд Hoffman 3D. Высочайшая точность регулировки углов. 1 ось от 1500 ₽, 2 оси от 2500 ₽."
             },
             suspension: {
                 name: "Ремонт ходовой",
@@ -48,7 +48,7 @@ export const translations = {
             },
             tires: {
                 name: "Шиномонтаж",
-                desc: "Сезонная переобувка и балансировка 4 колёс. От 2200 ₽."
+                desc: "Сезонная переобувка и балансировка 4 колёс. От 2500 ₽."
             },
             oil: {
                 name: "Замена масла",
@@ -166,7 +166,7 @@ export const translations = {
                 },
                 {
                     q: "Сколько стоит 3D сход-развал на Заречной 5Б и сколько времени это занимает?",
-                    a: "Цена на 3D развал-схождение начинается от 1400 рублей (зависит от оси и марки авто). Мы используем точный немецкий стенд Hoffman. Если все регулировочные болты откручиваются нормально, настройка геометрии колес занимает 30-40 минут."
+                    a: "Цена на 3D развал-схождение начинается от 1500 рублей (зависит от оси и марки авто). Мы используем точный немецкий стенд Hoffman. Если все регулировочные болты откручиваются нормально, настройка геометрии колес занимает 30-40 минут."
                 },
                 {
                     q: "Даете ли вы гарантию на ремонт подвески и запчасти?",
@@ -233,7 +233,7 @@ export const translations = {
             title_pt1: "Professional",
             title_highlight: "3D Wheel Alignment",
             title_pt2: "and Suspension Repair in Kazan",
-            subtitle: "Auto service 'Avto14' at 5B Zarechnaya St (Konstantinovka, Kazan) specializes in computerized 3D wheel alignment on a Hoffman stand and suspension repair. Adjustment is completed in 20–35 minutes with 0.01° precision. Wheel alignment pricing starts from 1400 rubles, and suspension inspection is free. Open Mon–Sat 9:00–19:00 by appointment.",
+            subtitle: "Auto service 'Avto14' at 5B Zarechnaya St (Konstantinovka, Kazan) specializes in computerized 3D wheel alignment on a Hoffman stand and suspension repair. Adjustment is completed in 20–35 minutes with 0.01° precision. Wheel alignment pricing starts from 1500 rubles, and suspension inspection is free. Open Mon–Sat 9:00–19:00 by appointment.",
             subtitle_p1: "Suspension Repair",
             subtitle_p2: "3D Alignment",
             subtitle_p3: "Tire Service",
@@ -258,7 +258,7 @@ export const translations = {
             more: "Learn more",
             alignment: {
                 name: "3D Wheel Alignment",
-                desc: "Hoffman 3D stand. Precision adjustment. 1 axle from 1400 ₽, 2 axles from 2500 ₽."
+                desc: "Hoffman 3D stand. Precision adjustment. 1 axle from 1500 ₽, 2 axles from 2500 ₽."
             },
             suspension: {
                 name: "Suspension Repair",
@@ -266,7 +266,7 @@ export const translations = {
             },
             tires: {
                 name: "Tire Service",
-                desc: "Seasonal change and balancing for 4 wheels. From 2200 ₽."
+                desc: "Seasonal change and balancing for 4 wheels. From 2500 ₽."
             },
             oil: {
                 name: "Oil Change",
@@ -384,7 +384,7 @@ export const translations = {
                 },
                 {
                     q: "How much does a 3D wheel alignment cost at 5B Zarechnaya St, and how long does it take?",
-                    a: "Prices for 3D alignment start from 1400 ₽ (depending on the axle and car make). We use a precise German Hoffman stand. If the adjustment bolts aren't seized, setting the wheel geometry takes 30-40 minutes."
+                    a: "Prices for 3D alignment start from 1500 ₽ (depending on the axle and car make). We use a precise German Hoffman stand. If the adjustment bolts aren't seized, setting the wheel geometry takes 30-40 minutes."
                 },
                 {
                     q: "Do you provide a warranty on suspension repairs and parts?",

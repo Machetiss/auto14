@@ -1,32 +1,42 @@
-import urllib.request
+import os
 import csv
-from io import StringIO
 import re
+from google.oauth2.service_account import Credentials
+from googleapiclient.discovery import build
 
-crm_url = 'https://docs.google.com/spreadsheets/d/1XVa9qSBSz2qWZSVGUC7UASCr3h4-z_CdroS6U4pmtlM/export?format=csv'
-db_file = r'c:\Users\lenovo\Pictures\Авто14\Сайт\avto14\data\Auto_Filters_DB.csv'
+# Настройки берутся строго из .env (без открытых ссылок в репозитории)
+CRM_SHEET_ID = os.environ.get('CRM_SHEET_ID')
+CRM_RANGE = os.environ.get('CRM_RANGE', 'A1:Z5000')
+SERVICE_ACCOUNT_FILE = os.environ.get('GOOGLE_APPLICATION_CREDENTIALS')
+db_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Auto_Filters_DB.csv')
 
 def get_crm_cars():
-    req = urllib.request.Request(crm_url, headers={'User-Agent': 'Mozilla/5.0'})
-    response = urllib.request.urlopen(req)
-    csv_data = response.read().decode('utf-8')
-    reader = csv.reader(StringIO(csv_data))
+    if not CRM_SHEET_ID or not SERVICE_ACCOUNT_FILE:
+        raise RuntimeError("CRM_SHEET_ID и GOOGLE_APPLICATION_CREDENTIALS должны быть заданы в .env")
+    creds = Credentials.from_service_account_file(
+        SERVICE_ACCOUNT_FILE,
+        scopes=['https://www.googleapis.com/auth/spreadsheets.readonly']
+    )
+    service = build('sheets', 'v4', credentials=creds)
+    result = service.spreadsheets().values().get(
+        spreadsheetId=CRM_SHEET_ID,
+        range=CRM_RANGE
+    ).execute()
+    rows = result.get('values', [])
+    if not rows:
+        return []
     
-    header = next(reader)
     model_idx = 4
     name_idx = 1
     
     unique_cars = set()
-    for row in reader:
+    for row in rows[1:]:
         if len(row) > model_idx:
             model = row[model_idx].strip()
-            name = row[name_idx].strip()
-            # sometimes model is in name, like 'Хендайи20', 'БМВ', 'Порше'
+            name = row[name_idx].strip() if len(row) > name_idx else ''
             if model:
                 unique_cars.add(model)
             elif name and len(name) > 2 and any(char.isalpha() for char in name):
-                # crude heuristic to catch cars in 'name' column if 'model' is empty
-                # we'll add it to unique cars if it doesn't look like a human name, but let's just add all and filter later
                 unique_cars.add(name)
                 
     return list(unique_cars)

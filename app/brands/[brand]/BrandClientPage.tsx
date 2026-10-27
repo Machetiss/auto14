@@ -32,13 +32,13 @@ export default function BrandClientPage({ brand }: { brand: CarBrand }) {
                             <td className="p-3 md:p-4 font-black">3D сход-развал (1 ось)</td>
                             <td className="p-3 md:p-4 opacity-80">30–40 мин</td>
                             <td className="p-3 md:p-4 opacity-80">30 дней / 1000 км</td>
-                            <td className="p-3 md:p-4 font-black text-accent-orange">от 1400 ₽</td>
+                            <td className="p-3 md:p-4 font-black text-accent-orange">от 1500 ₽</td>
                         </tr>
                         <tr>
                             <td className="p-3 md:p-4 font-black">3D сход-развал (2 оси)</td>
                             <td className="p-3 md:p-4 opacity-80">40–50 мин</td>
                             <td className="p-3 md:p-4 opacity-80">30 дней / 1000 км</td>
-                            <td className="p-3 md:p-4 font-black text-accent-orange">от 1800 ₽</td>
+                            <td className="p-3 md:p-4 font-black text-accent-orange">от 2500 ₽</td>
                         </tr>
                         <tr>
                             <td className="p-3 md:p-4 font-black">Диагностика подвески на подъёмнике</td>

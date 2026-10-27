@@ -15,33 +15,45 @@ interface PriceItem {
 }
 
 const alignmentData: PriceItem[] = [
-    { name: 'Веста / Иномарки — только схождение спереди', nameEn: 'Vesta / Foreign — front toe only', price: 1400 },
-    { name: 'Land Cruiser, Prado — только схождение спереди', nameEn: 'Land Cruiser, Prado — front toe only', price: 1500 },
-    { name: 'Гранта, Приора, Калина, Богдан, Он-До', nameEn: 'Granta, Priora, Kalina, Bogdan, On-Do', price: 1800, note: 'зависит от состояния рег. элементов', noteEn: 'depends on adjustment bolt condition' },
-    { name: 'Иномарки — схождение перед + зад (2 оси)', nameEn: 'Foreign — front + rear toe (2 axles)', price: 2200 },
-    { name: 'УАЗ', nameEn: 'UAZ', price: 2500 },
-    { name: 'Иномарки — схождение + развал зад, 2 оси', nameEn: 'Foreign — toe + rear camber, 2 axles', price: 2500, note: 'не премиум', noteEn: 'non-premium' },
-    { name: 'ВАЗ 2114, 2109 и аналогичные', nameEn: 'VAZ 2114, 2109 and similar', price: 2800 },
-    { name: 'Land Cruiser, Prado — развал + схождение', nameEn: 'Land Cruiser, Prado — camber + toe', price: 3000 },
-    { name: 'Touareg — полная регулировка всех осей', nameEn: 'Touareg — full adjustment, all axes', price: 3500 },
+    { name: 'Проверка углов на 3D-стенде (без регулировки)', nameEn: '3D alignment check (without adjustment)', price: 500, note: 'если углы в норме', noteEn: 'if angles are within spec' },
+    { name: 'Авто с задней балкой — схождение 1 ось (Vesta, Rio, Solaris, Polo, Logan)', nameEn: 'Rear torsion beam cars — front toe 1 axle (Vesta, Rio, Solaris, Polo)', price: 1500 },
+    { name: 'LADA Granta, Kalina, Priora, ВАЗ 2110–2112 (схождение + развал + кастор)', nameEn: 'LADA Granta, Kalina, Priora, VAZ 2110–2112 (toe + camber + caster)', price: 2200, note: 'зависит от состояния рег. элементов', noteEn: 'depends on adjustment bolt condition' },
+    { name: 'Легковые с многорычажкой и малые паркетники (Focus, Ceed, Octavia, Camry, Creta, Duster)', nameEn: 'Multi-link cars & compact SUVs (Focus, Ceed, Octavia, Camry, Creta, Duster)', price: 1500, note: '1–2 оси: от 1 500 до 3 000 ₽', noteEn: '1–2 axles: 1,500–3,000 ₽' },
+    { name: 'Среднеразмерные кроссоверы (RAV4, Sportage, Tucson, Tiguan, CX-5, Tiggo 7/8, Haval, Monjaro)', nameEn: 'Mid-size SUVs (RAV4, Sportage, Tucson, Tiguan, CX-5, Chery, Haval, Geely)', price: 1500, note: '1–2 оси: от 1 500 до 3 500 ₽', noteEn: '1–2 axles: 1,500–3,500 ₽' },
+    { name: 'ВАЗ 2108–2115 (Самара: девятка, четырка) — развал + схождение + кастор', nameEn: 'VAZ 2108–2115 — camber + toe + caster', price: 3000 },
+    { name: 'Нива (Legend, Travel, 4x4), ВАЗ Классика 2101–2107', nameEn: 'LADA Niva, VAZ Classic 2101–2107', price: 3500 },
+    { name: 'Land Cruiser 100/200/300, Prado 120/150, SsangYong — развал + кастор + схождение', nameEn: 'Land Cruiser, Prado, SsangYong — camber + caster + toe', price: 3500 },
+    { name: 'Крупные кроссоверы и немецкий премиум (Sorento, Santa Fe, BMW, Mercedes, Audi, Touareg, Cayenne)', nameEn: 'Large SUVs & German premium (Sorento, Santa Fe, BMW, Mercedes, Audi, Touareg, Cayenne)', price: 2000, note: '1–2 оси: от 2 000 до 4 500 ₽', noteEn: '1–2 axles: 2,000–4,500 ₽' },
+    { name: 'УАЗ Патриот / Хантер, Toyota Hiace, VW Transporter / Caravelle / Multivan', nameEn: 'UAZ Patriot / Hunter, Toyota Hiace, VW Transporter / Multivan', price: 4000, note: 'Transporter 2 оси — до 5 500 ₽', noteEn: 'Transporter 2 axles — up to 5,500 ₽' },
 ];
 
 const tiresData: PriceItem[] = [
-    { name: 'R13 – R15 (комплект с балансировкой)', nameEn: 'R13 – R15 (set with balancing)', price: 2200 },
-    { name: 'R16 (комплект с балансировкой)', nameEn: 'R16 (set with balancing)', price: 2500 },
-    { name: 'R17 (комплект с балансировкой)', nameEn: 'R17 (set with balancing)', price: 2700 },
-    { name: 'R18 (комплект с балансировкой)', nameEn: 'R18 (set with balancing)', price: 3000 },
-    { name: 'R19 (комплект с балансировкой)', nameEn: 'R19 (set with balancing)', price: 3300 },
-    { name: 'R20 (комплект с балансировкой)', nameEn: 'R20 (set with balancing)', price: 4000 },
-    { name: 'R21 (комплект с балансировкой)', nameEn: 'R21 (set with balancing)', price: 4400 },
+    { name: 'R13 – R15 (комплект 4 колеса с балансировкой)', nameEn: 'R13 – R15 (set of 4 with balancing)', price: 2500, note: 'единая цена за комплект', noteEn: 'fixed price for set' },
+    { name: 'R16 (легковые 2 800 ₽ / кроссоверы до 3 200 ₽)', nameEn: 'R16 (sedans 2,800 ₽ / SUVs up to 3,200 ₽)', price: 2800, note: 'кроссоверы до 3 200 ₽', noteEn: 'SUVs up to 3,200 ₽' },
+    { name: 'R17 (легковые 3 000 ₽ / кроссоверы до 3 600 ₽)', nameEn: 'R17 (sedans 3,000 ₽ / SUVs up to 3,600 ₽)', price: 3000, note: 'кроссоверы до 3 600 ₽', noteEn: 'SUVs up to 3,600 ₽' },
+    { name: 'R18 (легковые 3 300 ₽ / кроссоверы до 3 800 ₽)', nameEn: 'R18 (sedans 3,300 ₽ / SUVs up to 3,800 ₽)', price: 3300, note: 'кроссоверы до 3 800 ₽', noteEn: 'SUVs up to 3,800 ₽' },
+    { name: 'R19 (легковые от 3 500 ₽ / кроссоверы до 4 000 ₽)', nameEn: 'R19 (sedans from 3,500 ₽ / SUVs up to 4,000 ₽)', price: 3500, note: 'до 4 000 ₽ для больших авто', noteEn: 'up to 4,000 ₽ for large vehicles' },
+    { name: 'R20 (легковые от 3 700 ₽ / большие авто до 4 500 ₽)', nameEn: 'R20 (sedans from 3,700 ₽ / large vehicles up to 4,500 ₽)', price: 3700, note: 'до 4 500 ₽ для больших авто', noteEn: 'up to 4,500 ₽ for large vehicles' },
+    { name: 'R21 (комплект с балансировкой)', nameEn: 'R21 (set with balancing)', price: 4700, note: 'до 4 700 ₽', noteEn: 'up to 4,700 ₽' },
+    { name: 'R22 (комплект с балансировкой)', nameEn: 'R22 (set with balancing)', price: 5000, note: 'до 5 000 ₽', noteEn: 'up to 5,000 ₽' },
 ];
 
 const repairData: PriceItem[] = [
-    { name: 'Диагностика ходовой', nameEn: 'Suspension diagnostics', price: 0, note: 'бесплатно', noteEn: 'free' },
-    { name: 'Замена рулевого наконечника', nameEn: 'Tie rod end replacement', price: 700 },
-    { name: 'Замена шаровой опоры (болтовая)', nameEn: 'Ball joint replacement (bolted)', price: 800 },
-    { name: 'Замена масла в ДВС', nameEn: 'Engine oil change', price: 1000 },
-    { name: 'Замена шаровой опоры (прессованная / со снятием рычага)', nameEn: 'Ball joint replacement (pressed / arm removal)', price: 2000 },
+    { name: 'Диагностика (осмотр) ходовой на подъёмнике', nameEn: 'Suspension inspection on lift', price: 0, note: 'всегда бесплатно', noteEn: 'always free' },
+    { name: 'Замена дисковых тормозных колодок (за 1 колесо)', nameEn: 'Disc brake pads replacement (per wheel)', price: 800, note: 'с электроручником — от 1 200 ₽', noteEn: 'with EPB — from 1,200 ₽' },
+    { name: 'Замена стойки стабилизатора', nameEn: 'Stabilizer link replacement', price: 800, note: 'за 1 шт.', noteEn: 'per unit' },
+    { name: 'Замена рулевого наконечника', nameEn: 'Tie rod end replacement', price: 800, note: 'за 1 шт.', noteEn: 'per unit' },
+    { name: 'Замена шаровой опоры (на болтах, без снятия рычага)', nameEn: 'Ball joint replacement (bolted, without arm removal)', price: 800, note: 'за 1 шт.', noteEn: 'per unit' },
+    { name: 'Замена масла в ДВС и масляного фильтра', nameEn: 'Engine oil & filter change', price: 1000, note: 'снятие нештатной защиты +300–500 ₽', noteEn: 'skid plate removal +300–500 ₽' },
+    { name: 'Замена заднего амортизатора (отдельно от пружины)', nameEn: 'Rear shock absorber replacement (separate from spring)', price: 1300, note: 'за 1 шт.', noteEn: 'per unit' },
+    { name: 'Замена рулевой тяги', nameEn: 'Inner tie rod replacement', price: 1800, note: 'наконечник и пыльник с этой стороны входят в цену', noteEn: 'includes tie rod end & boot on same side' },
+    { name: 'Замена передней стойки в сборе (на болтах)', nameEn: 'Front strut assembly replacement (bolted)', price: 2000, note: 'за 1 сторону, зажимная VAG/Focus — от 3 500 ₽', noteEn: 'per side, pinch-bolt VAG/Focus — from 3,500 ₽' },
+    { name: 'Замена шаровой опоры (прессованная / на заклёпках)', nameEn: 'Ball joint replacement (pressed / riveted / arm removal)', price: 2000, note: 'со снятием рычага', noteEn: 'includes arm removal' },
+    { name: 'Снятие / установка переднего рычага подвески', nameEn: 'Front control arm removal / installation', price: 2000, note: 'перепрессовка сайлентблока от 600 ₽', noteEn: 'bushing press from 600 ₽' },
+    { name: 'Замена наружного ШРУСа (гранаты) или пыльника', nameEn: 'Outer CV joint or boot replacement', price: 2500, note: 'внутренний ШРУС / привод — от 3 000 ₽', noteEn: 'inner CV joint / axle — from 3,000 ₽' },
+    { name: 'Замена тормозных дисков (за ось, оба диска)', nameEn: 'Brake discs replacement (per axle, both discs)', price: 3000, note: 'замена колодок входит в цену', noteEn: 'includes brake pads replacement' },
+    { name: 'Замена ступичного подшипника (с перепрессовкой)', nameEn: 'Wheel bearing replacement (pressed)', price: 3500, note: 'ступица на болтах без пресса — от 3 000 ₽', noteEn: 'bolt-on hub assembly — from 3,000 ₽' },
+    { name: 'Замена сайлентблоков задней балки (комплект, 2 стороны)', nameEn: 'Rear axle beam bushings replacement (both sides)', price: 8000, note: 'фиксированная цена за ось', noteEn: 'fixed price for axle' },
 ];
 
 export default function PricingSection({ onBookClick }: { onBookClick: () => void }) {

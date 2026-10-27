@@ -13,10 +13,10 @@ export default function RazvalShozhdenie() {
         <ServicePageLayout
             title={l("3D Развал-схождение", "3D Wheel Alignment")}
             description={l(
-                "Регулировка сход-развала 3D в Казани проводится в техцентре «Авто14» по адресу ул. Заречная, 5Б. Настройка выполняется на компьютерном стенде Hoffman с четырьмя оптическими камерами и калиброванными мишенями с точностью до 0,01 градуса. Процедура занимает от 20 до 35 минут. Стоимость регулировки одной оси составляет от 1400 рублей, двух осей — от 2500 рублей по прайс-листу сервиса. Распечатку углов до и после регулировки выдаём по запросу клиента.",
-                "3D wheel alignment in Kazan at Avto14 service center, 5B Zarechnaya St. Adjustments are performed on a computerized Hoffman 3D stand with 0.01° precision in 20–35 minutes. One axle adjustment starts from 1400 ₽, two axles from 2500 ₽ per service price list. Before & after angle printout is provided upon customer request."
+                "Регулировка сход-развала 3D в Казани проводится в техцентре «Авто14» по адресу ул. Заречная, 5Б. Настройка выполняется на компьютерном стенде Hoffman с четырьмя оптическими камерами и калиброванными мишенями с точностью до 0,01 градуса. Процедура занимает от 20 до 35 минут. Стоимость регулировки одной оси составляет от 1500 рублей, двух осей — от 2500 рублей по прайс-листу сервиса. Распечатку углов до и после регулировки выдаём по запросу клиента.",
+                "3D wheel alignment in Kazan at Avto14 service center, 5B Zarechnaya St. Adjustments are performed on a computerized Hoffman 3D stand with 0.01° precision in 20–35 minutes. One axle adjustment starts from 1500 ₽, two axles from 2500 ₽ per service price list. Before & after angle printout is provided upon customer request."
             )}
-            price={l("от 1400₽", "from 1400₽")}
+            price={l("от 1500₽", "from 1500₽")}
             heroImage="/job/razval.jpg"
             symptoms={[
                 l("Машину тянет в сторону на ровной дороге", "Car pulls to one side on a straight road"),
@@ -86,7 +86,7 @@ export default function RazvalShozhdenie() {
                                 <tr>
                                     <td className="p-3 md:p-4 font-black">Регулировка одной оси (передняя)</td>
                                     <td className="p-3 md:p-4 opacity-70">20–30 мин</td>
-                                    <td className="p-3 md:p-4 text-right font-black text-accent-orange whitespace-nowrap">от 1 400 ₽</td>
+                                    <td className="p-3 md:p-4 text-right font-black text-accent-orange whitespace-nowrap">от 1 500 ₽</td>
                                 </tr>
                                 <tr>
                                     <td className="p-3 md:p-4 font-black">Регулировка двух осей (передняя + задняя)</td>
@@ -120,7 +120,7 @@ export default function RazvalShozhdenie() {
             faq={[
                 {
                     question: l("Сколько стоит развал-схождение?", "How much does wheel alignment cost?"),
-                    answer: l("От 1400 ₽ за одну ось (передняя ось). Две оси — от 2500 ₽ по прайсу сервиса. Распечатку параметров выдаем по вашему запросу.", "From 1,400 ₽ for one axle. Two axles from 2,500 ₽ per service price list. Report provided upon request.")
+                    answer: l("От 1500 ₽ за одну ось (передняя ось). Две оси — от 2500 ₽ по прайсу сервиса. Распечатку параметров выдаем по вашему запросу.", "From 1,500 ₽ for one axle. Two axles from 2,500 ₽ per service price list. Report provided upon request.")
                 },
                 {
                     question: l("Нужно ли делать развал после смены резины?", "Do I need alignment after changing tires?"),
