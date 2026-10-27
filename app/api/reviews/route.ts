@@ -13,25 +13,5 @@ export async function GET() {
     }
 }
 
-export async function POST(request: Request) {
-    try {
-        const body = await request.json();
-        // Basic validation for manual review addition
-        if (!body.author || !body.text || !body.rating) {
-             return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
-        }
-        
-        const review = await prisma.review.create({
-            data: {
-                author: body.author,
-                text: body.text,
-                rating: body.rating,
-                source: body.source || 'manual',
-                date: new Date()
-            }
-        });
-        return NextResponse.json(review, { status: 201 });
-    } catch (error) {
-        return handleApiError(error);
-    }
-}
+// POST убран 27.10.2026: эндпоинт был открыт без авторизации, сайт им не пользуется.
+// Отзывы теперь приходят из выгрузки штаба (data/hq/reviews.json).

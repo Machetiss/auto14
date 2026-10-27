@@ -70,4 +70,6 @@ EXPOSE 3000
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
-CMD ["node", "server.js"]
+# Заявки храним в постоянном хранилище Amvera /data: всё остальное стирается при пересборке.
+# При первом запуске копируем туда засеянную базу. Если /data нет или нельзя писать — работаем по-старому.
+CMD ["sh", "-c", "if [ -w /data ] && { [ -f /data/dev.db ] || cp ./prisma/dev.db /data/dev.db; }; then export DATABASE_URL=file:/data/dev.db; echo '[db] using /data/dev.db'; else echo '[db] /data unavailable, using image db'; fi; exec node server.js"]

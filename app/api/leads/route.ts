@@ -58,7 +58,8 @@ export async function POST(request: Request) {
 
                 message += `📍 *Источник:* ${utm?.source || 'прямой'}`;
 
-                await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+                const tgUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+                const tgRes = await fetch(tgUrl, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
@@ -67,6 +68,17 @@ export async function POST(request: Request) {
                         parse_mode: 'Markdown'
                     })
                 });
+                // Символы _ * [ ` в тексте клиента ломают Markdown, Telegram отвечает 400.
+                // Тогда шлём тот же текст без разметки, чтобы заявка не потерялась.
+                if (!tgRes.ok) {
+                    console.error("Telegram Markdown rejected, status", tgRes.status, "- resending as plain text");
+                    const plainRes = await fetch(tgUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: message.replace(/\*/g, '') })
+                    });
+                    if (!plainRes.ok) console.error("Telegram plain text failed, status", plainRes.status);
+                }
             } catch (tgError) {
                 console.error("Telegram notification failed:", tgError);
                 // Don't fail the request if TG fails, but log it.
