@@ -7,11 +7,21 @@
 echo "[db] uid=$(id -u) data: $(ls -ld /data 2>&1)"
 
 if [ -d /data ]; then
+    echo "[db] mount: $(grep ' /data ' /proc/mounts 2>&1)"
     chown 1001:1001 /data 2>/dev/null
     if [ ! -f /data/dev.db ]; then
-        cp ./prisma/dev.db /data/dev.db 2>/dev/null && echo "[db] copied seed db to /data"
+        # сначала от root, если нельзя — от nextjs (на NFS root часто превращается в nobody)
+        if cp ./prisma/dev.db /data/dev.db 2>/tmp/cp.err; then
+            echo "[db] copied seed db to /data (root)"
+        elif setpriv --reuid=1001 --regid=1001 --clear-groups cp ./prisma/dev.db /data/dev.db 2>>/tmp/cp.err; then
+            echo "[db] copied seed db to /data (uid 1001)"
+        else
+            echo "[db] copy to /data failed: $(cat /tmp/cp.err)"
+        fi
     fi
     chown 1001:1001 /data/dev.db 2>/dev/null
+    chmod 666 /data/dev.db 2>/dev/null
+    echo "[db] file: $(ls -l /data/dev.db 2>&1)"
 fi
 
 if [ -f /data/dev.db ] && setpriv --reuid=1001 --regid=1001 --clear-groups test -w /data/dev.db 2>/dev/null; then
