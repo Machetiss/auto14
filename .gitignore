@@ -44,5 +44,15 @@ prisma/dev.db
  
 .agent/ 
 .agents/ 
-*.log 
+*.log
 search_*.json
+
+# мусор от скриптов и случайных команд PowerShell
+__pycache__/
+$null
+Copy-Item
+*.bundle
+/scratch/
+/temp_fonts/
+scripts/flight_monitor_*.json
+.claude/settings.local.json
