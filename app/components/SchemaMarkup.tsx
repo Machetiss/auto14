@@ -7,13 +7,10 @@ export default function SchemaMarkup() {
         "image": "https://www.auto-14.ru/logo-wheel.png",
         "@id": "https://www.auto-14.ru/#organization",
         "url": "https://www.auto-14.ru",
-        "dateModified": "2026-09-28",
-        "description": "Автосервис в Казани (Константиновка, ул. Заречная 5Б). Компьютерный 3D сход-развал Hofmann, ремонт подвески, шиномонтаж и ТО.",
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5.0",
-            "reviewCount": "165"
-        },
+        "dateModified": "2026-10-27",
+        "description": "Автосервис в Казани (Константиновка, ул. Заречная 5Б). Компьютерный 3D сход-развал Hofmann от 1 500 ₽, ремонт подвески, шиномонтаж и ТО. Рейтинг 5,0 на Яндекс Картах и 4,9 в 2ГИС. Гарантия на ремонт 1 год или 20 000 км с нашими запчастями.",
+        // aggregateRating убран 27.10.2026: «5.0 / 165» не совпадал ни с одной площадкой.
+        // Реальные рейтинги живут в карточках (sameAs) и в тексте description.
         "telephone": ["+79992699359", "+79294945174"],
         "address": {
             "@type": "PostalAddress",

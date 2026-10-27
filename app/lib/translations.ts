@@ -23,6 +23,7 @@ export const translations = {
             guarantee: "Согласуем цену до начала работ. Никаких скрытых платежей",
             cta_route: "Маршрут",
             consultation_free: "Консультация всегда бесплатная",
+            subtitle_short: "3D сход-развал на стенде Hofmann за 20–35 минут, от 1 500 ₽. Диагностика ходовой бесплатно.",
             pain_points: {
                 pulls_aside: "Тянет машину в сторону?",
                 wheel_crooked: "Руль стоит криво?",
@@ -241,6 +242,7 @@ export const translations = {
             guarantee: "We agree on the price before starting work. No hidden fees",
             cta_route: "Directions",
             consultation_free: "Free consultation — always",
+            subtitle_short: "3D wheel alignment on a Hofmann stand in 20–35 minutes, from 1,500 ₽. Free suspension check.",
             pain_points: {
                 pulls_aside: "Car pulls to the side?",
                 wheel_crooked: "Steering wheel off-center?",

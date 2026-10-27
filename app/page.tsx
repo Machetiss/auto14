@@ -100,22 +100,6 @@ export default function Home() {
                         </span>
                     </div>
 
-                    {/* Symptoms / Pain Points as structured tags */}
-                    <div className="flex flex-wrap gap-2 mb-6 max-w-2xl">
-                        {[
-                            t('hero.pain_points.pulls_aside'),
-                            t('hero.pain_points.wheel_crooked'),
-                            t('hero.pain_points.throws_bumps'),
-                            t('hero.pain_points.bad_handling'),
-                            t('hero.pain_points.something_knocks'),
-                            t('hero.pain_points.alignment_check')
-                        ].map((tag, idx) => (
-                            <span key={idx} className="bg-black/5 border border-black/10 px-3 py-1 text-[10px] md:text-sm font-medium uppercase tracking-wider text-black/60 rounded-md">
-                                {tag}
-                            </span>
-                        ))}
-                    </div>
-
                     {/* MAIN TAGLINE - H1 and Subtitle */}
                     <h1 className="w-full text-[5.8vw] md:text-[3.9vw] leading-tight font-black tracking-tight uppercase mb-6 text-black drop-shadow-sm max-w-4xl">
                         {t('hero.title_pt1')}{" "}
@@ -124,12 +108,9 @@ export default function Home() {
                         </span>{" "}
                         {t('hero.title_pt2')}
                     </h1>
-                    <div className="bg-white/90 backdrop-blur-sm border-4 border-black rounded-2xl px-5 py-4 mb-6 max-w-2xl shadow-[4px_4px_0px_#FF4500] relative overflow-hidden">
-                        <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-accent-orange"></div>
-                        <p className="text-[3.5vw] md:text-[1.2vw] font-black leading-snug text-black pl-3 font-sans">
-                            {t('hero.subtitle')}
-                        </p>
-                    </div>
+                    <p className="text-base md:text-xl font-black leading-snug text-black mb-6 max-w-2xl font-sans">
+                        {t('hero.subtitle_short')}
+                    </p>
 
                     {/* NEW: Free Consultation Message */}
                     <p className="flex items-center gap-2 text-xs md:text-sm font-black uppercase text-accent-orange mb-8 animate-pulse italic">
@@ -176,6 +157,18 @@ export default function Home() {
                         </div>
                     </div>
 
+                    {/* SOCIAL PROOF BADGES */}
+                    <div className="flex flex-wrap gap-3 mt-4">
+                        <a href="https://yandex.com/maps/org/avto14/108623850068/reviews/" target="_blank" rel="noopener noreferrer" className="bg-black text-[#FFF500] px-4 py-2 rounded-xl font-black text-xs uppercase tracking-wider border-2 border-black hover:bg-black/80 transition-colors flex items-center gap-2">
+                            ★ 5.0 {language === 'ru' ? 'Яндекс Карты • Хорошее место 2026' : 'Yandex Maps • Top Rated 2026'}
+                        </a>
+                        <a href="https://2gis.ru/kazan/firm/70000001065947100/tab/reviews" target="_blank" rel="noopener noreferrer" className="bg-black text-[#FFF500] px-4 py-2 rounded-xl font-black text-xs uppercase tracking-wider border-2 border-black hover:bg-black/80 transition-colors flex items-center gap-2">
+                            ★ 4.9 {language === 'ru' ? '2ГИС' : '2GIS'}
+                        </a>
+                        <span className="bg-black/10 text-black px-4 py-2 rounded-xl font-black text-xs uppercase tracking-wider border-2 border-black/20">
+                            13 000+ {language === 'ru' ? 'авто обслужено' : 'cars serviced'}
+                        </span>
+                    </div>
                     {/* NEO-BRUTALISM DOUBLE IRON GUARANTEE */}
                     <div className="w-full max-w-2xl mt-6 p-4 md:p-5 bg-white border-4 border-black rounded-2xl shadow-[6px_6px_0px_#000] relative">
                         <div className="flex items-center gap-2 mb-3">
@@ -210,15 +203,30 @@ export default function Home() {
                         </div>
                     </div>
 
-                    {/* SOCIAL PROOF BADGES */}
-                    <div className="flex flex-wrap gap-3 mt-4">
-                        <a href="https://yandex.com/maps/org/avto14/108623850068/reviews/" target="_blank" rel="noopener noreferrer" className="bg-black text-[#FFF500] px-4 py-2 rounded-xl font-black text-xs uppercase tracking-wider border-2 border-black hover:bg-black/80 transition-colors flex items-center gap-2">
-                            ★ 5.0 {language === 'ru' ? 'Яндекс Карты • Хорошее место 2026' : 'Yandex Maps • Top Rated 2026'}
-                        </a>
-                        <span className="bg-black/10 text-black px-4 py-2 rounded-xl font-black text-xs uppercase tracking-wider border-2 border-black/20">
-                            13 000+ {language === 'ru' ? 'авто обслужено' : 'cars serviced'}
-                        </span>
+                    {/* Полный ответ про сервис для поисковиков и ИИ: текст целиком, просто ниже кнопок */}
+                    <div className="bg-white/90 backdrop-blur-sm border-4 border-black rounded-2xl px-5 py-4 mt-6 mb-6 max-w-2xl shadow-[4px_4px_0px_#FF4500] relative overflow-hidden">
+                        <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-accent-orange"></div>
+                        <p className="text-[3.5vw] md:text-[1.2vw] font-black leading-snug text-black pl-3 font-sans">
+                            {t('hero.subtitle')}
+                        </p>
                     </div>
+
+                    {/* Symptoms / Pain Points as structured tags */}
+                    <div className="flex flex-wrap gap-2 mb-6 max-w-2xl">
+                        {[
+                            t('hero.pain_points.pulls_aside'),
+                            t('hero.pain_points.wheel_crooked'),
+                            t('hero.pain_points.throws_bumps'),
+                            t('hero.pain_points.bad_handling'),
+                            t('hero.pain_points.something_knocks'),
+                            t('hero.pain_points.alignment_check')
+                        ].map((tag, idx) => (
+                            <span key={idx} className="bg-black/5 border border-black/10 px-3 py-1 text-[10px] md:text-sm font-medium uppercase tracking-wider text-black/60 rounded-md">
+                                {tag}
+                            </span>
+                        ))}
+                    </div>
+
                 </div>
 
                 {/* Right Image Content - The Girl */}
