@@ -82,18 +82,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'weekly',
             priority: 0.7,
         },
-        {
-            url: `${baseUrl}/blog/kogda-delat-shod-razval`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.6,
-        },
-        {
-            url: `${baseUrl}/blog/kak-vybrat-maslo`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.6,
-        }
+        // Статьи /blog/[slug] убраны 27.10.2026: страниц нет, поисковик получал 404.
     ];
 
     return [...staticRoutes, ...dynamicBrandRoutes, ...dynamicServiceBrandRoutes, ...blogRoutes];

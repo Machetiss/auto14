@@ -10,6 +10,8 @@ export const metadata = {
 const blogPosts = [
     {
         slug: 'kogda-delat-shod-razval',
+        // Статей пока нет (роута /blog/[slug] нет), ведём на страницу услуги
+        href: '/razval-shozhdenie',
         title: '5 признаков того, что вам пора делать сход-развал',
         excerpt: 'Руль стоит неровно? Машину тянет в сторону или подъедает резину? Рассказываем, как понять, что пора на 3D стенд Hofmann.',
         date: '20.04.2026',
@@ -17,6 +19,8 @@ const blogPosts = [
     },
     {
         slug: 'kak-vybrat-maslo',
+        // Статей пока нет (роута /blog/[slug] нет), ведём на страницу услуги
+        href: '/zamena-masla',
         title: 'Как выбрать моторное масло и не убить двигатель',
         excerpt: 'Разбираемся в допусках API, ACEA и почему качественные масла — лучший выбор для климата Казани и пробок.',
         date: '15.04.2026',
@@ -24,6 +28,8 @@ const blogPosts = [
     },
     {
         slug: 'diagnostika-podveski-besplatno',
+        // Статей пока нет (роута /blog/[slug] нет), ведём на страницу услуги
+        href: '/diagnostika',
         title: 'Почему мы делаем диагностику подвески бесплатно?',
         excerpt: 'Честный подход к ремонту: сначала находим реальную причину стука на подъёмнике, а потом фиксируем смету.',
         date: '10.04.2026',
@@ -31,6 +37,8 @@ const blogPosts = [
     },
     {
         slug: 'podgotovka-k-zime-podveska',
+        // Статей пока нет (роута /blog/[slug] нет), ведём на страницу услуги
+        href: '/razval-shozhdenie',
         title: 'Подготовка подвески и сход-развала к зимнему сезону',
         excerpt: 'Почему после перехода на зимнюю резину необходимо проверить углы колес и состояние пыльников амортизаторов.',
         date: '02.04.2026',
@@ -68,7 +76,7 @@ export default function BlogPage() {
                     {blogPosts.map((post) => (
                         <Link
                             key={post.slug}
-                            href={`/blog/${post.slug}`}
+                            href={post.href}
                             className="bg-white p-8 rounded-[2rem] border-4 border-black shadow-[8px_8px_0_#000] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all flex flex-col h-full group"
                         >
                             <div className="flex items-center gap-4 mb-4 text-xs font-black uppercase opacity-50">
@@ -83,7 +91,7 @@ export default function BlogPage() {
                                 {post.excerpt}
                             </p>
                             <div className="flex items-center gap-2 font-black uppercase text-sm">
-                                Читать статью <ChevronRight className="w-4 h-4" />
+                                Подробнее об услуге <ChevronRight className="w-4 h-4" />
                             </div>
                         </Link>
                     ))}
