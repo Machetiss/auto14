@@ -8,10 +8,11 @@ export default function SchemaMarkup() {
         "@id": "https://www.auto-14.ru/#organization",
         "url": "https://www.auto-14.ru",
         "foundingDate": "2022",
-        "dateModified": "2026-10-27",
+        "dateModified": "2026-10-28",
         "description": "Автосервис в Казани (Константиновка, ул. Заречная 5Б). Компьютерный 3D сход-развал Hofmann от 1 500 ₽, ремонт подвески, шиномонтаж и ТО. Рейтинг 5,0 на Яндекс Картах и 4,9 в 2ГИС. Гарантия на ремонт 1 год или 20 000 км с нашими запчастями.",
         // aggregateRating убран 27.10.2026: «5.0 / 165» не совпадал ни с одной площадкой.
         // Реальные рейтинги живут в карточках (sameAs) и в тексте description.
+        // review тоже убран 28.10.2026: Search Console «Multiple reviews without aggregateRating object».
         "telephone": ["+79992699359", "+79294945174"],
         "address": {
             "@type": "PostalAddress",
@@ -85,21 +86,7 @@ export default function SchemaMarkup() {
                     }
                 }
             ]
-        },
-        "review": [
-            {
-                "@type": "Review",
-                "author": { "@type": "Person", "name": "Павел Парамошков" },
-                "reviewRating": { "@type": "Rating", "ratingValue": "5" },
-                "reviewBody": "Сделал Сход-Развал который не мог нормально сделать 2.5 года Цена супер !Сервис На высоте ! Мастер Золотые Руки !!! Всем советую не пожалеете"
-            },
-            {
-                "@type": "Review",
-                "author": { "@type": "Person", "name": "Светлана Ханова" },
-                "reviewRating": { "@type": "Rating", "ratingValue": "5" },
-                "reviewBody": "Выбрала в 2ГИС по отзывам. Нужна была хорошая балансировка, развал и попросила сделать диагностику ходовой. После диагностики нужен был ремонт, заказали запчасти и все сделали быстро и качественно."
-            }
-        ]
+        }
     };
 
     const faqSchema = {
